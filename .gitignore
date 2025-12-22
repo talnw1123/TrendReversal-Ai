@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Large model files (exceed GitHub's 100MB limit)
+*.pkl
+old_model/
+model_downtrend/*.pkl
+model_uptrend/*.pkl
+model/model_downtrend/*.pkl
+model/model_uptrend/*.pkl
+
+# OS files
+.DS_Store
+Thumbs.db

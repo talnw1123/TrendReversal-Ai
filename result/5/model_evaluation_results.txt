@@ -1,0 +1,113 @@
+Train shape: (9382, 60, 42), (9382, 3)
+Class Weights: {0: np.float64(0.7528486599261756), 1: np.float64(5.889516635279347), 2: np.float64(0.6658150592576823)}
+
+==============================
+Training LSTM Model...
+==============================
+
+LSTM Global Test Accuracy: 0.4134
+Saved LSTM model to reversal_model_LSTM.keras
+              precision    recall  f1-score   support
+
+Bearish (-1)       0.45      0.54      0.49       273
+ Neutral (0)       0.40      0.51      0.45       187
+ Bullish (1)       0.36      0.19      0.25       244
+
+    accuracy                           0.41       704
+   macro avg       0.40      0.42      0.40       704
+weighted avg       0.40      0.41      0.40       704
+
+
+==============================
+Training CNN Model...
+==============================
+
+CNN Global Test Accuracy: 0.4091
+Saved CNN model to reversal_model_CNN.keras
+              precision    recall  f1-score   support
+
+Bearish (-1)       0.50      0.28      0.36       273
+ Neutral (0)       0.40      0.68      0.50       187
+ Bullish (1)       0.37      0.34      0.35       244
+
+    accuracy                           0.41       704
+   macro avg       0.42      0.44      0.41       704
+weighted avg       0.43      0.41      0.40       704
+
+
+==============================
+Training MLP Model...
+==============================
+
+MLP Global Test Accuracy: 0.4276
+Saved MLP model to reversal_model_MLP.keras
+              precision    recall  f1-score   support
+
+Bearish (-1)       0.46      0.58      0.51       273
+ Neutral (0)       0.42      0.45      0.43       187
+ Bullish (1)       0.37      0.24      0.29       244
+
+    accuracy                           0.43       704
+   macro avg       0.42      0.42      0.41       704
+weighted avg       0.42      0.43      0.42       704
+
+
+==============================
+Training Transformer Model...
+==============================
+
+Transformer Global Test Accuracy: 0.4205
+Saved Transformer model to reversal_model_Transformer.keras
+              precision    recall  f1-score   support
+
+Bearish (-1)       0.49      0.69      0.58       273
+ Neutral (0)       0.35      0.41      0.37       187
+ Bullish (1)       0.30      0.13      0.18       244
+
+    accuracy                           0.42       704
+   macro avg       0.38      0.41      0.38       704
+weighted avg       0.39      0.42      0.39       704
+
+
+==============================
+Training RandomForest Model...
+==============================
+
+RandomForest Global Test Accuracy: 0.3878
+Saved RandomForest model to reversal_model_RandomForest.pkl
+              precision    recall  f1-score   support
+
+Bearish (-1)       0.45      0.37      0.41       273
+ Neutral (0)       0.49      0.27      0.34       187
+ Bullish (1)       0.32      0.50      0.39       244
+
+    accuracy                           0.39       704
+   macro avg       0.42      0.38      0.38       704
+weighted avg       0.41      0.39      0.39       704
+
+
+==============================
+Training SVM Model...
+==============================
+
+SVM Global Test Accuracy: 0.4460
+Saved SVM model to reversal_model_SVM.pkl
+              precision    recall  f1-score   support
+
+Bearish (-1)       0.48      0.53      0.51       273
+ Neutral (0)       0.46      0.54      0.50       187
+ Bullish (1)       0.37      0.28      0.32       244
+
+    accuracy                           0.45       704
+   macro avg       0.44      0.45      0.44       704
+weighted avg       0.44      0.45      0.44       704
+
+
+Model Comparison Summary:
+          Model  Accuracy  F1_Macro  F1_Weighted  F1_Bearish  F1_Bullish
+0          LSTM  0.413352  0.396221     0.395846    0.490066    0.250000
+1           CNN  0.409091  0.405357     0.395773    0.360656    0.354430
+2           MLP  0.427557  0.412685     0.415173    0.512987    0.292079
+3   Transformer  0.420455  0.377856     0.386292    0.575804    0.183381
+4  RandomForest  0.387784  0.381411     0.385435    0.407186    0.392220
+5           SVM  0.446023  0.439858     0.438078    0.505226    0.319249

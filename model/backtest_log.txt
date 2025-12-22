@@ -1,0 +1,90 @@
+======================================================================
+SMART BACKTEST: SMA200 MODEL SWITCHING
+======================================================================
+
+Fitting scalers...
+  Loading Uptrend data...
+Found 5 files in /Users/oattao/Desktop/p-e/model/../trend_data_manual/split/train
+Found 5 files in /Users/oattao/Desktop/p-e/model/../trend_data_manual/split/val
+Found 5 files in /Users/oattao/Desktop/p-e/model/../trend_data_manual/split/test
+BINARY MODE: Removing Neutral class...
+  Loading Downtrend data...
+Found 5 files in /Users/oattao/Desktop/p-e/model/../trend_data_manual/split/train
+Found 5 files in /Users/oattao/Desktop/p-e/model/../trend_data_manual/split/val
+Found 5 files in /Users/oattao/Desktop/p-e/model/../trend_data_manual/split/test
+BINARY MODE: Removing Neutral class...
+
+Loading models...
+  Loaded uptrend LSTM (Keras)
+  Loaded downtrend LSTM (Keras)
+  Loaded uptrend CNN (Keras)
+  Loaded downtrend CNN (Keras)
+  Loaded uptrend MLP (Keras)
+  Loaded downtrend MLP (Keras)
+  Loaded uptrend Transformer (Keras)
+  Loaded downtrend Transformer (Keras)
+  Loaded uptrend RandomForest (Pickle)
+  Loaded downtrend RandomForest (Pickle)
+  Loaded uptrend SVM (Pickle)
+  Loaded downtrend SVM (Pickle)
+
+==================================================
+Market: US
+==================================================
+  LSTM: -26.86% (B&H: +27.75%)
+  CNN: -29.02% (B&H: +27.75%)
+  MLP: -34.66% (B&H: +27.75%)
+  Transformer: -17.07% (B&H: +27.75%)
+  RandomForest: -22.24% (B&H: +27.75%)
+  SVM: -33.90% (B&H: +27.75%)
+
+==================================================
+Market: UK
+==================================================
+  LSTM: -17.35% (B&H: +14.20%)
+  CNN: +7.66% (B&H: +14.20%)
+  MLP: +6.70% (B&H: +14.20%)
+  Transformer: -0.78% (B&H: +14.20%)
+  RandomForest: +1.93% (B&H: +14.20%)
+  SVM: +20.68% (B&H: +14.20%)
+
+==================================================
+Market: Thai
+==================================================
+  LSTM: +33.06% (B&H: +2.30%)
+  CNN: -4.27% (B&H: +2.30%)
+  MLP: +10.75% (B&H: +2.30%)
+  Transformer: +2.11% (B&H: +2.30%)
+  RandomForest: -35.79% (B&H: +2.30%)
+  SVM: -8.79% (B&H: +2.30%)
+
+==================================================
+Market: Gold
+==================================================
+  LSTM: +7.74% (B&H: -8.32%)
+  CNN: -4.02% (B&H: -8.32%)
+  MLP: +17.46% (B&H: -8.32%)
+  Transformer: -11.81% (B&H: -8.32%)
+  RandomForest: -12.02% (B&H: -8.32%)
+  SVM: -18.27% (B&H: -8.32%)
+
+==================================================
+Market: BTC
+==================================================
+  LSTM: -27.95% (B&H: +76.70%)
+  CNN: -42.32% (B&H: +76.70%)
+  MLP: -63.82% (B&H: +76.70%)
+  Transformer: +150.50% (B&H: +76.70%)
+  RandomForest: -33.15% (B&H: +76.70%)
+  SVM: -27.86% (B&H: +76.70%)
+
+======================================================================
+SUMMARY: BEST SMART MODEL PER MARKET
+======================================================================
+US: Transformer (-17.07% vs B&H 27.75%)
+UK: SVM (20.68% vs B&H 14.2%)
+Thai: LSTM (33.06% vs B&H 2.3%)
+Gold: MLP (17.46% vs B&H -8.32%)
+BTC: Transformer (150.5% vs B&H 76.7%)
+
+Full results saved to smart_backtest_results.csv
