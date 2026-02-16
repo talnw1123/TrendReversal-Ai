@@ -1,0 +1,11 @@
+Market,Regime Method,Uptrend Model,Downtrend Model,Type,Return (%),B&H (%),Max DD (%),Trades,Final $,Confidence,Threshold Long,Threshold Short,Stop Loss,Win Rate (%)
+US,HMM,LSTM,CNN,Original,46.21,39703.96,-81.37,9705,14620.67,,,,,
+UK,HMM,MLP,SVM,Original,-90.43,908.16,-92.6,7123,956.85,,,,,
+Thai,HMM_Enhanced,MLP,LSTM,Original,604.71,66.76,-60.2,5923,70470.89,,,,,
+Gold,HMM,CNN,Transformer,Original,-61.12,1740.48,-82.18,6356,3887.5,,,,,
+BTC,GMM_Enhanced,RandomForest,LSTM,Original,4330.88,17299.86,-86.26,3391,443087.56,,,,,
+US,HMM,LSTM,CNN,MOO-Optimized,222.93,39703.96,-59.32,395,32292.75,0.5105,0.5393,0.3019,0.1496,66.1
+UK,HMM,MLP,SVM,MOO-Optimized,-70.87,908.16,-91.54,243,2913.15,0.5169,0.5232,0.3251,0.1105,67.1
+Thai,HMM_Enhanced,MLP,LSTM,MOO-Optimized,238.54,66.76,-61.0,86,33853.92,0.5132,0.5413,0.3166,0.0793,38.4
+Gold,HMM,CNN,Transformer,MOO-Optimized,-64.72,1740.48,-83.95,345,3528.22,0.5392,0.5488,0.3533,0.032,58.0
+BTC,GMM_Enhanced,RandomForest,LSTM,MOO-Optimized,30.53,17299.86,-86.48,310,13052.53,0.5955,0.5765,0.3294,0.0596,52.3

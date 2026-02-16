@@ -71,7 +71,8 @@ def build_cnn(input_shape, num_classes):
 def build_mlp(input_shape, num_classes):
     """Enhanced Multi-Layer Perceptron"""
     model = Sequential([
-        Flatten(input_shape=input_shape),
+        Input(shape=input_shape),
+        Flatten(),
         Dense(256, activation='relu'),
         BatchNormalization(),
         Dropout(0.4),

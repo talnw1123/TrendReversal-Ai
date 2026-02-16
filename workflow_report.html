@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Reversal Prediction Model — Complete Workflow</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Thai', sans-serif;
+            color: #1a1a2e;
+            background: #ffffff;
+            line-height: 1.7;
+            padding: 40px 60px;
+        }
+
+        @media print {
+            body { padding: 20px 30px; }
+            .page-break { page-break-before: always; }
+            .no-break { page-break-inside: avoid; }
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1565C0;
+            border-bottom: 3px solid #1565C0;
+            padding-bottom: 12px;
+            margin-bottom: 8px;
+        }
+
+        h1 .subtitle {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #283593;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #E8EAF6, #C5CAE9);
+            border-radius: 8px;
+            border-left: 4px solid #283593;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1565C0;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            padding: 16px 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .diagram-container {
+            margin: 20px 0;
+            padding: 16px;
+            background: #fafafa;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            overflow-x: auto;
+        }
+
+        .diagram-container .mermaid {
+            display: flex;
+            justify-content: center;
+        }
+
+        .mermaid svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ccc, transparent);
+            margin: 32px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 13px;
+        }
+
+        th {
+            background: linear-gradient(135deg, #1565C0, #283593);
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 8px 14px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:nth-child(even) { background: #f5f5f5; }
+        tr:hover { background: #E3F2FD; }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 16px;
+            border-top: 2px solid #e0e0e0;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: #283593;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>
+    🔄 Market Reversal Prediction Model
+    <span class="subtitle">Complete Workflow Documentation — Generated 2026-02-11</span>
+</h1>
+
+<div class="intro">
+    โปรเจกต์ <strong>Market Reversal Prediction</strong> ใช้ Machine Learning / Deep Learning ทำนายจุดกลับตัวของตลาด 5 ตลาด
+    (US, UK, Thai, Gold, BTC) พร้อม Regime-Switching Strategy สลับโมเดลตามสภาวะตลาด
+</div>
+
+<!-- ===== SECTION 1: OVERVIEW ===== -->
+<h2>📊 ภาพรวมระบบทั้งหมด (Full System Overview)</h2>
+<div class="diagram-container no-break">
+    <pre class="mermaid">
+flowchart LR
+    subgraph P1["📥 Phase 1\nData Preparation"]
+        direction TB
+        A1["fetch_data.py\n(Yahoo Finance)"]
+        A2["analyze_periods.py\n(วิเคราะห์ SMA200)"]
+        A3["export_manual_trends.py\n(แบ่งตาม Trend)"]
+        A4["split_datasets.py\n(70/15/15)"]
+        A5["label_data.py\n(Triple Barrier)"]
+        A1 --> A2 --> A3 --> A4 --> A5
+    end
+
+    subgraph P2["🔧 Phase 2\nFeature Engineering"]
+        direction TB
+        B1["features.py\n(9 Groups: A-I)"]
+        B2["feature_importance.py\n(Random Forest)"]
+        B3["selected_features.json"]
+        B1 --> B2 --> B3
+    end
+
+    subgraph P3["🧠 Phase 3\nModel Training"]
+        direction TB
+        C1["models.py\n(LSTM/CNN/MLP/Transformer)"]
+        C2["train_separate_models.py\n(แยก Up/Down)"]
+        C3["train_reversal_model.py\n(รวม Trend)"]
+        C1 --> C2
+        C1 --> C3
+    end
+
+    subgraph P4["🔍 Phase 4\nRegime Detection"]
+        direction TB
+        D1["regime_detection.py\n(GMM/HMM/ADX)"]
+        D2["analyze_regime_features.py"]
+        D3["train_regime_models.py"]
+        D4["compare_regime_methods.py"]
+        D2 --> D3 --> D1
+        D4 --> D1
+    end
+
+    subgraph P5["🎯 Phase 5\nPrediction & Backtest"]
+        direction TB
+        E1["predict_reversals.py"]
+        E2["ensemble.py\n(Soft Voting)"]
+        E3["smart_backtest.py\n(Regime Switching)"]
+        E4["backtest_all_models.py"]
+        E5["backtest_master.py"]
+        E6["walk_forward_4period.py"]
+    end
+
+    subgraph P6["📈 Phase 6\nVisualization & Trading"]
+        direction TB
+        F1["plot_trends.py"]
+        F2["plot_reversal_points.py"]
+        F3["plot_manual_context.py"]
+        F4["plot_trading_charts.py"]
+        F5["adaptive_trader.py\n(Live Trading)"]
+    end
+
+    P1 --> P2 --> P3 --> P5
+    P1 --> P4
+    P4 --> P5
+    P3 --> P6
+    P5 --> P6
+    </pre>
+</div>
+
+<hr>
+
+<!-- ===== SECTION 2: DATA PREP ===== -->
+<div class="page-break"></div>
+<h2>📥 Phase 1: Data Preparation — รายละเอียด</h2>
+<div class="diagram-container no-break">
+    <pre class="mermaid">
+flowchart TD
+    subgraph Input["🌐 Data Sources"]
+        YF["Yahoo Finance API"]
+    end
+
+    subgraph Fetch["📥 fetch_data.py"]
+        F1["Download OHLCV\n5 Markets"]
+        F2["S&P 500 · ^GSPC"]
+        F3["FTSE 100 · ^FTSE"]
+        F4["SET Index · ^SET.BK"]
+        F5["Gold · GC=F"]
+        F6["BTC · BTC-USD"]
+        F1 --> F2 & F3 & F4 & F5 & F6
+    end
+
+    subgraph Raw["📂 full_data/"]
+        R1["US_full_history.csv"]
+        R2["UK_full_history.csv"]
+        R3["Thai_full_history.csv"]
+        R4["Gold_full_history.csv"]
+        R5["BTC_full_history.csv"]
+    end
+
+    subgraph Analyze["📊 analyze_periods.py"]
+        AN["วิเคราะห์ Uptrend/Downtrend\nด้วย SMA200"]
+    end
+
+    subgraph Export["✂️ export_manual_trends.py"]
+        EX["ตัดข้อมูลตามช่วงเวลา\nที่กำหนดด้วยมือ"]
+    end
+
+    subgraph TrendData["📂 trend_data_manual/"]
+        TD1["Market_uptrend.csv"]
+        TD2["Market_downtrend.csv"]
+    end
+
+    subgraph Split["📊 split_datasets.py"]
+        SP["Train 70% · Val 15% · Test 15%"]
+    end
+
+    subgraph Label["🏷️ label_data.py"]
+        LB["Triple Barrier Method\nt=20 bars, h=2%\n1=Bull · -1=Bear · 0=Neutral"]
+    end
+
+    subgraph Output["📂 trend_data_manual/split/"]
+        O1["train/*.csv"]
+        O2["val/*.csv"]
+        O3["test/*.csv"]
+    end
+
+    YF --> F1
+    F2 & F3 & F4 & F5 & F6 --> R1 & R2 & R3 & R4 & R5
+    R1 & R2 & R3 & R4 & R5 --> AN --> EX --> TD1 & TD2
+    TD1 & TD2 --> SP --> O1 & O2 & O3
+    O1 & O2 & O3 --> LB
+
+    style Input fill:#E3F2FD,stroke:#1565C0
+    style Raw fill:#FFF3E0,stroke:#E65100
+    style Output fill:#E8F5E9,stroke:#2E7D32
+    </pre>
+</div>
+
+<hr>
+
+<!-- ===== SECTION 3: FEATURE ENG ===== -->
+<div class="page-break"></div>
+<h2>🔧 Phase 2: Feature Engineering — รายละเอียด</h2>
+<div class="diagram-container no-break">
+    <pre class="mermaid">
+flowchart TD
+    subgraph FE["🔧 features.py — calculate_features()"]
+        direction LR
+        GA["Group A\nPrice-Based\nSMA_10/20/50\nEMA_10/20\nPrice_Change_%"]
+        GB["Group B\nMomentum\nRSI · MACD\nStochastic K/D"]
+        GC["Group C\nVolatility\nBollinger Bands\nATR"]
+        GD["Group D\nVolume\nOBV\nVolume_MA_Ratio"]
+        GE["Group E\nTrend Strength\nADX · +DI · -DI"]
+        GF["Group F\nAdvanced Osc.\nWilliams %R\nCCI · MFI"]
+        GG["Group G\nPatterns\nDoji · Hammer\nEngulfing"]
+        GH["Group H\nMarket Structure\nSupport\nResistance"]
+        GI["Group I\nChart Patterns\nDouble Bottom\nV-Bottom"]
+    end
+
+    subgraph FI["📊 feature_importance.py"]
+        RF["Random Forest\nClassifier"]
+        CALC["คำนวณ Importance\nThreshold > 0.5%\nMin 10 Features"]
+    end
+
+    subgraph Out["📋 Output"]
+        CSV["feature_importance.csv\n(Ranking ทั้งหมด)"]
+        JSON["selected_features.json\n(Features ที่เลือก)"]
+    end
+
+    GA & GB & GC & GD & GE & GF & GG & GH & GI --> RF --> CALC
+    CALC --> CSV & JSON
+
+    style FE fill:#F3E5F5,stroke:#7B1FA2
+    style Out fill:#E8F5E9,stroke:#2E7D32
+    </pre>
+</div>
+
+<hr>
+
+<!-- ===== SECTION 4: MODEL TRAINING ===== -->
+<div class="page-break"></div>
+<h2>🧠 Phase 3: Model Training — รายละเอียด</h2>
+<div class="diagram-container no-break">
+    <pre class="mermaid">
+flowchart TD
+    subgraph ARCH["🧠 models.py — สถาปัตยกรรม"]
+        L["LSTM\nBidirectional + Attention\n128→64→32"]
+        C["CNN\n1D Conv + Residual\n64→128→64"]
+        M["MLP\nMulti-Layer Perceptron\nDense Layers"]
+        T["Transformer\n3 Encoder Blocks\n4 Heads, dim=64"]
+    end
+
+    subgraph ML["🤖 ML Models"]
+        RF["Random Forest"]
+        SV["SVM"]
+    end
+
+    subgraph SEP["📚 train_separate_models.py"]
+        direction TB
+        S1["LOOKBACK=30\nBATCH=32\nEPOCHS=100\nBINARY_MODE=True"]
+        S2["โหลด Uptrend Data"]
+        S3["โหลด Downtrend Data"]
+        S4["สร้าง Sliding Windows"]
+        S5["เทรน 6 Models"]
+        S1 --> S2 & S3 --> S4 --> S5
+    end
+
+    subgraph REV["📚 train_reversal_model.py"]
+        RV1["LOOKBACK=60\nEPOCHS=50\nรวมทุก Trend"]
+    end
+
+    subgraph OUT_UP["📁 model_uptrend/"]
+        U1["model_LSTM.keras"]
+        U2["model_CNN.keras"]
+        U3["model_MLP.keras"]
+        U4["model_Transformer.keras"]
+        U5["model_RandomForest.pkl"]
+        U6["model_SVM.pkl"]
+    end
+
+    subgraph OUT_DN["📁 model_downtrend/"]
+        D1["model_LSTM.keras"]
+        D2["model_CNN.keras"]
+        D3["model_MLP.keras"]
+        D4["model_Transformer.keras"]
+        D5["model_RandomForest.pkl"]
+        D6["model_SVM.pkl"]
+    end
+
+    subgraph OUT_REV["📦 Root/"]
+        RV2["reversal_model_*.keras"]
+    end
+
+    ARCH --> SEP
+    ML --> SEP
+    ARCH --> REV
+    SEP --> OUT_UP & OUT_DN
+    REV --> OUT_REV
+
+    style ARCH fill:#E3F2FD,stroke:#1565C0
+    style ML fill:#FFF9C4,stroke:#F9A825
+    style OUT_UP fill:#C8E6C9,stroke:#2E7D32
+    style OUT_DN fill:#FFCDD2,stroke:#C62828
+    </pre>
+</div>
+
+<hr>
+
+<!-- ===== SECTION 5: REGIME DETECTION ===== -->
+<div class="page-break"></div>
+<h2>🔍 Phase 4: Regime Detection — รายละเอียด</h2>
+<div class="diagram-container no-break">
+    <pre class="mermaid">
+flowchart TD
+    subgraph METHODS["🎯 regime_detection.py — RegimeDetector"]
+        direction LR
+        SMA["SMA200\nClose > SMA200\n= Uptrend"]
+        GMM["GMM\nGaussian Mixture\n2 Components\nBull/Bear"]
+        ADX["ADX + Supertrend\nADX > 25\n= Strong Trend"]
+        HMM["HMM\nHidden Markov\n2 States\nBull/Bear"]
+    end
+
+    subgraph ENHANCED["🔬 Enhanced Methods"]
+        GMM_E["GMM Enhanced\nReturns + Volatility\n+ RSI + ADX"]
+        HMM_E["HMM Enhanced\nReturns + Volatility"]
+    end
+
+    subgraph ANALYSIS["📊 all_trad/ Scripts"]
+        AR["analyze_regime_features.py\nหา Features สำคัญ\nด้วย Random Forest"]
+        TR["train_regime_models.py\nเทรน RF/GMM/HMM\nสำหรับแต่ละตลาด"]
+        CR["compare_regime_methods.py\nเปรียบเทียบ 7 Methods\nเลือก Best per Market"]
+    end
+
+    subgraph BEST["🏆 Best Methods"]
+        B1["US, UK, Gold → HMM"]
+        B2["Thai → HMM Enhanced"]
+        B3["BTC → GMM Enhanced"]
+    end
+
+    subgraph REGIME_OUT["📂 regime_models/"]
+        RM1["regime_rf_Market.pkl"]
+        RM2["regime_gmm_Market.pkl"]
+        RM3["regime_hmm_Market.pkl"]
+    end
+
+    AR --> TR --> REGIME_OUT
+    CR --> BEST
+    METHODS --> CR
+    ENHANCED --> CR
+
+    style METHODS fill:#E8EAF6,stroke:#283593
+    style BEST fill:#FFF9C4,stroke:#F57F17
+    style REGIME_OUT fill:#E8F5E9,stroke:#2E7D32
+    </pre>
+</div>
+
+<hr>
+
+<!-- ===== SECTION 6: PREDICTION & BACKTEST ===== -->
+<div class="page-break"></div>
+<h2>🎯 Phase 5: Prediction & Backtesting — รายละเอียด</h2>
+<div class="diagram-container no-break">
+    <pre class="mermaid">
+flowchart TD
+    subgraph PREDICT["🔮 Prediction"]
+        PR["predict_reversals.py\nทำนาย URP/DRP"]
+        EN["ensemble.py\nSoft Voting\n4 Models"]
+        EV["evaluate_per_market.py\nAccuracy · F1-Score"]
+    end
+
+    subgraph BACKTEST["📈 Backtesting Systems"]
+        SB["smart_backtest.py\n🎯 Regime Switching\nสลับ Up/Down Model\nตาม Regime Detection"]
+        BA["backtest_all_models.py\nทดสอบทุก Model\nทุก Market แยก Trend"]
+        BM["backtest_master.py\n📋 Consolidated\nSmart Loading + Hybrid\nStop-Loss + Visualization"]
+        WF["walk_forward_4period.py\n🔄 Walk-Forward\nTrain/Test Rolling"]
+    end
+
+    subgraph PARAMS["⚙️ Trading Parameters"]
+        P1["Initial Capital = $10,000"]
+        P2["Transaction Cost = 0.1%"]
+        P3["Long Threshold > 0.54"]
+        P4["Short Threshold < 0.46"]
+        P5["Stop-Loss = 5%"]
+    end
+
+    subgraph RESULTS["📋 Results"]
+        R1["smart_backtest_results.csv"]
+        R2["backtest_all_models.csv"]
+        R3["backtest_champion_results.csv"]
+        R4["backtest_combined_results.csv"]
+        R5["reversal_points.csv"]
+        R6["ensemble_predictions.csv"]
+    end
+
+    PREDICT --> RESULTS
+    BACKTEST --> RESULTS
+    PARAMS --> BACKTEST
+
+    style BACKTEST fill:#FFF3E0,stroke:#E65100
+    style RESULTS fill:#E8F5E9,stroke:#2E7D32
+    style PARAMS fill:#F3E5F5,stroke:#7B1FA2
+    </pre>
+</div>
+
+<hr>
+
+<!-- ===== SECTION 7: VIZ & TRADING ===== -->
+<div class="page-break"></div>
+<h2>📈 Phase 6: Visualization & Live Trading — รายละเอียด</h2>
+<div class="diagram-container no-break">
+    <pre class="mermaid">
+flowchart TD
+    subgraph VIZ["📊 Visualization Scripts"]
+        PT["plot_trends.py\nราคา + SMA200\n+ Shading Up/Down"]
+        PRP["plot_reversal_points.py\n🔺 URP Green\n🔻 DRP Red"]
+        PMC["plot_manual_context.py\nFull History +\nHighlight Selected"]
+        PTC["plot_trading_charts.py\nPrice + Trend +\nVolume + Signals"]
+    end
+
+    subgraph TRADER["🤖 adaptive_trader.py — AdaptiveTrader"]
+        T1["1. Fetch Live Data\nyfinance"]
+        T2["2. Detect Market Trend\nMarket-Specific Method"]
+        T3["3. Load Best Model\nfrom config.py"]
+        T4["4. Calculate Features\nfeatures.py"]
+        T5["5. Make Prediction\nSignal + Probability"]
+        T6["6. Generate Trading Signal\nBUY/SELL/HOLD"]
+        T1 --> T2 --> T3 --> T4 --> T5 --> T6
+    end
+
+    subgraph CONFIG["⚙️ config.py"]
+        CF1["BEST_MODELS per Market/Trend"]
+        CF2["TREND_METHOD = hmm"]
+        CF3["CONFIDENCE_THRESHOLD = 0.50"]
+        CF4["STOP_LOSS_PCT = 0.05"]
+    end
+
+    subgraph SIGNALS["📋 Output"]
+        S1["trading_signals.csv"]
+        S2["chart_Market.png"]
+        S3["market_trend_Market.png"]
+        S4["prediction_Market_trend.png"]
+    end
+
+    CONFIG --> TRADER
+    VIZ --> S2 & S3 & S4
+    TRADER --> S1
+
+    style TRADER fill:#E3F2FD,stroke:#1565C0
+    style CONFIG fill:#FFF9C4,stroke:#F57F17
+    style SIGNALS fill:#E8F5E9,stroke:#2E7D32
+    </pre>
+</div>
+
+<hr>
+
+<!-- ===== SECTION 8: EXECUTION ORDER ===== -->
+<div class="page-break"></div>
+<h2>🚀 ลำดับการรันทั้งหมด (Execution Order)</h2>
+<div class="diagram-container no-break">
+    <pre class="mermaid">
+flowchart TD
+    START(["🚀 START"]) --> S1
+
+    subgraph S1["Step 1: เตรียมข้อมูล"]
+        A["python fetch_data.py"] --> B["python export_manual_trends.py"]
+        B --> C2["python split_datasets.py"]
+        C2 --> D["python label_data.py"]
+    end
+
+    S1 --> S2
+
+    subgraph S2["Step 2: Feature Engineering"]
+        E["cd model\npython feature_importance.py"]
+    end
+
+    S2 --> S3
+
+    subgraph S3["Step 3: เทรนโมเดล"]
+        F["python train_separate_models.py\nUptrend + Downtrend x 6 Models"]
+    end
+
+    S3 --> S3B
+
+    subgraph S3B["Step 3B: Regime Detection"]
+        G["cd all_trad\npython analyze_regime_features.py"]
+        H["python train_regime_models.py"]
+        I["python compare_regime_methods.py"]
+        G --> H --> I
+    end
+
+    S3B --> S4
+
+    subgraph S4["Step 4: Backtest"]
+        J["python smart_backtest.py\nRegime Switching"]
+        K["python backtest_master.py\nConsolidated"]
+        LL["python walk_forward_4period.py\nWalk-Forward"]
+    end
+
+    S4 --> S5
+
+    subgraph S5["Step 5: ประเมินผล"]
+        MM["python evaluate_per_market.py"]
+        N["python ensemble.py"]
+    end
+
+    S5 --> S6
+
+    subgraph S6["Step 6: Live Trading"]
+        O["python adaptive_trader.py"]
+    end
+
+    S6 --> DONE(["✅ DONE"])
+
+    style START fill:#4CAF50,stroke:#2E7D32,color:#fff
+    style DONE fill:#4CAF50,stroke:#2E7D32,color:#fff
+    style S1 fill:#E3F2FD,stroke:#1565C0
+    style S2 fill:#F3E5F5,stroke:#7B1FA2
+    style S3 fill:#FFF3E0,stroke:#E65100
+    style S3B fill:#E8EAF6,stroke:#283593
+    style S4 fill:#FFF9C4,stroke:#F57F17
+    style S5 fill:#FFCDD2,stroke:#C62828
+    style S6 fill:#C8E6C9,stroke:#2E7D32
+    </pre>
+</div>
+
+<hr>
+
+<!-- ===== SECTION 9: FILE DEPENDENCIES ===== -->
+<div class="page-break"></div>
+<h2>📂 File Dependency Map</h2>
+<div class="diagram-container no-break">
+    <pre class="mermaid">
+flowchart LR
+    subgraph ROOT["📂 Root"]
+        fetch["fetch_data.py"]
+        analyze["analyze_periods.py"]
+        export["export_manual_trends.py"]
+        split["split_datasets.py"]
+        label["label_data.py"]
+        plt1["plot_trends.py"]
+        plt2["plot_reversal_points.py"]
+        plt3["plot_manual_context.py"]
+    end
+
+    subgraph MODEL["📂 model/"]
+        features["features.py"]
+        models["models.py"]
+        fi["feature_importance.py"]
+        tsp["train_separate_models.py"]
+        trm["train_reversal_model.py"]
+        rd["regime_detection.py"]
+        pr["predict_reversals.py"]
+        ens["ensemble.py"]
+        epm["evaluate_per_market.py"]
+        sb["smart_backtest.py"]
+        bam["backtest_all_models.py"]
+    end
+
+    subgraph ALLTRAD["📂 all_trad/"]
+        config["config.py"]
+        at["adaptive_trader.py"]
+        trmod["train_regime_models.py"]
+        cmp["compare_regime_methods.py"]
+        arf["analyze_regime_features.py"]
+        ptc["plot_trading_charts.py"]
+        bm["backtest_master.py"]
+        wf["walk_forward.py"]
+    end
+
+    features --> fi & tsp & trm & sb & bam & at & arf & trmod
+    models --> tsp & trm
+    rd --> sb & bam & at & cmp & bm & ptc
+    config --> at & cmp & ptc & bm & wf
+
+    style ROOT fill:#E3F2FD,stroke:#1565C0
+    style MODEL fill:#FFF3E0,stroke:#E65100
+    style ALLTRAD fill:#E8F5E9,stroke:#2E7D32
+    </pre>
+</div>
+
+<hr>
+
+<!-- ===== SECTION 10: BEST MODELS TABLE ===== -->
+<h2>🏆 Best Models per Market (จาก config.py)</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Market</th>
+            <th>Uptrend Model</th>
+            <th>Accuracy</th>
+            <th>Downtrend Model</th>
+            <th>Accuracy</th>
+            <th>Regime Method</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🇹🇭 Thai</td>
+            <td>Transformer</td>
+            <td>61.87%</td>
+            <td>LSTM</td>
+            <td>67.0%</td>
+            <td>HMM Enhanced</td>
+        </tr>
+        <tr>
+            <td>🇬🇧 UK</td>
+            <td>Transformer</td>
+            <td>69.94%</td>
+            <td>SVM</td>
+            <td>57.38%</td>
+            <td>HMM</td>
+        </tr>
+        <tr>
+            <td>🪙 Gold</td>
+            <td>Transformer</td>
+            <td>68.32%</td>
+            <td>CNN</td>
+            <td>64.64%</td>
+            <td>HMM</td>
+        </tr>
+        <tr>
+            <td>🇺🇸 US</td>
+            <td>Transformer</td>
+            <td>65.71%</td>
+            <td>Transformer</td>
+            <td>54.55%</td>
+            <td>HMM</td>
+        </tr>
+        <tr>
+            <td>₿ BTC</td>
+            <td>SVM</td>
+            <td>63.28%</td>
+            <td>MLP</td>
+            <td>61.67%</td>
+            <td>GMM Enhanced</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="footer">
+    <p>Market Reversal Prediction Model — Complete Workflow Documentation</p>
+    <p>Generated: 2026-02-11 | Project: p-e</p>
+</div>
+
+<script>
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'base',
+        themeVariables: {
+            primaryColor: '#E3F2FD',
+            primaryTextColor: '#1a1a2e',
+            primaryBorderColor: '#1565C0',
+            lineColor: '#546E7A',
+            secondaryColor: '#FFF3E0',
+            tertiaryColor: '#E8F5E9',
+            fontSize: '13px'
+        },
+        flowchart: {
+            htmlLabels: true,
+            useMaxWidth: true,
+            curve: 'basis'
+        }
+    });
+</script>
+
+</body>
+</html>

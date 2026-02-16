@@ -22,8 +22,15 @@ EPOCHS = 50 # Increased from 20
 
 def load_and_process_data(split_name, market_filter=None):
     """Loads labeled CSVs for a split. Optional: filter by market name."""
-    # Use parent directory since script is now in model/
-    base_dir = "../trend_data_manual/split"
+    # Handle running from root or model/ dir
+    if os.path.exists("trend_data_manual/split"):
+        base_dir = "trend_data_manual/split"
+    elif os.path.exists("../trend_data_manual/split"):
+        base_dir = "../trend_data_manual/split"
+    else:
+        # Fallback to absolute path if needed or just assume typical structure
+        base_dir = "trend_data_manual/split"
+        
     split_dir = os.path.join(base_dir, split_name)
     
     # Recursive search to handle subdirectories like 'label'

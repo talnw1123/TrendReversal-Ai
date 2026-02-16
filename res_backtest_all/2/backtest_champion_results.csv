@@ -1,0 +1,11 @@
+Market,Trend,Regime,Champion Model,Best Threshold,Return (%),B&H (%),Max DD (%),Final $
+US,uptrend,HMM,LSTM,0.53,178.01,39703.96,-78.67,27801.33
+US,downtrend,HMM,CNN,0.51,59948.06,39703.96,-74.34,6004805.69
+UK,uptrend,HMM,MLP,0.8500000000000003,-86.91,908.16,-95.67,1309.34
+UK,downtrend,HMM,SVM,0.5,907.15,908.16,-52.57,100715.15
+Thai,uptrend,HMM_Enhanced,MLP,0.5,-75.88,66.76,-94.43,2412.34
+Thai,downtrend,HMM_Enhanced,LSTM,0.5,1719.17,66.76,-52.2,181917.19
+Gold,uptrend,HMM,CNN,0.5,-89.38,1738.71,-91.94,1061.97
+Gold,downtrend,HMM,Transformer,0.6500000000000001,1223.76,1737.99,-44.36,132375.52
+BTC,uptrend,GMM_Enhanced,RandomForest,0.52,4012.19,17284.1,-79.86,411218.93
+BTC,downtrend,GMM_Enhanced,LSTM,0.52,116044.32,17284.1,-83.15,11614432.15
