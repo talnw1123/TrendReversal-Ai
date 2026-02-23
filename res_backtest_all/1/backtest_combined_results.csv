@@ -1,6 +1,0 @@
-Market,Regime Method,Uptrend Model,Downtrend Model,Return (%),B&H (%),Max DD (%),Final $
-US,HMM,LSTM,CNN,2338.85,39649.42,-71.75,243885.23
-UK,HMM,MLP,SVM,-60.05,909.72,-88.43,3995.06
-Thai,HMM_Enhanced,MLP,LSTM,1344.79,64.6,-54.09,144478.69
-Gold,HMM,CNN,Transformer,-60.92,1724.57,-82.18,3907.86
-BTC,GMM_Enhanced,RandomForest,LSTM,44562.89,18451.12,-82.93,4466289.47

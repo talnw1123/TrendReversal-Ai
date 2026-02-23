@@ -157,8 +157,11 @@ class RegimeDetector:
         try:
             from hmmlearn.hmm import GaussianHMM
         except ImportError:
-            print("  [Warning] hmmlearn not found. Falling back to SMA200.")
-            return (df['Close'] > df['Close'].rolling(200).mean()).astype(int).fillna(0).values
+            import sys
+            import subprocess
+            print("  [Warning] hmmlearn not found. Auto-installing...")
+            subprocess.check_call([sys.executable, "-m", "pip", "install", "hmmlearn"])
+            from hmmlearn.hmm import GaussianHMM
 
         data = df.copy()
         data['log_ret'] = np.log(data['Close'] / data['Close'].shift(1))
@@ -290,9 +293,12 @@ class RegimeDetector:
             from hmmlearn.hmm import GaussianHMM
             from sklearn.preprocessing import StandardScaler
         except ImportError:
-            print("  [Warning] hmmlearn not found. Falling back to SMA200.")
-            return (df['Close'] > df['Close'].rolling(200).mean()).astype(int).fillna(0).values
-            
+            import sys
+            import subprocess
+            print("  [Warning] hmmlearn not found. Auto-installing...")
+            subprocess.check_call([sys.executable, "-m", "pip", "install", "hmmlearn"])
+            from hmmlearn.hmm import GaussianHMM
+            from sklearn.preprocessing import StandardScaler
         data = df.copy()
         data['log_ret'] = np.log(data['Close'] / data['Close'].shift(1))
         # Add Volatility (helps distinguish high vol bear vs low vol bull)

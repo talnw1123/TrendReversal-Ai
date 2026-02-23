@@ -1,0 +1,6 @@
+Market,Regime Method,Uptrend Model,Downtrend Model,Type,Return (%),B&H (%),Max DD (%),Trades,Final $,Confidence,Threshold Long,Threshold Short,Stop Loss,Win Rate (%)
+US,HMM,LSTM,CNN,MOO (smart_hold),36.4,34.24,-14.56,6,13639.63,0.5,0.58,0.35,0.03,66.7
+UK,HMM,MLP,SVM,MOO (active),21.09,33.99,-12.21,10,12108.74,0.5,0.5,0.35,0.05,70.0
+Thai,HMM_Enhanced,MLP,LSTM,MOO (smart_hold),53.1,7.56,-15.04,8,15309.7,0.5,0.65,0.5,0.1,62.5
+Gold,HMM,CNN,Transformer,MOO (smart_hold),117.45,121.05,-11.45,8,21744.85,0.5,0.5,0.35,0.03,75.0
+BTC,GMM_Enhanced,RandomForest,LSTM,MOO (active),112.27,6.34,-23.53,33,21226.87,0.5,0.58,0.42,0.15,66.7
