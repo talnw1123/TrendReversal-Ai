@@ -26,3 +26,6 @@ model/model_uptrend/*.pkl
 # OS files
 .DS_Store
 Thumbs.db
+
+# Environment variables
+.env
