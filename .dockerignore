@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+.git/
+.vscode/
+model/backtest_plots/
+workflows/plot/
+.idea/
+.DS_Store
+*.sqlite3
+*.sqlite

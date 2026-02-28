@@ -3,4 +3,4 @@ US,HMM,RandomForest,CNN,MOO (smart_hold),67.5,32.31,-34.36,0,16749.8,0.0,0.6,0.4
 UK,HMM,CNN,XGBoost,MOO (smart_hold),130.32,37.69,-10.29,0,23032.37,0.0,0.6,0.5,0.08,0.0
 Thai,ADX_Supertrend,LSTM,CNN,MOO (smart_hold),26.79,8.53,-26.83,1,12678.58,0.0,0.55,0.5,0.15,0.0
 Gold,SMA200,CNN,Transformer,MOO (smart_hold),363.03,122.12,-22.89,1,46302.89,0.0,0.6,0.4,0.03,100.0
-BTC,GMM,RandomForest,RandomForest,MOO (active),91.41,-8.75,-31.5,28,19141.45,0.0,0.5,0.4,0.03,0.0
+BTC,GMM,RandomForest,RandomForest,MOO (active),90.72,-9.23,-31.5,28,19071.77,0.0,0.5,0.4,0.03,0.0

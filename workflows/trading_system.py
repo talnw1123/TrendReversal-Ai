@@ -954,86 +954,96 @@ def print_summary_table(results):
 # 5. PLOT & BACKTEST — สร้างกราฟ backtest
 # ═════════════════════════════════════════════════════════════════
 
-def plot_backtest(dates, equity_curve, prices, signals, regime, market, strategy_return, bnh_return, save_dir='workflows/plot', **kwargs):
-    """
-    สร้างกราฟ backtest แบบ 2 panels:
-    - Panel 1: Price + Buy/Sell markers (จุดเข้า-ออกจริง) + Regime background
-    - Panel 2: Equity Curve vs Buy & Hold + Regime background
-    
-    trade_points: list of (idx, 'buy'|'sell') — ถ้าไม่ส่งมา จะคำนวณจาก simulation params
-    """
+def plot_backtest(dates, equity_curve, prices, signals, market, trend, model_name, final_return, bnh_return, regime=None, save_dir='workflows/plot', **kwargs):
+    """Generate and save backtest plot with Entry/Exit markers and Regime Background."""
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+        
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     import matplotlib.dates as mdates
-
-    os.makedirs(save_dir, exist_ok=True)
-
-    # Align arrays (equity_curve is len(signals)-1)
+        
+    # Align data
+    # dates, prices, signals are all length N
+    # equity_curve length is N-1 (starts from step 1)
+    
     plot_dates = dates[1:]
     plot_prices = prices[1:]
     plot_bnh = (prices[1:] / prices[0]) * INITIAL_CAPITAL
-    plot_equity = np.array(equity_curve)
-    plot_signals = signals[:-1]
-    plot_regime = regime[1:] if len(regime) == len(dates) else regime[:len(plot_dates)]
+    plot_equity = equity_curve
+    plot_signals = signals[:-1] # shift to align with decision points
+    
+    # Create Trade Markers
+    buy_dates = []
+    buy_prices = []
+    sell_dates = []
+    sell_prices = []
+    
+    # 1 = Buy/Hold Long, 0 = Sell/Short, 99 = Neutral/Cash
+    prev_pos = 0 
+    
+    for i in range(len(plot_dates)):
+        sig = plot_signals[i]
+        curr_pos = 0
+        
+        if sig == 1: curr_pos = 1
+        elif sig == 0: curr_pos = -1
+        elif sig == 99: curr_pos = 0
+        
+        if curr_pos != prev_pos:
+            if curr_pos == 1:
+                buy_dates.append(plot_dates[i])
+                buy_prices.append(plot_prices[i])
+            elif curr_pos == -1 or curr_pos == 0:
+                 sell_dates.append(plot_dates[i])
+                 sell_prices.append(plot_prices[i])
+        
+        prev_pos = curr_pos
 
-    # Use real trade points from simulation (passed via kwargs)
-    trade_points = kwargs.get('trade_points', [])
-
-    buy_dates_actual, buy_prices_actual = [], []
-    sell_dates_actual, sell_prices_actual = [], []
-
-    for idx, action in trade_points:
-        if 0 <= idx < len(dates):
-            if action == 'buy':
-                buy_dates_actual.append(dates[idx])
-                buy_prices_actual.append(prices[idx])
-            elif action == 'sell':
-                sell_dates_actual.append(dates[idx])
-                sell_prices_actual.append(prices[idx])
-
-    # ── Plot ──
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10), sharex=True,
-                                     gridspec_kw={'height_ratios': [1, 1]})
-
-    # Panel 1: Price + Signals
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10), sharex=True, gridspec_kw={'height_ratios': [1, 1]})
+    
+    # 1. Price Chart with Markers
     ax1.plot(plot_dates, plot_prices, label='Price', color='black', alpha=0.6)
-    ax1.scatter(buy_dates_actual, buy_prices_actual, marker='^', color='green', s=100, label='Buy/Long', zorder=5)
-    ax1.scatter(sell_dates_actual, sell_prices_actual, marker='v', color='red', s=100, label='Sell/Exit', zorder=5)
-    ax1.set_title(f"{market} Combined - Price & Signals")
+    ax1.scatter(buy_dates, buy_prices, marker='^', color='green', s=100, label='Buy/Long', zorder=5)
+    ax1.scatter(sell_dates, sell_prices, marker='v', color='red', s=100, label='Sell/Exit', zorder=5)
+    ax1.set_title(f"{market} {trend} - Price & Signals")
     ax1.set_ylabel('Price')
     ax1.legend()
     ax1.grid(True, alpha=0.3)
+    
+    # Plot Regime Background
+    if regime is not None and len(regime) == len(dates):
+        plot_regime = regime[1:]
+        start_idx = 0
+        current_val = plot_regime[0]
+        
+        for i in range(1, len(plot_regime)):
+            if plot_regime[i] != current_val:
+                color = 'green' if current_val == 1 else 'red'
+                if start_idx < len(plot_dates) and i < len(plot_dates):
+                    ax1.axvspan(plot_dates[start_idx], plot_dates[i], color=color, alpha=0.1)
+                    ax2.axvspan(plot_dates[start_idx], plot_dates[i], color=color, alpha=0.1)
+                start_idx = i
+                current_val = plot_regime[i]
+                
+        # Last segment
+        color = 'green' if current_val == 1 else 'red'
+        if start_idx < len(plot_dates):
+            ax1.axvspan(plot_dates[start_idx], plot_dates[-1], color=color, alpha=0.1)
+            ax2.axvspan(plot_dates[start_idx], plot_dates[-1], color=color, alpha=0.1)
 
-    # Panel 2: Equity Curve
+    # 2. Equity Curve
     ax2.plot(plot_dates, plot_bnh, label=f'Buy & Hold ({bnh_return:.2f}%)', color='gray', linestyle='--')
-    ax2.plot(plot_dates, plot_equity, label=f'Strategy ({strategy_return:.2f}%)', color='blue', linewidth=2)
-    ax2.set_title(f"Equity Curve (Hybrid_MOO)")
+    ax2.plot(plot_dates, plot_equity, label=f'Strategy ({final_return:.2f}%)', color='blue', linewidth=2)
+    ax2.set_title(f"Equity Curve ({model_name})")
     ax2.set_ylabel('Equity ($)')
     ax2.set_xlabel('Date')
     ax2.legend()
     ax2.grid(True, alpha=0.3)
-
-    # Regime Background (both panels)
-    if len(plot_regime) > 0:
-        start_idx = 0
-        current_val = plot_regime[0]
-
-        for i in range(1, len(plot_regime)):
-            if plot_regime[i] != current_val:
-                color = 'green' if current_val == 1 else 'red'
-                ax1.axvspan(plot_dates[start_idx], plot_dates[i], color=color, alpha=0.1)
-                ax2.axvspan(plot_dates[start_idx], plot_dates[i], color=color, alpha=0.1)
-                start_idx = i
-                current_val = plot_regime[i]
-
-        # Last segment
-        color = 'green' if current_val == 1 else 'red'
-        ax1.axvspan(plot_dates[start_idx], plot_dates[-1], color=color, alpha=0.1)
-        ax2.axvspan(plot_dates[start_idx], plot_dates[-1], color=color, alpha=0.1)
-
+    
     plt.tight_layout()
-    filename = os.path.join(save_dir, f"{market}_Combined_Hybrid_MOO.png")
+    filename = os.path.join(save_dir, f"{market}_{trend}_{model_name}.png")
     plt.savefig(filename, dpi=100)
     plt.close()
     print(f"  📊 Plot saved: {filename}")
@@ -1331,10 +1341,13 @@ def run_backtest(markets=None, period='2y'):
         current_pos = 0
         bnh_curve = (prices / prices[0]) * INITIAL_CAPITAL
         
+        # Align equity curve to be length N (same as dates and prices)
+        # best_eq is length N-1, representing the equity at the end of each day starting from day 1
+        aligned_eq = [INITIAL_CAPITAL] + list(best_eq)
+        
         market_history = []
         for i in range(len(dates)):
             # Update Position first if there was an action ON this index
-            # Actually, the action takes effect at this index, so position changes here
             if i in event_dict:
                 current_pos = 1 if event_dict[i] == 'buy' else 0
 
@@ -1363,7 +1376,7 @@ def run_backtest(markets=None, period='2y'):
                 'ml_down_prob': round(float(p_dn) * 100, 2),
                 'signal_action': sg_text,
                 'position': float(current_pos),
-                'equity_curve': float(best_eq[i] if i < len(best_eq) else best_eq[-1]),
+                'equity_curve': float(aligned_eq[i]),
                 'bnh_curve': float(bnh_curve[i])
             })
             
@@ -1459,12 +1472,13 @@ def run_backtest(markets=None, period='2y'):
             equity_curve=best_eq,
             prices=prices,
             signals=best_signals,
-            regime=regime_aligned,
             market=market,
-            strategy_return=strategy_return,
+            trend="Combined",
+            model_name="Hybrid_MOO",
+            final_return=strategy_return,
             bnh_return=bnh_return,
-            save_dir=save_dir,
-            trade_points=result.get('trade_points', []),
+            regime=regime_aligned,
+            save_dir=save_dir
         )
 
         results.append({
@@ -1672,7 +1686,19 @@ if __name__ == '__main__':
             results = get_current_signals(markets=markets, quiet=True)
         finally:
             sys.stdout = old_stdout  # Restore stdout
-        print(json.dumps(results, indent=2, ensure_ascii=False))
+            
+        import numpy as np
+        class NpEncoder(json.JSONEncoder):
+            def default(self, obj):
+                if isinstance(obj, np.integer):
+                    return int(obj)
+                if isinstance(obj, np.floating):
+                    return float(obj)
+                if isinstance(obj, np.ndarray):
+                    return obj.tolist()
+                return super(NpEncoder, self).default(obj)
+                
+        print(json.dumps(results, indent=2, ensure_ascii=False, cls=NpEncoder))
         sys.exit(0)
 
     print("=" * 80)

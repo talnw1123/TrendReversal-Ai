@@ -1,0 +1,10 @@
+pandas
+numpy<2.0.0
+scikit-learn
+yfinance
+xgboost
+tensorflow
+fastapi
+uvicorn
+python-dotenv
+openai

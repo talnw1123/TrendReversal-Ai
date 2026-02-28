@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: trending_api
+    command: python workflows/api_server.py
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./workflows/trading_database.sqlite:/app/workflows/trading_database.sqlite
+      - ./.env:/app/.env
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  dashboard:
+    build: .
+    container_name: trending_dashboard
+    command: python workflows/web_dashboard.py
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./workflows/trading_database.sqlite:/app/workflows/trading_database.sqlite
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1

@@ -8,7 +8,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9968.227054848036,
+    "equity_curve": 10000.0,
     "bnh_curve": 10000.0
   },
   {
@@ -20,7 +20,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 10137.382114841017,
+    "equity_curve": 9968.227054848036,
     "bnh_curve": 9964.585288055978
   },
   {
@@ -32,7 +32,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9975.082870405233,
+    "equity_curve": 10137.382114841017,
     "bnh_curve": 10206.147089930766
   },
   {
@@ -44,7 +44,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9548.811766883668,
+    "equity_curve": 9975.082870405233,
     "bnh_curve": 9972.71827559203
   },
   {
@@ -56,7 +56,7 @@
     "ml_down_prob": 56.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 9542.127598646848,
+    "equity_curve": 9548.811766883668,
     "bnh_curve": 9363.903910026535
   },
   {
@@ -92,7 +92,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9639.595034598004,
+    "equity_curve": 9542.127598646848,
     "bnh_curve": 9705.951589721853
   },
   {
@@ -104,7 +104,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9685.278902255452,
+    "equity_curve": 9639.595034598004,
     "bnh_curve": 9857.393272423114
   },
   {
@@ -116,7 +116,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9907.038386036395,
+    "equity_curve": 9685.278902255452,
     "bnh_curve": 9924.130493539104
   },
   {
@@ -128,7 +128,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9665.744324433736,
+    "equity_curve": 9907.038386036395,
     "bnh_curve": 10248.742438478912
   },
   {
@@ -140,7 +140,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9807.532080124038,
+    "equity_curve": 9665.744324433736,
     "bnh_curve": 9892.14737474182
   },
   {
@@ -152,7 +152,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9756.250250112074,
+    "equity_curve": 9807.532080124038,
     "bnh_curve": 10099.44578094006
   },
   {
@@ -164,7 +164,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9477.000621071684,
+    "equity_curve": 9756.250250112074,
     "bnh_curve": 10024.005503068203
   },
   {
@@ -176,7 +176,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9143.864101151272,
+    "equity_curve": 9477.000621071684,
     "bnh_curve": 9614.129087368361
   },
   {
@@ -188,7 +188,7 @@
     "ml_down_prob": 60.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 9137.463396280466,
+    "equity_curve": 9143.864101151272,
     "bnh_curve": 9131.333552865872
   },
   {
@@ -224,7 +224,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8877.13042025798,
+    "equity_curve": 9137.463396280466,
     "bnh_curve": 9129.95868004161
   },
   {
@@ -236,7 +236,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 8870.9164289638,
+    "equity_curve": 8877.13042025798,
     "bnh_curve": 8767.235931082878
   },
   {
@@ -272,7 +272,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8858.233932501093,
+    "equity_curve": 8870.9164289638,
     "bnh_curve": 9299.157460048767
   },
   {
@@ -284,7 +284,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9040.745713491158,
+    "equity_curve": 8858.233932501093,
     "bnh_curve": 9289.457341049612
   },
   {
@@ -296,7 +296,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8999.992721547715,
+    "equity_curve": 9040.745713491158,
     "bnh_curve": 9562.880982289626
   },
   {
@@ -308,7 +308,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8909.81023510991,
+    "equity_curve": 8999.992721547715,
     "bnh_curve": 9501.300093156018
   },
   {
@@ -320,7 +320,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8918.327163038253,
+    "equity_curve": 8909.81023510991,
     "bnh_curve": 9196.494141365094
   },
   {
@@ -332,7 +332,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8888.18766439769,
+    "equity_curve": 8918.327163038253,
     "bnh_curve": 9225.797375937847
   },
   {
@@ -344,7 +344,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8851.838529182058,
+    "equity_curve": 8888.18766439769,
     "bnh_curve": 9121.868727142739
   },
   {
@@ -356,7 +356,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8821.949964048363,
+    "equity_curve": 8851.838529182058,
     "bnh_curve": 9073.769416166402
   },
   {
@@ -368,7 +368,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8893.171009742746,
+    "equity_curve": 8821.949964048363,
     "bnh_curve": 9030.000954586498
   },
   {
@@ -380,7 +380,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8580.719455432736,
+    "equity_curve": 8893.171009742746,
     "bnh_curve": 9134.144776567517
   },
   {
@@ -392,7 +392,7 @@
     "ml_down_prob": 60.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 8574.712951813934,
+    "equity_curve": 8580.719455432736,
     "bnh_curve": 8675.690638859807
   },
   {
@@ -428,7 +428,7 @@
     "ml_down_prob": 62.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 8313.898313662325,
+    "equity_curve": 8574.712951813934,
     "bnh_curve": 8998.038514770718
   },
   {
@@ -440,7 +440,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8305.803090313255,
+    "equity_curve": 8313.898313662325,
     "bnh_curve": 9141.348886610102
   },
   {
@@ -452,7 +452,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8226.88074077259,
+    "equity_curve": 8305.803090313255,
     "bnh_curve": 9161.330930547461
   },
   {
@@ -464,7 +464,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8151.466568750203,
+    "equity_curve": 8226.88074077259,
     "bnh_curve": 9036.971448027236
   },
   {
@@ -476,7 +476,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8103.231242765919,
+    "equity_curve": 8151.466568750203,
     "bnh_curve": 8918.628431341645
   },
   {
@@ -488,7 +488,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8100.800273393089,
+    "equity_curve": 8103.231242765919,
     "bnh_curve": 8754.537918657159
   },
   {
@@ -524,7 +524,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8156.152867925265,
+    "equity_curve": 8100.800273393089,
     "bnh_curve": 8698.13292270465
   },
   {
@@ -536,7 +536,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8210.727209737453,
+    "equity_curve": 8156.152867925265,
     "bnh_curve": 8791.802561108625
   },
   {
@@ -548,7 +548,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8157.913733518008,
+    "equity_curve": 8210.727209737453,
     "bnh_curve": 8999.700098879066
   },
   {
@@ -560,7 +560,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8345.373028013228,
+    "equity_curve": 8157.913733518008,
     "bnh_curve": 8806.738933559214
   },
   {
@@ -572,7 +572,7 @@
     "ml_down_prob": 62.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 8562.177175156574,
+    "equity_curve": 8345.373028013228,
     "bnh_curve": 9481.300723585508
   },
   {
@@ -584,7 +584,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8707.603416709884,
+    "equity_curve": 8562.177175156574,
     "bnh_curve": 9333.086638672916
   },
   {
@@ -596,7 +596,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8699.794906278568,
+    "equity_curve": 8707.603416709884,
     "bnh_curve": 9593.5272328773
   },
   {
@@ -608,7 +608,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8673.967294487233,
+    "equity_curve": 8699.794906278568,
     "bnh_curve": 9577.635715037823
   },
   {
@@ -620,7 +620,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8876.942663271639,
+    "equity_curve": 8673.967294487233,
     "bnh_curve": 9482.85667722077
   },
   {
@@ -632,7 +632,7 @@
     "ml_down_prob": 62.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 9151.022365774192,
+    "equity_curve": 8876.942663271639,
     "bnh_curve": 10222.536021109105
   },
   {
@@ -644,7 +644,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9035.747808481296,
+    "equity_curve": 9151.022365774192,
     "bnh_curve": 10034.86811616267
   },
   {
@@ -656,7 +656,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8926.60334917721,
+    "equity_curve": 9035.747808481296,
     "bnh_curve": 9889.760908498078
   },
   {
@@ -668,7 +668,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 8920.354726832786,
+    "equity_curve": 8926.60334917721,
     "bnh_curve": 9719.10342195786
   },
   {
@@ -704,7 +704,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8993.928938722918,
+    "equity_curve": 8920.354726832786,
     "bnh_curve": 9803.308234638702
   },
   {
@@ -716,7 +716,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8894.283530058743,
+    "equity_curve": 8993.928938722918,
     "bnh_curve": 9928.70893182218
   },
   {
@@ -728,7 +728,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8828.818044064814,
+    "equity_curve": 8894.283530058743,
     "bnh_curve": 9771.563203574402
   },
   {
@@ -740,7 +740,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8900.781722186357,
+    "equity_curve": 8828.818044064814,
     "bnh_curve": 9668.816610073323
   },
   {
@@ -752,7 +752,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8821.166855404781,
+    "equity_curve": 8900.781722186357,
     "bnh_curve": 9781.40304542155
   },
   {
@@ -764,7 +764,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8840.885181963686,
+    "equity_curve": 8821.166855404781,
     "bnh_curve": 9656.414810085353
   },
   {
@@ -776,7 +776,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8844.96761286415,
+    "equity_curve": 8840.885181963686,
     "bnh_curve": 9687.251083746298
   },
   {
@@ -788,7 +788,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8941.212395395369,
+    "equity_curve": 8844.96761286415,
     "bnh_curve": 9693.641447922164
   },
   {
@@ -800,7 +800,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9101.582826376818,
+    "equity_curve": 8941.212395395369,
     "bnh_curve": 9844.32639167869
   },
   {
@@ -812,7 +812,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9148.083788959568,
+    "equity_curve": 9101.582826376818,
     "bnh_curve": 10096.567490271378
   },
   {
@@ -824,7 +824,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9118.74629990369,
+    "equity_curve": 9148.083788959568,
     "bnh_curve": 10170.25955586913
   },
   {
@@ -836,7 +836,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8991.13483539796,
+    "equity_curve": 9118.74629990369,
     "bnh_curve": 10123.665898302781
   },
   {
@@ -848,7 +848,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8987.793594187277,
+    "equity_curve": 8991.13483539796,
     "bnh_curve": 9921.273440743316
   },
   {
@@ -860,7 +860,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9018.859606952927,
+    "equity_curve": 8987.793594187277,
     "bnh_curve": 9916.006448265325
   },
   {
@@ -872,7 +872,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9006.5581679911,
+    "equity_curve": 9018.859606952927,
     "bnh_curve": 9964.969805333656
   },
   {
@@ -884,7 +884,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8808.814925144587,
+    "equity_curve": 9006.5581679911,
     "bnh_curve": 9945.552800593588
   },
   {
@@ -896,7 +896,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8892.074145116536,
+    "equity_curve": 8808.814925144587,
     "bnh_curve": 9633.610923509901
   },
   {
@@ -908,7 +908,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8756.642766471115,
+    "equity_curve": 8892.074145116536,
     "bnh_curve": 9763.689541644228
   },
   {
@@ -920,7 +920,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 8688.208025571981,
+    "equity_curve": 8756.642766471115,
     "bnh_curve": 9551.251570205366
   },
   {
@@ -932,7 +932,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8682.12627995408,
+    "equity_curve": 8688.208025571981,
     "bnh_curve": 9444.616210398912
   },
   {
@@ -968,7 +968,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8552.780611348664,
+    "equity_curve": 8682.12627995408,
     "bnh_curve": 9513.1787708011
   },
   {
@@ -980,7 +980,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8536.19591021451,
+    "equity_curve": 8552.780611348664,
     "bnh_curve": 9320.090178243878
   },
   {
@@ -992,7 +992,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8524.087019812827,
+    "equity_curve": 8536.19591021451,
     "bnh_curve": 9294.272190391495
   },
   {
@@ -1004,7 +1004,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8456.671319971692,
+    "equity_curve": 8524.087019812827,
     "bnh_curve": 9275.437550481865
   },
   {
@@ -1016,7 +1016,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8450.751650047712,
+    "equity_curve": 8456.671319971692,
     "bnh_curve": 9170.640384463624
   },
   {
@@ -1052,7 +1052,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8594.610708145696,
+    "equity_curve": 8450.751650047712,
     "bnh_curve": 8624.263129644247
   },
   {
@@ -1064,7 +1064,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8497.914094017022,
+    "equity_curve": 8594.610708145696,
     "bnh_curve": 8842.772897165549
   },
   {
@@ -1076,7 +1076,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8575.536305037886,
+    "equity_curve": 8497.914094017022,
     "bnh_curve": 8700.646257294371
   },
   {
@@ -1088,7 +1088,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8450.356477855172,
+    "equity_curve": 8575.536305037886,
     "bnh_curve": 8814.18057244339
   },
   {
@@ -1100,7 +1100,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8505.982662875313,
+    "equity_curve": 8450.356477855172,
     "bnh_curve": 8630.375724798301
   },
   {
@@ -1112,7 +1112,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8681.116474972005,
+    "equity_curve": 8505.982662875313,
     "bnh_curve": 8711.53457939287
   },
   {
@@ -1124,7 +1124,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8697.955813480297,
+    "equity_curve": 8681.116474972005,
     "bnh_curve": 8967.771751438195
   },
   {
@@ -1136,7 +1136,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8660.323776071185,
+    "equity_curve": 8697.955813480297,
     "bnh_curve": 8992.622298291066
   },
   {
@@ -1148,7 +1148,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8475.629939072982,
+    "equity_curve": 8660.323776071185,
     "bnh_curve": 8874.875618720716
   },
   {
@@ -1160,7 +1160,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8160.493804687051,
+    "equity_curve": 8475.629939072982,
     "bnh_curve": 8609.455861105205
   },
   {
@@ -1172,7 +1172,7 @@
     "ml_down_prob": 54.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8154.78145902377,
+    "equity_curve": 8160.493804687051,
     "bnh_curve": 8152.153039664969
   },
   {
@@ -1208,7 +1208,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8236.502577136096,
+    "equity_curve": 8154.78145902377,
     "bnh_curve": 7990.678138694935
   },
   {
@@ -1220,7 +1220,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8369.101286579344,
+    "equity_curve": 8236.502577136096,
     "bnh_curve": 8113.149686093061
   },
   {
@@ -1232,7 +1232,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8342.1640886709,
+    "equity_curve": 8369.101286579344,
     "bnh_curve": 8299.739489544372
   },
   {
@@ -1244,7 +1244,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8301.956506085506,
+    "equity_curve": 8342.1640886709,
     "bnh_curve": 8261.576708625997
   },
   {
@@ -1256,7 +1256,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8358.155030037165,
+    "equity_curve": 8301.956506085506,
     "bnh_curve": 8204.692183859172
   },
   {
@@ -1268,7 +1268,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8492.802225176452,
+    "equity_curve": 8358.155030037165,
     "bnh_curve": 8284.035200321207
   },
   {
@@ -1280,7 +1280,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8648.957941355407,
+    "equity_curve": 8492.802225176452,
     "bnh_curve": 8474.682555278272
   },
   {
@@ -1292,7 +1292,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9055.547932010553,
+    "equity_curve": 8648.957941355407,
     "bnh_curve": 8697.286202245805
   },
   {
@@ -1304,7 +1304,7 @@
     "ml_down_prob": 59.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 9036.995635454723,
+    "equity_curve": 9055.547932010553,
     "bnh_curve": 9281.374653738838
   },
   {
@@ -1316,7 +1316,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8932.980794502782,
+    "equity_curve": 9036.995635454723,
     "bnh_curve": 9313.852391418022
   },
   {
@@ -1328,7 +1328,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8923.361063841432,
+    "equity_curve": 8932.980794502782,
     "bnh_curve": 9173.87301227482
   },
   {
@@ -1340,7 +1340,7 @@
     "ml_down_prob": 53.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 9037.853321175126,
+    "equity_curve": 8923.361063841432,
     "bnh_curve": 9153.166086202067
   },
   {
@@ -1352,7 +1352,7 @@
     "ml_down_prob": 54.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 9056.28497882661,
+    "equity_curve": 9037.853321175126,
     "bnh_curve": 9544.635413907139
   },
   {
@@ -1364,7 +1364,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9146.151130057508,
+    "equity_curve": 9056.28497882661,
     "bnh_curve": 9609.519351167333
   },
   {
@@ -1376,7 +1376,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 9119.583354272434,
+    "equity_curve": 9146.151130057508,
     "bnh_curve": 9751.289977221822
   },
   {
@@ -1388,7 +1388,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8959.432989448136,
+    "equity_curve": 9119.583354272434,
     "bnh_curve": 9669.840499103426
   },
   {
@@ -1400,7 +1400,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8906.585370180635,
+    "equity_curve": 8959.432989448136,
     "bnh_curve": 9432.680525831847
   },
   {
@@ -1412,7 +1412,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 8945.219591498686,
+    "equity_curve": 8906.585370180635,
     "bnh_curve": 9353.196109847644
   },
   {
@@ -1424,7 +1424,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9148.444994506986,
+    "equity_curve": 8945.219591498686,
     "bnh_curve": 9411.15538276124
   },
   {
@@ -1436,7 +1436,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9139.135364593014,
+    "equity_curve": 9148.444994506986,
     "bnh_curve": 9716.599588521802
   },
   {
@@ -1448,7 +1448,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9180.883009929,
+    "equity_curve": 9139.135364593014,
     "bnh_curve": 9702.474167480972
   },
   {
@@ -1460,7 +1460,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9045.681118368433,
+    "equity_curve": 9180.883009929,
     "bnh_curve": 9765.789855495277
   },
   {
@@ -1472,7 +1472,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8987.033174979408,
+    "equity_curve": 9045.681118368433,
     "bnh_curve": 9560.339144238915
   },
   {
@@ -1484,7 +1484,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8836.721793667546,
+    "equity_curve": 8987.033174979408,
     "bnh_curve": 9471.78950987684
   },
   {
@@ -1496,7 +1496,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8907.391089657867,
+    "equity_curve": 8836.721793667546,
     "bnh_curve": 9245.476500740755
   },
   {
@@ -1508,7 +1508,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8531.278807132134,
+    "equity_curve": 8907.391089657867,
     "bnh_curve": 9351.102502693298
   },
   {
@@ -1520,7 +1520,7 @@
     "ml_down_prob": 62.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 8525.306911967142,
+    "equity_curve": 8531.278807132134,
     "bnh_curve": 8787.034099752276
   },
   {
@@ -1556,7 +1556,7 @@
     "ml_down_prob": 65.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 7930.381189991772,
+    "equity_curve": 8525.306911967142,
     "bnh_curve": 7724.89230721768
   },
   {
@@ -1568,7 +1568,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 7916.106503849786,
+    "equity_curve": 7930.381189991772,
     "bnh_curve": 8017.176856262747
   },
   {
@@ -1604,7 +1604,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 7916.540950254185,
+    "equity_curve": 7916.106503849786,
     "bnh_curve": 8710.495041403792
   },
   {
@@ -1616,7 +1616,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 7714.109118876343,
+    "equity_curve": 7916.540950254185,
     "bnh_curve": 8719.895035725456
   },
   {
@@ -1628,7 +1628,7 @@
     "ml_down_prob": 65.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 7708.70924249313,
+    "equity_curve": 7714.109118876343,
     "bnh_curve": 8401.360475782007
   },
   {
@@ -1664,7 +1664,7 @@
     "ml_down_prob": 67.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 7972.419757926461,
+    "equity_curve": 7708.70924249313,
     "bnh_curve": 8403.905108289679
   },
   {
@@ -1676,7 +1676,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8275.104340784637,
+    "equity_curve": 7972.419757926461,
     "bnh_curve": 8235.479833969017
   },
   {
@@ -1688,7 +1688,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8323.463490646793,
+    "equity_curve": 8275.104340784637,
     "bnh_curve": 8426.34459767756
   },
   {
@@ -1700,7 +1700,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8225.994795723609,
+    "equity_curve": 8323.463490646793,
     "bnh_curve": 8510.02517023273
   },
   {
@@ -1712,7 +1712,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8325.386684749337,
+    "equity_curve": 8225.994795723609,
     "bnh_curve": 8367.663237085528
   },
   {
@@ -1724,7 +1724,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8278.302896228475,
+    "equity_curve": 8325.386684749337,
     "bnh_curve": 8512.09698062279
   },
   {
@@ -1736,7 +1736,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8490.64147305545,
+    "equity_curve": 8278.302896228475,
     "bnh_curve": 8443.325953731393
   },
   {
@@ -1748,7 +1748,7 @@
     "ml_down_prob": 63.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 8667.100738386887,
+    "equity_curve": 8490.64147305545,
     "bnh_curve": 8752.713697153744
   },
   {
@@ -1760,7 +1760,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9017.514009886434,
+    "equity_curve": 8667.100738386887,
     "bnh_curve": 8639.21459216242
   },
   {
@@ -1772,7 +1772,7 @@
     "ml_down_prob": 63.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 8973.590049226386,
+    "equity_curve": 9017.514009886434,
     "bnh_curve": 9170.37658772661
   },
   {
@@ -1784,7 +1784,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8966.244901179494,
+    "equity_curve": 8973.590049226386,
     "bnh_curve": 9182.48608751658
   },
   {
@@ -1796,7 +1796,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8824.501857723266,
+    "equity_curve": 8966.244901179494,
     "bnh_curve": 9204.598625440154
   },
   {
@@ -1808,7 +1808,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8492.804954089064,
+    "equity_curve": 8824.501857723266,
     "bnh_curve": 8996.725678890962
   },
   {
@@ -1820,7 +1820,7 @@
     "ml_down_prob": 65.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 8486.859990621202,
+    "equity_curve": 8492.804954089064,
     "bnh_curve": 8513.624989688455
   },
   {
@@ -1856,7 +1856,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8465.898893371614,
+    "equity_curve": 8486.859990621202,
     "bnh_curve": 8458.589836537682
   },
   {
@@ -1868,7 +1868,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8300.645309023652,
+    "equity_curve": 8465.898893371614,
     "bnh_curve": 8437.188767356092
   },
   {
@@ -1880,7 +1880,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8294.834857307334,
+    "equity_curve": 8300.645309023652,
     "bnh_curve": 8201.91281696687
   },
   {
@@ -1916,7 +1916,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8107.762006394499,
+    "equity_curve": 8294.834857307334,
     "bnh_curve": 8294.347305394576
   },
   {
@@ -1928,7 +1928,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 8102.086572990022,
+    "equity_curve": 8107.762006394499,
     "bnh_curve": 8035.2290482236085
   },
   {
@@ -1964,7 +1964,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8321.49288058814,
+    "equity_curve": 8102.086572990022,
     "bnh_curve": 7846.52272307088
   },
   {
@@ -1976,7 +1976,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8385.768698322785,
+    "equity_curve": 8321.49288058814,
     "bnh_curve": 8158.138207581652
   },
   {
@@ -1988,7 +1988,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8354.657405367014,
+    "equity_curve": 8385.768698322785,
     "bnh_curve": 8248.158285196017
   },
   {
@@ -2000,7 +2000,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8434.598908404867,
+    "equity_curve": 8354.657405367014,
     "bnh_curve": 8204.44291829835
   },
   {
@@ -2012,7 +2012,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8682.876225165961,
+    "equity_curve": 8434.598908404867,
     "bnh_curve": 8316.591741686658
   },
   {
@@ -2024,7 +2024,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8626.063053597072,
+    "equity_curve": 8682.876225165961,
     "bnh_curve": 8666.311323519647
   },
   {
@@ -2036,7 +2036,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8543.317473993338,
+    "equity_curve": 8626.063053597072,
     "bnh_curve": 8585.304487383697
   },
   {
@@ -2048,7 +2048,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8443.24654618305,
+    "equity_curve": 8543.317473993338,
     "bnh_curve": 8467.65505491555
   },
   {
@@ -2060,7 +2060,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8658.159461098501,
+    "equity_curve": 8443.24654618305,
     "bnh_curve": 8325.962673655938
   },
   {
@@ -2072,7 +2072,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8792.937499168393,
+    "equity_curve": 8658.159461098501,
     "bnh_curve": 8628.716376255521
   },
   {
@@ -2084,7 +2084,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8921.807708981767,
+    "equity_curve": 8792.937499168393,
     "bnh_curve": 8820.601675645816
   },
   {
@@ -2096,7 +2096,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8928.973081110622,
+    "equity_curve": 8921.807708981767,
     "bnh_curve": 9005.281188319348
   },
   {
@@ -2108,7 +2108,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8937.529879203033,
+    "equity_curve": 8928.973081110622,
     "bnh_curve": 9041.41072235371
   },
   {
@@ -2120,7 +2120,7 @@
     "ml_down_prob": 53.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8948.267253844797,
+    "equity_curve": 8937.529879203033,
     "bnh_curve": 9070.292552816913
   },
   {
@@ -2132,7 +2132,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8913.315963879882,
+    "equity_curve": 8948.267253844797,
     "bnh_curve": 9106.6154632729
   },
   {
@@ -2144,7 +2144,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 8950.782382766549,
+    "equity_curve": 8913.315963879882,
     "bnh_curve": 9060.987011140494
   },
   {
@@ -2156,7 +2156,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8834.332055798748,
+    "equity_curve": 8950.782382766549,
     "bnh_curve": 9200.081106318803
   },
   {
@@ -2168,7 +2168,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9033.914848203245,
+    "equity_curve": 8834.332055798748,
     "bnh_curve": 9034.28094486626
   },
   {
@@ -2180,7 +2180,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9093.061418413632,
+    "equity_curve": 9033.914848203245,
     "bnh_curve": 9325.852348495162
   },
   {
@@ -2192,7 +2192,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9102.444503745686,
+    "equity_curve": 9093.061418413632,
     "bnh_curve": 9413.077969149643
   },
   {
@@ -2204,7 +2204,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9078.041424802981,
+    "equity_curve": 9102.444503745686,
     "bnh_curve": 9426.95412462965
   },
   {
@@ -2216,7 +2216,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8854.799780702997,
+    "equity_curve": 9078.041424802981,
     "bnh_curve": 9390.849740707927
   },
   {
@@ -2228,7 +2228,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8610.847696876419,
+    "equity_curve": 8854.799780702997,
     "bnh_curve": 9060.943976503311
   },
   {
@@ -2240,7 +2240,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 8590.61377715032,
+    "equity_curve": 8610.847696876419,
     "bnh_curve": 8704.327674893324
   },
   {
@@ -2252,7 +2252,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8603.171398357905,
+    "equity_curve": 8590.61377715032,
     "bnh_curve": 8675.108274029368
   },
   {
@@ -2264,7 +2264,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8732.822290073527,
+    "equity_curve": 8603.171398357905,
     "bnh_curve": 8693.224179608915
   },
   {
@@ -2276,7 +2276,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8735.035603824952,
+    "equity_curve": 8732.822290073527,
     "bnh_curve": 8880.378463366122
   },
   {
@@ -2288,7 +2288,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8806.826813345684,
+    "equity_curve": 8735.035603824952,
     "bnh_curve": 8883.593765544167
   },
   {
@@ -2300,7 +2300,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8749.683114625583,
+    "equity_curve": 8806.826813345684,
     "bnh_curve": 8987.8968715719
   },
   {
@@ -2312,7 +2312,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8739.380318186175,
+    "equity_curve": 8749.683114625583,
     "bnh_curve": 8904.584608444044
   },
   {
@@ -2324,7 +2324,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8586.779083319172,
+    "equity_curve": 8739.380318186175,
     "bnh_curve": 8889.605760247665
   },
   {
@@ -2336,7 +2336,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8556.259926401142,
+    "equity_curve": 8586.779083319172,
     "bnh_curve": 8667.856658218465
   },
   {
@@ -2348,7 +2348,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8771.948013862873,
+    "equity_curve": 8556.259926401142,
     "bnh_curve": 8623.846196665832
   },
   {
@@ -2360,7 +2360,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8845.493976131951,
+    "equity_curve": 8771.948013862873,
     "bnh_curve": 8934.40593533716
   },
   {
@@ -2372,7 +2372,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 8812.01821690997,
+    "equity_curve": 8845.493976131951,
     "bnh_curve": 9041.417429050414
   },
   {
@@ -2384,7 +2384,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9125.560070830128,
+    "equity_curve": 8812.01821690997,
     "bnh_curve": 8992.53567012531
   },
   {
@@ -2396,7 +2396,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9221.79361637909,
+    "equity_curve": 9125.560070830128,
     "bnh_curve": 9449.628348402162
   },
   {
@@ -2408,7 +2408,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9276.832750042086,
+    "equity_curve": 9221.79361637909,
     "bnh_curve": 9591.986928201011
   },
   {
@@ -2420,7 +2420,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9256.386674238564,
+    "equity_curve": 9276.832750042086,
     "bnh_curve": 9673.77062337181
   },
   {
@@ -2432,7 +2432,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9354.343543090128,
+    "equity_curve": 9256.386674238564,
     "bnh_curve": 9643.31216029184
   },
   {
@@ -2444,7 +2444,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9348.978812613568,
+    "equity_curve": 9354.343543090128,
     "bnh_curve": 9789.10009767186
   },
   {
@@ -2456,7 +2456,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9410.14654898632,
+    "equity_curve": 9348.978812613568,
     "bnh_curve": 9781.080006196988
   },
   {
@@ -2468,7 +2468,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9254.17434305114,
+    "equity_curve": 9410.14654898632,
     "bnh_curve": 9872.501224531039
   },
   {
@@ -2480,7 +2480,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9253.554578119783,
+    "equity_curve": 9254.17434305114,
     "bnh_curve": 9638.73595757433
   },
   {
@@ -2492,7 +2492,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9164.201442216101,
+    "equity_curve": 9253.554578119783,
     "bnh_curve": 9637.813786777568
   },
   {
@@ -2504,7 +2504,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9331.14656351255,
+    "equity_curve": 9164.201442216101,
     "bnh_curve": 9504.865820236831
   },
   {
@@ -2516,7 +2516,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9185.616820466414,
+    "equity_curve": 9331.14656351255,
     "bnh_curve": 9752.224443629208
   },
   {
@@ -2528,7 +2528,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9221.536033058503,
+    "equity_curve": 9185.616820466414,
     "bnh_curve": 9534.943119387473
   },
   {
@@ -2540,7 +2540,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9309.633454939021,
+    "equity_curve": 9221.536033058503,
     "bnh_curve": 9588.207704608463
   },
   {
@@ -2552,7 +2552,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9499.435541612365,
+    "equity_curve": 9309.633454939021,
     "bnh_curve": 9719.065417343205
   },
   {
@@ -2564,7 +2564,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9766.981988658456,
+    "equity_curve": 9499.435541612365,
     "bnh_curve": 10002.136082900137
   },
   {
@@ -2576,7 +2576,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9731.16631223862,
+    "equity_curve": 9766.981988658456,
     "bnh_curve": 10404.571418607193
   },
   {
@@ -2588,7 +2588,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9531.127812687999,
+    "equity_curve": 9731.16631223862,
     "bnh_curve": 10350.066094496015
   },
   {
@@ -2600,7 +2600,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9461.50547863239,
+    "equity_curve": 9531.127812687999,
     "bnh_curve": 10046.12195323152
   },
   {
@@ -2612,7 +2612,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9443.09014339194,
+    "equity_curve": 9461.50547863239,
     "bnh_curve": 9941.287341490019
   },
   {
@@ -2624,7 +2624,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9390.7963028416,
+    "equity_curve": 9443.09014339194,
     "bnh_curve": 9913.645691025613
   },
   {
@@ -2636,7 +2636,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9301.899862875141,
+    "equity_curve": 9390.7963028416,
     "bnh_curve": 9835.217579772245
   },
   {
@@ -2648,7 +2648,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9450.54564741715,
+    "equity_curve": 9301.899862875141,
     "bnh_curve": 9702.212606309526
   },
   {
@@ -2660,7 +2660,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 10049.473795794847,
+    "equity_curve": 9450.54564741715,
     "bnh_curve": 9923.70238273285
   },
   {
@@ -2672,7 +2672,7 @@
     "ml_down_prob": 63.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 9960.947543951072,
+    "equity_curve": 10049.473795794847,
     "bnh_curve": 10822.151593254046
   },
   {
@@ -2684,7 +2684,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 9994.745513345499,
+    "equity_curve": 9960.947543951072,
     "bnh_curve": 10860.178563564172
   },
   {
@@ -2696,7 +2696,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 10016.077615577819,
+    "equity_curve": 9994.745513345499,
     "bnh_curve": 10951.83563406564
   },
   {
@@ -2708,7 +2708,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 10353.525034303384,
+    "equity_curve": 10016.077615577819,
     "bnh_curve": 10985.228276953487
   },
   {
@@ -2720,7 +2720,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 11094.471526145515,
+    "equity_curve": 10353.525034303384,
     "bnh_curve": 11513.940651546643
   },
   {
@@ -2732,7 +2732,7 @@
     "ml_down_prob": 65.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 11234.194505860502,
+    "equity_curve": 11094.471526145515,
     "bnh_curve": 12691.070994632184
   },
   {
@@ -2744,7 +2744,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 11440.516676347814,
+    "equity_curve": 11234.194505860502,
     "bnh_curve": 12584.383099034883
   },
   {
@@ -2756,7 +2756,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 11145.788001921117,
+    "equity_curve": 11440.516676347814,
     "bnh_curve": 12960.437643257836
   },
   {
@@ -2768,7 +2768,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 11486.982165970916,
+    "equity_curve": 11145.788001921117,
     "bnh_curve": 12483.459609254436
   },
   {
@@ -2780,7 +2780,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 11442.168499596097,
+    "equity_curve": 11486.982165970916,
     "bnh_curve": 13029.378014241
   },
   {
@@ -2792,7 +2792,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 11379.139803160619,
+    "equity_curve": 11442.168499596097,
     "bnh_curve": 12956.762373464195
   },
   {
@@ -2804,7 +2804,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 11440.914520772256,
+    "equity_curve": 11379.139803160619,
     "bnh_curve": 12854.802699043023
   },
   {
@@ -2816,7 +2816,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 11600.228956703111,
+    "equity_curve": 11440.914520772256,
     "bnh_curve": 12954.496627761118
   },
   {
@@ -2828,7 +2828,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 11775.719148195658,
+    "equity_curve": 11600.228956703111,
     "bnh_curve": 13212.198095253425
   },
   {
@@ -2840,7 +2840,7 @@
     "ml_down_prob": 38.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12697.585581119398,
+    "equity_curve": 11775.719148195658,
     "bnh_curve": 13497.735707414544
   },
   {
@@ -2852,7 +2852,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12728.048203927052,
+    "equity_curve": 12697.585581119398,
     "bnh_curve": 14093.681598679763
   },
   {
@@ -2864,7 +2864,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12618.215674156892,
+    "equity_curve": 12728.048203927052,
     "bnh_curve": 14164.209221216144
   },
   {
@@ -2876,7 +2876,7 @@
     "ml_down_prob": 35.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12659.221105752024,
+    "equity_curve": 12618.215674156892,
     "bnh_curve": 13989.60149031743
   },
   {
@@ -2888,7 +2888,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 11517.372846662796,
+    "equity_curve": 12659.221105752024,
     "bnh_curve": 14023.444599667215
   },
   {
@@ -2900,7 +2900,7 @@
     "ml_down_prob": 68.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 11723.734277534062,
+    "equity_curve": 11517.372846662796,
     "bnh_curve": 13320.722507964761
   },
   {
@@ -2912,7 +2912,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12048.37094365784,
+    "equity_curve": 11723.734277534062,
     "bnh_curve": 13160.909749994467
   },
   {
@@ -2924,7 +2924,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12021.120478534218,
+    "equity_curve": 12048.37094365784,
     "bnh_curve": 13729.953962998261
   },
   {
@@ -2936,7 +2936,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12416.682273209082,
+    "equity_curve": 12021.120478534218,
     "bnh_curve": 13685.591399868681
   },
   {
@@ -2948,7 +2948,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12312.830669217,
+    "equity_curve": 12416.682273209082,
     "bnh_curve": 13944.42406353835
   },
   {
@@ -2960,7 +2960,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12387.067624742693,
+    "equity_curve": 12312.830669217,
     "bnh_curve": 13799.563885869013
   },
   {
@@ -2972,7 +2972,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12049.595832639527,
+    "equity_curve": 12387.067624742693,
     "bnh_curve": 13918.422200418006
   },
   {
@@ -2984,7 +2984,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12080.55990549216,
+    "equity_curve": 12049.595832639527,
     "bnh_curve": 13716.04315625195
   },
   {
@@ -2996,7 +2996,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12707.15699046375,
+    "equity_curve": 12080.55990549216,
     "bnh_curve": 13735.62447506126
   },
   {
@@ -3008,7 +3008,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12203.478080631934,
+    "equity_curve": 12707.15699046375,
     "bnh_curve": 14131.425769945548
   },
   {
@@ -3020,7 +3020,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12960.100261617865,
+    "equity_curve": 12203.478080631934,
     "bnh_curve": 13820.240631806599
   },
   {
@@ -3032,7 +3032,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12946.082219978765,
+    "equity_curve": 12960.100261617865,
     "bnh_curve": 14296.27525714034
   },
   {
@@ -3044,7 +3044,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13065.131902441832,
+    "equity_curve": 12946.082219978765,
     "bnh_curve": 14296.650832155749
   },
   {
@@ -3056,7 +3056,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12721.544667005195,
+    "equity_curve": 13065.131902441832,
     "bnh_curve": 14484.464048864098
   },
   {
@@ -3068,7 +3068,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12652.330539239723,
+    "equity_curve": 12721.544667005195,
     "bnh_curve": 13940.30279841391
   },
   {
@@ -3080,7 +3080,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13064.364902578438,
+    "equity_curve": 12652.330539239723,
     "bnh_curve": 13831.952759816872
   },
   {
@@ -3092,7 +3092,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 12962.221097127103,
+    "equity_curve": 13064.364902578438,
     "bnh_curve": 14475.452484059859
   },
   {
@@ -3104,7 +3104,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13090.670792031406,
+    "equity_curve": 12962.221097127103,
     "bnh_curve": 14313.771911057578
   },
   {
@@ -3116,7 +3116,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13082.8774450846,
+    "equity_curve": 13090.670792031406,
     "bnh_curve": 14516.404691915592
   },
   {
@@ -3128,7 +3128,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13747.39183274595,
+    "equity_curve": 13082.8774450846,
     "bnh_curve": 14504.058781066815
   },
   {
@@ -3140,7 +3140,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13891.807809496095,
+    "equity_curve": 13747.39183274595,
     "bnh_curve": 14922.660609178205
   },
   {
@@ -3152,7 +3152,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13901.977165004626,
+    "equity_curve": 13891.807809496095,
     "bnh_curve": 15170.328858401735
   },
   {
@@ -3164,7 +3164,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13342.79134498545,
+    "equity_curve": 13901.977165004626,
     "bnh_curve": 15186.1935494544
   },
   {
@@ -3176,7 +3176,7 @@
     "ml_down_prob": 70.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 13985.284952750391,
+    "equity_curve": 13342.79134498545,
     "bnh_curve": 14313.562885676978
   },
   {
@@ -3188,7 +3188,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13974.0608584718,
+    "equity_curve": 13985.284952750391,
     "bnh_curve": 13948.634751285506
   },
   {
@@ -3200,7 +3200,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13920.906585636556,
+    "equity_curve": 13974.0608584718,
     "bnh_curve": 13986.546589968882
   },
   {
@@ -3212,7 +3212,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13708.44448268641,
+    "equity_curve": 13920.906585636556,
     "bnh_curve": 13910.544067356695
   },
   {
@@ -3224,7 +3224,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13666.198905135852,
+    "equity_curve": 13708.44448268641,
     "bnh_curve": 13607.252711238032
   },
   {
@@ -3236,7 +3236,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14069.30153817712,
+    "equity_curve": 13666.198905135852,
     "bnh_curve": 13547.34737849757
   },
   {
@@ -3248,7 +3248,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14131.491096022331,
+    "equity_curve": 14069.30153817712,
     "bnh_curve": 14118.200164045802
   },
   {
@@ -3260,7 +3260,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13782.459538354798,
+    "equity_curve": 14131.491096022331,
     "bnh_curve": 14207.351165545642
   },
   {
@@ -3272,7 +3272,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13345.46784073609,
+    "equity_curve": 13782.459538354798,
     "bnh_curve": 13706.058002642885
   },
   {
@@ -3284,7 +3284,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 13321.445998622765,
+    "equity_curve": 13345.46784073609,
     "bnh_curve": 13472.749908844815
   },
   {
@@ -3320,7 +3320,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13391.179733329747,
+    "equity_curve": 13321.445998622765,
     "bnh_curve": 13255.038238231256
   },
   {
@@ -3332,7 +3332,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13490.562868245073,
+    "equity_curve": 13391.179733329747,
     "bnh_curve": 13367.495010776545
   },
   {
@@ -3344,7 +3344,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13737.311644186368,
+    "equity_curve": 13490.562868245073,
     "bnh_curve": 13509.21980773689
   },
   {
@@ -3356,7 +3356,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13858.45290387373,
+    "equity_curve": 13737.311644186368,
     "bnh_curve": 13862.205550864595
   },
   {
@@ -3368,7 +3368,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13871.188410271434,
+    "equity_curve": 13858.45290387373,
     "bnh_curve": 14036.837872984554
   },
   {
@@ -3380,7 +3380,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13878.97064674106,
+    "equity_curve": 13871.188410271434,
     "bnh_curve": 14055.265639960824
   },
   {
@@ -3392,7 +3392,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14250.83481310892,
+    "equity_curve": 13878.97064674106,
     "bnh_curve": 14066.530654857514
   },
   {
@@ -3404,7 +3404,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13747.02485498546,
+    "equity_curve": 14250.83481310892,
     "bnh_curve": 14604.94426623261
   },
   {
@@ -3416,7 +3416,7 @@
     "ml_down_prob": 64.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 14191.217869348256,
+    "equity_curve": 13747.02485498546,
     "bnh_curve": 13867.331702711806
   },
   {
@@ -3428,7 +3428,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13888.893904919478,
+    "equity_curve": 14191.217869348256,
     "bnh_curve": 13598.465820773366
   },
   {
@@ -3440,7 +3440,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14121.995749071943,
+    "equity_curve": 13888.893904919478,
     "bnh_curve": 13232.264531790972
   },
   {
@@ -3452,7 +3452,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14107.918473377227,
+    "equity_curve": 14121.995749071943,
     "bnh_curve": 13549.52370157793
   },
   {
@@ -3464,7 +3464,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14099.756654582423,
+    "equity_curve": 14107.918473377227,
     "bnh_curve": 13530.22853516131
   },
   {
@@ -3476,7 +3476,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 14095.373561195944,
+    "equity_curve": 14099.756654582423,
     "bnh_curve": 13519.046236190632
   },
   {
@@ -3488,7 +3488,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14300.264314774908,
+    "equity_curve": 14095.373561195944,
     "bnh_curve": 13523.064665298947
   },
   {
@@ -3500,7 +3500,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 14470.924588468813,
+    "equity_curve": 14300.264314774908,
     "bnh_curve": 13811.72424477565
   },
   {
@@ -3512,7 +3512,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 14438.632719251327,
+    "equity_curve": 14470.924588468813,
     "bnh_curve": 14379.80045788854
   },
   {
@@ -3524,7 +3524,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 14642.936422509923,
+    "equity_curve": 14438.632719251327,
     "bnh_curve": 14272.838705509172
   },
   {
@@ -3536,7 +3536,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 14640.666906285242,
+    "equity_curve": 14642.936422509923,
     "bnh_curve": 14946.031211625119
   },
   {
@@ -3548,7 +3548,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 14501.067119366357,
+    "equity_curve": 14640.666906285242,
     "bnh_curve": 14938.309568153563
   },
   {
@@ -3560,7 +3560,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 14540.962264861157,
+    "equity_curve": 14501.067119366357,
     "bnh_curve": 14463.516799492794
   },
   {
@@ -3572,7 +3572,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14947.010482488957,
+    "equity_curve": 14540.962264861157,
     "bnh_curve": 14596.15625798516
   },
   {
@@ -3584,7 +3584,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14701.254577879563,
+    "equity_curve": 14947.010482488957,
     "bnh_curve": 15187.003941972765
   },
   {
@@ -3596,7 +3596,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14731.744217661346,
+    "equity_curve": 14701.254577879563,
     "bnh_curve": 14830.287039912222
   },
   {
@@ -3608,7 +3608,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 14762.367739761237,
+    "equity_curve": 14731.744217661346,
     "bnh_curve": 14874.22596336668
   },
   {
@@ -3620,7 +3620,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14746.131647323471,
+    "equity_curve": 14762.367739761237,
     "bnh_curve": 14997.17312733938
   },
   {
@@ -3632,7 +3632,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14545.811728540433,
+    "equity_curve": 14746.131647323471,
     "bnh_curve": 14982.173600161497
   },
   {
@@ -3644,7 +3644,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14486.829706802087,
+    "equity_curve": 14545.811728540433,
     "bnh_curve": 14691.421531313232
   },
   {
@@ -3656,7 +3656,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14411.811565451851,
+    "equity_curve": 14486.829706802087,
     "bnh_curve": 14606.31802127409
   },
   {
@@ -3668,7 +3668,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 14647.832679020668,
+    "equity_curve": 14411.811565451851,
     "bnh_curve": 14498.265312897582
   },
   {
@@ -3680,7 +3680,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14749.879235686325,
+    "equity_curve": 14647.832679020668,
     "bnh_curve": 14837.46096981964
   },
   {
@@ -3692,7 +3692,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14520.157682026202,
+    "equity_curve": 14749.879235686325,
     "bnh_curve": 14985.129017842271
   },
   {
@@ -3704,7 +3704,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14346.55076744315,
+    "equity_curve": 14520.157682026202,
     "bnh_curve": 14651.721240175528
   },
   {
@@ -3716,7 +3716,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14050.535895791174,
+    "equity_curve": 14346.55076744315,
     "bnh_curve": 14401.464206024357
   },
   {
@@ -3728,7 +3728,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 14424.709472727283,
+    "equity_curve": 14050.535895791174,
     "bnh_curve": 13976.967191510394
   },
   {
@@ -3740,7 +3740,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14072.856263182057,
+    "equity_curve": 14424.709472727283,
     "bnh_curve": 14508.702050751363
   },
   {
@@ -3752,7 +3752,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 13946.399543445557,
+    "equity_curve": 14072.856263182057,
     "bnh_curve": 14003.12777978606
   },
   {
@@ -3764,7 +3764,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13944.16156099516,
+    "equity_curve": 13946.399543445557,
     "bnh_curve": 13823.370423601671
   },
   {
@@ -3776,7 +3776,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13937.672939105081,
+    "equity_curve": 13944.16156099516,
     "bnh_curve": 13820.20150940916
   },
   {
@@ -3788,7 +3788,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13932.959675555756,
+    "equity_curve": 13937.672939105081,
     "bnh_curve": 13811.01445270784
   },
   {
@@ -3800,7 +3800,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13922.213821212292,
+    "equity_curve": 13932.959675555756,
     "bnh_curve": 13804.342407270418
   },
   {
@@ -3812,7 +3812,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14165.661842915757,
+    "equity_curve": 13922.213821212292,
     "bnh_curve": 13806.866360796586
   },
   {
@@ -3824,7 +3824,7 @@
     "ml_down_prob": 38.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13723.377235730382,
+    "equity_curve": 14165.661842915757,
     "bnh_curve": 13940.994705957179
   },
   {
@@ -3836,7 +3836,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13922.594713146163,
+    "equity_curve": 13723.377235730382,
     "bnh_curve": 13699.178049607648
   },
   {
@@ -3848,7 +3848,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13796.946901409787,
+    "equity_curve": 13922.594713146163,
     "bnh_curve": 14005.136435448827
   },
   {
@@ -3860,7 +3860,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13885.415617586601,
+    "equity_curve": 13796.946901409787,
     "bnh_curve": 13824.575393442772
   },
   {
@@ -3872,7 +3872,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13892.531127293601,
+    "equity_curve": 13885.415617586601,
     "bnh_curve": 13951.212358385306
   },
   {
@@ -3884,7 +3884,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13752.478144179438,
+    "equity_curve": 13892.531127293601,
     "bnh_curve": 13961.425539682295
   },
   {
@@ -3896,7 +3896,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13712.274747303974,
+    "equity_curve": 13752.478144179438,
     "bnh_curve": 13760.357654721814
   },
   {
@@ -3908,7 +3908,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13688.839260651597,
+    "equity_curve": 13712.274747303974,
     "bnh_curve": 13702.891324015942
   },
   {
@@ -3920,7 +3920,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13798.769406973423,
+    "equity_curve": 13688.839260651597,
     "bnh_curve": 13669.434967509409
   },
   {
@@ -3932,7 +3932,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13968.524498580684,
+    "equity_curve": 13798.769406973423,
     "bnh_curve": 13826.255420967058
   },
   {
@@ -3944,7 +3944,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13748.930210663311,
+    "equity_curve": 13968.524498580684,
     "bnh_curve": 14069.24574923974
   },
   {
@@ -3956,7 +3956,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13794.20632898584,
+    "equity_curve": 13748.930210663311,
     "bnh_curve": 13753.277618568249
   },
   {
@@ -3968,7 +3968,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13763.82849670979,
+    "equity_curve": 13794.20632898584,
     "bnh_curve": 13817.978239451875
   },
   {
@@ -3980,7 +3980,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13277.885925295988,
+    "equity_curve": 13763.82849670979,
     "bnh_curve": 13774.506549201109
   },
   {
@@ -3992,7 +3992,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 13268.591405148281,
+    "equity_curve": 13277.885925295988,
     "bnh_curve": 13079.764308793307
   },
   {
@@ -4028,7 +4028,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13223.00991383393,
+    "equity_curve": 13268.591405148281,
     "bnh_curve": 12119.158551004763
   },
   {
@@ -4040,7 +4040,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 13404.999557809086,
+    "equity_curve": 13223.00991383393,
     "bnh_curve": 12071.769032096237
   },
   {
@@ -4052,7 +4052,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14301.166283589193,
+    "equity_curve": 13404.999557809086,
     "bnh_curve": 12309.11902844109
   },
   {
@@ -4064,7 +4064,7 @@
     "ml_down_prob": 68.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 16494.765407200775,
+    "equity_curve": 14301.166283589193,
     "bnh_curve": 13484.695653456933
   },
   {
@@ -4076,7 +4076,7 @@
     "ml_down_prob": 66.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 16095.792759070438,
+    "equity_curve": 16494.765407200775,
     "bnh_curve": 12313.948967850554
   },
   {
@@ -4088,7 +4088,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 16493.831427922483,
+    "equity_curve": 16095.792759070438,
     "bnh_curve": 12479.419942273227
   },
   {
@@ -4100,7 +4100,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 16409.51177573218,
+    "equity_curve": 16493.831427922483,
     "bnh_curve": 12966.074621837319
   },
   {
@@ -4112,7 +4112,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 15998.490528433294,
+    "equity_curve": 16409.51177573218,
     "bnh_curve": 12871.381653294631
   },
   {
@@ -4124,7 +4124,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 15922.566493853816,
+    "equity_curve": 15998.490528433294,
     "bnh_curve": 12410.811552776897
   },
   {
@@ -4136,7 +4136,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 15204.10462248923,
+    "equity_curve": 15922.566493853816,
     "bnh_curve": 12326.671571497523
   },
   {
@@ -4148,7 +4148,7 @@
     "ml_down_prob": 63.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 15193.461749253489,
+    "equity_curve": 15204.10462248923,
     "bnh_curve": 11532.090090609709
   },
   {
@@ -4184,7 +4184,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14845.709006970319,
+    "equity_curve": 15193.461749253489,
     "bnh_curve": 11978.676728500175
   },
   {
@@ -4196,7 +4196,7 @@
     "ml_down_prob": 60.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 14835.31701066544,
+    "equity_curve": 14845.709006970319,
     "bnh_curve": 11598.715533447303
   },
   {
@@ -4232,7 +4232,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 15012.92850868539,
+    "equity_curve": 14835.31701066544,
     "bnh_curve": 11815.187582953455
   },
   {
@@ -4244,7 +4244,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 14843.28670543202,
+    "equity_curve": 15012.92850868539,
     "bnh_curve": 12029.22957268729
   },
   {
@@ -4256,7 +4256,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 16161.321383735478,
+    "equity_curve": 14843.28670543202,
     "bnh_curve": 11835.048347458755
   },
   {
@@ -4268,7 +4268,7 @@
     "ml_down_prob": 63.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 16999.877133882703,
+    "equity_curve": 16161.321383735478,
     "bnh_curve": 12426.77237314898
   },
   {
@@ -4280,7 +4280,7 @@
     "ml_down_prob": 64.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 17044.941463251966,
+    "equity_curve": 16999.877133882703,
     "bnh_curve": 12042.322162435748
   },
   {
@@ -4292,7 +4292,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 16972.48302657643,
+    "equity_curve": 17044.941463251966,
     "bnh_curve": 12024.587420785529
   },
   {
@@ -4304,7 +4304,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 17287.369324419193,
+    "equity_curve": 16972.48302657643,
     "bnh_curve": 11994.432994622795
   },
   {
@@ -4316,7 +4316,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 17490.503635648474,
+    "equity_curve": 17287.369324419193,
     "bnh_curve": 12312.332653944957
   },
   {
@@ -4328,7 +4328,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 17486.696124384354,
+    "equity_curve": 17490.503635648474,
     "bnh_curve": 12519.011808480887
   },
   {
@@ -4340,7 +4340,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 17406.8162010172,
+    "equity_curve": 17486.696124384354,
     "bnh_curve": 12515.118571044373
   },
   {
@@ -4352,7 +4352,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 17445.546098802344,
+    "equity_curve": 17406.8162010172,
     "bnh_curve": 12433.447771934754
   },
   {
@@ -4364,7 +4364,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 17049.963056030418,
+    "equity_curve": 17445.546098802344,
     "bnh_curve": 12472.968100044242
   },
   {
@@ -4376,7 +4376,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 16801.57169867864,
+    "equity_curve": 17049.963056030418,
     "bnh_curve": 12068.927628259427
   },
   {
@@ -4388,7 +4388,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 16778.80424928599,
+    "equity_curve": 16801.57169867864,
     "bnh_curve": 11817.748423311494
   },
   {
@@ -4400,7 +4400,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 16791.911333093263,
+    "equity_curve": 16778.80424928599,
     "bnh_curve": 11780.110441410185
   },
   {
@@ -4412,7 +4412,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 17158.15012335402,
+    "equity_curve": 16791.911333093263,
     "bnh_curve": 11810.78463656746
   },
   {
@@ -4424,7 +4424,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 16989.169019562753,
+    "equity_curve": 17158.15012335402,
     "bnh_curve": 12185.681157826233
   },
   {
@@ -4436,7 +4436,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 17071.310939479416,
+    "equity_curve": 16989.169019562753,
     "bnh_curve": 11801.74177384527
   },
   {
@@ -4448,7 +4448,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 17177.860970421734,
+    "equity_curve": 17071.310939479416,
     "bnh_curve": 11890.036553732602
   },
   {
@@ -4460,7 +4460,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 17129.24198939026,
+    "equity_curve": 17177.860970421734,
     "bnh_curve": 11996.052661876744
   },
   {
@@ -4472,7 +4472,7 @@
     "ml_down_prob": 53.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 16796.96181859778,
+    "equity_curve": 17129.24198939026,
     "bnh_curve": 11947.548713532617
   },
   {
@@ -4484,7 +4484,7 @@
     "ml_down_prob": 65.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 16791.922730052203,
+    "equity_curve": 16796.96181859778,
     "bnh_curve": 11190.63092355014
   },
   {
@@ -4520,7 +4520,7 @@
     "ml_down_prob": 64.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 17838.775572286457,
+    "equity_curve": 16791.922730052203,
     "bnh_curve": 11814.367130390034
   },
   {
@@ -4532,7 +4532,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 18385.28031434537,
+    "equity_curve": 17838.775572286457,
     "bnh_curve": 11392.605330348406
   },
   {
@@ -4544,7 +4544,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 18675.722553951615,
+    "equity_curve": 18385.28031434537,
     "bnh_curve": 11933.246682811921
   },
   {
@@ -4556,7 +4556,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 18430.143923323034,
+    "equity_curve": 18675.722553951615,
     "bnh_curve": 12202.555206732808
   },
   {
@@ -4568,7 +4568,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 18479.39831526748,
+    "equity_curve": 18430.143923323034,
     "bnh_curve": 11973.328137878954
   },
   {
@@ -4580,7 +4580,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 18338.42392265025,
+    "equity_curve": 18479.39831526748,
     "bnh_curve": 12096.00368063515
   },
   {
@@ -4592,7 +4592,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 18394.40478936904,
+    "equity_curve": 18338.42392265025,
     "bnh_curve": 11971.041154302984
   },
   {
@@ -4604,7 +4604,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 18526.466722317167,
+    "equity_curve": 18394.40478936904,
     "bnh_curve": 12023.246081444782
   },
   {
@@ -4616,7 +4616,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 18458.497652396734,
+    "equity_curve": 18526.466722317167,
     "bnh_curve": 12146.560995953403
   },
   {
@@ -4628,7 +4628,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 18552.226707158046,
+    "equity_curve": 18458.497652396734,
     "bnh_curve": 12082.899913058856
   },
   {
@@ -4640,7 +4640,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 18569.156284064407,
+    "equity_curve": 18552.226707158046,
     "bnh_curve": 12170.549732279846
   },
   {
@@ -4652,7 +4652,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 18926.964793313316,
+    "equity_curve": 18569.156284064407,
     "bnh_curve": 12186.415541115291
   },
   {
@@ -4664,7 +4664,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19823.60398909713,
+    "equity_curve": 18926.964793313316,
     "bnh_curve": 12521.872214625026
   },
   {
@@ -4676,7 +4676,7 @@
     "ml_down_prob": 63.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 19676.066875553097,
+    "equity_curve": 19823.60398909713,
     "bnh_curve": 13369.310290017685
   },
   {
@@ -4688,7 +4688,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19662.75448776498,
+    "equity_curve": 19676.066875553097,
     "bnh_curve": 13406.112170396596
   },
   {
@@ -4700,7 +4700,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19776.55110186131,
+    "equity_curve": 19662.75448776498,
     "bnh_curve": 13441.121127190043
   },
   {
@@ -4712,7 +4712,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19765.798657234063,
+    "equity_curve": 19776.55110186131,
     "bnh_curve": 13552.24885600521
   },
   {
@@ -4724,7 +4724,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19635.388154128937,
+    "equity_curve": 19765.798657234063,
     "bnh_curve": 13541.722695528713
   },
   {
@@ -4736,7 +4736,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19814.816878291364,
+    "equity_curve": 19635.388154128937,
     "bnh_curve": 13414.086432777325
   },
   {
@@ -4748,7 +4748,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19713.47319638278,
+    "equity_curve": 19814.816878291364,
     "bnh_curve": 13589.198283711603
   },
   {
@@ -4760,7 +4760,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19702.133801053325,
+    "equity_curve": 19713.47319638278,
     "bnh_curve": 13489.908992361297
   },
   {
@@ -4772,7 +4772,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20036.65015033266,
+    "equity_curve": 19702.133801053325,
     "bnh_curve": 13478.82394049282
   },
   {
@@ -4784,7 +4784,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20097.369980694577,
+    "equity_curve": 20036.65015033266,
     "bnh_curve": 13805.75640249212
   },
   {
@@ -4796,7 +4796,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19949.550124984307,
+    "equity_curve": 20097.369980694577,
     "bnh_curve": 13865.524247950154
   },
   {
@@ -4808,7 +4808,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19720.06402569662,
+    "equity_curve": 19949.550124984307,
     "bnh_curve": 13719.833557672338
   },
   {
@@ -4820,7 +4820,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19783.302789899204,
+    "equity_curve": 19720.06402569662,
     "bnh_curve": 13494.371181234841
   },
   {
@@ -4832,7 +4832,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20083.575709504334,
+    "equity_curve": 19783.302789899204,
     "bnh_curve": 13556.191275884217
   },
   {
@@ -4844,7 +4844,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20116.955630792305,
+    "equity_curve": 20083.575709504334,
     "bnh_curve": 13850.130143449534
   },
   {
@@ -4856,7 +4856,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21018.060584681247,
+    "equity_curve": 20116.955630792305,
     "bnh_curve": 13883.01531295347
   },
   {
@@ -4868,7 +4868,7 @@
     "ml_down_prob": 61.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 21064.431478745748,
+    "equity_curve": 21018.060584681247,
     "bnh_curve": 14771.395536156808
   },
   {
@@ -4880,7 +4880,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21258.23550904079,
+    "equity_curve": 21064.431478745748,
     "bnh_curve": 14732.6777760862
   },
   {
@@ -4892,7 +4892,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21174.381696795816,
+    "equity_curve": 21258.23550904079,
     "bnh_curve": 14979.552399533124
   },
   {
@@ -4904,7 +4904,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 21087.02303773379,
+    "equity_curve": 21174.381696795816,
     "bnh_curve": 14895.141914820033
   },
   {
@@ -4916,7 +4916,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21273.31540467908,
+    "equity_curve": 21087.02303773379,
     "bnh_curve": 14710.0862682397
   },
   {
@@ -4928,7 +4928,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 21226.19997890758,
+    "equity_curve": 21273.31540467908,
     "bnh_curve": 14904.220546591308
   },
   {
@@ -4940,7 +4940,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21247.148590655233,
+    "equity_curve": 21226.19997890758,
     "bnh_curve": 14814.025535971256
   },
   {
@@ -4952,7 +4952,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21210.54096648279,
+    "equity_curve": 21247.148590655233,
     "bnh_curve": 14843.388571922951
   },
   {
@@ -4964,7 +4964,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21167.758425801425,
+    "equity_curve": 21210.54096648279,
     "bnh_curve": 14806.853841629407
   },
   {
@@ -4976,7 +4976,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21635.1396876927,
+    "equity_curve": 21167.758425801425,
     "bnh_curve": 14764.188072765872
   },
   {
@@ -4988,7 +4988,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21515.653204169303,
+    "equity_curve": 21635.1396876927,
     "bnh_curve": 15229.88991404474
   },
   {
@@ -5000,7 +5000,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21684.63784522842,
+    "equity_curve": 21515.653204169303,
     "bnh_curve": 15109.730500335223
   },
   {
@@ -5012,7 +5012,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22094.993874936798,
+    "equity_curve": 21684.63784522842,
     "bnh_curve": 15279.262379612
   },
   {
@@ -5024,7 +5024,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22376.35183731029,
+    "equity_curve": 22094.993874936798,
     "bnh_curve": 15692.322240680543
   },
   {
@@ -5036,7 +5036,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20771.75602474607,
+    "equity_curve": 22376.35183731029,
     "bnh_curve": 15977.788314743488
   },
   {
@@ -5048,7 +5048,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20817.05006974224,
+    "equity_curve": 20771.75602474607,
     "bnh_curve": 15350.329891233028
   },
   {
@@ -5060,7 +5060,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20985.254059093255,
+    "equity_curve": 20817.05006974224,
     "bnh_curve": 15422.348636003202
   },
   {
@@ -5072,7 +5072,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21102.313197489148,
+    "equity_curve": 20985.254059093255,
     "bnh_curve": 15600.368957741328
   },
   {
@@ -5084,7 +5084,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20947.61204675963,
+    "equity_curve": 21102.313197489148,
     "bnh_curve": 15658.311463913165
   },
   {
@@ -5096,7 +5096,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20535.14241356014,
+    "equity_curve": 20947.61204675963,
     "bnh_curve": 15594.538602740222
   },
   {
@@ -5108,7 +5108,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19794.32618352053,
+    "equity_curve": 20535.14241356014,
     "bnh_curve": 15423.947065384256
   },
   {
@@ -5120,7 +5120,7 @@
     "ml_down_prob": 38.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19240.128468028684,
+    "equity_curve": 19794.32618352053,
     "bnh_curve": 15114.82088313335
   },
   {
@@ -5132,7 +5132,7 @@
     "ml_down_prob": 38.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19453.094122324852,
+    "equity_curve": 19240.128468028684,
     "bnh_curve": 14879.719865749816
   },
   {
@@ -5144,7 +5144,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19792.416635558264,
+    "equity_curve": 19453.094122324852,
     "bnh_curve": 14971.220446661528
   },
   {
@@ -5156,7 +5156,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19869.78132791683,
+    "equity_curve": 19792.416635558264,
     "bnh_curve": 15116.300827539306
   },
   {
@@ -5168,7 +5168,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19718.092998233536,
+    "equity_curve": 19869.78132791683,
     "bnh_curve": 15149.126754555691
   },
   {
@@ -5180,7 +5180,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19482.283392474805,
+    "equity_curve": 19718.092998233536,
     "bnh_curve": 15084.876600134001
   },
   {
@@ -5192,7 +5192,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19050.344647304537,
+    "equity_curve": 19482.283392474805,
     "bnh_curve": 14984.65396015909
   },
   {
@@ -5204,7 +5204,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19419.827549608093,
+    "equity_curve": 19050.344647304537,
     "bnh_curve": 14533.101013359517
   },
   {
@@ -5216,7 +5216,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19579.385654352216,
+    "equity_curve": 19419.827549608093,
     "bnh_curve": 14935.773319016771
   },
   {
@@ -5228,7 +5228,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19602.487469796928,
+    "equity_curve": 19579.385654352216,
     "bnh_curve": 15111.081899721024
   },
   {
@@ -5240,7 +5240,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21080.272410652127,
+    "equity_curve": 19602.487469796928,
     "bnh_curve": 15136.55281601899
   },
   {
@@ -5252,7 +5252,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21067.588988600462,
+    "equity_curve": 21080.272410652127,
     "bnh_curve": 15780.46053097812
   },
   {
@@ -5264,7 +5264,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20834.570918626046,
+    "equity_curve": 21067.588988600462,
     "bnh_curve": 15775.185714020641
   },
   {
@@ -5276,7 +5276,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20464.544193008103,
+    "equity_curve": 20834.570918626046,
     "bnh_curve": 15550.46889870004
   },
   {
@@ -5288,7 +5288,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20486.440435243938,
+    "equity_curve": 20464.544193008103,
     "bnh_curve": 15155.926227230486
   },
   {
@@ -5300,7 +5300,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20402.82822232211,
+    "equity_curve": 20486.440435243938,
     "bnh_curve": 15179.092275427936
   },
   {
@@ -5312,7 +5312,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20413.60915641192,
+    "equity_curve": 20402.82822232211,
     "bnh_curve": 15090.590705725575
   },
   {
@@ -5324,7 +5324,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20582.120039909027,
+    "equity_curve": 20413.60915641192,
     "bnh_curve": 15101.982030076853
   },
   {
@@ -5336,7 +5336,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20285.915755399623,
+    "equity_curve": 20582.120039909027,
     "bnh_curve": 15280.07388991315
   },
   {
@@ -5348,7 +5348,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20362.00839807232,
+    "equity_curve": 20285.915755399623,
     "bnh_curve": 14965.929980745073
   },
   {
@@ -5360,7 +5360,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20312.590986534306,
+    "equity_curve": 20362.00839807232,
     "bnh_curve": 15006.307648249855
   },
   {
@@ -5372,7 +5372,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20125.873135935053,
+    "equity_curve": 20312.590986534306,
     "bnh_curve": 14977.82989626305
   },
   {
@@ -5384,7 +5384,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19982.387493387563,
+    "equity_curve": 20125.873135935053,
     "bnh_curve": 14781.144837598456
   },
   {
@@ -5396,7 +5396,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19808.629341206815,
+    "equity_curve": 19982.387493387563,
     "bnh_curve": 14630.600734472711
   },
   {
@@ -5408,7 +5408,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21405.871819410524,
+    "equity_curve": 19808.629341206815,
     "bnh_curve": 14448.85596049845
   },
   {
@@ -5420,7 +5420,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21448.65319379129,
+    "equity_curve": 21405.871819410524,
     "bnh_curve": 15105.666242132766
   },
   {
@@ -5432,7 +5432,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21634.920827137237,
+    "equity_curve": 21448.65319379129,
     "bnh_curve": 15172.60578193265
   },
   {
@@ -5444,7 +5444,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21578.319155108504,
+    "equity_curve": 21634.920827137237,
     "bnh_curve": 15360.840402750551
   },
   {
@@ -5456,7 +5456,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21596.45591417831,
+    "equity_curve": 21578.319155108504,
     "bnh_curve": 15303.429961183874
   },
   {
@@ -5468,7 +5468,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21630.233800189315,
+    "equity_curve": 21596.45591417831,
     "bnh_curve": 15321.8051923693
   },
   {
@@ -5480,7 +5480,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21779.4715063011,
+    "equity_curve": 21630.233800189315,
     "bnh_curve": 15356.039525693468
   },
   {
@@ -5492,7 +5492,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21603.61220411169,
+    "equity_curve": 21779.4715063011,
     "bnh_curve": 15507.395139120363
   },
   {
@@ -5504,7 +5504,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21400.766893185766,
+    "equity_curve": 21603.61220411169,
     "bnh_curve": 15328.516360204161
   },
   {
@@ -5516,7 +5516,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21848.77854977807,
+    "equity_curve": 21400.766893185766,
     "bnh_curve": 15122.90804157526
   },
   {
@@ -5528,7 +5528,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21959.580481997364,
+    "equity_curve": 21848.77854977807,
     "bnh_curve": 15575.177487139352
   },
   {
@@ -5540,7 +5540,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21733.361899591906,
+    "equity_curve": 21959.580481997364,
     "bnh_curve": 15688.015423613966
   },
   {
@@ -5552,7 +5552,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21761.081360201435,
+    "equity_curve": 21733.361899591906,
     "bnh_curve": 15457.141860719348
   },
   {
@@ -5564,7 +5564,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21901.949487762482,
+    "equity_curve": 21761.081360201435,
     "bnh_curve": 15485.30551574386
   },
   {
@@ -5576,7 +5576,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21771.107093757284,
+    "equity_curve": 21901.949487762482,
     "bnh_curve": 15628.509139327376
   },
   {
@@ -5588,7 +5588,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21862.633378093906,
+    "equity_curve": 21771.107093757284,
     "bnh_curve": 15495.130826414816
   },
   {
@@ -5600,7 +5600,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22196.42084730346,
+    "equity_curve": 21862.633378093906,
     "bnh_curve": 15588.190714310145
   },
   {
@@ -5612,7 +5612,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22846.89278637789,
+    "equity_curve": 22196.42084730346,
     "bnh_curve": 15928.179997008814
   },
   {
@@ -5624,7 +5624,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23057.82682072417,
+    "equity_curve": 22846.89278637789,
     "bnh_curve": 16595.007847952926
   },
   {
@@ -5636,7 +5636,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23046.59664617468,
+    "equity_curve": 23057.82682072417,
     "bnh_curve": 16813.884248227365
   },
   {
@@ -5648,7 +5648,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23277.50832882951,
+    "equity_curve": 23046.59664617468,
     "bnh_curve": 16802.1855336105
   },
   {
@@ -5660,7 +5660,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23377.85777961149,
+    "equity_curve": 23277.50832882951,
     "bnh_curve": 17042.680970709396
   },
   {
@@ -5672,7 +5672,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23094.872657539745,
+    "equity_curve": 23377.85777961149,
     "bnh_curve": 17147.639656339918
   },
   {
@@ -5684,7 +5684,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23226.826047411665,
+    "equity_curve": 23094.872657539745,
     "bnh_curve": 16851.112003846963
   },
   {
@@ -5696,7 +5696,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23302.32007967586,
+    "equity_curve": 23226.826047411665,
     "bnh_curve": 16988.654057629752
   },
   {
@@ -5708,7 +5708,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23126.388791592533,
+    "equity_curve": 23302.32007967586,
     "bnh_curve": 17067.537106476186
   },
   {
@@ -5720,7 +5720,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23078.661872249348,
+    "equity_curve": 23126.388791592533,
     "bnh_curve": 16883.45281313511
   },
   {
@@ -5732,7 +5732,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22965.817672037643,
+    "equity_curve": 23078.661872249348,
     "bnh_curve": 16874.403243716217
   },
   {
@@ -5744,7 +5744,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22984.833358626147,
+    "equity_curve": 22965.817672037643,
     "bnh_curve": 16782.950727464213
   },
   {
@@ -5756,7 +5756,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23334.99185720855,
+    "equity_curve": 22984.833358626147,
     "bnh_curve": 16802.80254970724
   },
   {
@@ -5768,7 +5768,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23166.13394994525,
+    "equity_curve": 23334.99185720855,
     "bnh_curve": 17168.48742304345
   },
   {
@@ -5780,7 +5780,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23113.293443843217,
+    "equity_curve": 23166.13394994525,
     "bnh_curve": 16991.00810817276
   },
   {
@@ -5792,7 +5792,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23013.222921633005,
+    "equity_curve": 23113.293443843217,
     "bnh_curve": 16935.64320910072
   },
   {
@@ -5804,7 +5804,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23055.87811689289,
+    "equity_curve": 23013.222921633005,
     "bnh_curve": 16830.89466663358
   },
   {
@@ -5816,7 +5816,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23261.281841490163,
+    "equity_curve": 23055.87811689289,
     "bnh_curve": 16875.46066622984
   },
   {
@@ -5828,7 +5828,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23053.532129172163,
+    "equity_curve": 23261.281841490163,
     "bnh_curve": 17090.235921469946
   },
   {
@@ -5840,7 +5840,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23053.213534981736,
+    "equity_curve": 23053.532129172163,
     "bnh_curve": 16872.18556267285
   },
   {
@@ -5852,7 +5852,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23040.76583656104,
+    "equity_curve": 23053.213534981736,
     "bnh_curve": 16871.852463403233
   },
   {
@@ -5864,7 +5864,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22757.01919862567,
+    "equity_curve": 23040.76583656104,
     "bnh_curve": 16858.838118449654
   },
   {
@@ -5876,7 +5876,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22421.500896659923,
+    "equity_curve": 22757.01919862567,
     "bnh_curve": 16562.243398989656
   },
   {
@@ -5888,7 +5888,7 @@
     "ml_down_prob": 37.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22114.66154626905,
+    "equity_curve": 22421.500896659923,
     "bnh_curve": 16213.406865555993
   },
   {
@@ -5900,7 +5900,7 @@
     "ml_down_prob": 35.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22712.767046317545,
+    "equity_curve": 22114.66154626905,
     "bnh_curve": 16099.92285063225
   },
   {
@@ -5912,7 +5912,7 @@
     "ml_down_prob": 35.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23018.5226153468,
+    "equity_curve": 22712.767046317545,
     "bnh_curve": 16341.830047387282
   },
   {
@@ -5924,7 +5924,7 @@
     "ml_down_prob": 34.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22683.50477256529,
+    "equity_curve": 23018.5226153468,
     "bnh_curve": 16464.04729920206
   },
   {
@@ -5936,7 +5936,7 @@
     "ml_down_prob": 38.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23000.64024753653,
+    "equity_curve": 22683.50477256529,
     "bnh_curve": 16330.923840764242
   },
   {
@@ -5948,7 +5948,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23889.252068863134,
+    "equity_curve": 23000.64024753653,
     "bnh_curve": 16457.768713304587
   },
   {
@@ -5960,7 +5960,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23748.0792073306,
+    "equity_curve": 23889.252068863134,
     "bnh_curve": 16811.009310907033
   },
   {
@@ -5972,7 +5972,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23653.027735700813,
+    "equity_curve": 23748.0792073306,
     "bnh_curve": 16695.3791530381
   },
   {
@@ -5984,7 +5984,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24678.63552596268,
+    "equity_curve": 23653.027735700813,
     "bnh_curve": 16668.428292334178
   },
   {
@@ -5996,7 +5996,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24568.2781758932,
+    "equity_curve": 24678.63552596268,
     "bnh_curve": 17069.95710620345
   },
   {
@@ -6008,7 +6008,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24777.068267172574,
+    "equity_curve": 24568.2781758932,
     "bnh_curve": 16987.643581993056
   },
   {
@@ -6020,7 +6020,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 25234.745210676505,
+    "equity_curve": 24777.068267172574,
     "bnh_curve": 17193.88233011211
   },
   {
@@ -6032,7 +6032,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24520.908375224404,
+    "equity_curve": 25234.745210676505,
     "bnh_curve": 17647.59930438142
   },
   {
@@ -6044,7 +6044,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24381.510244644713,
+    "equity_curve": 24520.908375224404,
     "bnh_curve": 16934.438239259616
   },
   {
@@ -6056,7 +6056,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24395.03033496797,
+    "equity_curve": 24381.510244644713,
     "bnh_curve": 16796.909598870236
   },
   {
@@ -6068,7 +6068,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24389.46529566819,
+    "equity_curve": 24395.03033496797,
     "bnh_curve": 16810.215685130424
   },
   {
@@ -6080,7 +6080,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24214.927868705472,
+    "equity_curve": 24389.46529566819,
     "bnh_curve": 16804.737431706268
   },
   {
@@ -6092,7 +6092,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23716.101327093544,
+    "equity_curve": 24214.927868705472,
     "bnh_curve": 16632.938688943632
   },
   {
@@ -6104,7 +6104,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23928.49804431097,
+    "equity_curve": 23716.101327093544,
     "bnh_curve": 16143.456018936135
   },
   {
@@ -6116,7 +6116,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23656.495130262458,
+    "equity_curve": 23928.49804431097,
     "bnh_curve": 16349.995450624068
   },
   {
@@ -6128,7 +6128,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24312.73353441547,
+    "equity_curve": 23656.495130262458,
     "bnh_curve": 16084.487388168627
   },
   {
@@ -6140,7 +6140,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24094.342534919837,
+    "equity_curve": 24312.73353441547,
     "bnh_curve": 16721.8996673702
   },
   {
@@ -6152,7 +6152,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23814.266197524743,
+    "equity_curve": 24094.342534919837,
     "bnh_curve": 16507.32002411728
   },
   {
@@ -6164,7 +6164,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23324.403637752428,
+    "equity_curve": 23814.266197524743,
     "bnh_curve": 16233.200563094255
   },
   {
@@ -6176,7 +6176,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23573.229794565854,
+    "equity_curve": 23324.403637752428,
     "bnh_curve": 15756.173346648362
   },
   {
@@ -6188,7 +6188,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 23527.090296226386,
+    "equity_curve": 23573.229794565854,
     "bnh_curve": 15996.298797645772
   },
   {
@@ -6200,7 +6200,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23713.463266416922,
+    "equity_curve": 23527.090296226386,
     "bnh_curve": 15913.229652273423
   },
   {
@@ -6212,7 +6212,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23103.73719812894,
+    "equity_curve": 23713.463266416922,
     "bnh_curve": 16102.482573207506
   },
   {
@@ -6224,7 +6224,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23162.9962100966,
+    "equity_curve": 23103.73719812894,
     "bnh_curve": 15511.010048643671
   },
   {
@@ -6236,7 +6236,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23077.854763328884,
+    "equity_curve": 23162.9962100966,
     "bnh_curve": 15567.84483207661
   },
   {
@@ -6248,7 +6248,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23229.178358289148,
+    "equity_curve": 23077.854763328884,
     "bnh_curve": 15486.096905954899
   },
   {
@@ -6260,7 +6260,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23949.108726614442,
+    "equity_curve": 23229.178358289148,
     "bnh_curve": 15631.159402308132
   },
   {
@@ -6272,7 +6272,7 @@
     "ml_down_prob": 38.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24151.711303902186,
+    "equity_curve": 23949.108726614442,
     "bnh_curve": 15910.156867400334
   },
   {
@@ -6284,7 +6284,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23762.749168725786,
+    "equity_curve": 24151.711303902186,
     "bnh_curve": 15984.93206451574
   },
   {
@@ -6296,7 +6296,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23734.696872940698,
+    "equity_curve": 23762.749168725786,
     "bnh_curve": 15841.911757308791
   },
   {
@@ -6308,7 +6308,7 @@
     "ml_down_prob": 38.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23570.10624480931,
+    "equity_curve": 23734.696872940698,
     "bnh_curve": 15831.521966331937
   },
   {
@@ -6320,7 +6320,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23685.165909767802,
+    "equity_curve": 23570.10624480931,
     "bnh_curve": 15770.53014872547
   },
   {
@@ -6332,7 +6332,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23819.961137809805,
+    "equity_curve": 23685.165909767802,
     "bnh_curve": 15905.439824052048
   },
   {
@@ -6344,7 +6344,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23739.488663006465,
+    "equity_curve": 23819.961137809805,
     "bnh_curve": 16034.753878762149
   },
   {
@@ -6356,7 +6356,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24100.776824201686,
+    "equity_curve": 23739.488663006465,
     "bnh_curve": 15957.366423280644
   },
   {
@@ -6368,7 +6368,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24330.56957384741,
+    "equity_curve": 24100.776824201686,
     "bnh_curve": 16304.299372633235
   },
   {
@@ -6380,7 +6380,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24418.159667099615,
+    "equity_curve": 24330.56957384741,
     "bnh_curve": 16526.379338366485
   },
   {
@@ -6392,7 +6392,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24395.918786744583,
+    "equity_curve": 24418.159667099615,
     "bnh_curve": 16611.372187910016
   },
   {
@@ -6404,7 +6404,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24315.967831657814,
+    "equity_curve": 24395.918786744583,
     "bnh_curve": 16589.757622216694
   },
   {
@@ -6416,7 +6416,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24321.457129075327,
+    "equity_curve": 24315.967831657814,
     "bnh_curve": 16512.088485473632
   },
   {
@@ -6428,7 +6428,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 24400.070433872133,
+    "equity_curve": 24321.457129075327,
     "bnh_curve": 16517.413602656387
   },
   {
@@ -6440,7 +6440,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 24376.597407431957,
+    "equity_curve": 24400.070433872133,
     "bnh_curve": 16717.47883645966
   },
   {
@@ -6452,7 +6452,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24464.7770808286,
+    "equity_curve": 24376.597407431957,
     "bnh_curve": 16663.871091923997
   },
   {
@@ -6464,7 +6464,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24253.030648231565,
+    "equity_curve": 24464.7770808286,
     "bnh_curve": 16759.545473750994
   },
   {
@@ -6476,7 +6476,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 24245.410428270585,
+    "equity_curve": 24253.030648231565,
     "bnh_curve": 16552.32195899928
   },
   {
@@ -6488,7 +6488,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24174.745562616907,
+    "equity_curve": 24245.410428270585,
     "bnh_curve": 16557.058004654893
   },
   {
@@ -6500,7 +6500,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 24004.275166288422,
+    "equity_curve": 24174.745562616907,
     "bnh_curve": 16497.557309282223
   },
   {
@@ -6512,7 +6512,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 23957.393857132414,
+    "equity_curve": 24004.275166288422,
     "bnh_curve": 16131.62764151633
   },
   {
@@ -6524,7 +6524,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 24041.712933777788,
+    "equity_curve": 23957.393857132414,
     "bnh_curve": 16026.608595615475
   },
   {
@@ -6536,7 +6536,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23396.871779464967,
+    "equity_curve": 24041.712933777788,
     "bnh_curve": 16214.629719921639
   },
   {
@@ -6548,7 +6548,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 23496.52687075086,
+    "equity_curve": 23396.871779464967,
     "bnh_curve": 15602.357493313983
   },
   {
@@ -6560,7 +6560,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23491.897082308555,
+    "equity_curve": 23496.52687075086,
     "bnh_curve": 15697.29413850357
   },
   {
@@ -6572,7 +6572,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23857.82416400841,
+    "equity_curve": 23491.897082308555,
     "bnh_curve": 15692.8755431586
   },
   {
@@ -6584,7 +6584,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24197.08999478248,
+    "equity_curve": 23857.82416400841,
     "bnh_curve": 16042.080944910971
   },
   {
@@ -6596,7 +6596,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24146.113874028877,
+    "equity_curve": 24197.08999478248,
     "bnh_curve": 16367.971633355623
   },
   {
@@ -6608,7 +6608,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24826.73980553528,
+    "equity_curve": 24146.113874028877,
     "bnh_curve": 16318.710946066756
   },
   {
@@ -6620,7 +6620,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 24944.334657274714,
+    "equity_curve": 24826.73980553528,
     "bnh_curve": 16975.83756022893
   },
   {
@@ -6632,7 +6632,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 25042.635566293397,
+    "equity_curve": 24944.334657274714,
     "bnh_curve": 17266.61533808123
   },
   {
@@ -6644,7 +6644,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 25052.399241491385,
+    "equity_curve": 25042.635566293397,
     "bnh_curve": 17493.430231687307
   },
   {
@@ -6656,7 +6656,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 25198.17187019499,
+    "equity_curve": 25052.399241491385,
     "bnh_curve": 17516.164815730157
   },
   {
@@ -6668,7 +6668,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 25375.118869735383,
+    "equity_curve": 25198.17187019499,
     "bnh_curve": 17671.838424051468
   },
   {
@@ -6680,7 +6680,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24905.09294546587,
+    "equity_curve": 25375.118869735383,
     "bnh_curve": 17849.11765580383
   },
   {
@@ -6692,7 +6692,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 25178.32588795911,
+    "equity_curve": 24905.09294546587,
     "bnh_curve": 17376.801893792304
   },
   {
@@ -6704,7 +6704,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24942.67812457417,
+    "equity_curve": 25178.32588795911,
     "bnh_curve": 17649.145197971626
   },
   {
@@ -6716,7 +6716,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23724.528487689357,
+    "equity_curve": 24942.67812457417,
     "bnh_curve": 17413.172310016605
   },
   {
@@ -6728,7 +6728,7 @@
     "ml_down_prob": 63.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 24570.667226938112,
+    "equity_curve": 23724.528487689357,
     "bnh_curve": 16198.281028923524
   },
   {
@@ -6740,7 +6740,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 25184.594177217983,
+    "equity_curve": 24570.667226938112,
     "bnh_curve": 15853.97039798209
   },
   {
@@ -6752,7 +6752,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 25200.10223984721,
+    "equity_curve": 25184.594177217983,
     "bnh_curve": 16478.051999702224
   },
   {
@@ -6764,7 +6764,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24870.715730031916,
+    "equity_curve": 25200.10223984721,
     "bnh_curve": 16492.547406844544
   },
   {
@@ -6776,7 +6776,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24511.271159604727,
+    "equity_curve": 24870.715730031916,
     "bnh_curve": 16184.588189820084
   },
   {
@@ -6788,7 +6788,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24109.033283891662,
+    "equity_curve": 24511.271159604727,
     "bnh_curve": 15850.433733253658
   },
   {
@@ -6800,7 +6800,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23840.997382408288,
+    "equity_curve": 24109.033283891662,
     "bnh_curve": 15478.846966818171
   },
   {
@@ -6812,7 +6812,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 23824.3086842406,
+    "equity_curve": 23840.997382408288,
     "bnh_curve": 15233.006292446405
   },
   {
@@ -6848,7 +6848,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23489.355202808365,
+    "equity_curve": 23824.3086842406,
     "bnh_curve": 15822.643417678988
   },
   {
@@ -6860,7 +6860,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23369.866728404017,
+    "equity_curve": 23489.355202808365,
     "bnh_curve": 15520.460902082004
   },
   {
@@ -6872,7 +6872,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23731.584332998566,
+    "equity_curve": 23369.866728404017,
     "bnh_curve": 15407.673265832667
   },
   {
@@ -6884,7 +6884,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23877.10406999326,
+    "equity_curve": 23731.584332998566,
     "bnh_curve": 15748.357809422952
   },
   {
@@ -6896,7 +6896,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24085.848277803503,
+    "equity_curve": 23877.10406999326,
     "bnh_curve": 15886.311207270239
   },
   {
@@ -6908,7 +6908,7 @@
     "ml_down_prob": 37.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 25185.118917662658,
+    "equity_curve": 24085.848277803503,
     "bnh_curve": 15973.273590079096
   },
   {
@@ -6920,7 +6920,7 @@
     "ml_down_prob": 37.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 25045.277954166122,
+    "equity_curve": 25185.118917662658,
     "bnh_curve": 16378.282061754817
   },
   {
@@ -6932,7 +6932,7 @@
     "ml_down_prob": 37.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 24585.783651891048,
+    "equity_curve": 25045.277954166122,
     "bnh_curve": 16327.759397702868
   },
   {
@@ -6944,7 +6944,7 @@
     "ml_down_prob": 38.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23449.273547617977,
+    "equity_curve": 24585.783651891048,
     "bnh_curve": 16161.338307913835
   },
   {
@@ -6956,7 +6956,7 @@
     "ml_down_prob": 38.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22778.20194896111,
+    "equity_curve": 23449.273547617977,
     "bnh_curve": 15746.294382403774
   },
   {
@@ -6968,7 +6968,7 @@
     "ml_down_prob": 37.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23251.642700828328,
+    "equity_curve": 22778.20194896111,
     "bnh_curve": 15495.945690064318
   },
   {
@@ -6980,7 +6980,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23301.43158203299,
+    "equity_curve": 23251.642700828328,
     "bnh_curve": 15674.879240336937
   },
   {
@@ -6992,7 +6992,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23386.734354927143,
+    "equity_curve": 23301.43158203299,
     "bnh_curve": 15747.540710207884
   },
   {
@@ -7004,7 +7004,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22781.249434520923,
+    "equity_curve": 23386.734354927143,
     "bnh_curve": 15829.896710164066
   },
   {
@@ -7016,7 +7016,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22765.30255991676,
+    "equity_curve": 22781.249434520923,
     "bnh_curve": 15244.414383539442
   },
   {
@@ -7052,7 +7052,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23074.946350458467,
+    "equity_curve": 22765.30255991676,
     "bnh_curve": 14493.803124024036
   },
   {
@@ -7064,7 +7064,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22904.583158041485,
+    "equity_curve": 23074.946350458467,
     "bnh_curve": 14790.130693398667
   },
   {
@@ -7076,7 +7076,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23286.676547055748,
+    "equity_curve": 22904.583158041485,
     "bnh_curve": 14634.13628141836
   },
   {
@@ -7088,7 +7088,7 @@
     "ml_down_prob": 45.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23485.447245151227,
+    "equity_curve": 23286.676547055748,
     "bnh_curve": 14982.887863360444
   },
   {
@@ -7100,7 +7100,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23020.290275157746,
+    "equity_curve": 23485.447245151227,
     "bnh_curve": 15165.58945939777
   },
   {
@@ -7112,7 +7112,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22811.538745246093,
+    "equity_curve": 23020.290275157746,
     "bnh_curve": 14736.486062031132
   },
   {
@@ -7124,7 +7124,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22502.79007112342,
+    "equity_curve": 22811.538745246093,
     "bnh_curve": 14545.582175925148
   },
   {
@@ -7136,7 +7136,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 21665.450304885322,
+    "equity_curve": 22502.79007112342,
     "bnh_curve": 14264.337967437199
   },
   {
@@ -7148,7 +7148,7 @@
     "ml_down_prob": 67.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 21650.284489671903,
+    "equity_curve": 21665.450304885322,
     "bnh_curve": 13506.076602548412
   },
   {
@@ -7184,7 +7184,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 21704.071719323794,
+    "equity_curve": 21650.284489671903,
     "bnh_curve": 13176.441341777512
   },
   {
@@ -7196,7 +7196,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 21600.19334022393,
+    "equity_curve": 21704.071719323794,
     "bnh_curve": 13298.771489653467
   },
   {
@@ -7208,7 +7208,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 21257.714052149127,
+    "equity_curve": 21600.19334022393,
     "bnh_curve": 13086.60625721389
   },
   {
@@ -7220,7 +7220,7 @@
     "ml_down_prob": 62.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 21251.33673793348,
+    "equity_curve": 21257.714052149127,
     "bnh_curve": 12394.96251068321
   },
   {
@@ -7256,7 +7256,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21487.439827750542,
+    "equity_curve": 21251.33673793348,
     "bnh_curve": 12419.730341610068
   },
   {
@@ -7268,7 +7268,7 @@
     "ml_down_prob": 41.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21329.195149932264,
+    "equity_curve": 21487.439827750542,
     "bnh_curve": 12629.416331834833
   },
   {
@@ -7280,7 +7280,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22700.46917010969,
+    "equity_curve": 21329.195149932264,
     "bnh_curve": 12496.54549230619
   },
   {
@@ -7292,7 +7292,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 23046.703729297908,
+    "equity_curve": 22700.46917010969,
     "bnh_curve": 12951.023676651374
   },
   {
@@ -7304,7 +7304,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22880.327617717514,
+    "equity_curve": 23046.703729297908,
     "bnh_curve": 13060.764237031652
   },
   {
@@ -7316,7 +7316,7 @@
     "ml_down_prob": 40.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22849.747943090275,
+    "equity_curve": 22880.327617717514,
     "bnh_curve": 13008.382700209986
   },
   {
@@ -7328,7 +7328,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 22642.657638927958,
+    "equity_curve": 22849.747943090275,
     "bnh_curve": 12998.723939173837
   },
   {
@@ -7340,7 +7340,7 @@
     "ml_down_prob": 39.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20806.348826847265,
+    "equity_curve": 22642.657638927958,
     "bnh_curve": 12933.274403824964
   },
   {
@@ -7352,7 +7352,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 21630.97514094236,
+    "equity_curve": 20806.348826847265,
     "bnh_curve": 12350.561942938977
   },
   {
@@ -7364,7 +7364,7 @@
     "ml_down_prob": 60.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 20651.069492744984,
+    "equity_curve": 21630.97514094236,
     "bnh_curve": 13070.039598572905
   },
   {
@@ -7376,7 +7376,7 @@
     "ml_down_prob": 42.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20385.728158747777,
+    "equity_curve": 20651.069492744984,
     "bnh_curve": 13381.60254729283
   },
   {
@@ -7388,7 +7388,7 @@
     "ml_down_prob": 43.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19959.235664082426,
+    "equity_curve": 20385.728158747777,
     "bnh_curve": 13183.273230153041
   },
   {
@@ -7400,7 +7400,7 @@
     "ml_down_prob": 44.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 19945.264199117566,
+    "equity_curve": 19959.235664082426,
     "bnh_curve": 12789.260387723078
   },
   {
@@ -7436,7 +7436,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20247.083536152768,
+    "equity_curve": 19945.264199117566,
     "bnh_curve": 12968.45549916714
   },
   {
@@ -7448,7 +7448,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20144.520607346774,
+    "equity_curve": 20247.083536152768,
     "bnh_curve": 13261.977433754044
   },
   {
@@ -7460,7 +7460,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20219.667399331905,
+    "equity_curve": 20144.520607346774,
     "bnh_curve": 13166.006839489299
   },
   {
@@ -7472,7 +7472,7 @@
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19876.817670000364,
+    "equity_curve": 20219.667399331905,
     "bnh_curve": 13236.170064838108
   },
   {
@@ -7484,7 +7484,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19881.179190677907,
+    "equity_curve": 19876.817670000364,
     "bnh_curve": 12915.547486654234
   },
   {
@@ -7496,7 +7496,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19553.900834188047,
+    "equity_curve": 19881.179190677907,
     "bnh_curve": 12919.596095897714
   },
   {
@@ -7508,7 +7508,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19281.404413255197,
+    "equity_curve": 19553.900834188047,
     "bnh_curve": 12615.769321825535
   },
   {
@@ -7520,7 +7520,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 19267.90743016592,
+    "equity_curve": 19281.404413255197,
     "bnh_curve": 12364.613590316067
   },
   {
@@ -7556,7 +7556,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19670.906167239566,
+    "equity_curve": 19267.90743016592,
     "bnh_curve": 12227.650548015365
   },
   {
@@ -7568,7 +7568,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19708.512108992418,
+    "equity_curve": 19670.906167239566,
     "bnh_curve": 12605.496898040996
   },
   {
@@ -7580,7 +7580,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19751.886050253746,
+    "equity_curve": 19708.512108992418,
     "bnh_curve": 12639.923490004003
   },
   {
@@ -7592,7 +7592,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19731.333514846458,
+    "equity_curve": 19751.886050253746,
     "bnh_curve": 12679.662903539147
   },
   {
@@ -7604,7 +7604,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19563.38398845216,
+    "equity_curve": 19731.333514846458,
     "bnh_curve": 12660.81485023611
   },
   {
@@ -7616,7 +7616,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19594.396756252725,
+    "equity_curve": 19563.38398845216,
     "bnh_curve": 12506.862627402086
   },
   {
@@ -7628,7 +7628,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19535.341330023086,
+    "equity_curve": 19594.396756252725,
     "bnh_curve": 12535.186125364706
   },
   {
@@ -7640,7 +7640,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19545.795125490287,
+    "equity_curve": 19535.341330023086,
     "bnh_curve": 12481.215101424257
   },
   {
@@ -7652,7 +7652,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19624.270004855774,
+    "equity_curve": 19545.795125490287,
     "bnh_curve": 12490.75649526809
   },
   {
@@ -7664,7 +7664,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19629.539323020446,
+    "equity_curve": 19624.270004855774,
     "bnh_curve": 12562.398547240073
   },
   {
@@ -7676,7 +7676,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19520.394733022287,
+    "equity_curve": 19629.539323020446,
     "bnh_curve": 12567.217308821699
   },
   {
@@ -7688,7 +7688,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19722.994170166137,
+    "equity_curve": 19520.394733022287,
     "bnh_curve": 12467.393717300662
   },
   {
@@ -7700,7 +7700,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19579.156085999442,
+    "equity_curve": 19722.994170166137,
     "bnh_curve": 12652.2470451971
   },
   {
@@ -7712,7 +7712,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19770.72369528653,
+    "equity_curve": 19579.156085999442,
     "bnh_curve": 12520.430274833725
   },
   {
@@ -7724,7 +7724,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 19843.845654034794,
+    "equity_curve": 19770.72369528653,
     "bnh_curve": 12695.43481862074
   },
   {
@@ -7736,7 +7736,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19937.56228600052,
+    "equity_curve": 19843.845654034794,
     "bnh_curve": 12868.944886825611
   },
   {
@@ -7748,7 +7748,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20062.379639963576,
+    "equity_curve": 19937.56228600052,
     "bnh_curve": 12963.159444336765
   },
   {
@@ -7760,7 +7760,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20441.69660544758,
+    "equity_curve": 20062.379639963576,
     "bnh_curve": 13079.094756905719
   },
   {
@@ -7772,7 +7772,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20418.297203086273,
+    "equity_curve": 20441.69660544758,
     "bnh_curve": 13432.358827946626
   },
   {
@@ -7784,7 +7784,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20049.12072893615,
+    "equity_curve": 20418.297203086273,
     "bnh_curve": 13410.39327845914
   },
   {
@@ -7796,7 +7796,7 @@
     "ml_down_prob": 50.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20005.940800635028,
+    "equity_curve": 20049.12072893615,
     "bnh_curve": 13064.009160453472
   },
   {
@@ -7808,7 +7808,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19926.860353762353,
+    "equity_curve": 20005.940800635028,
     "bnh_curve": 13023.81480932526
   },
   {
@@ -7820,7 +7820,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19907.372902732932,
+    "equity_curve": 19926.860353762353,
     "bnh_curve": 12950.270291054989
   },
   {
@@ -7832,7 +7832,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19975.33419213319,
+    "equity_curve": 19907.372902732932,
     "bnh_curve": 12932.177858913905
   },
   {
@@ -7844,7 +7844,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20031.607109604807,
+    "equity_curve": 19975.33419213319,
     "bnh_curve": 12995.24763471574
   },
   {
@@ -7856,7 +7856,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20666.462868234463,
+    "equity_curve": 20031.607109604807,
     "bnh_curve": 13047.546455611391
   },
   {
@@ -7868,7 +7868,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20910.43245373561,
+    "equity_curve": 20666.462868234463,
     "bnh_curve": 13638.277890189467
   },
   {
@@ -7880,7 +7880,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20702.319368606684,
+    "equity_curve": 20910.43245373561,
     "bnh_curve": 13868.279582512601
   },
   {
@@ -7892,7 +7892,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 20692.34458420558,
+    "equity_curve": 20702.319368606684,
     "bnh_curve": 13671.1004638575
   },
   {
@@ -7904,7 +7904,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 20664.713250643636,
+    "equity_curve": 20692.34458420558,
     "bnh_curve": 13667.370422707443
   },
   {
@@ -7916,7 +7916,7 @@
     "ml_down_prob": 52.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 20569.18012539391,
+    "equity_curve": 20664.713250643636,
     "bnh_curve": 13606.535094690733
   },
   {
@@ -7928,7 +7928,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20394.81579318061,
+    "equity_curve": 20569.18012539391,
     "bnh_curve": 13396.858046728239
   },
   {
@@ -7940,7 +7940,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19740.38219890031,
+    "equity_curve": 20394.81579318061,
     "bnh_curve": 13242.216151916517
   },
   {
@@ -7952,7 +7952,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 19907.190914933908,
+    "equity_curve": 19740.38219890031,
     "bnh_curve": 12635.188562131174
   },
   {
@@ -7964,7 +7964,7 @@
     "ml_down_prob": 49.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19920.520261739977,
+    "equity_curve": 19907.190914933908,
     "bnh_curve": 12787.715611915653
   },
   {
@@ -7976,7 +7976,7 @@
     "ml_down_prob": 53.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 19915.317957810556,
+    "equity_curve": 19920.520261739977,
     "bnh_curve": 12799.947508920466
   },
   {
@@ -7988,7 +7988,7 @@
     "ml_down_prob": 53.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 19889.074891075154,
+    "equity_curve": 19915.317957810556,
     "bnh_curve": 12805.87399324099
   },
   {
@@ -8000,7 +8000,7 @@
     "ml_down_prob": 53.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 19719.09965386528,
+    "equity_curve": 19889.074891075154,
     "bnh_curve": 12749.624927986844
   },
   {
@@ -8012,7 +8012,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19981.3480395715,
+    "equity_curve": 19719.09965386528,
     "bnh_curve": 12386.42376799658
   },
   {
@@ -8024,7 +8024,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20113.73148216667,
+    "equity_curve": 19981.3480395715,
     "bnh_curve": 12628.926742975462
   },
   {
@@ -8036,7 +8036,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 20126.688776025054,
+    "equity_curve": 20113.73148216667,
     "bnh_curve": 12748.45684497761
   },
   {
@@ -8048,7 +8048,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19396.385796661958,
+    "equity_curve": 20126.688776025054,
     "bnh_curve": 12760.189093077995
   },
   {
@@ -8060,7 +8060,7 @@
     "ml_down_prob": 54.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 19406.750704521273,
+    "equity_curve": 19396.385796661958,
     "bnh_curve": 12098.750072935327
   },
   {
@@ -8072,7 +8072,7 @@
     "ml_down_prob": 51.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 19014.192543686382,
+    "equity_curve": 19406.750704521273,
     "bnh_curve": 12036.8081399625
   },
   {
@@ -8084,7 +8084,7 @@
     "ml_down_prob": 55.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 19008.488285923275,
+    "equity_curve": 19014.192543686382,
     "bnh_curve": 11248.810399672178
   },
   {
@@ -8120,7 +8120,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 0.0,
-    "equity_curve": 18535.659969578828,
+    "equity_curve": 19008.488285923275,
     "bnh_curve": 10821.360203043007
   },
   {
@@ -8132,7 +8132,7 @@
     "ml_down_prob": 48.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 18522.685007600125,
+    "equity_curve": 18535.659969578828,
     "bnh_curve": 10447.381381449859
   },
   {
@@ -8168,7 +8168,7 @@
     "ml_down_prob": 62.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 18017.259071144043,
+    "equity_curve": 18522.685007600125,
     "bnh_curve": 9912.600564122615
   },
   {
@@ -8180,7 +8180,7 @@
     "ml_down_prob": 63.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 18083.69781225475,
+    "equity_curve": 18017.259071144043,
     "bnh_curve": 10053.209813864574
   },
   {
@@ -8192,7 +8192,7 @@
     "ml_down_prob": 63.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 18699.618954011006,
+    "equity_curve": 18083.69781225475,
     "bnh_curve": 10032.614666070218
   },
   {
@@ -8204,7 +8204,7 @@
     "ml_down_prob": 59.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 18818.294711722534,
+    "equity_curve": 18699.618954011006,
     "bnh_curve": 9842.778262522912
   },
   {
@@ -8216,7 +8216,7 @@
     "ml_down_prob": 61.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 19178.878965846183,
+    "equity_curve": 18818.294711722534,
     "bnh_curve": 9584.956074489939
   },
   {
@@ -8228,7 +8228,7 @@
     "ml_down_prob": 62.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 17804.71087018444,
+    "equity_curve": 19178.878965846183,
     "bnh_curve": 9474.769518778863
   },
   {
@@ -8240,7 +8240,7 @@
     "ml_down_prob": 63.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 17381.271735111946,
+    "equity_curve": 17804.71087018444,
     "bnh_curve": 9851.918372347305
   },
   {
@@ -8252,7 +8252,7 @@
     "ml_down_prob": 63.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 17820.486411017937,
+    "equity_curve": 17381.271735111946,
     "bnh_curve": 9982.086413104349
   },
   {
@@ -8264,7 +8264,7 @@
     "ml_down_prob": 62.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 17794.85372877391,
+    "equity_curve": 17820.486411017937,
     "bnh_curve": 9841.952221045569
   },
   {
@@ -8276,7 +8276,7 @@
     "ml_down_prob": 60.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 18422.47547444546,
+    "equity_curve": 17794.85372877391,
     "bnh_curve": 9849.816940713472
   },
   {
@@ -8288,7 +8288,7 @@
     "ml_down_prob": 60.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 18947.63392661482,
+    "equity_curve": 18422.47547444546,
     "bnh_curve": 9656.816094104792
   },
   {
@@ -8300,7 +8300,7 @@
     "ml_down_prob": 58.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 18873.73796109064,
+    "equity_curve": 18947.63392661482,
     "bnh_curve": 9503.882171386951
   },
   {
@@ -8312,7 +8312,7 @@
     "ml_down_prob": 60.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 18314.54498042503,
+    "equity_curve": 18873.73796109064,
     "bnh_curve": 9580.027770195486
   },
   {
@@ -8324,7 +8324,7 @@
     "ml_down_prob": 62.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 18315.347861073627,
+    "equity_curve": 18314.54498042503,
     "bnh_curve": 9729.957092790055
   },
   {
@@ -8336,7 +8336,7 @@
     "ml_down_prob": 62.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 18482.297825550435,
+    "equity_curve": 18315.347861073627,
     "bnh_curve": 9729.720122839857
   },
   {
@@ -8348,7 +8348,7 @@
     "ml_down_prob": 61.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 19978.3705997683,
+    "equity_curve": 18482.297825550435,
     "bnh_curve": 9680.448257723152
   },
   {
@@ -8360,7 +8360,7 @@
     "ml_down_prob": 60.0,
     "signal_action": "🔴 SELL",
     "position": 0.0,
-    "equity_curve": 20277.056925439905,
+    "equity_curve": 19978.3705997683,
     "bnh_curve": 9245.117133575714
   },
   {
@@ -8372,7 +8372,7 @@
     "ml_down_prob": 58.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 19878.85774183377,
+    "equity_curve": 20277.056925439905,
     "bnh_curve": 9168.328809666406
   },
   {
@@ -8384,7 +8384,7 @@
     "ml_down_prob": 59.0,
     "signal_action": "⚪ HOLD (รอ)",
     "position": 0.0,
-    "equity_curve": 19923.29125639084,
+    "equity_curve": 19878.85774183377,
     "bnh_curve": 9723.476188208688
   },
   {
@@ -8396,7 +8396,7 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19578.681317477945,
+    "equity_curve": 19923.29125639084,
     "bnh_curve": 9651.02933263226
   },
   {
@@ -8408,19 +8408,19 @@
     "ml_down_prob": 47.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19141.45125765933,
+    "equity_curve": 19578.681317477945,
     "bnh_curve": 9426.116905324468
   },
   {
     "date": "2026-02-28",
     "market": "BTC",
-    "price": 63779.984375,
+    "price": 63445.04296875,
     "trend_regime": "1 (Uptrend)",
     "ml_up_prob": 54.0,
     "ml_down_prob": 46.0,
     "signal_action": "🟢 BUY",
     "position": 1.0,
-    "equity_curve": 19141.45125765933,
-    "bnh_curve": 9125.397567391683
+    "equity_curve": 19071.77498963332,
+    "bnh_curve": 9077.475424986604
   }
 ]

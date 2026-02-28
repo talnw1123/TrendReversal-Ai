@@ -229,8 +229,8 @@
     </div>
 
     <script>
-        // API Base (Defaulting to localhost for zero-dependency Python server)
-        const API_URL = "http://localhost:8001/api/data";
+        // API Base (FastAPI server running on port 8000)
+        const API_URL = "http://localhost:8000/api/data";
 
         function updateUIActiveBtn(marketName) {
             document.querySelectorAll('.market-btn').forEach(btn => btn.classList.remove('active'));
@@ -266,20 +266,37 @@
             const eqLines = history.map(row => row.equity_curve);
             const bnhLines = history.map(row => row.bnh_curve);
 
-            // 1. Build Buy / Sell Markers (By extracting positional jumps)
+            // 1. Build Buy / Sell Markers (Aligning exactly with Python plot_backtest logic)
             let buyDates = [], buyPrices = [];
             let sellDates = [], sellPrices = [];
 
-            for (let i = 1; i < history.length; i++) {
-                let prev = history[i - 1].position;
-                let curr = history[i].position;
-                if (prev === 0 && curr === 1) {
-                    buyDates.push(history[i].date);
-                    buyPrices.push(history[i].price);
-                } else if (prev === 1 && curr === 0) {
-                    sellDates.push(history[i].date);
-                    sellPrices.push(history[i].price);
+            // In Python plot_backtest:
+            // plot_dates = dates[1:]
+            // plot_prices = prices[1:]
+            // plot_signals = signals[:-1] 
+            // This means signal generated on day `i` triggers marker execution on day `i+1`.
+
+            let prev_pos = 0;
+            for (let i = 0; i < history.length - 1; i++) {
+                // Read signal from current day (i)
+                let sig_action = history[i].signal_action;
+                let curr_pos = 0;
+
+                if (sig_action.includes("BUY")) curr_pos = 1;
+                else if (sig_action.includes("SELL")) curr_pos = -1;
+                else curr_pos = 0; // HOLD
+
+                if (curr_pos !== prev_pos) {
+                    // Marker occurs on NEXT day (i + 1)
+                    if (curr_pos === 1) {
+                        buyDates.push(history[i + 1].date);
+                        buyPrices.push(history[i + 1].price);
+                    } else if (curr_pos === -1 || curr_pos === 0) {
+                        sellDates.push(history[i + 1].date);
+                        sellPrices.push(history[i + 1].price);
+                    }
                 }
+                prev_pos = curr_pos;
             }
 
             // 2. Build Regime Background Shapes (Merging contiguous blocks)
