@@ -1,0 +1,11 @@
+Market,Trend,Best_Model,ASF_Score,Return,Max_DD,Sharpe,Win_Rate
+BTC,downtrend,CNN,0.25,21.22,-28.28,0.26,58.62
+BTC,uptrend,XGBoost,0.1484,20.82,-70.97,0.27,48.33
+Gold,downtrend,Transformer,0.25,121.69,-13.08,1.21,33.33
+Gold,uptrend,CNN,0.178,199.17,-20.05,1.42,50.0
+Thai,downtrend,RandomForest,0.1181,2.09,-11.61,0.12,53.49
+Thai,uptrend,CNN,0.25,3.14,-10.71,0.16,60.0
+UK,downtrend,CNN,0.2197,47.98,-11.8,0.73,100.0
+UK,uptrend,SVM,0.2222,63.92,-9.59,1.09,66.67
+US,downtrend,MLP,0.25,64.98,-26.01,0.73,66.67
+US,uptrend,MLP,0.2353,43.35,-19.49,0.58,75.0

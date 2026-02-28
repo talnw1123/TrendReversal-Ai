@@ -439,3 +439,91 @@ class RegimeDetector:
         
         final_regime = pd.Series(full_preds, index=df.index)
         return final_regime.values
+
+    @staticmethod
+    def _detect_sklearn_model(df, market_name, model_prefix):
+        import os
+        import joblib
+        from model.features import calculate_features
+        
+        model_dir = os.path.join(os.path.dirname(__file__), '../all_trad/regime_models')
+        model_path = os.path.join(model_dir, f'regime_{model_prefix}_{market_name}.pkl')
+        features_path = os.path.join(model_dir, f'regime_features_{market_name}.pkl')
+        scaler_path = os.path.join(model_dir, f'regime_{model_prefix}_scaler_{market_name}.pkl')
+        
+        if not (os.path.exists(model_path) and os.path.exists(features_path)):
+            return (df['Close'] > df['Close'].rolling(200).mean()).astype(int).fillna(0).values
+            
+        try:
+            model = joblib.load(model_path)
+            valid_features = joblib.load(features_path)
+            
+            df_feat = calculate_features(df.copy())
+            valid_features = [f for f in valid_features if f in df_feat.columns]
+            
+            if not valid_features:
+                 return (df['Close'] > df['Close'].rolling(200).mean()).astype(int).fillna(0).values
+                 
+            X_full = df_feat[valid_features].values
+            X_full = np.nan_to_num(X_full)
+            
+            if os.path.exists(scaler_path):
+                scaler = joblib.load(scaler_path)
+                X_full = scaler.transform(X_full)
+                
+            full_preds = model.predict(X_full)
+            return pd.Series(full_preds, index=df.index).values
+        except Exception as e:
+            print(f"  [{model_prefix.upper()} Warning] Error loading model for {market_name}: {e}")
+            return (df['Close'] > df['Close'].rolling(200).mean()).astype(int).fillna(0).values
+
+    @staticmethod
+    def detect_xgboost(df, market_name='Default'):
+        return RegimeDetector._detect_sklearn_model(df, market_name, 'xgb')
+
+    @staticmethod
+    def detect_svc(df, market_name='Default'):
+        return RegimeDetector._detect_sklearn_model(df, market_name, 'svc')
+
+    @staticmethod
+    def detect_logistic_regression(df, market_name='Default'):
+        return RegimeDetector._detect_sklearn_model(df, market_name, 'lr')
+        
+    @staticmethod
+    def detect_best_regime(df, market_name='Default'):
+        """
+        Loads the best regime model based on Pareto+ASF evaluation from MOO script.
+        Defaults to SMA200 if not found.
+        """
+        import os
+        import joblib
+        
+        model_dir = os.path.join(os.path.dirname(__file__), '../all_trad/regime_models')
+        meta_path = os.path.join(model_dir, f'best_regime_meta_{market_name}.pkl')
+        
+        best_model = 'SMA200'
+        if os.path.exists(meta_path):
+            try:
+                meta = joblib.load(meta_path)
+                best_model = meta.get('best_model_type', 'SMA200')
+            except:
+                pass
+                
+        if best_model == 'SMA200':
+            return (df['Close'] > df['Close'].rolling(200).mean()).astype(int).fillna(0).values
+        elif best_model == 'ADX_Supertrend':
+            return RegimeDetector.detect_adx_supertrend(df)
+        elif best_model == 'GMM':
+            return RegimeDetector.detect_gmm(df, market_name=market_name)
+        elif best_model == 'HMM':
+            return RegimeDetector.detect_hmm(df, market_name=market_name)
+        elif best_model == 'RandomForest':
+            return RegimeDetector.detect_random_forest(df, market_name=market_name)
+        elif best_model == 'XGBoost':
+            return RegimeDetector.detect_xgboost(df, market_name=market_name)
+        elif best_model == 'SVC':
+            return RegimeDetector.detect_svc(df, market_name=market_name)
+        elif best_model == 'LogisticRegression':
+            return RegimeDetector.detect_logistic_regression(df, market_name=market_name)
+        else:
+            return (df['Close'] > df['Close'].rolling(200).mean()).astype(int).fillna(0).values

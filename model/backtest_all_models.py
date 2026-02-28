@@ -580,100 +580,141 @@ def run_simulation(signals, prices):
     
     return equity_curve
 
-def run_simulation_moo(signals, prices, stop_loss_pct=0.05, trailing_stop_pct=0.10, long_only=False, strategy_mode='active'):
+def run_simulation_moo(signals, prices, confidences=None, regimes=None, stop_loss_pct=0.05, trailing_stop_pct=0.10, long_only=False, strategy_mode='active', initial_capital=10000.0, transaction_cost=0.001, leverage=1.0, sizing_mode='conservative', min_position=0.0):
     """
-    Run trading simulation with MOO-optimized stop-loss and trailing stop.
-    strategy_mode: 'active' (Neutral->Cash), 'smart_hold' (Neutral->Hold)
+    Run trading simulation with MOO-optimized stop-loss, trailing stop, continuous Position Sizing, and optional Leverage.
+    
+    sizing_mode: 'conservative', 'moderate', or 'aggressive' — controls confidence-to-size mapping
+    min_position: minimum position to hold when in uptrend regime (0.0 = no floor)
+    regimes: array of 0/1 indicating downtrend/uptrend per day (for min_position logic)
     """
-    cash = INITIAL_CAPITAL
-    position = 0
+    # Sizing tier lookup tables
+    SIZING_TIERS = {
+        'conservative': {70: 1.0, 60: 0.6,  50: 0.3, 0: 0.1},
+        'moderate':     {70: 1.0, 60: 0.8,  50: 0.5, 0: 0.3},
+        'aggressive':   {70: 1.0, 60: 0.9,  50: 0.7, 0: 0.5},
+    }
+    tiers = SIZING_TIERS.get(sizing_mode, SIZING_TIERS['conservative'])
+    
+    cash = initial_capital
+    position = 0.0  # Float position (-1.0 to 1.0)
     entry_price = 0.0
     highest_price = 0.0 # For trailing stop
     equity_curve = []
+    trade_points = []  # List of (index, 'buy'|'sell') for plotting
     n_trades = 0
     wins = 0
+    cooldown = 0
     
     for i in range(len(signals) - 1):
         signal = signals[i]
         price = prices[i]
         next_price = prices[i+1]
         
-        # Track highest price for long position
-        if position == 1:
+        # Determine sizing multiplier based on confidence + sizing_mode
+        size_multiplier = 1.0
+        if confidences is not None:
+            conf = confidences[i]
+            if conf >= 0.70:
+                size_multiplier = tiers[70] * leverage  # Leverage on high confidence
+            elif conf >= 0.60:
+                size_multiplier = tiers[60] * leverage  # Leverage also at medium-high confidence
+            elif conf >= 0.50:
+                size_multiplier = tiers[50]
+            else:
+                size_multiplier = tiers[0]
+        
+        # Track highest/lowest price for trailing stop
+        if position > 0:
             if price > highest_price:
                 highest_price = price
+        elif position < 0:
+            if entry_price > 0 and (highest_price == 0 or price < highest_price):
+                highest_price = price
+        
+        # Decrement cooldown
+        if cooldown > 0:
+            cooldown -= 1
         
         # Check Exits (Stop Loss & Trailing Stop) first
         if position != 0 and entry_price > 0:
-            # Calculate PnL percentage
-            if position == 1:
+            if position > 0:
                 pnl_pct = (price - entry_price) / entry_price
-                # Trailing Stop Check
                 if trailing_stop_pct > 0:
                     drawdown_from_peak = (highest_price - price) / highest_price
                     if drawdown_from_peak > trailing_stop_pct:
-                        # Trailing Stop Hit
-                        cost = cash * TRANSACTION_COST
+                        cost = cash * abs(position) * transaction_cost
                         cash -= cost
                         if pnl_pct > 0: wins += 1
                         n_trades += 1
-                        position = 0
+                        trade_points.append((i, 'sell'))
+                        position = 0.0
                         entry_price = 0.0
                         highest_price = 0.0
                         equity_curve.append(cash)
                         continue
             else:
-                 # Short position
                  pnl_pct = (entry_price - price) / entry_price
-                 # No trailing stop implemented for short yet (can be added if needed)
+                 if trailing_stop_pct > 0 and highest_price > 0:
+                     drawup_from_bottom = (price - highest_price) / highest_price
+                     if drawup_from_bottom > trailing_stop_pct:
+                         cost = cash * abs(position) * transaction_cost
+                         cash -= cost
+                         if pnl_pct > 0: wins += 1
+                         n_trades += 1
+                         trade_points.append((i, 'sell'))
+                         position = 0.0
+                         entry_price = 0.0
+                         highest_price = 0.0
+                         equity_curve.append(cash)
+                         continue
             
             # Stop Loss Check
             if pnl_pct < -stop_loss_pct:
-                cost = cash * TRANSACTION_COST
+                cost = cash * abs(position) * transaction_cost
                 cash -= cost
                 if pnl_pct > 0: wins += 1
                 n_trades += 1
-                position = 0
+                trade_points.append((i, 'sell'))
+                position = 0.0
                 entry_price = 0.0
                 highest_price = 0.0
+                cooldown = 3 
                 equity_curve.append(cash)
                 continue
         
         # Determine target position based on signal
-        # Revert to Active Trading: If Neutral (99), Exit to Cash (0)
-        # This allows capturing volatility (like Original BTC result) and avoiding drawdown
+        target_pos = 0.0 
         
-        target_pos = 0 # Default to Cash
-        
-        if signal == 1:
-            target_pos = 1
-        elif signal == 0:
-            if long_only:
-                target_pos = 0
-            else:
-                target_pos = -1
-        elif signal == 99:
-            # Neutral Logic based on Strategy Mode
-            if strategy_mode == 'smart_hold':
-                # Smart Hold: Only exit if stop loss/trailing stop hits.
-                # If signal is neutral, we HOLD current position.
-                target_pos = position
-                
-                # Exception: If we are Short and want to cover on neutral?
-                # For now, HOLD means stay in position.
-                # If in Cash, stay in Cash.
-            else:
-                # Active / Defensive: Exit to Cash on Neutral
-                target_pos = 0
+        if cooldown == 0:
+            if signal == 1:
+                target_pos = 1.0 * size_multiplier
+            elif signal == 0:
+                target_pos = 0.0 if long_only else -1.0 * size_multiplier
+            elif signal == 99:
+                if strategy_mode == 'smart_hold':
+                    target_pos = position
+                else:
+                    target_pos = 0.0
             
-        # Execute Trade
+            # Regime-aware minimum position floor
+            # In uptrend, always hold at least min_position (prevents full cash exit)
+            if min_position > 0 and regimes is not None and i < len(regimes):
+                if regimes[i] == 1 and target_pos >= 0:  # Uptrend regime
+                    target_pos = max(target_pos, min_position)
+                elif regimes[i] == 0 and not long_only and target_pos <= 0:  # Downtrend regime
+                    target_pos = min(target_pos, -min_position)
+        else:
+            target_pos = 0.0
+            
+        # Execute Trade (Adjust position)
         if position != target_pos:
-            cost = cash * abs(target_pos - position) * TRANSACTION_COST
+            cost = cash * abs(target_pos - position) * transaction_cost
             cash -= cost
             
-            # Record trade stats for previous position
-            if position != 0 and entry_price > 0:
-                if position == 1:
+            # If completely closing a position, record trade stats
+            if target_pos == 0.0 and position != 0.0 and entry_price > 0:
+                if position > 0:
                     trade_pnl = (price - entry_price) / entry_price
                 else:
                     trade_pnl = (entry_price - price) / entry_price
@@ -681,26 +722,28 @@ def run_simulation_moo(signals, prices, stop_loss_pct=0.05, trailing_stop_pct=0.
                 if trade_pnl > 0: wins += 1
                 n_trades += 1
             
+            # Record trade point for plotting
+            if position <= 0 and target_pos > 0:
+                trade_points.append((i, 'buy'))
+            elif position >= 0 and target_pos < 0:
+                trade_points.append((i, 'sell'))
+            elif target_pos == 0.0 and position != 0.0:
+                trade_points.append((i, 'sell'))
+            
+            # If entering a new position direction, reset entry price
+            if (position <= 0 and target_pos > 0) or (position >= 0 and target_pos < 0):
+                entry_price = price
+                highest_price = price
+                
             position = target_pos
             
-            if target_pos != 0:
-                entry_price = price
-                if target_pos == 1:
-                    highest_price = price
-            else:
-                entry_price = 0.0
-                highest_price = 0.0
-        
-        # Update Equity
-        if position == 1:
-            cash *= (1 + (next_price - price) / price)
-        elif position == -1:
-            cash *= (1 + (price - next_price) / price)
+        # Daily Equity Update based on continuous position (-1.0 to 1.0)
+        cash *= (1 + position * (next_price - price) / price)
         
         equity_curve.append(cash)
     
     win_rate = (wins / n_trades * 100) if n_trades > 0 else 0.0
-    return equity_curve, n_trades, win_rate
+    return equity_curve, n_trades, win_rate, trade_points
 
 def load_best_models_map():
     """
@@ -766,17 +809,211 @@ def _scan_models_fallback():
                 
     return best_map
 
+def quick_backtest_model(market, trend, model_name, threshold_configs=None):
+    """
+    Quick backtest a single model for a market/trend combination.
+    Tests multiple threshold configurations and returns the best metrics.
+    Returns dict with: return, max_dd, sharpe, win_rate, best_config (or None on failure).
+    """
+    try:
+        # 1. Load data
+        ticker = get_ticker(market)
+        if not ticker:
+            return None
+        
+        df = yf.download(ticker, period="5y", progress=False)
+        if isinstance(df.columns, pd.MultiIndex):
+            df.columns = df.columns.get_level_values(0)
+        
+        if df.empty or len(df) < 200:
+            return None
+        
+        df = add_technical_features(df)
+        df = df.dropna()
+        
+        if len(df) < LOOKBACK + 50:
+            return None
+        
+        feature_cols = get_selected_features(df)
+        data = df[feature_cols].values
+        prices = df['Close'].values
+        
+        # 2. Load model
+        model_dir = os.path.join(MODEL_BASE_DIR, f"model_{market}_{trend}")
+        model, scaler, le, model_type = load_model_and_objects(model_dir, model_name)
+        
+        if model is None:
+            return None
+        
+        # 3. Batch predict all probabilities first (speed optimization)
+        sequences = []
+        for i in range(LOOKBACK, len(data)):
+            sequence = data[i-LOOKBACK:i].copy()
+            mean = np.nanmean(sequence, axis=0)
+            std = np.nanstd(sequence, axis=0) + 1e-9
+            sequence = (sequence - mean) / std
+            sequence = np.nan_to_num(sequence, nan=0.0, posinf=0.0, neginf=0.0)
+            sequences.append(sequence)
+        
+        if len(sequences) < 10:
+            return None
+        
+        X_batch = np.array(sequences)  # (N, LOOKBACK, features)
+        
+        try:
+            if model_type == 'ml':
+                X_flat = X_batch.reshape(len(X_batch), -1)
+                probs = model.predict_proba(X_flat)
+            else:
+                probs = model.predict(X_batch, verbose=0, batch_size=512)
+            
+            bull_probs = probs[:, 1] if probs.shape[1] > 1 else probs[:, 0]
+        except Exception as e:
+            return None
+        
+        sim_prices = prices[LOOKBACK:]
+        strategy_mode = MARKET_STRATEGIES.get(market, 'active')
+        trailing_stop = MARKET_TRAILING_STOPS.get(market, 0.0)
+        long_only = MARKET_LONG_ONLY.get(market, False)
+        
+        # 4. Default threshold configs to test (grid search for better results)
+        if threshold_configs is None:
+            moo_params = OPTIMIZED_PARAMS.get(market, {
+                'confidence': 0.55, 'long': 0.54, 'short': 0.46, 'stop_loss': 0.05
+            })
+            base_conf = moo_params['confidence']
+            base_long = moo_params['long']
+            base_short = moo_params['short']
+            base_sl = moo_params['stop_loss']
+            
+            threshold_configs = [
+                # Original MOO params
+                {'confidence': base_conf, 'long': base_long, 'short': base_short, 'stop_loss': base_sl},
+                # Looser thresholds (more trades)
+                {'confidence': max(0.50, base_conf - 0.03), 'long': max(0.51, base_long - 0.03), 
+                 'short': min(0.49, base_short + 0.03), 'stop_loss': base_sl},
+                # Tighter thresholds (fewer, higher-quality trades)
+                {'confidence': min(0.70, base_conf + 0.05), 'long': min(0.70, base_long + 0.05), 
+                 'short': max(0.30, base_short - 0.05), 'stop_loss': base_sl},
+                # Lower stop loss
+                {'confidence': base_conf, 'long': base_long, 'short': base_short, 
+                 'stop_loss': max(0.02, base_sl * 0.5)},
+                # Higher stop loss 
+                {'confidence': base_conf, 'long': base_long, 'short': base_short, 
+                 'stop_loss': min(0.20, base_sl * 2.0)},
+                # Very loose (try to trade more)
+                {'confidence': 0.50, 'long': 0.52, 'short': 0.48, 'stop_loss': 0.10},
+            ]
+        
+        # 5. Test each config and collect all results
+        all_results = []
+        for cfg in threshold_configs:
+            conf_thresh = cfg['confidence']
+            long_thresh = cfg['long']
+            short_thresh = cfg['short']
+            stop_loss = cfg['stop_loss']
+            
+            # Generate signals with this config
+            signals = []
+            for bp in bull_probs:
+                confidence = max(bp, 1 - bp)
+                if confidence >= conf_thresh:
+                    if bp >= long_thresh:
+                        signals.append(1)
+                    elif bp <= short_thresh:
+                        signals.append(0)
+                    else:
+                        signals.append(99)
+                else:
+                    signals.append(99)
+            
+            # Run simulation
+            equity_curve, n_trades, win_rate, _ = run_simulation_moo(
+                signals, sim_prices,
+                stop_loss_pct=stop_loss,
+                trailing_stop_pct=trailing_stop,
+                long_only=long_only,
+                strategy_mode=strategy_mode
+            )
+            
+            if not equity_curve or len(equity_curve) == 0:
+                continue
+            
+            # Calculate metrics
+            equity = np.array(equity_curve)
+            total_return = ((equity[-1] / INITIAL_CAPITAL) - 1) * 100
+            
+            peak = np.maximum.accumulate(equity)
+            drawdown = (equity - peak) / peak
+            max_dd = np.min(drawdown) * 100
+            
+            daily_returns = np.diff(equity) / equity[:-1]
+            if len(daily_returns) > 0 and np.std(daily_returns) > 0:
+                sharpe = np.mean(daily_returns) / np.std(daily_returns) * np.sqrt(252)
+            else:
+                sharpe = 0.0
+            
+            all_results.append({
+                'return': round(total_return, 2),
+                'max_dd': round(max_dd, 2),
+                'sharpe': round(sharpe, 2),
+                'win_rate': round(win_rate, 2),
+                'trades': n_trades,
+                'config': cfg,
+            })
+        
+        if not all_results:
+            return None
+        
+        # Return the best result (by return as primary, sharpe as secondary)
+        best = max(all_results, key=lambda r: (r['sharpe'], r['return']))
+        return best
+        
+    except Exception as e:
+        print(f"    Quick backtest error for {model_name}: {e}")
+        return None
+
+
+def load_best_models_map_moo(preference='balanced'):
+    """
+    Load best models directly from the generated MOO selection file.
+    Requested by user to strictly use: all_trad/separate_models/moo_model_selection.csv
+    """
+    best_map = {}
+    
+    csv_path = os.path.join(MODEL_BASE_DIR, 'moo_model_selection.csv')
+    if os.path.exists(csv_path):
+        print(f"  Loading MOO models from CSV: {csv_path}")
+        try:
+            cache_df = pd.read_csv(csv_path)
+            for _, row in cache_df.iterrows():
+                market = row['Market']
+                trend = row['Trend']
+                model_name = row['Best_Model']
+                
+                # We assume the model exists since it was selected
+                best_map[(market, trend)] = model_name
+                print(f"  Best for {market}/{trend}: {model_name}")
+                
+            return best_map
+        except Exception as e:
+            print(f"  Error reading MOO CSV: {e}")
+            
+    print(f"Warning: {csv_path} not found. Returning empty map.")
+    return best_map
+
+
 def load_best_regime_methods():
     """
-    Load best regime detection method from regime_comparison_results.csv.
-    Selects the method with highest 'separation' for each Market.
+    Load best regime detection method from regime_evaluation_summary.csv.
+    Selects the method where Is_Best == True for each Market.
     Returns: dict {market: method_name}
     """
     best_regime = {}
-    csv_path = 'all_trad/regime_comparison_results.csv'
+    csv_path = 'all_trad/regime_models/regime_evaluation_summary.csv'
     
     if not os.path.exists(csv_path):
-        print(f"Warning: Regime CSV not found. Using default HMM.")
+        print(f"Warning: Regime CSV not found at {csv_path}. Using default HMM.")
         for market in MARKETS:
             best_regime[market] = 'HMM'
         return best_regime
@@ -784,14 +1021,20 @@ def load_best_regime_methods():
     try:
         df = pd.read_csv(csv_path)
         
-        # For each Market, get the method with highest separation
-        for market, group in df.groupby('Market'):
-            best_row = group.loc[group['separation'].idxmax()]
-            best_method = best_row['Method']
-            best_sep = best_row['separation']
+        # Filter for the best models
+        best_df = df[df['Is_Best'] == True]
+        
+        for _, row in best_df.iterrows():
+            market = row['Market']
+            best_method = row['Method']
             
             best_regime[market] = best_method
-            print(f"  Best Regime for {market}: {best_method} (Sep: {best_sep:.4f})")
+            print(f"  Best Regime for {market}: {best_method}")
+            
+        # Ensure all MARKETS have a fallback if missing
+        for market in MARKETS:
+            if market not in best_regime:
+                best_regime[market] = 'HMM'
                 
     except Exception as e:
         print(f"Error reading regime CSV: {e}")
@@ -840,12 +1083,12 @@ def load_best_thresholds():
 
 def main():
     print("=" * 70)
-    print("BACKTEST: BEST SPECIALIZED MODELS (From CSV)")
+    print("BACKTEST: BEST SPECIALIZED MODELS (MOO Selection)")
     print("=" * 70)
     
-    # Load best prediction models from CSV
-    print("\n[Prediction Models - from separate_models_comparison.csv]")
-    best_models_map = load_best_models_map()
+    # Load best prediction models using MOO composite score
+    print("\n[Prediction Models - MOO Multi-Objective Selection]")
+    best_models_map = load_best_models_map_moo()
     if not best_models_map:
         print("No champion models found. Please run training first.")
         return
@@ -1167,9 +1410,9 @@ def main_combined():
     print("COMBINED BACKTEST: REGIME-SWITCHING MODELS (MOO-Optimized)")
     print("=" * 70)
     
-    # Load best prediction models
-    print("\n[Loading Prediction Models from CSV]")
-    best_models_map = load_best_models_map()
+    # Load best prediction models using MOO composite score
+    print("\n[Loading Prediction Models - MOO Multi-Objective Selection]")
+    best_models_map = load_best_models_map_moo()
     if not best_models_map:
         print("No champion models found.")
         return
@@ -1390,7 +1633,7 @@ def main_combined():
         signals_orig = np.array(original_signals)
         
         # ──────────────────────────────────────────────
-        # B) GRID SEARCH — Find Best Parameters Per Market
+        # B) WALK-FORWARD GRID SEARCH — No Look-Ahead Bias
         # ──────────────────────────────────────────────
         bnh_return = (prices[-1] - prices[0]) / prices[0] * 100
         
@@ -1404,108 +1647,233 @@ def main_combined():
             ret_orig, dd_orig, trades_orig = 0.0, 0.0, 0
             eq_orig = [INITIAL_CAPITAL]
         
-        # B) Grid Search Optimization
-        print(f"   ⚡ Running Grid Search for {market}...")
+        # B) Walk-Forward Optimization
+        print(f"   ⚡ Running Walk-Forward Grid Search for {market}...")
         
         # Parameter grid
-        conf_grid = [0.50, 0.52, 0.55, 0.58, 0.60]
-        long_grid = [0.50, 0.52, 0.54, 0.56, 0.58, 0.60]
-        short_grid = [0.40, 0.42, 0.44, 0.46, 0.48, 0.50]
-        sl_grid = [0.03, 0.05, 0.08, 0.10, 0.15, 0.20]
+        conf_grid = [0.0, 0.50, 0.55, 0.60]
+        long_grid = [0.50, 0.55, 0.60]
+        short_grid = [0.40, 0.45, 0.50]
+        sl_grid = [0.03, 0.08, 0.15, 0.25, 0.50]
         strategy_grid = ['active', 'smart_hold']
-        trailing_grid = [0.0, 0.10, 0.15, 0.20]
+        trailing_grid = [0.0, 0.10, 0.20]
         long_only_options = [True, False]
+        fallback_options = [True, False]
+        leverage_grid = [1.0, 1.5, 2.0]
+        sizing_mode_grid = ['conservative', 'moderate', 'aggressive']
+        min_position_grid = [0.0, 0.3, 0.5]
         
-        best_ret = -999
-        best_params = {}
-        best_eq = [INITIAL_CAPITAL]
-        best_trades = 0
-        best_winrate = 0.0
-        best_dd = 0.0
-        best_strategy = 'active'
-        best_signals = signals_orig
+        # Walk-Forward windows
+        n_total = len(prices)
+        train_days = min(252, n_total // 2)  # ~1 year or half data
+        test_days = 63   # ~3 months
         
-        total_combos = 0
+        oos_equity_parts = []
+        oos_trade_points_all = []
+        window_params_list = []
+        oos_start_capital = INITIAL_CAPITAL
+        total_oos_trades = 0
+        total_oos_wins = 0
+        n_windows = 0
+        total_combos_all = 0
         
-        for conf_t in conf_grid:
-            for long_t in long_grid:
-                for short_t in short_grid:
-                    if short_t >= long_t:
-                        continue  # short must be < long
+        def _gen_signals(regime_arr, p_up, p_down, conf_t, long_t, short_t, fb):
+            sigs, confs = [], []
+            for i in range(len(regime_arr)):
+                if regime_arr[i] == 1:
+                    bp = p_up[i, 1] if p_up.shape[1] > 1 else p_up[i, 0]
+                    c = np.max(p_up[i])
+                else:
+                    bp = p_down[i, 1] if p_down.shape[1] > 1 else p_down[i, 0]
+                    c = np.max(p_down[i])
+                confs.append(c)
+                if c < conf_t:
+                    sigs.append(regime_arr[i] if fb else 99)
+                elif bp >= long_t:
+                    sigs.append(1)
+                elif bp <= short_t:
+                    sigs.append(0)
+                else:
+                    sigs.append(regime_arr[i] if fb else 99)
+            return np.array(sigs), np.array(confs)
+        
+        w_start = 0
+        while w_start + train_days + test_days <= n_total:
+            train_end = w_start + train_days
+            test_end = min(train_end + test_days, n_total)
+            
+            # Slice data
+            tr_prices = prices[w_start:train_end]
+            tr_regime = regime_aligned[w_start:train_end]
+            tr_pup = probs_up[w_start:train_end]
+            tr_pdn = probs_down[w_start:train_end]
+            
+            te_prices = prices[train_end:test_end]
+            te_regime = regime_aligned[train_end:test_end]
+            te_pup = probs_up[train_end:test_end]
+            te_pdn = probs_down[train_end:test_end]
+            
+            # Grid Search on TRAIN only
+            best_score_w = -10000
+            best_params_w = {}
+            total_combos = 0
+            
+            for conf_t in conf_grid:
+                for long_t in long_grid:
+                    for short_t in short_grid:
+                        if short_t >= long_t:
+                            continue
+                        for fallback_opt in fallback_options:
+                            for leverage_opt in leverage_grid:
+                                tr_sigs, tr_confs = _gen_signals(tr_regime, tr_pup, tr_pdn, conf_t, long_t, short_t, fallback_opt)
+                                
+                                for sl in sl_grid:
+                                    for strat in strategy_grid:
+                                        for ts in trailing_grid:
+                                            if strat == 'smart_hold' and ts == 0:
+                                                continue
+                                            for lo in long_only_options:
+                                              for sm in sizing_mode_grid:
+                                                for mp in min_position_grid:
+                                                    total_combos += 1
+                                                    eq, trades, wr, _ = run_simulation_moo(
+                                                        tr_sigs, tr_prices,
+                                                        confidences=tr_confs, regimes=tr_regime,
+                                                        stop_loss_pct=sl, trailing_stop_pct=ts,
+                                                        long_only=lo, strategy_mode=strat,
+                                                        leverage=leverage_opt, sizing_mode=sm,
+                                                        min_position=mp
+                                                    )
+                                                    if eq:
+                                                        ret = (eq[-1] - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100
+                                                        dd = calculate_drawdown(pd.Series(eq))
+                                                        score = ret - (10 if dd < -50 else 0)
+                                                        if score > best_score_w:
+                                                            best_score_w = score
+                                                            best_params_w = {
+                                                                'confidence': conf_t, 'long': long_t, 'short': short_t,
+                                                                'stop_loss': sl, 'strategy': strat, 'trailing': ts,
+                                                                'long_only': lo, 'fallback': fallback_opt,
+                                                                'leverage': leverage_opt, 'sizing_mode': sm,
+                                                                'min_position': mp
+                                                            }
+            
+            total_combos_all += total_combos
+            
+            # Apply best params on TEST (out-of-sample)
+            if best_params_w:
+                window_params_list.append(best_params_w)
+                te_sigs, te_confs = _gen_signals(te_regime, te_pup, te_pdn,
+                    best_params_w['confidence'], best_params_w['long'], best_params_w['short'], best_params_w['fallback'])
+                
+                oos_eq, oos_trades, oos_wr, oos_tp = run_simulation_moo(
+                    te_sigs, te_prices,
+                    confidences=te_confs, regimes=te_regime,
+                    stop_loss_pct=best_params_w['stop_loss'],
+                    trailing_stop_pct=best_params_w['trailing'],
+                    long_only=best_params_w['long_only'],
+                    strategy_mode=best_params_w['strategy'],
+                    initial_capital=oos_start_capital,
+                    leverage=best_params_w['leverage'],
+                    sizing_mode=best_params_w['sizing_mode'],
+                    min_position=best_params_w['min_position']
+                )
+                
+                if oos_eq:
+                    for idx, action in oos_tp:
+                        oos_trade_points_all.append((train_end + idx, action))
+                    oos_equity_parts.append(oos_eq)
+                    oos_start_capital = oos_eq[-1]
+                    total_oos_trades += oos_trades
+                    if oos_trades > 0:
+                        total_oos_wins += int(oos_wr / 100 * oos_trades)
                     
-                    # Generate signals for this param combo
-                    test_signals = []
-                    for i in range(len(regime_aligned)):
-                        if regime_aligned[i] == 1:
-                            bull_prob = probs_up[i, 1] if probs_up.shape[1] > 1 else probs_up[i, 0]
-                            conf = np.max(probs_up[i])
-                        else:
-                            bull_prob = probs_down[i, 1] if probs_down.shape[1] > 1 else probs_down[i, 0]
-                            conf = np.max(probs_down[i])
-                        
-                        if conf < conf_t:
-                            test_signals.append(99)
-                        elif bull_prob >= long_t:
-                            test_signals.append(1)
-                        elif bull_prob <= short_t:
-                            test_signals.append(0)
-                        else:
-                            test_signals.append(99)
-                    
-                    test_signals = np.array(test_signals)
-                    
-                    for sl in sl_grid:
-                        for strat in strategy_grid:
-                            for ts in trailing_grid:
-                                if strat == 'active' and ts > 0:
-                                    continue  # Active doesn't use trailing
-                                if strat == 'smart_hold' and ts == 0:
-                                    continue  # Smart hold needs trailing
-                                    
-                                for lo in long_only_options:
-                                    total_combos += 1
-                                    
-                                    eq, trades, wr = run_simulation_moo(
-                                        test_signals, prices,
-                                        stop_loss_pct=sl,
-                                        trailing_stop_pct=ts,
-                                        long_only=lo,
-                                        strategy_mode=strat
-                                    )
-                                    
-                                    if eq:
-                                        ret = (eq[-1] - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100
-                                        dd = calculate_drawdown(pd.Series(eq))
-                                        
-                                        # Maximize return, but penalize extreme drawdown
-                                        score = ret
-                                        if dd < -50:
-                                            score -= 10  # Penalty for heavy drawdown
-                                        
-                                        if score > best_ret:
-                                            best_ret = score
-                                            best_params = {
-                                                'confidence': conf_t, 'long': long_t, 'short': short_t,
-                                                'stop_loss': sl, 'strategy': strat, 'trailing': ts, 'long_only': lo
-                                            }
-                                            best_eq = eq
-                                            best_trades = trades
-                                            best_winrate = wr
-                                            best_dd = dd
-                                            best_strategy = strat
-                                            best_signals = test_signals
+                    oos_ret = (oos_eq[-1] / (oos_eq[0] if oos_eq[0] > 0 else INITIAL_CAPITAL) - 1) * 100
+                    print(f"      W{n_windows+1}: Train[{w_start}-{train_end}] Test[{train_end}-{test_end}] "
+                          f"TrainBest={best_score_w:.1f}% OOS={oos_ret:.1f}% "
+                          f"strat={best_params_w['strategy']}, lev={best_params_w['leverage']}, sm={best_params_w['sizing_mode']}, mp={best_params_w['min_position']}")
+            
+            n_windows += 1
+            w_start += test_days
         
-        print(f"   ✅ Searched {total_combos} combos → Best Return: {best_ret:.2f}%")
-        print(f"   📊 Best Params: {best_params}")
+        # Handle remaining data with last params
+        if w_start < n_total and window_params_list:
+            last_p = window_params_list[-1]
+            rem_prices = prices[w_start:]
+            rem_regime = regime_aligned[w_start:]
+            rem_pup = probs_up[w_start:]
+            rem_pdn = probs_down[w_start:]
+            
+            rem_sigs, rem_confs = _gen_signals(rem_regime, rem_pup, rem_pdn,
+                last_p['confidence'], last_p['long'], last_p['short'], last_p['fallback'])
+            
+            rem_eq, rem_trades, rem_wr, rem_tp = run_simulation_moo(
+                rem_sigs, rem_prices,
+                confidences=rem_confs, regimes=rem_regime,
+                stop_loss_pct=last_p['stop_loss'], trailing_stop_pct=last_p['trailing'],
+                long_only=last_p['long_only'], strategy_mode=last_p['strategy'],
+                initial_capital=oos_start_capital,
+                leverage=last_p['leverage'], sizing_mode=last_p['sizing_mode'],
+                min_position=last_p['min_position']
+            )
+            
+            if rem_eq:
+                for idx, action in rem_tp:
+                    oos_trade_points_all.append((w_start + idx, action))
+                oos_equity_parts.append(rem_eq)
+                total_oos_trades += rem_trades
+                if rem_trades > 0:
+                    total_oos_wins += int(rem_wr / 100 * rem_trades)
         
-        # Use the best results
+        # Select final params = most common across windows (mode)
+        from collections import Counter
+        if window_params_list:
+            param_keys = ['strategy', 'leverage', 'sizing_mode', 'min_position', 'stop_loss',
+                         'trailing', 'long_only', 'fallback', 'confidence', 'long', 'short']
+            param_tuples = [tuple(p.get(k, None) for k in param_keys) for p in window_params_list]
+            mode_tuple = Counter(param_tuples).most_common(1)[0][0]
+            best_params = dict(zip(param_keys, mode_tuple))
+        else:
+            best_params = {'confidence': 0.55, 'long': 0.54, 'short': 0.46, 'stop_loss': 0.05,
+                          'strategy': 'active', 'trailing': 0.0, 'long_only': True,
+                          'fallback': True, 'leverage': 1.0, 'sizing_mode': 'conservative', 'min_position': 0.0}
+        
+        # Log OOS return for reference
+        if oos_equity_parts:
+            oos_final = oos_equity_parts[-1][-1] if oos_equity_parts[-1] else INITIAL_CAPITAL
+            oos_ret = (oos_final - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100
+            print(f"   📝 Walk-Forward OOS Return: {oos_ret:.2f}% ({n_windows} windows)")
+        
+        print(f"   📊 Final Params (mode): {best_params}")
+        
+        # Generate full signals using best params (same as trading_system.py)
+        best_signals, best_confidences = _gen_signals(regime_aligned, probs_up, probs_down,
+            best_params['confidence'], best_params['long'], best_params['short'], best_params['fallback'])
+        
+        # Run full-period simulation with best params (matches trading_system.py)
+        eq_moo, trades_moo, winrate_moo, trade_points_moo = run_simulation_moo(
+            best_signals, prices,
+            confidences=best_confidences, regimes=regime_aligned,
+            stop_loss_pct=best_params['stop_loss'],
+            trailing_stop_pct=best_params['trailing'],
+            long_only=best_params['long_only'],
+            strategy_mode=best_params['strategy'],
+            initial_capital=INITIAL_CAPITAL,
+            leverage=best_params['leverage'],
+            sizing_mode=best_params['sizing_mode'],
+            min_position=best_params['min_position']
+        )
+        
+        if not eq_moo:
+            eq_moo = [INITIAL_CAPITAL]
+        
+        ret_moo = (eq_moo[-1] - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100
+        dd_moo = calculate_drawdown(pd.Series(eq_moo))
+        
+        print(f"   ✅ Full-Period Return: {ret_moo:.2f}% (Walk-Forward selected params)")
+        
         signals_moo = best_signals
-        eq_moo = best_eq
-        ret_moo = best_ret
-        dd_moo = best_dd
-        trades_moo = best_trades
-        winrate_moo = best_winrate
-        strategy_mode = best_strategy
+        strategy_mode = best_params.get('strategy', 'unknown')
         
         # Print comparison
         print(f"\n   {'Metric':<20} {'B&H':>10} {'Original':>12} {'MOO(Hyb)':>12}")
@@ -1522,10 +1890,15 @@ def main_combined():
             'Uptrend Model': uptrend_model_name,
             'Downtrend Model': downtrend_model_name,
             'Type': 'Original',
+            'Confidence': original_conf_thresh,
+            'Threshold Long': original_long,
+            'Threshold Short': original_short,
+            'Stop Loss': 0.0,
             'Return (%)': round(ret_orig, 2),
             'B&H (%)': round(bnh_return, 2),
             'Max DD (%)': round(dd_orig, 2),
             'Trades': trades_orig,
+            'Win Rate (%)': 0.0,
             'Final $': round(eq_orig[-1], 2)
         })
         
@@ -1534,11 +1907,12 @@ def main_combined():
             'Regime Method': regime_method,
             'Uptrend Model': uptrend_model_name,
             'Downtrend Model': downtrend_model_name,
-            'Type': f'MOO ({best_params.get("strategy", "grid")})',
+            'Type': f'MOO ({best_params.get("strategy", "grid")})[FB:{best_params.get("fallback", False)}][LO:{best_params.get("long_only", True)}][Lev:{best_params.get("leverage", 1.0)}][SM:{best_params.get("sizing_mode", "conservative")}][MP:{best_params.get("min_position", 0.0)}]',
             'Confidence': best_params.get('confidence', 0),
             'Threshold Long': best_params.get('long', 0),
             'Threshold Short': best_params.get('short', 0),
             'Stop Loss': best_params.get('stop_loss', 0),
+            'Trailing': best_params.get('trailing', 0),
             'Return (%)': round(ret_moo, 2),
             'B&H (%)': round(bnh_return, 2),
             'Max DD (%)': round(dd_moo, 2),
@@ -1570,12 +1944,28 @@ def main_combined():
         print("="*80)
         print(f"{'Market':<8} {'B&H':>10} {'Orig':>10} {'MOO(Hyb)':>10} {'Orig vs B&H':>12} {'MOO vs B&H':>12}")
         print("-" * 80)
+        
+        summary_rows = []
         for o, m in zip(results_original, results_moo):
             orig_vs_bh = o['Return (%)'] - o['B&H (%)']
             moo_vs_bh = m['Return (%)'] - m['B&H (%)']
             print(f"{o['Market']:<8} {o['B&H (%)']:>10.2f} {o['Return (%)']:>10.2f} {m['Return (%)']:>10.2f} {orig_vs_bh:>+12.2f} {moo_vs_bh:>+12.2f}")
+            
+            summary_rows.append({
+                'Market': o['Market'],
+                'B&H': round(o['B&H (%)'], 2),
+                'Orig': round(o['Return (%)'], 2),
+                'MOO(Hyb)': round(m['Return (%)'], 2),
+                'Orig vs B&H': round(orig_vs_bh, 2),
+                'MOO vs B&H': round(moo_vs_bh, 2)
+            })
+            
+        summary_df = pd.DataFrame(summary_rows)
+        summary_csv_path = "backtest_comparison_summary.csv"
+        summary_df.to_csv(summary_csv_path, index=False)
         
         print(f"\nSaved to backtest_combined_results.csv")
+        print(f"Saved summary to {summary_csv_path}")
     else:
         print("\nNo results generated.")
 

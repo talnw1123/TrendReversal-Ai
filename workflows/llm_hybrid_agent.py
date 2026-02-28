@@ -39,13 +39,6 @@ def init_db():
             updated_at TEXT
         )
     ''')
-    c.execute('''
-        CREATE TABLE IF NOT EXISTS news_articles (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            date TEXT,
-            content TEXT
-        )
-    ''')
     conn.commit()
     conn.close()
 
@@ -149,55 +142,13 @@ def get_sql_history(days=5):
     return history_text
 
 # =========================================================
-# 2. RAG System (เก็บและค้นหาข่าว) ด้วย Scikit-Learn
+# 2. ข่าวสารระดับมหภาค (LLM Native Knowledge)
 # =========================================================
-def add_news_to_rag(date, content):
-    """บันทึกข่าวลง Database สำหรับทำ RAG"""
-    conn = sqlite3.connect(DB_FILE)
-    c = conn.cursor()
-    c.execute("INSERT INTO news_articles (date, content) VALUES (?, ?)", (date, content))
-    conn.commit()
-    conn.close()
-    print(f"📰 เพิ่มข่าวของวันที่ {date} ลง RAG Database เรียบร้อย")
-
-def retrieve_relevant_news(query, top_k=2):
-    """รันระบบ Vector Search (TF-IDF Cosine Similarity) หาข่าวที่เกี่ยวกับสิ่งที่ถาม"""
-    try:
-        from sklearn.feature_extraction.text import TfidfVectorizer
-        from sklearn.metrics.pairwise import cosine_similarity
-    except ImportError:
-        print("❌ ไม่พบ scikit-learn (ไม่สามารถรันระบบ RAG ได้)")
-        return "ไม่มีข้อมูลข่าวสาร (ไม่พบไลบรารี sklearn)"
-
-    conn = sqlite3.connect(DB_FILE)
-    c = conn.cursor()
-    c.execute("SELECT date, content FROM news_articles ORDER BY id DESC LIMIT 50")  # ดึงข่าว 50 ล่าสุด
-    articles = c.fetchall()
-    conn.close()
-    
-    if not articles:
-        return "ไม่มีข้อมูลข่าวสารในระบบ"
-        
-    docs = [row[1] for row in articles]
-    docs_with_dates = [f"[{row[0]}] {row[1]}" for row in articles]
-    
-    # Vectorize (แปลงข้อความเป็นตัวเลขเพื่อหาความสอดคล้อง)
-    vectorizer = TfidfVectorizer()
-    all_text = [query] + docs
-    tfidf_matrix = vectorizer.fit_transform(all_text)
-    
-    # เทียบความคล้ายคลังเวกเตอร์
-    cosine_similarities = cosine_similarity(tfidf_matrix[0:1], tfidf_matrix[1:]).flatten()
-    related_docs_indices = cosine_similarities.argsort()[-top_k:][::-1] # เอา top_k ที่มีคะแนนสูงสุด
-    
-    rag_context = ""
-    for idx in related_docs_indices:
-        if cosine_similarities[idx] > 0.05: # ถัามีความคล้ายเกิน 5% ค่อยเอามา
-            rag_context += f"- {docs_with_dates[idx]}\n"
-            
-    if not rag_context:
-        return "ไม่มีข่าวที่เกี่ยวข้องกับเหตุการณ์ล่าสุดโดยตรง"
-    return rag_context
+def get_market_news_instruction():
+    """สั่งให้ LLM ใช้ความรู้ตัวเองเกี่ยวกับข่าวล่าสุดในการวิเคราะห์"""
+    return """ให้ใช้ความรู้ล่าสุดของคุณเกี่ยวกับข่าวเศรษฐกิจโลก, นโยบายธนาคารกลาง (FED/BOT/ECB), 
+ภูมิรัฐศาสตร์, และเหตุการณ์สำคัญที่อาจส่งผลต่อตลาดการเงิน (หุ้น, ทอง, คริปโต) 
+ในการประกอบการวิเคราะห์ร่วมกับข้อมูล Quantitative ด้านล่าง"""
 
 # =========================================================
 # 3. LLM Hybrid Prompt (SQL + RAG)
@@ -235,22 +186,6 @@ if __name__ == "__main__":
     print("📡 กำลังดึงและบันทึกสัญญาณวันนี้...")
     save_signals_to_sql()
     
-    # -------------------------------------------------------------
-    # ระบบจำลอง (Mock): ลองป้อนข่าวเข้า RAG
-    # -------------------------------------------------------------
-    print("\n--- 2. ระบบ RAG VectorDB ---")
-    today = datetime.datetime.now().strftime('%Y-%m-%d')
-    yesterday = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
-    
-    conn = sqlite3.connect(DB_FILE)
-    count_news = conn.execute("SELECT COUNT(*) FROM news_articles").fetchone()[0]
-    conn.close()
-    
-    if count_news == 0:
-        add_news_to_rag(yesterday, "กนง. ประเทศไทย (BOT) มีมติคงอัตราดอกเบี้ยนโยบายไว้ที่ 2.50% ทำให้ตลาดหุ้นไทยแกว่งตัวแคบ ๆ ขาดปัจจัยบวกใหม่เข้ามาหนุน")
-        add_news_to_rag(today, "เงินเฟ้อสหรัฐพุ่งสูงขึ้นกว่าที่คาดการณ์ ทำให้นักลงทุนกังวลว่า FED อาจจะคงดอกเบี้ยสูงไปอีกนาน ส่งผลลบต่อ Bitcoin (BTC) และสินทรัพย์เสี่ยง (US Stocks)")
-        add_news_to_rag(today, "ทองคำ (Gold) ได้รับอานิสงส์ความตึงเครียดทางภูมิรัฐศาสตร์เป็นที่พักพิงที่ปลอดภัยในช่วงนี้")
-    
     print("\n=======================================================")
     print("🤖 ยินดีต้อนรับสู่ AI Trading Assistant (Hybrid SQL+RAG)")
     print("พิมพ์คำถามที่คุณอยากวิเคราะห์ (พิมพ์ 'exit' เพื่อออก)")
@@ -281,26 +216,26 @@ if __name__ == "__main__":
             continue
             
         print("🔍 กำลังค้นหาข้อมูลที่เกี่ยวข้องจาก Database...")
-        news_context = retrieve_relevant_news(user_input)
+        news_context = get_market_news_instruction()
         sql_history = get_sql_history(days=5)
         
         # -------------------------------------------------------------
         # กะเกณฑ์โมเดลผู้เชี่ยวชาญ (MoE - Mixture of Experts) - โหมด Turbo เร็วปรื๊ด
         # -------------------------------------------------------------
-        expert1_model = "deepseek/deepseek-r1-distill-llama-70b" # รุ่นบีบอัดของ R1 คิดไว ตอบเร็ว
-        expert2_model = "qwen/qwen-2.5-72b-instruct" # รุ่นล่าสุดของ Qwen ที่เบาและไวกว่า Max มาก
-        master_model = "anthropic/claude-3-5-haiku" # รุ่นน้องเล็กสุดของ Claude 3.5 ที่เน้นความไวแสง
+        expert1_model = "deepseek/deepseek-r1-distill-llama-70b"
+        expert2_model = "qwen/qwen-2.5-72b-instruct"
+        master_model = "anthropic/claude-3-5-haiku"
         
         expert_prompt = f"""คำถามของผู้ใช้: {user_input}
 
-[ข้อมูล RAG ข่าวสารระดับมหภาค]:
+[คำสั่งเกี่ยวกับข่าวสาร]:
 {news_context}
 
 [ข้อมูล Quantitative จาก Database (กลยุทธ์ 2 ปี ➕ สัญญาณ 5 วันล่าสุด)]:
 {sql_history}
 
 คำสั่ง: 
-ในฐานะผู้เชี่ยวชาญ Quant ให้หาตลาดที่ผู้ใช้ถามจากตาราง แล้ววิเคราะห์สั้นๆ ว่าแนวโน้มเป็นยังไง, ML ให้โอกาสขึ้นกี่ %, และระบบมีสัญญาณ Buy/Sell/Hold อะไร"""
+ในฐานะผู้เชี่ยวชาญ Quant ให้หาตลาดที่ผู้ใช้ถามจากตาราง วิเคราะห์โดยอิงจากข่าวสารล่าสุดที่คุณรู้ + ข้อมูล Quantitative ข้างต้น แล้วสรุปสั้นๆ ว่าแนวโน้มเป็นยังไง, ML ให้โอกาสขึ้นกี่ %, และระบบมีสัญญาณ Buy/Sell/Hold อะไร"""
 
         print(f"🧠 Expert 1 ({expert1_model}) กำลังวิเคราะห์อย่างอิสระ...")
         exp1_resp = ask_llm([{"role": "user", "content": expert_prompt}], model_override=expert1_model)

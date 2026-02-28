@@ -20,8 +20,18 @@ import os
 import sys
 import warnings
 import yfinance as yf
+import sqlite3
+import datetime
 
 warnings.filterwarnings('ignore')
+
+# Add project root to sys.path to allow importing from model/
+current_script_dir = os.path.dirname(os.path.abspath(__file__))
+proj_root = os.path.join(current_script_dir, '..')
+if proj_root not in sys.path:
+    sys.path.insert(0, proj_root)
+
+from model.backtest_all_models import run_simulation_moo
 
 # ─────────────────────────────────────────────────────────────────
 # CONSTANTS
@@ -38,78 +48,132 @@ TICKERS = {
 }
 
 # ─────────────────────────────────────────────────────────────────
-# BEST CONFIG per Market (จาก backtest_combined_results.csv)
+# DYNAMIC CONFIGURATIONS
 # ─────────────────────────────────────────────────────────────────
-# Market | Regime Method  | Uptrend Model  | Downtrend Model | Strategy
-# US     | HMM            | LSTM           | CNN             | smart_hold
-# UK     | HMM            | MLP            | SVM             | active
-# Thai   | HMM_Enhanced   | MLP            | LSTM            | smart_hold
-# Gold   | HMM            | CNN            | Transformer     | smart_hold
-# BTC    | GMM_Enhanced   | RandomForest   | LSTM            | active
+# Global variable states holding the best-performing models & parameters
+MARKET_REGIME_METHOD = {}
+MARKET_UPTREND_MODEL = {}
+MARKET_DOWNTREND_MODEL = {}
+OPTIMIZED_PARAMS = {}
+MARKET_STRATEGIES = {}
+MARKET_LONG_ONLY = {}
+MARKET_LEVERAGE = {}
+MARKET_SIZING_MODE = {}
+MARKET_MIN_POSITION = {}
 
-MARKET_REGIME_METHOD = {
-    'US':   'HMM',
-    'UK':   'HMM',
-    'Thai': 'HMM_Enhanced',
-    'Gold': 'HMM',
-    'BTC':  'GMM_Enhanced',
-}
-
-MARKET_UPTREND_MODEL = {
-    'US':   'LSTM',
-    'UK':   'MLP',
-    'Thai': 'MLP',
-    'Gold': 'CNN',
-    'BTC':  'RandomForest',
-}
-
-MARKET_DOWNTREND_MODEL = {
-    'US':   'CNN',
-    'UK':   'SVM',
-    'Thai': 'LSTM',
-    'Gold': 'Transformer',
-    'BTC':  'LSTM',
-}
-
-# MOO-Optimized Parameters per Market (จาก moo_optimized_params.csv)
-OPTIMIZED_PARAMS = {
-    'US':   {'confidence': 0.5105, 'long': 0.5393, 'short': 0.3019, 'stop_loss': 0.1496},
-    'UK':   {'confidence': 0.5169, 'long': 0.5232, 'short': 0.3251, 'stop_loss': 0.1105},
-    'Thai': {'confidence': 0.5132, 'long': 0.5413, 'short': 0.3166, 'stop_loss': 0.0793},
-    'Gold': {'confidence': 0.5392, 'long': 0.5488, 'short': 0.3533, 'stop_loss': 0.0320},
-    'BTC':  {'confidence': 0.5955, 'long': 0.5765, 'short': 0.3294, 'stop_loss': 0.0596},
-}
-
-# Strategy per Market
-MARKET_STRATEGIES = {
-    'US':   'smart_hold',
-    'UK':   'active',
-    'Gold': 'smart_hold',
-    'BTC':  'active',
-    'Thai': 'smart_hold',
-}
-
-# Trailing Stop per Market (ใช้กับ smart_hold เท่านั้น)
+# Default Trailing Stop / Long-Only overrides (unless overridden by ML later)
 MARKET_TRAILING_STOPS = {
-    'US':   0.15,
-    'UK':   0.0,
-    'Gold': 0.15,
-    'BTC':  0.0,
-    'Thai': 0.10,
+    'US':   0.15, 'UK':   0.10, 'Gold': 0.15, 'BTC':  0.20, 'Thai': 0.10,
 }
 
-# Long Only per Market
-MARKET_LONG_ONLY = {
-    'US':   True,
-    'UK':   True,
-    'Gold': True,
-    'BTC':  False,
-    'Thai': False,
-}
+# MARKET_LONG_ONLY is loaded dynamically from backtest_combined_results.csv via load_dynamic_configs()
 
 LOOKBACK = 30
 INITIAL_CAPITAL = 10000.0
 TRANSACTION_COST = 0.001
+
+def load_dynamic_configs(quiet=True):
+    """
+    Load parameters and model selections dynamically from 
+    'backtest_combined_results.csv' to ensure we utilize the absolute
+    best-performing configurations from our most recent MOO optimizations.
+    """
+    global MARKET_REGIME_METHOD, MARKET_UPTREND_MODEL, MARKET_DOWNTREND_MODEL
+    global OPTIMIZED_PARAMS, MARKET_STRATEGIES
+    global MARKET_LONG_ONLY, MARKET_LEVERAGE, MARKET_TRAILING_STOPS
+    global MARKET_SIZING_MODE, MARKET_MIN_POSITION
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.join(script_dir, '..')
+    
+    combined_csv = os.path.join(project_root, 'backtest_combined_results.csv')
+    
+    if not os.path.exists(combined_csv):
+        if not quiet:
+            print(f"  [Warning] Dynamic config {combined_csv} not found.")
+        return
+
+    try:
+        df = pd.read_csv(combined_csv)
+        # Filter strictly for rows denoting the hybrid MOO logic
+        moo_df = df[df['Type'].str.contains('MOO', na=False)]
+        
+        for idx, row in moo_df.iterrows():
+            market = row['Market']
+            
+            # Extract models
+            MARKET_REGIME_METHOD[market] = row['Regime Method']
+            MARKET_UPTREND_MODEL[market] = row['Uptrend Model']
+            MARKET_DOWNTREND_MODEL[market] = row['Downtrend Model']
+            
+            # Extract strategy parsing from string e.g., 'MOO (active)[FB:True]' -> 'active'
+            type_str = row['Type']
+            strategy_mode = 'active'
+            if '(smart_hold)' in type_str:
+                strategy_mode = 'smart_hold'
+            elif '(Buy_and_Hold_Override)' in type_str:
+                strategy_mode = 'Buy_and_Hold_Override'
+            elif '(Enhanced_Oracle_B&H)' in type_str:
+                strategy_mode = 'Enhanced_Oracle_B&H'
+            elif '(Perfect_Oracle)' in type_str:
+                strategy_mode = 'Perfect_Oracle'
+            
+            fallback_mode = False
+            if '[FB:True]' in type_str:
+                fallback_mode = True
+            
+            MARKET_STRATEGIES[market] = strategy_mode
+            
+            # Extract parameters
+            OPTIMIZED_PARAMS[market] = {
+                'confidence': float(row['Confidence']),
+                'long': float(row['Threshold Long']),
+                'short': float(row['Threshold Short']),
+                'stop_loss': float(row['Stop Loss']),
+                'fallback': fallback_mode
+            }
+            
+            # Extract Long Only if present in Type string or fallback to False
+            if '[LO:True]' in type_str:
+                MARKET_LONG_ONLY[market] = True
+            elif '[LO:False]' in type_str:
+                MARKET_LONG_ONLY[market] = False
+                
+            # Extract Leverage if present in Type string (e.g., [Lev:1.5])
+            import re
+            match = re.search(r'\[Lev:([0-9.]+)\]', type_str)
+            if match:
+                MARKET_LEVERAGE[market] = float(match.group(1))
+            else:
+                MARKET_LEVERAGE[market] = 1.0
+            
+            # Extract Trailing Stop from CSV column if it exists
+            if 'Trailing' in row.index:
+                MARKET_TRAILING_STOPS[market] = float(row['Trailing'])
+            
+            # Extract Sizing Mode (e.g., [SM:aggressive])
+            sm_match = re.search(r'\[SM:(\w+)\]', type_str)
+            if sm_match:
+                MARKET_SIZING_MODE[market] = sm_match.group(1)
+            else:
+                MARKET_SIZING_MODE[market] = 'conservative'
+            
+            # Extract Min Position (e.g., [MP:0.3])
+            mp_match = re.search(r'\[MP:([0-9.]+)\]', type_str)
+            if mp_match:
+                MARKET_MIN_POSITION[market] = float(mp_match.group(1))
+            else:
+                MARKET_MIN_POSITION[market] = 0.0
+            
+        if not quiet:
+            print(f"  ✔️ Successfully loaded dynamic configurations for {len(MARKET_STRATEGIES)} markets.")
+            
+    except Exception as e:
+        if not quiet:
+            print(f"  [Error] Failed to load dynamic configs: {e}")
+
+# Pre-warm configurations globally upon module load
+load_dynamic_configs()
 
 
 # ═════════════════════════════════════════════════════════════════
@@ -153,8 +217,11 @@ class TrendDetector:
             return TrendDetector.detect_gmm_enhanced(df)
         elif method in ('ADX_SUPERTREND', 'ADX'):
             return TrendDetector.detect_adx_supertrend(df)
+        elif method == 'SMA200':
+            return TrendDetector.detect_sma200(df)
         else:
-            print(f"  [Warning] Unknown method '{method}'. Using HMM.")
+            import sys as _sys
+            print(f"  [Warning] Unknown method '{method}'. Using HMM.", file=_sys.stderr)
             return TrendDetector.detect_hmm(df, market_name)
 
     # ─── HMM ────────────────────────────────────────────────────
@@ -424,6 +491,17 @@ class TrendDetector:
         is_uptrend = ((adx > adx_threshold) & (supertrend == 1)).astype(int)
         return is_uptrend.values
 
+    # ─── SMA200 ─────────────────────────────────────────────────
+    @staticmethod
+    def detect_sma200(df):
+        """
+        Simple Moving Average 200-day Regime Detection.
+        Uptrend when Close > SMA(200), Downtrend otherwise.
+        """
+        sma200 = df['Close'].rolling(200).mean()
+        regime = (df['Close'] > sma200).astype(int).fillna(0)
+        return regime.values
+
     # ─── Utility ────────────────────────────────────────────────
     @staticmethod
     def get_current_trend(df, method='HMM', market_name='Default'):
@@ -476,11 +554,12 @@ class SignalGenerator:
 
     def __init__(self, market='US'):
         params = OPTIMIZED_PARAMS.get(market, {
-            'confidence': 0.55, 'long': 0.54, 'short': 0.46
+            'confidence': 0.55, 'long': 0.54, 'short': 0.46, 'fallback': False
         })
         self.confidence_threshold = params['confidence']
         self.long_threshold = params['long']
         self.short_threshold = params['short']
+        self.fallback = params.get('fallback', False)
         self.market = market
 
     def generate(self, probabilities):
@@ -528,21 +607,21 @@ class SignalGenerator:
 
             confidence = np.max(prob)
             bull_prob = prob[1] if len(prob) > 1 else prob[0]
-            signal = self._classify(confidence, bull_prob)
+            signal = self._classify(confidence, bull_prob, regime[i])
             signals.append(signal)
 
         return np.array(signals)
 
-    def _classify(self, confidence, bull_prob):
+    def _classify(self, confidence, bull_prob, regime_val=None):
         """ตัดสินสัญญาณจาก confidence และ bull_prob"""
         if confidence < self.confidence_threshold:
-            return 99  # HOLD — ไม่มั่นใจ
+            return regime_val if (self.fallback and regime_val is not None) else 99  # HOLD — ไม่มั่นใจ
         elif bull_prob >= self.long_threshold:
             return 1   # BUY
         elif bull_prob <= self.short_threshold:
             return 0   # SELL
         else:
-            return 99  # HOLD — อยู่ในโซนกลาง
+            return regime_val if (self.fallback and regime_val is not None) else 99  # HOLD — อยู่ในโซนกลาง
 
     @staticmethod
     def signal_to_text(signal):
@@ -588,8 +667,11 @@ class TradingEngine:
         self.trailing_stop_pct = MARKET_TRAILING_STOPS.get(market, 0.0)
         self.long_only = MARKET_LONG_ONLY.get(market, False)
         self.strategy_mode = MARKET_STRATEGIES.get(market, 'active')
+        self.leverage = MARKET_LEVERAGE.get(market, 1.0)
+        self.sizing_mode = MARKET_SIZING_MODE.get(market, 'conservative')
+        self.min_position = MARKET_MIN_POSITION.get(market, 0.0)
 
-    def run(self, signals, prices):
+    def run(self, signals, prices, confidences=None, regimes=None):
         """
         รัน simulation
         
@@ -607,104 +689,26 @@ class TradingEngine:
                 'final_equity': float,
             }
         """
-        cash = self.initial_capital
-        position = 0
-        entry_price = 0.0
-        highest_price = 0.0
-        equity_curve = []
-        n_trades = 0
-        wins = 0
+        # ─── B&H Override Checks Removed to ensure genuine signals ───
 
-        for i in range(len(signals) - 1):
-            signal = signals[i]
-            price = prices[i]
-            next_price = prices[i + 1]
-
-            # Track highest price for trailing stop (long only)
-            if position == 1 and price > highest_price:
-                highest_price = price
-
-            # ──── Check Exits: Stop Loss & Trailing Stop ────
-            if position != 0 and entry_price > 0:
-                if position == 1:
-                    pnl_pct = (price - entry_price) / entry_price
-
-                    # Trailing Stop
-                    if self.trailing_stop_pct > 0:
-                        drawdown_from_peak = (highest_price - price) / highest_price
-                        if drawdown_from_peak > self.trailing_stop_pct:
-                            cash -= cash * self.transaction_cost
-                            if pnl_pct > 0:
-                                wins += 1
-                            n_trades += 1
-                            position = 0
-                            entry_price = 0.0
-                            highest_price = 0.0
-                            equity_curve.append(cash)
-                            continue
-                else:
-                    pnl_pct = (entry_price - price) / entry_price
-
-                # Stop Loss
-                if pnl_pct < -self.stop_loss_pct:
-                    cash -= cash * self.transaction_cost
-                    if pnl_pct > 0:
-                        wins += 1
-                    n_trades += 1
-                    position = 0
-                    entry_price = 0.0
-                    highest_price = 0.0
-                    equity_curve.append(cash)
-                    continue
-
-            # ──── Determine Target Position ────
-            target_pos = 0
-
-            if signal == 1:
-                target_pos = 1
-            elif signal == 0:
-                target_pos = 0 if self.long_only else -1
-            elif signal == 99:
-                if self.strategy_mode == 'smart_hold':
-                    target_pos = position  # Hold current position
-                else:
-                    target_pos = 0  # Exit to cash
-
-            # ──── Execute Trade ────
-            if position != target_pos:
-                cost = cash * abs(target_pos - position) * self.transaction_cost
-                cash -= cost
-
-                # Record trade stats
-                if position != 0 and entry_price > 0:
-                    if position == 1:
-                        trade_pnl = (price - entry_price) / entry_price
-                    else:
-                        trade_pnl = (entry_price - price) / entry_price
-                    if trade_pnl > 0:
-                        wins += 1
-                    n_trades += 1
-
-                position = target_pos
-
-                if target_pos != 0:
-                    entry_price = price
-                    if target_pos == 1:
-                        highest_price = price
-                else:
-                    entry_price = 0.0
-                    highest_price = 0.0
-
-            # ──── Update Equity ────
-            if position == 1:
-                cash *= (1 + (next_price - price) / price)
-            elif position == -1:
-                cash *= (1 + (price - next_price) / price)
-
-            equity_curve.append(cash)
+        equity_curve, n_trades, win_rate, trade_points = run_simulation_moo(
+            signals=signals,
+            prices=prices,
+            confidences=confidences,
+            regimes=regimes,
+            stop_loss_pct=self.stop_loss_pct,
+            trailing_stop_pct=self.trailing_stop_pct,
+            long_only=self.long_only,
+            strategy_mode=self.strategy_mode,
+            initial_capital=self.initial_capital,
+            transaction_cost=self.transaction_cost,
+            leverage=self.leverage,
+            sizing_mode=self.sizing_mode,
+            min_position=self.min_position
+        )
 
         # Calculate metrics
-        win_rate = (wins / n_trades * 100) if n_trades > 0 else 0.0
+        cash = equity_curve[-1] if equity_curve else self.initial_capital
         total_return = (cash - self.initial_capital) / self.initial_capital * 100
         max_dd = self._calculate_drawdown(equity_curve)
         bnh_return = (prices[-1] - prices[0]) / prices[0] * 100
@@ -717,6 +721,7 @@ class TradingEngine:
             'win_rate': round(win_rate, 1),
             'max_drawdown': round(max_dd, 2),
             'final_equity': round(cash, 2),
+            'trade_points': trade_points,
         }
 
     @staticmethod
@@ -833,7 +838,8 @@ def get_current_signals(markets=None, quiet=False):
         
         # 3. Model Prediction
         active_model_name = up_model if trend == 'UPTREND' else down_model
-        model_dir = os.path.join(model_base_dir, market, f"regime_{'uptrend' if trend == 'UPTREND' else 'downtrend'}")
+        trend_suffix = 'uptrend' if trend == 'UPTREND' else 'downtrend'
+        model_dir = os.path.join(model_base_dir, f"model_{market}_{trend_suffix}")
         
         if not quiet: print(f"   Loading active model: {active_model_name}...")
         
@@ -845,6 +851,8 @@ def get_current_signals(markets=None, quiet=False):
             
         signal = 99
         signal_text = "⚪ HOLD (รอ)"
+        ml_up_prob = 0.0
+        ml_down_prob = 0.0
         
         if model is not None:
             selected_cols = get_selected_features(df)
@@ -883,8 +891,12 @@ def get_current_signals(markets=None, quiet=False):
                 
                 # Generate signal based on MOO thresholds
                 sg = SignalGenerator(market)
-                signals = sg.generate_signals([prob])
+                signals = sg.generate(np.array([prob]))
                 signal = signals[0]
+                
+                # Store ML probabilities
+                ml_up_prob = round(float(prob[1] * 100 if len(prob) > 1 else prob[0] * 100), 2)
+                ml_down_prob = round(100.0 - ml_up_prob, 2)
                 
                 if signal == 99:
                     signal_text = "⚪ HOLD (รอ)"
@@ -912,6 +924,8 @@ def get_current_signals(markets=None, quiet=False):
             'price': current_price,
             'date': current_date,
             'trend_stats': summary,
+            'ml_up_prob': ml_up_prob,
+            'ml_down_prob': ml_down_prob,
         })
 
     return results
@@ -963,26 +977,13 @@ def plot_backtest(dates, equity_curve, prices, signals, regime, market, strategy
     plot_signals = signals[:-1]
     plot_regime = regime[1:] if len(regime) == len(dates) else regime[:len(plot_dates)]
 
-    # Extract actual trade points from simulation
-    sim_params = kwargs.get('sim_params', {})
-    trade_points = _extract_trade_points(
-        signals, prices,
-        stop_loss_pct=sim_params.get('stop_loss', 0.05),
-        trailing_stop_pct=sim_params.get('trailing', 0.0),
-        long_only=sim_params.get('long_only', True),
-        strategy_mode=sim_params.get('strategy', 'active')
-    )
+    # Use real trade points from simulation (passed via kwargs)
+    trade_points = kwargs.get('trade_points', [])
 
     buy_dates_actual, buy_prices_actual = [], []
     sell_dates_actual, sell_prices_actual = [], []
 
     for idx, action in trade_points:
-        # idx range is 0 to len(signals)-2
-        # plot_dates corresponds to dates[1:]
-        # So we can safely use idx for plot_dates, because plot_dates[idx] == dates[idx+1]
-        # But wait, run_simulation_moo uses prices[i] for execution and next_price for PnL.
-        # So the actual trade happens at index `i` of the original array?
-        # Let's map it safely.
         if 0 <= idx < len(dates):
             if action == 'buy':
                 buy_dates_actual.append(dates[idx])
@@ -1262,125 +1263,49 @@ def run_backtest(markets=None, period='2y'):
             print(f"   Prediction error: {e}")
             continue
 
-        # ── 7. Grid Search Optimization (เหมือน backtest_all_models.py) ──
+        # ── 7. Generate Signals & Run Simulation ──
         valid_indices = list(range(check_lookback, len(feature_data)))
         regime_aligned = regime[valid_indices]
         prices = df['Close'].iloc[valid_indices].values
         dates = df.index[valid_indices]
         bnh_return = (prices[-1] - prices[0]) / prices[0] * 100
 
-        print(f"   ⚡ Running Grid Search...")
+        print(f"   Generating signals using MOO-optimized parameters...")
+        generator = SignalGenerator(market=market)
+        best_signals = generator.generate_from_regime(probs_up, probs_down, regime_aligned)
 
-        # Parameter grids (expanded for better alpha)
-        conf_grid = [0.50, 0.52, 0.55, 0.58, 0.60, 0.62, 0.65, 0.70]
-        long_grid = [0.50, 0.52, 0.54, 0.56, 0.58, 0.60, 0.62, 0.65, 0.68, 0.70, 0.75]
-        short_grid = [0.35, 0.38, 0.40, 0.42, 0.44, 0.46, 0.48, 0.50]
-        sl_grid = [0.03, 0.05, 0.08, 0.10, 0.15, 0.20, 0.25, 0.30]
-        strategy_grid = ['active', 'smart_hold']
-        trailing_grid = [0.0, 0.03, 0.05, 0.10, 0.15, 0.20]
-        long_only_options = [True, False]
+        # Extract confidences for position sizing
+        confidences = []
+        for i in range(len(regime_aligned)):
+            if regime_aligned[i] == 1:
+                conf = np.max(probs_up[i])
+            else:
+                conf = np.max(probs_down[i])
+            confidences.append(conf)
+        confidences = np.array(confidences)
 
-        best_score = -999
-        best_params = {}
-        best_eq = [INITIAL_CAPITAL]
-        best_trades = 0
-        best_winrate = 0.0
-        best_dd = 0.0
-        best_signals = np.ones(len(regime_aligned)) * 99
-        total_combos = 0
+        print(f"   Running simulation...")
+        engine = TradingEngine(market=market, initial_capital=INITIAL_CAPITAL)
+        result = engine.run(best_signals, prices, confidences=confidences, regimes=regime_aligned)
 
-        for conf_t in conf_grid:
-            for long_t in long_grid:
-                for short_t in short_grid:
-                    if short_t >= long_t:
-                        continue
+        best_eq = result['equity_curve']
+        best_trades = result['n_trades']
+        best_winrate = result['win_rate']
+        best_dd = result['max_drawdown']
+        
+        market_params = OPTIMIZED_PARAMS.get(market, {})
+        best_params = {
+            'confidence': generator.confidence_threshold, 
+            'long': generator.long_threshold, 
+            'short': generator.short_threshold,
+            'stop_loss': market_params.get('stop_loss', 0.05),
+            'strategy': MARKET_STRATEGIES.get(market, 'active'),
+            'trailing': MARKET_TRAILING_STOPS.get(market, 0.0), 
+            'long_only': MARKET_LONG_ONLY.get(market, False),
+            'fallback': generator.fallback
+        }
 
-                    # Generate signals for this param combo
-                    test_signals = []
-                    for i in range(len(regime_aligned)):
-                        if regime_aligned[i] == 1:
-                            bull_prob = probs_up[i, 1] if probs_up.shape[1] > 1 else probs_up[i, 0]
-                            conf = np.max(probs_up[i])
-                        else:
-                            bull_prob = probs_down[i, 1] if probs_down.shape[1] > 1 else probs_down[i, 0]
-                            conf = np.max(probs_down[i])
-
-                        if conf < conf_t:
-                            test_signals.append(99)
-                        elif bull_prob >= long_t:
-                            test_signals.append(1)
-                        elif bull_prob <= short_t:
-                            test_signals.append(0)
-                        else:
-                            test_signals.append(99)
-
-                    test_signals = np.array(test_signals)
-
-                    for sl in sl_grid:
-                        for strat in strategy_grid:
-                            for ts in trailing_grid:
-                                if strat == 'active' and ts > 0:
-                                    continue
-                                if strat == 'smart_hold' and ts == 0:
-                                    continue
-
-                                for lo in long_only_options:
-                                    total_combos += 1
-
-                                    eq, trades, wr = run_simulation_moo(
-                                        test_signals, prices,
-                                        stop_loss_pct=sl,
-                                        trailing_stop_pct=ts,
-                                        long_only=lo,
-                                        strategy_mode=strat
-                                    )
-
-                                    if eq:
-                                        ret = (eq[-1] - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100
-                                        dd = _calculate_drawdown_val(eq)
-
-                                        # Score = Alpha + WR adjustments
-                                        alpha = ret - bnh_return
-                                        score = alpha
-                                        
-                                        # ── Penalties & Bonuses for Balance ──
-                                        
-                                        # 1. Drawdown Penalty
-                                        if dd < -25:
-                                            score -= 10
-                                            
-                                        # 2. Prevent 1-trade "Fluke" 100% WR if possible, but don't ban it completely 
-                                        # (Gold often has 1-2 good long-term trades)
-                                        if trades < 3:
-                                            # Penalty depends on how much it beats B&H. If it crushes B&H, keep it.
-                                            # If it just barely beats B&H, penalize it to encourage more active trading.
-                                            score -= 15
-                                            
-                                        if trades > 0:
-                                            # 3. Win Rate Penalty (Bad strategies)
-                                            if wr < 50:
-                                                score -= 30
-                                            
-                                            # 4. Balanced Bonus: Reward higher trades IF Win Rate is good
-                                            # Cap the bonus to not overshadow Alpha
-                                            elif wr >= 55:
-                                                trade_multiplier = min(trades, 20) / 10.0  # e.g., 5 trades = 0.5x, 20 trades = 2.0x
-                                                wr_bonus = (wr - 50) * 0.4                 # e.g., 70% WR = 8 points
-                                                score += (wr_bonus * trade_multiplier)
-                                        if score > best_score:
-                                            best_score = score
-                                            best_params = {
-                                                'confidence': conf_t, 'long': long_t, 'short': short_t,
-                                                'stop_loss': sl, 'strategy': strat, 'trailing': ts, 'long_only': lo
-                                            }
-                                            best_eq = eq
-                                            best_trades = trades
-                                            best_winrate = wr
-                                            best_dd = dd
-                                            best_signals = test_signals
-
-        print(f"   ✅ Searched {total_combos} combos → Best Alpha vs B&H: {best_score:+.2f}%")
-        print(f"   📊 Best Params: {best_params}")
+        print(f"   📊 Loaded MOO Params: {best_params}")
 
         strategy_return = (best_eq[-1] - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100
         vs_bnh = strategy_return - bnh_return
@@ -1539,7 +1464,7 @@ def run_backtest(markets=None, period='2y'):
             strategy_return=strategy_return,
             bnh_return=bnh_return,
             save_dir=save_dir,
-            sim_params=best_params,
+            trade_points=result.get('trade_points', []),
         )
 
         results.append({
@@ -1620,6 +1545,98 @@ def _calculate_drawdown_val(equity_curve):
     return drawdown.min() * 100
 
 
+def save_signals_to_db(results, quiet=False):
+    """
+    Save the daily generated signals to the SQLite database.
+    Prevents duplicates by checking the current date.
+    """
+    try:
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(script_dir, 'trading_database.sqlite')
+        
+        today_date = datetime.datetime.now().strftime('%Y-%m-%d')
+        conn = sqlite3.connect(db_path)
+        c = conn.cursor()
+        
+        saved_count = 0
+        
+        for m in results:
+            market = m['market']
+            table_name = f"signals_history_{market}"
+            
+            c.execute(f'''
+                CREATE TABLE IF NOT EXISTS "{table_name}" (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    date TEXT,
+                    market TEXT,
+                    price REAL,
+                    trend_regime TEXT,
+                    ml_up_prob REAL,
+                    ml_down_prob REAL,
+                    signal_action TEXT,
+                    position REAL,
+                    equity_curve REAL,
+                    bnh_curve REAL,
+                    UNIQUE(date)
+                )
+            ''')
+            
+            # Check if we already have today's insert
+            c.execute(f'SELECT COUNT(*) FROM "{table_name}" WHERE date=?', (today_date,))
+            if c.fetchone()[0] == 0:
+                trend_str = "1 (Uptrend)" if m['trend'] == 'UPTREND' else "0 (Downtrend)"
+                price = m.get('price', 0)
+                if price == 'N/A': price = 0
+                
+                # Use real ML probabilities from signal generation
+                up_prob = m.get('ml_up_prob', 0.0)
+                down_prob = m.get('ml_down_prob', 0.0)
+                
+                # Determine position from signal (1=long, -1=short, 0=cash)
+                sig = m.get('signal', 99)
+                position = 1.0 if sig == 1 else (-1.0 if sig == 0 else 0.0)
+                
+                # Chain equity/bnh from last known row
+                equity_val = 0.0
+                bnh_val = 0.0
+                try:
+                    c.execute(f'SELECT equity_curve, bnh_curve, price FROM "{table_name}" WHERE equity_curve != 0 ORDER BY date DESC LIMIT 1')
+                    last_row = c.fetchone()
+                    if last_row and last_row[2] > 0:
+                        prev_eq, prev_bnh, prev_price = last_row
+                        price_ratio = price / prev_price if prev_price > 0 else 1.0
+                        # B&H always tracks price
+                        bnh_val = round(prev_bnh * price_ratio, 4)
+                        # Equity tracks based on position
+                        if position == 1.0:
+                            equity_val = round(prev_eq * price_ratio, 4)
+                        elif position == -1.0:
+                            equity_val = round(prev_eq * (2 - price_ratio), 4)
+                        else:
+                            equity_val = prev_eq  # Cash: no change
+                except Exception:
+                    pass
+                
+                c.execute(f'''
+                    INSERT INTO "{table_name}" 
+                    (date, market, price, trend_regime, ml_up_prob, ml_down_prob, signal_action, position, equity_curve, bnh_curve)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ''', (today_date, market, price, trend_str, up_prob, down_prob, m['signal_text'], position, equity_val, bnh_val))
+                saved_count += 1
+                
+        conn.commit()
+        conn.close()
+        
+        if not quiet and saved_count > 0:
+            print(f"\n  ✅ Successfully archived {saved_count} daily signals to SQLite Database.")
+        elif not quiet and saved_count == 0:
+            print(f"\n  ℹ️ Database up to date. No new records inserted for {today_date}.")
+            
+    except Exception as e:
+        if not quiet:
+            print(f"\n  ❌ Failed to save signals to Database: {e}")
+
+
 # ═════════════════════════════════════════════════════════════════
 # MAIN
 # ═════════════════════════════════════════════════════════════════
@@ -1646,8 +1663,15 @@ if __name__ == '__main__':
 
     if args.json:
         # JSON Output Mode for LLMs / Integrations
+        # Suppress ALL stdout noise during JSON mode
         import json
-        results = get_current_signals(markets=markets, quiet=True)
+        import io
+        old_stdout = sys.stdout
+        sys.stdout = io.StringIO()  # Capture any stray prints
+        try:
+            results = get_current_signals(markets=markets, quiet=True)
+        finally:
+            sys.stdout = old_stdout  # Restore stdout
         print(json.dumps(results, indent=2, ensure_ascii=False))
         sys.exit(0)
 
@@ -1676,4 +1700,7 @@ if __name__ == '__main__':
             print(f"  {m:>5}: {sg.get_params_text()}")
             print(f"         {te.get_config_text()}")
             print(f"         Regime: {regime} | Models: ↑{up_m} / ↓{down_m}")
+
+        # Auto-Save to SQLite Database
+        save_signals_to_db(results)
 

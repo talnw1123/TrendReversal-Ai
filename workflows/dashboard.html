@@ -222,30 +222,6 @@
     </header>
 
     <div class="container">
-        <!-- Live Metrics via Database -->
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <div class="metric-title">Alpha (vs B&H)</div>
-                <div class="metric-value" id="val-alpha">--</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-title">Ai Strategy Return</div>
-                <div class="metric-value" id="val-return">--</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-title">Market Return (B&H)</div>
-                <div class="metric-value" id="val-bnh">--</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-title">Win Rate</div>
-                <div class="metric-value val-neutral" id="val-winrate">--</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-title">Max Drawdown</div>
-                <div class="metric-value val-negative" id="val-dd">--</div>
-            </div>
-        </div>
-
         <!-- Master Interactive Plotly Chart -->
         <div class="chart-container">
             <div id="plotly-chart"></div>
@@ -273,7 +249,6 @@
                 const res = await fetch(`${API_URL}?market=${market}`);
                 const data = await res.json();
 
-                renderMetrics(data.stats);
                 renderPlotly(data.history, market);
             } catch (err) {
                 console.error("Failed to load SQLite data:", err);
@@ -281,27 +256,6 @@
             } finally {
                 document.getElementById('loader').style.display = 'none';
             }
-        }
-
-        function renderMetrics(stats) {
-            if (!stats) return;
-
-            const alpha = stats.base_return_pct - stats.bnh_return_pct;
-
-            const elAlpha = document.getElementById('val-alpha');
-            elAlpha.innerText = (alpha >= 0 ? '+' : '') + alpha.toFixed(2) + '%';
-            elAlpha.className = 'metric-value ' + (alpha >= 0 ? 'val-positive' : 'val-negative');
-
-            const elRet = document.getElementById('val-return');
-            elRet.innerText = (stats.base_return_pct >= 0 ? '+' : '') + stats.base_return_pct.toFixed(2) + '%';
-            elRet.className = 'metric-value ' + (stats.base_return_pct >= 0 ? 'val-positive' : 'val-negative');
-
-            const elBnh = document.getElementById('val-bnh');
-            elBnh.innerText = (stats.bnh_return_pct >= 0 ? '+' : '') + stats.bnh_return_pct.toFixed(2) + '%';
-            elBnh.className = 'metric-value ' + (stats.bnh_return_pct >= 0 ? 'val-positive' : 'val-negative');
-
-            document.getElementById('val-winrate').innerText = stats.win_rate_pct.toFixed(1) + '%';
-            document.getElementById('val-dd').innerText = stats.max_drawdown_pct.toFixed(2) + '%';
         }
 
         function renderPlotly(history, market) {

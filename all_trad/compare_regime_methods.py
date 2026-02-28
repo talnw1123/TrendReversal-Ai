@@ -57,6 +57,18 @@ def calculate_trend_returns(df, is_uptrend):
     avg_downtrend = downtrend_returns.mean() if len(downtrend_returns) > 0 else 0
     separation = avg_uptrend - avg_downtrend
     
+    # Calculate Max Drawdown for strategy
+    cum_ret = (1 + strategy_returns).cumprod()
+    rolling_max = cum_ret.cummax()
+    drawdown = cum_ret / rolling_max - 1
+    max_dd = drawdown.min() * 100
+    
+    # Calculate Sharpe Ratio for strategy (annualized)
+    # Assuming daily data, 252 trading days
+    mean_ret = strategy_returns.mean()
+    std_ret = strategy_returns.std()
+    sharpe = (mean_ret / std_ret * np.sqrt(252)) if std_ret > 0 else 0.0
+    
     return {
         'uptrend_days': len(uptrend_returns),
         'downtrend_days': len(downtrend_returns),
@@ -68,7 +80,9 @@ def calculate_trend_returns(df, is_uptrend):
         'downtrend_accuracy': downtrend_accuracy * 100,
         'strategy_return': cum_strategy * 100,
         'buyhold_return': cum_buyhold * 100,
-        'excess_return': (cum_strategy - cum_buyhold) * 100
+        'excess_return': (cum_strategy - cum_buyhold) * 100,
+        'max_dd': max_dd,
+        'sharpe': sharpe
     }
 
 

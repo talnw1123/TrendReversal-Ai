@@ -12,13 +12,9 @@ markets = ['US', 'UK', 'Thai', 'Gold', 'BTC']
 
 def import_history_to_db():
     print("=" * 60)
-    print(" 📥 IMPORTING 2-YEAR HISTORICAL SIGNALS TO SQLITE")
+    print(" 📥 IMPORTING HISTORICAL SIGNALS TO SQLITE")
     print("=" * 60)
     
-    if not os.path.exists(db_path):
-        print(f"❌ Database not found at {db_path}. Please run llm_agent.py first to init.")
-        sys.exit(1)
-        
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     
@@ -33,17 +29,48 @@ def import_history_to_db():
         with open(json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
             
+        table_name = f"signals_history_{market}"
+        
+        # Ensure table exists with correct schema
+        cursor.execute(f'''
+            CREATE TABLE IF NOT EXISTS "{table_name}" (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                date TEXT,
+                market TEXT,
+                price REAL,
+                trend_regime TEXT,
+                ml_up_prob REAL,
+                ml_down_prob REAL,
+                signal_action TEXT,
+                position REAL,
+                equity_curve REAL,
+                bnh_curve REAL,
+                UNIQUE(date)
+            )
+        ''')
+        
+        # Clear existing data for this market to prevent duplicates
+        cursor.execute(f'DELETE FROM "{table_name}"')
+        
         print(f"📡 Importing {len(data)} trading days for {market}...")
         
-        # Insert ignores duplicate dates for the same market via UNIQUE constraint (assume we defined it)
-        # Wait, the current schema might not have a UNIQUE constraint. Let's delete existing first to prevent duplicates
-        cursor.execute("DELETE FROM signals_history WHERE market = ?", (market,))
-        
         for row in data:
-            cursor.execute('''
-                INSERT INTO signals_history (date, market, trend, signal_text, price)
-                VALUES (?, ?, ?, ?, ?)
-            ''', (row['date'], row['market'], row['trend'], row['signal_text'], row['price']))
+            cursor.execute(f'''
+                INSERT OR IGNORE INTO "{table_name}" 
+                (date, market, price, trend_regime, ml_up_prob, ml_down_prob, signal_action, position, equity_curve, bnh_curve)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (
+                row['date'], 
+                row.get('market', market),
+                row.get('price', 0),
+                row.get('trend_regime', ''),
+                row.get('ml_up_prob', 0),
+                row.get('ml_down_prob', 0),
+                row.get('signal_action', ''),
+                row.get('position', 0),
+                row.get('equity_curve', 0),
+                row.get('bnh_curve', 0),
+            ))
             total_inserted += 1
             
     conn.commit()
