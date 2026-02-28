@@ -3,6 +3,21 @@
 
 ไฟลนี้เปรียบเสมือน **"ต้นน้ำ"** ของระบบ AI ทั้งหมด เพราะ AI ไม่สามารถอ่านกราฟแท่งเทียนด้วยตาเปล่าได้เหมือนมนุษย์ หน้าที่ของไฟล์นี้คือการแปลง "ราคา (Price)" และ "ปริมาณ (Volume)" ให้เป็น "ตัวเลขทางสถิติ (Features / Indicators)" กว่า 100+ ตัวแปร เพื่อให้ AI มองเห็นแพทเทิร์นและการแกว่งตัวของตลาด
 
+```mermaid
+graph TD
+    A([OHLCV Data]) --> B{Feature Engineering}
+    B --> C[Group A-C: Moving Averages]
+    B --> D[Group D-G: Momentum]
+    B --> E[Group H-I: Volume]
+    B --> F[Group J-K: Indictors]
+    C & D & E & F --> G[Clean Data ffill/bfill]
+    G --> H([100+ Features Pool])
+    
+    style A fill:#eceff1,stroke:#607d8b,stroke-width:2px;
+    style H fill:#e8f5e9,stroke:#4caf50,stroke-width:2px;
+```
+
+
 ## 1. ข้อมูลขาเข้า (Inputs)
 - ไฟล์นี้คาดหวังตารางข้อมูลตระกูล Time-Series ที่มีคอลัมน์มาตรฐาน ได้แก่ `Open`, `High`, `Low`, `Close`, `Volume` แบบรายวัน 
 

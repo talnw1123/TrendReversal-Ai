@@ -3,6 +3,23 @@
 
 ระบบจัดเป็น **Quantitative Trading System แบบผสมผสาน (Hybrid AI Trading)** ที่รวมกันระหว่างปัจจัยทางเทคนิค (Technical indicators), Machine Learning/Deep Learning, ทฤษฎีความเสี่ยงและการบริหารพอร์ตลงทุน (Portfolio Management) และ Generative AI (LLM) เข้าด้วยกันอย่างสมบูรณ์แบบเพื่อหาจุดเข้าและออกของตลาด (Market Timing) ที่สามารถเอาชนะค่าเฉลี่ยแบบซื้อแล้วถือยาว (Buy & Hold) ได้
 
+```mermaid
+graph TD
+    A[1. Data Ingestion & Features] --> B[2. Regime Detection]
+    B --> C[3. Specialized Signal Models]
+    C --> D[4. Trading Engine & Simulation]
+    D --> E[5. LLM Analyst & REST API]
+    E --> F[6. Frontend Dashboards]
+    
+    style A fill:#e1f5fe,stroke:#03a9f4,stroke-width:2px;
+    style B fill:#fff3e0,stroke:#ff9800,stroke-width:2px;
+    style C fill:#e8f5e9,stroke:#4caf50,stroke-width:2px;
+    style D fill:#fce4ec,stroke:#e91e63,stroke-width:2px;
+    style E fill:#ede7f6,stroke:#9c27b0,stroke-width:2px;
+    style F fill:#e0f7fa,stroke:#00bcd4,stroke-width:2px;
+```
+
+
 ภาพรวมระบบถูกแบ่งเป็น 6 ส่วนหลักดังนี้ครับ:
 
 ---

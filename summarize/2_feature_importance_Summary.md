@@ -3,6 +3,23 @@
 
 การมีตัวแปรอ้างอิงให้ AI เยอะแยะเป็นร้อยตัวแปร (จาก `features.py`) ไม่ใช่เรื่องดีเสมอไป เพราะในโลกของ Machine Learning การใส่ตัวแปร "ขยะ" หรือเรื่องที่ไม่เกี่ยวข้องกันเข้าไป จะทำให้ AI เกิดอาการ **"จำข้อสอบ (Overfitting)"** หรือสับสนกับตัวแปรกวนสัญญาณ (Noise) มากเกินไป 
 
+```mermaid
+graph TD
+    A([100+ Features Pool]) --> B{Market Testing}
+    B --> C1[BTC Training]
+    B --> C2[Gold Training]
+    B --> C3[SET Training]
+    C1 & C2 & C3 --> D[Random Forest Importance]
+    D --> E[Top 20 per Market]
+    E --> F{Global Consensus > 60%}
+    F --> G([selected_features.json <br> Max 15 Features])
+    
+    style A fill:#eceff1,stroke:#607d8b,stroke-width:2px;
+    style D fill:#fff3e0,stroke:#ff9800,stroke-width:2px;
+    style G fill:#e8f5e9,stroke:#4caf50,stroke-width:2px;
+```
+
+
 หน้าที่ของไฟล์ `feature_importance.py` คือการเป็น **เครื่องคัดกรองชั้นยอด** เพื่อหาว่าอินดิเคเตอร์ตัวไหนบ้างที่สะท้อน "ผลตอบแทนในอนาคต" ได้แม่นยำที่สุดจริงๆ
 
 ## 1. กระบวนการทดสอบผู้เข้าแข่งขัน (Per-Market Testing)

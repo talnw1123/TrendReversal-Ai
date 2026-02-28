@@ -5,6 +5,23 @@
 
 หน้าที่เดียวของไฟล์นี้ ไม่ใช่การบอกว่าจุดไหนคือจุดตีฝ่า (Breakout) เพื่อเข้าซื้อ... แต่เป็นการแปะป้ายกำกับว่าในทุกๆ แท่งเทียนรายวัน วันนั้นๆ ถือเป็น **ฤดูขาขึ้นหนุึ่ง (1) หรือ ขาลงศูนย์ (0)** ให้กับสินทรัพย์แต่ละชนิดแยกทีละตัวๆ 
 
+```mermaid
+graph TD
+    A([Input: Market Data]) --> B{Regime Candidate Models}
+    B --> C1[Supervised: RF, XGB, SVC]
+    B --> C2[Unsupervised: GMM, HMM]
+    B --> C3[Baseline: SMA200]
+    C1 & C2 & C3 --> D[Test Out-of-Sample]
+    D --> E[Evaluate: Return, Sharpe, DD, Separation]
+    E --> F[Select Best via MOO / ASF]
+    F --> G([Output: Best Regime Model per Market])
+    
+    style A fill:#eceff1,stroke:#607d8b,stroke-width:2px;
+    style B fill:#fff3e0,stroke:#ff9800,stroke-width:2px;
+    style G fill:#e8f5e9,stroke:#4caf50,stroke-width:2px;
+```
+
+
 ## 1. ขบวนการเสกเครื่องมือกะเทรนด์ (The Suite of Regime Models)
 ระบบได้ยกกระบวนรบ AI ถึง 6 ศาสตร์และ 2 อินดิเคเตอร์มาคำนวณแยกเพื่อมองภาพเทรนด์ ได้แก่:
 - **(A) ตระกูลเรียนรู้ตามผลลัพธ์อนาคต (Supervised Learning):** 

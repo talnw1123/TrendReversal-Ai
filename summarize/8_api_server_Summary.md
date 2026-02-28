@@ -5,6 +5,24 @@
 
 ไฟล์นี้ทำงานด้วยเฟรมเวิร์ก **FastAPI** ซึ่งรองรับข้อมูลได้รวดเร็วและพร้อมกันเป็นจำนวนมากๆ 
 
+```mermaid
+graph TD
+    A([SQLite Database]) --> B[FastAPI Backend]
+    B --> C{Endpoints}
+    C -->|/api/history <br> /api/performance| D[Send Data to Dashboard]
+    C -->|/api/signals/save| E[Trigger trading_system.py]
+    C -->|/api/chat| F[Mixture of Experts LLM]
+    F --> G1[DeepSeek-R1]
+    F --> G2[Qwen-2.5-72b]
+    G1 & G2 --> H[Claude-3.5-Haiku Judge]
+    H --> I([Human-readable Analysis])
+    
+    style A fill:#eceff1,stroke:#607d8b,stroke-width:2px;
+    style B fill:#e3f2fd,stroke:#2196f3,stroke-width:2px;
+    style I fill:#e8f5e9,stroke:#4caf50,stroke-width:2px;
+```
+
+
 ## 1. จุดเชื่อมข้อมูลหลัก (Database Endpoints)
 - หน้าที่พื้นฐานของไฟล์นี้คือการต่อท่อกับฐานข้อมูลออฟไลน์ `trading_database.sqlite` (ที่ระบบเทรดได้โยนสถิติการขยับของกราฟรายวันมาเซฟทิ้งไว้)
 - มันเปิดช่องทาง (Endpoint) เช่น `/api/performance` และ `/api/history` เพื่อให้แดชบอร์ดหน้าบ้าน เข้ามา "ขอดึงประวัติการเทรด" เอาไปใช้วาดกราฟ และวาดตารางสถิติสรุปว่า ตอนนี้ Win Rate กี่เปอร์เซ็นต์ กำไรเทียบพอร์ตโง่ๆ ต่างกันแค่ไหน

@@ -3,6 +3,23 @@
 
 ไฟล์นี้ทำหน้าที่เป็นเหมือน **ผู้ตรวจการบัญชีการเก็งกำไร** มันไม่ได้ทำหน้าที่จำลองเทรดจริงในหน้าเว็บ (เหมือน Trading System) แต่มันถูกออกแบบมาเพื่อ "พิสูจน์ทราบว่า AI กองกำลัง Mixture of Experts ของเรา เอาชนะตลาดได้จริงหรือไม่ ในสเกลของไฟล์บิลด์"
 
+```mermaid
+graph TD
+    A([Historical Data & Features]) --> B{Identify Historical Regime}
+    B -->|Uptrend Detected| C[Load Uptrend Expert AI]
+    B -->|Downtrend Detected| D[Load Downtrend Expert AI]
+    C & D --> E[Predict Up/Down Probability]
+    E --> F{Apply Strategy Rules}
+    F -->|High Confirm| G[Execute BUY / SELL]
+    F -->|Low Confidence| H[HOLD / Cash]
+    G & H --> I([Calculate Equity Curve VS Buy&Hold])
+    
+    style A fill:#eceff1,stroke:#607d8b,stroke-width:2px;
+    style B fill:#fff3e0,stroke:#ff9800,stroke-width:2px;
+    style I fill:#e8f5e9,stroke:#4caf50,stroke-width:2px;
+```
+
+
 ## 1. จุดประสงค์ของสนามประลอง
 หลังจากที่เราเทรน AI เป็นร้อยๆ ตัว แยกตามตลาด (BTC, US, Gold) และตามเทรนด์ (Uptrend, Downtrend) ผ่านไฟล์ `train_separate_models.py` แล้ว... เราต้องมีตัวเลขสักชุดที่ยืนยันว่า:
 *"ถ้าเมื่อ 10 ปีก่อน เราเอา AI ชุดนี้ทั้งหมด ไปวางเงินล้านทิ้งไว้จริงๆ เทียบกับการเอาเงินล้านไปซื้อทิ้งไว้เฉยๆ (Buy & Hold) ใครจะวิน?"*

@@ -6,6 +6,23 @@
 
 มันประกอบด้วย 3 ห้องเครื่องหลักที่ทำงานสอดประสานกัน:
 
+```mermaid
+graph TD
+    A([Live Market Data]) --> B[1. Load Dynamic Configs from MOO]
+    B --> C[2. Trend Detector]
+    C --> D[3. Load Expert Model & Generate Signal]
+    D --> E{4. Trading Engine Risk Guard}
+    E --> F[Stop Loss Filter]
+    E --> G[Trailing Stop Filter]
+    E --> H[Position Sizing]
+    F & G & H --> I([5. Final Action: BUY/SELL/HOLD & Draw Plot])
+    
+    style A fill:#eceff1,stroke:#607d8b,stroke-width:2px;
+    style E fill:#fff3e0,stroke:#ff9800,stroke-width:2px;
+    style I fill:#e8f5e9,stroke:#4caf50,stroke-width:2px;
+```
+
+
 ## 1. การดูดซับความฉลาดสูงสุด (Dynamic Configurations)
 ฟังก์ชันแรกสุด `load_dynamic_configs()` จะวิ่งไปเคาะประตูอ่านไฟล์ Excel สรุปผลจาก `backtest_combined_results.csv`
 - มันจะดูว่าจากการแข่งขัน (MOO) รอบล่าสุด... วันนี้ตลาดหุ้นไทย (Thai) ถือเป็นสภาวะไหน? และใครคือ AI โมเดลที่เก่งที่สุดสำหรับตลาดไทย? จุดตัด Stop Loss ที่คุ้มสุดอยู่ตรงไหน?

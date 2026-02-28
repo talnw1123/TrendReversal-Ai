@@ -4,6 +4,25 @@
 ไฟล์นี้ทำหน้าที่เป็น **คลังอาวุธ หรือ โรงเก็บแบบแปลน (Blueprint)** สำหรับกระบวนการเรียนรู้เชิงลึก (Deep Learning) ที่จะถูกเรียกไปใช้งานต่อ
 จุดสำคัญคือ ไฟล์นี้ **"ไม่ได้ทำการเทรนโมเดลเลยซักนิดเดียว"** แต่ทำหน้าที่ประกาศสร้างมิติ (Dimensions), เลเยอร์ (Layers), และวงจรประสาทเทียมระดับสูงที่ประกอบร่างกันเอาไว้ เพื่อให้สคริปต์หลัก (`train_separate_models.py`) มาดึงสถาปัตยกรรมเหล่านี้ไปใช้กับข้อมูลของตัวเอง
 
+```mermaid
+graph TD
+    A([models.py: The Blueprint Library]) --> B[build_lstm]
+    A --> C[build_cnn]
+    A --> D[build_transformer]
+    A --> E[build_mlp]
+    B --> F([Time Series / Sequence Data])
+    C --> G([Local Patterns / Spikes])
+    D --> H([Global Attention overview])
+    E --> I([Non-Linear extraction])
+    
+    style A fill:#eceff1,stroke:#607d8b,stroke-width:2px;
+    style B fill:#e3f2fd,stroke:#2196f3,stroke-width:2px;
+    style C fill:#fce4ec,stroke:#e91e63,stroke-width:2px;
+    style D fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px;
+    style E fill:#fff8e1,stroke:#ffc107,stroke-width:2px;
+```
+
+
 ในคลังแห่งนี้บรรจุ 4 สถาปัตยกรรมระดับแนวหน้าของโลก AI เอาไว้:
 
 ## 1. `build_lstm` (Bidirectional LSTM พร้อม Self-Attention)

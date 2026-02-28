@@ -5,6 +5,21 @@
 
 ไฟล์ `train_separate_models.py` นี่แหละครับคือการ **"ฉีกกฎ"** ด้วยการสร้างกองพันนักรบที่เรียกว่า Mixture of Experts (สมาคมผู้เชี่ยวชาญ) หน้าที่ของมันคือดึงทรัพยากรทุกอย่างและพิมพ์เขียวทุกอย่างจากโฟลเดอร์รหัสมาสวมเข้าร่าง "ทหารเกณฑ์" เพื่อเฟ้นหาแม่ทัพนายกองที่เก่งที่สุด "แบบเจาะงบประมาณซอยย่อย" ลงไปทีละเทรนด์และทีละตลาด
 
+```mermaid
+graph TD
+    A([Data Targeted by Regime]) --> B1[e.g., US Uptrend]
+    A --> B2[e.g., BTC Downtrend]
+    B1 & B2 --> C[Train 7 Model Types<br>LSTM, CNN, RF, SVM...]
+    C --> D[Evaluate Accuracy on Test Set]
+    D --> E[Select Champion Model]
+    E --> F([Save as Exclusive Model for that Regime])
+    
+    style A fill:#eceff1,stroke:#607d8b,stroke-width:2px;
+    style C fill:#e3f2fd,stroke:#2196f3,stroke-width:2px;
+    style F fill:#e8f5e9,stroke:#4caf50,stroke-width:2px;
+```
+
+
 ## 1. กลยุทธ์แยกส่วนฐานข้อมูล (Data Targeting)
 แทนที่จะโหลดกราฟยาวๆ ม้วนเดียวจบสิบปี ไฟล์นี้ถูกตั้งโปรแกรมให้ไปซักถามตารางกราฟย่อยๆ ที่ถูกแบ่งหั่นเอาไว้แล้ว ผ่านฟังก์ชัน `load_market_trend_data`
 - ตลาดหุ้นสหรัฐช่วงขาขึ้น (`US_uptrend_labeled`)

@@ -10,6 +10,21 @@
 
 ไฟล์ `moo_trading_optimizer.py` ถูกสร้างขึ้นมาเพื่อแก้ปัญหานี้โดยเฉพาะ! 
 
+```mermaid
+graph TD
+    A([Gen 1: 40 Random Parameter Sets]) --> B[Fast Vectorized Backtest]
+    B --> C{Evaluate 4 Goals}
+    C -->|Return, Drawdown, Sharpe, Win Rate| D[Kill Weak / Breed Strong bots]
+    D --> E[Loop 50 Generations]
+    E --> F[Pareto Front Solutions]
+    F --> G([Select final params via mode<br>Balanced, Max Return, Min Risk])
+    
+    style A fill:#eceff1,stroke:#607d8b,stroke-width:2px;
+    style C fill:#fff3e0,stroke:#ff9800,stroke-width:2px;
+    style G fill:#e8f5e9,stroke:#4caf50,stroke-width:2px;
+```
+
+
 ## 1. การจำลองสมรภูมิ (Vectorized Backtest Simulator)
 ไฟล์นี้มีเครื่องจำลองการเทรดด้วยความเร็วแสง (Fast Vectorized Backtest) ที่กวาดข้อมูลราคาและผลคำทำนายของ AI ย้อนหลังเป็นพันๆ วัน มันถูกเขียนมาเพื่อทดสอบการเข้า-ออกออเดอร์ให้จบภายในเสี้ยววินาทีต่อ 1 รูปแบบ 
 
