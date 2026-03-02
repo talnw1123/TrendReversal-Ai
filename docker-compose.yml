@@ -6,7 +6,7 @@ services:
     container_name: trending_api
     command: python workflows/api_server.py
     ports:
-      - "8000:8000"
+      - "5000:8000"
     volumes:
       - ./workflows/trading_database.sqlite:/app/workflows/trading_database.sqlite
       - ./.env:/app/.env

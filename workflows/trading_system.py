@@ -627,11 +627,11 @@ class SignalGenerator:
     def signal_to_text(signal):
         """แปลงตัวเลขสัญญาณเป็นข้อความ"""
         if signal == 1:
-            return '🟢 BUY'
+            return 'BUY'
         elif signal == 0:
-            return '🔴 SELL'
+            return 'SELL'
         else:
-            return '⚪ HOLD'
+            return 'HOLD'
 
     def get_params_text(self):
         """แสดง parameters ปัจจุบัน"""
@@ -850,7 +850,7 @@ def get_current_signals(markets=None, quiet=False):
             model = None
             
         signal = 99
-        signal_text = "⚪ HOLD (รอ)"
+        signal_text = "HOLD"
         ml_up_prob = 0.0
         ml_down_prob = 0.0
         
@@ -899,7 +899,7 @@ def get_current_signals(markets=None, quiet=False):
                 ml_down_prob = round(100.0 - ml_up_prob, 2)
                 
                 if signal == 99:
-                    signal_text = "⚪ HOLD (รอ)"
+                    signal_text = "HOLD"
                 else:
                     signal_text = SignalGenerator.signal_to_text(signal)
             else:
@@ -920,7 +920,7 @@ def get_current_signals(markets=None, quiet=False):
             'strategy': strategy,
             'trend': trend,
             'signal': signal,
-            'signal_text': "HOLD (รอ)" if signal == 99 else signal_text,
+            'signal_text': "HOLD" if signal == 99 else signal_text,
             'price': current_price,
             'date': current_date,
             'trend_stats': summary,
@@ -1347,14 +1347,21 @@ def run_backtest(markets=None, period='2y'):
         
         market_history = []
         for i in range(len(dates)):
+            prev_pos = current_pos
+            
             # Update Position first if there was an action ON this index
             if i in event_dict:
                 current_pos = 1 if event_dict[i] == 'buy' else 0
 
-            sig = best_signals[i]
-            sg_text = "⚪ HOLD (รอ)"
-            if sig == 1: sg_text = "🟢 BUY"
-            elif sig == 0: sg_text = "🔴 SELL"
+            # Generate smart text based on position change (like the chart markers)
+            if current_pos == 1 and prev_pos == 0:
+                sg_text = "BUY"
+            elif current_pos == 0 and prev_pos == 1:
+                sg_text = "SELL"
+            elif current_pos == 1 and prev_pos == 1:
+                sg_text = "HOLD"
+            else:
+                sg_text = "WAIT"
                 
             reg_val = regime_aligned[i]
             trend_str = "1 (Uptrend)" if reg_val == 1 else "0 (Downtrend)"
@@ -1602,40 +1609,54 @@ def save_signals_to_db(results, quiet=False):
                 price = m.get('price', 0)
                 if price == 'N/A': price = 0
                 
-                # Use real ML probabilities from signal generation
                 up_prob = m.get('ml_up_prob', 0.0)
                 down_prob = m.get('ml_down_prob', 0.0)
-                
-                # Determine position from signal (1=long, -1=short, 0=cash)
                 sig = m.get('signal', 99)
-                position = 1.0 if sig == 1 else (-1.0 if sig == 0 else 0.0)
                 
                 # Chain equity/bnh from last known row
                 equity_val = 0.0
                 bnh_val = 0.0
+                prev_pos = 0.0
                 try:
-                    c.execute(f'SELECT equity_curve, bnh_curve, price FROM "{table_name}" WHERE equity_curve != 0 ORDER BY date DESC LIMIT 1')
+                    c.execute(f'SELECT equity_curve, bnh_curve, price, position FROM "{table_name}" WHERE equity_curve != 0 ORDER BY date DESC LIMIT 1')
                     last_row = c.fetchone()
                     if last_row and last_row[2] > 0:
-                        prev_eq, prev_bnh, prev_price = last_row
+                        prev_eq, prev_bnh, prev_price, prev_pos = last_row
                         price_ratio = price / prev_price if prev_price > 0 else 1.0
-                        # B&H always tracks price
                         bnh_val = round(prev_bnh * price_ratio, 4)
-                        # Equity tracks based on position
-                        if position == 1.0:
+                        if prev_pos > 0.0:
                             equity_val = round(prev_eq * price_ratio, 4)
-                        elif position == -1.0:
+                        elif prev_pos < 0.0:
                             equity_val = round(prev_eq * (2 - price_ratio), 4)
                         else:
                             equity_val = prev_eq  # Cash: no change
                 except Exception:
                     pass
+                    
+                # Determine target position taking smart_hold into account
+                strat = m.get('strategy', 'active')
+                if sig == 1:
+                    position = 1.0
+                elif sig == 0:
+                    position = 0.0 # simplified to long_only=True for live DB right now
+                else:
+                    position = prev_pos if strat == 'smart_hold' else 0.0
+                    
+                # Format smart textual action based on position transitions
+                if position > 0 and prev_pos <= 0:
+                    sg_text = "BUY"
+                elif position <= 0 and prev_pos > 0:
+                    sg_text = "SELL"
+                elif position > 0 and prev_pos > 0:
+                    sg_text = "HOLD"
+                else:
+                    sg_text = "WAIT"
                 
                 c.execute(f'''
                     INSERT INTO "{table_name}" 
                     (date, market, price, trend_regime, ml_up_prob, ml_down_prob, signal_action, position, equity_curve, bnh_curve)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                ''', (today_date, market, price, trend_str, up_prob, down_prob, m['signal_text'], position, equity_val, bnh_val))
+                ''', (today_date, market, price, trend_str, up_prob, down_prob, sg_text, position, equity_val, bnh_val))
                 saved_count += 1
                 
         conn.commit()

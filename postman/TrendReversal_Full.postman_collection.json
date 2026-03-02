@@ -1,0 +1,704 @@
+{
+  "info": {
+    "name": "TrendReversal Complete API",
+    "description": "Full collection for all TrendReversal backend endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register - Step 1: Send OTP",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\",\n  \"firstName\": \"Test\",\n  \"lastName\": \"User\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Register - Step 2: Verify OTP",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"otp\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/verify-email",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "verify-email"]
+            }
+          }
+        },
+        {
+          "name": "Resend OTP Code",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/resend-code",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "resend-code"]
+            }
+          }
+        },
+        {
+          "name": "Login (Sets jwt_token)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.accessToken || (jsonData.data && jsonData.data.accessToken)) {",
+                  "    var token = jsonData.accessToken || jsonData.data.accessToken;",
+                  "    pm.collectionVariables.set(\"jwt_token\", token);",
+                  "} else if (jsonData.token) {",
+                  "    pm.collectionVariables.set(\"jwt_token\", jsonData.token);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Login with Google (Redirect)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/google",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "google"]
+            }
+          }
+        },
+        {
+          "name": "Login with Google (Mobile)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"token\": \"your_google_id_token_here\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/google/mobile",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "google", "mobile"]
+            }
+          }
+        },
+        {
+          "name": "Request Password Reset OTP",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/forgot-password",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "forgot-password"]
+            }
+          }
+        },
+        {
+          "name": "Verify Password Reset OTP",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"otp\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/verify-reset-otp",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "verify-reset-otp"]
+            }
+          }
+        },
+        {
+          "name": "Reset Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"otp\": \"123456\",\n  \"password\": \"newpassword123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/reset-password",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "reset-password"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get Current User Profile",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/users/me",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "users", "me"]
+            }
+          }
+        },
+        {
+          "name": "Update Current User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "PATCH",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"UpdatedName\",\n  \"lastName\": \"UpdatedSurname\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/users/me",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "users", "me"]
+            }
+          }
+        },
+        {
+          "name": "Add Asset to Favorites",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/users/me/favorites/BTC",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "users", "me", "favorites", "BTC"]
+            }
+          }
+        },
+        {
+          "name": "Remove Asset from Favorites",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/users/me/favorites/BTC",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "users", "me", "favorites", "BTC"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Assets",
+      "item": [
+        {
+          "name": "Get S&P 500 (US)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/assets/price/us",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "assets", "price", "us"]
+            }
+          }
+        },
+        {
+          "name": "Get FTSE 100 (UK)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/assets/price/uk",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "assets", "price", "uk"]
+            }
+          }
+        },
+        {
+          "name": "Get SET 50 (Thailand)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/assets/price/thai",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "assets", "price", "thai"]
+            }
+          }
+        },
+        {
+          "name": "Get Gold Price",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/assets/price/gold",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "assets", "price", "gold"]
+            }
+          }
+        },
+        {
+          "name": "Get Bitcoin Price",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/assets/price/btc",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "assets", "price", "btc"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Predictions",
+      "item": [
+        {
+          "name": "Request Prediction",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symbol\": \"BTC\",\n  \"timeframe\": \"1d\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/predictions",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "predictions"]
+            }
+          }
+        },
+        {
+          "name": "Get Reversal Points for Symbol",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/predictions/reversal-points/BTC?timeframe=1d&limit=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "predictions", "reversal-points", "BTC"],
+              "query": [
+                { "key": "timeframe", "value": "1d" },
+                { "key": "limit", "value": "10" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Batch Reversal Points",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/predictions/batch?symbols=BTC,US,Gold&timeframe=1d",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "predictions", "batch"],
+              "query": [
+                { "key": "symbols", "value": "BTC,US,Gold" },
+                { "key": "timeframe", "value": "1d" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Check ML API Health Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/predictions/health",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "predictions", "health"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Notifications",
+      "item": [
+        {
+          "name": "Get Messages/Notifications",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/notifications",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "notifications"]
+            }
+          }
+        },
+        {
+          "name": "Mark One as Read",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/notifications/1/read",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "notifications", "1", "read"]
+            }
+          }
+        },
+        {
+          "name": "Mark All as Read",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/notifications/read-all",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "notifications", "read-all"]
+            }
+          }
+        },
+        {
+          "name": "Register Push Device",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"token\": \"device-push-token-dsaf312\",\n  \"platform\": \"ios\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/notifications/devices",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "notifications", "devices"]
+            }
+          }
+        },
+        {
+          "name": "Unregister Push Device",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/notifications/devices/device-push-token-dsaf312",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "notifications", "devices", "device-push-token-dsaf312"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Portfolio",
+      "item": [
+        {
+          "name": "Get Portfolio",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/portfolio",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "portfolio"]
+            }
+          }
+        },
+        {
+          "name": "Add Asset to Portfolio",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symbol\": \"BTC\",\n  \"quantity\": 0.5,\n  \"buyPrice\": 65000\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/portfolio",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "portfolio"]
+            }
+          }
+        },
+        {
+          "name": "Update Asset in Portfolio",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "PATCH",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantity\": 0.6,\n  \"buyPrice\": 66000\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/portfolio/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "portfolio", "1"]
+            }
+          }
+        },
+        {
+          "name": "Remove Asset from Portfolio",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/portfolio/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "portfolio", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chat",
+      "item": [
+        {
+          "name": "สร้างห้องแชทใหม่",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.id) {",
+                  "    pm.collectionVariables.set(\"chat_session_id\", jsonData.id);",
+                  "    console.log('Saved chat_session_id: ' + jsonData.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"วิเคราะห์ตลาด BTC\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/chat/sessions",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "chat", "sessions"]
+            }
+          }
+        },
+        {
+          "name": "ดึงรายการห้องแชททั้งหมด",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/chat/sessions",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "chat", "sessions"]
+            }
+          }
+        },
+        {
+          "name": "ดูข้อความทั้งหมดในห้องแชท",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/chat/sessions/{{chat_session_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "chat", "sessions", "{{chat_session_id}}"]
+            }
+          }
+        },
+        {
+          "name": "ส่งข้อความหา AI",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"วิเคราะห์ตลาด BTC วันนี้ให้หน่อย ควรซื้อหรือขาย?\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/chat/sessions/{{chat_session_id}}/messages",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "chat", "sessions", "{{chat_session_id}}", "messages"]
+            }
+          }
+        },
+        {
+          "name": "ลบห้องแชท",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [{ "key": "token", "value": "{{jwt_token}}", "type": "string" }]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/chat/sessions/{{chat_session_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "chat", "sessions", "{{chat_session_id}}"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "jwt_token",
+      "value": ""
+    },
+    {
+      "key": "chat_session_id",
+      "value": ""
+    }
+  ]
+}

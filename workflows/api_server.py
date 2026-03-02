@@ -182,12 +182,52 @@ def save_signals_to_sql_sync() -> dict:
             price = m.get('price', 0)
             if price == 'N/A':
                 price = 0
+                
+            up_prob = m.get('ml_up_prob', 0.0)
+            down_prob = m.get('ml_down_prob', 0.0)
+            sig = m.get('signal', 99)
+
+            equity_val = 0.0
+            bnh_val = 0.0
+            prev_pos = 0.0
+            try:
+                c.execute(f'SELECT equity_curve, bnh_curve, price, position FROM "{table_name}" WHERE equity_curve != 0 ORDER BY date DESC LIMIT 1')
+                last_row = c.fetchone()
+                if last_row and last_row[2] > 0:
+                    prev_eq, prev_bnh, prev_price, prev_pos = last_row
+                    price_ratio = price / prev_price if prev_price > 0 else 1.0
+                    bnh_val = round(prev_bnh * price_ratio, 4)
+                    if prev_pos > 0.0:
+                        equity_val = round(prev_eq * price_ratio, 4)
+                    elif prev_pos < 0.0:
+                        equity_val = round(prev_eq * (2 - price_ratio), 4)
+                    else:
+                        equity_val = prev_eq
+            except Exception:
+                pass
+                
+            strat = m.get('strategy', 'active')
+            if sig == 1:
+                position = 1.0
+            elif sig == 0:
+                position = 0.0
+            else:
+                position = prev_pos if strat == 'smart_hold' else 0.0
+                
+            if position > 0 and prev_pos <= 0:
+                sg_text = "BUY"
+            elif position <= 0 and prev_pos > 0:
+                sg_text = "SELL"
+            elif position > 0 and prev_pos > 0:
+                sg_text = "HOLD"
+            else:
+                sg_text = "WAIT"
 
             c.execute(f'''
                 INSERT INTO "{table_name}"
                 (date, market, price, trend_regime, ml_up_prob, ml_down_prob, signal_action, position, equity_curve, bnh_curve)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (today_date, market, price, trend_str, 0, 0, m.get('signal_text', ''), 0, 0, 0))
+            ''', (today_date, market, price, trend_str, up_prob, down_prob, sg_text, position, equity_val, bnh_val))
             saved.append(market)
 
     conn.commit()
@@ -219,8 +259,15 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="AI Trading Assistant API",
-    description="LLM Hybrid Agent with Mixture-of-Experts — ระบบวิเคราะห์ตลาดด้วย AI",
+    description="""
+    LLM Hybrid Agent with Mixture-of-Experts — ระบบวิเคราะห์ตลาดด้วย AI
+    
+    API สำรองข้อมูลการเทรดและวิเคราะห์ทางเทคนิคสำหรับระบบ Trading Dashboard
+    """,
     version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json",
     lifespan=lifespan
 )
 
@@ -237,7 +284,7 @@ app.add_middleware(
 # Endpoints
 # ───────────────────────────────────────
 
-@app.get("/")
+@app.get("/", tags=["System"], summary="API Root / Status")
 async def root():
     return {
         "name": "AI Trading Assistant API",
@@ -254,7 +301,7 @@ async def root():
     }
 
 
-@app.post("/api/chat", response_model=ChatResponse)
+@app.post("/api/chat", response_model=ChatResponse, tags=["LLM Chat"], summary="Ask the MoE Trading Assistant")
 async def chat_moe(req: ChatRequest):
     """
     Full Mixture-of-Experts analysis:
@@ -327,7 +374,7 @@ async def chat_moe(req: ChatRequest):
     )
 
 
-@app.post("/api/chat/simple")
+@app.post("/api/chat/simple", tags=["LLM Chat"], summary="Quick Single-Model LLM Response")
 async def chat_simple(req: ChatRequest):
     """Quick single-model response without MoE."""
     news_context = get_market_news_instruction()
@@ -358,7 +405,7 @@ async def chat_simple(req: ChatRequest):
     }
 
 
-@app.get("/api/signals")
+@app.get("/api/signals", tags=["Live Trading"], summary="Get Today's Live Signals")
 async def get_signals():
     """Get today's live trading signals from trading_system.py --json."""
     loop = asyncio.get_event_loop()
@@ -380,7 +427,7 @@ async def get_signals():
         raise HTTPException(status_code=500, detail=f"JSON parse error: {e}")
 
 
-@app.post("/api/signals/save")
+@app.post("/api/signals/save", tags=["Live Trading"], summary="Force Save Today's Signals to Database")
 async def save_signals():
     """Save today's signals to SQLite database."""
     loop = asyncio.get_event_loop()
@@ -390,7 +437,7 @@ async def save_signals():
     return result
 
 
-@app.get("/api/history")
+@app.get("/api/history", tags=["Historical Data"], summary="Get Signal History (Last N Days)")
 async def get_history(
     days: int = Query(default=5, ge=1, le=365, description="Number of days to look back"),
     market: Optional[str] = Query(default=None, description="Filter by market (BTC, US, UK, Thai, Gold)")
@@ -425,7 +472,7 @@ async def get_history(
     return {"days": days, "markets": result}
 
 
-@app.get("/api/performance")
+@app.get("/api/performance", tags=["Historical Data"], summary="Get Backtested Strategy Performance")
 async def get_performance():
     """Get strategy performance stats for all markets."""
     conn = sqlite3.connect(DB_FILE)
@@ -443,7 +490,7 @@ async def get_performance():
     return {"markets": rows}
 
 
-@app.get("/api/markets")
+@app.get("/api/markets", tags=["System"], summary="List Supported Markets")
 async def get_markets():
     """List available markets with their current status."""
     conn = sqlite3.connect(DB_FILE)

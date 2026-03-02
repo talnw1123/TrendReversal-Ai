@@ -160,11 +160,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     int sellCount = 0;
     int prevPos = 0;
     for (int i = 0; i < history.length - 1; i++) {
-        final sigAction = history[i]['signal_action'].toString();
-        int currPos = 0;
-        if (sigAction.contains("BUY")) currPos = 1;
-        else if (sigAction.contains("SELL")) currPos = -1;
-        else currPos = 0;
+        int currPos = (history[i]['position'] as num).toInt();
         
         if (currPos != prevPos) {
             if (currPos == 1) buyCount++;
@@ -295,11 +291,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
         // Plotting markers shifted by 1 day to match Python plot_backtest
         if (i < history.length - 1) {
-            final sigAction = row['signal_action'].toString();
-            int currPos = 0;
-            if (sigAction.contains("BUY")) currPos = 1;
-            else if (sigAction.contains("SELL")) currPos = -1;
-            else currPos = 0;
+            int currPos = (row['position'] as num).toInt();
             
             if (currPos != prevPos) {
                 final nextRow = history[i + 1];
