@@ -546,6 +546,71 @@ async def get_dashboard_data(market: str = Query(default="BTC", description="Mar
         conn.close()
 
 
+@app.get("/api/signals/markers", tags=["Live Trading"], summary="Get Buy/Sell Signal Markers for Dashboard")
+async def get_signal_markers(
+    market: str = Query(default="BTC", description="Market name"),
+    limit: int = Query(default=20, ge=1, le=100, description="Max number of signal markers to return")
+):
+    """
+    Return only the actual position-change signals (BUY/SELL) for overlay on charts.
+    Also returns the latest/current signal status.
+    """
+    conn = sqlite3.connect(DB_FILE)
+    conn.row_factory = sqlite3.Row
+    c = conn.cursor()
+
+    try:
+        table_name = f"signals_history_{market}"
+        c.execute(f'SELECT date, price, position, signal_action, trend_regime, ml_up_prob, ml_down_prob FROM "{table_name}" ORDER BY date ASC')
+        rows = c.fetchall()
+
+        markers = []
+        prev_pos = 0.0
+        latest_signal = None
+
+        for row in rows:
+            r = dict(row)
+            curr_pos = float(r.get('position', 0))
+            action = r.get('signal_action', 'WAIT')
+
+            latest_signal = {
+                "date": r['date'],
+                "price": r['price'],
+                "action": action,
+                "position": curr_pos,
+                "trend": r.get('trend_regime', ''),
+                "ml_up_prob": r.get('ml_up_prob', 0),
+                "ml_down_prob": r.get('ml_down_prob', 0),
+            }
+
+            # Only record actual position changes (BUY or SELL)
+            if curr_pos != prev_pos:
+                marker_type = "BUY" if curr_pos > 0 else "SELL"
+                markers.append({
+                    "date": r['date'],
+                    "price": r['price'],
+                    "type": marker_type,
+                    "action": action,
+                    "ml_up_prob": r.get('ml_up_prob', 0),
+                })
+            prev_pos = curr_pos
+
+        # Return most recent markers (limit)
+        recent_markers = markers[-limit:] if len(markers) > limit else markers
+
+        return {
+            "market": market,
+            "current_signal": latest_signal,
+            "total_signals": len(markers),
+            "markers": recent_markers,
+        }
+
+    except sqlite3.OperationalError as e:
+        raise HTTPException(status_code=404, detail=f"Market data not found: {e}")
+    finally:
+        conn.close()
+
+
 # ─── Run with: python workflows/api_server.py ───
 if __name__ == "__main__":
     import uvicorn
