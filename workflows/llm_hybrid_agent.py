@@ -2,7 +2,6 @@ import sqlite3
 import json
 import os
 import datetime
-import subprocess
 
 # ---------------------------------------------------------
 # ตั้งค่า LLM (Ollama / API) เสมือน llm_agent.py
@@ -42,66 +41,116 @@ def init_db():
     conn.commit()
     conn.close()
 
+def catch_up_missing_days(trading_system_module):
+    """เติมข้อมูลย้อนหลังจากวันที่ล่าสุดใน DB ให้ถึงวันปัจจุบัน"""
+    markets = getattr(trading_system_module, 'MARKETS', ['US', 'UK', 'Thai', 'Gold', 'BTC'])
+    today = datetime.datetime.now().date()
+    conn = sqlite3.connect(DB_FILE)
+    cursor = conn.cursor()
+    missing_dates = set()
+
+    for market in markets:
+        table_name = f"signals_history_{market}"
+        try:
+            cursor.execute(
+                f'SELECT date FROM "{table_name}" '
+                'WHERE (equity_curve IS NULL OR equity_curve=0) '
+                'AND (bnh_curve IS NULL OR bnh_curve=0)'
+            )
+            bad_rows = [r[0] for r in cursor.fetchall() if r[0]]
+            if bad_rows:
+                cursor.executemany(f'DELETE FROM "{table_name}" WHERE date=?', [(d,) for d in bad_rows])
+                conn.commit()
+                for bad in bad_rows:
+                    bad_date = datetime.datetime.strptime(bad, '%Y-%m-%d').date()
+                    missing_dates.add(bad_date)
+                print(f"⚠️ ลบข้อมูลเสีย {table_name} จำนวน {len(bad_rows)} แถว (eq/bnh = 0)")
+
+            cursor.execute(f'SELECT MAX(date) FROM "{table_name}"')
+            row = cursor.fetchone()
+        except sqlite3.OperationalError:
+            continue
+
+        if not row or not row[0]:
+            continue
+
+        last_date = datetime.datetime.strptime(row[0], '%Y-%m-%d').date()
+        next_day = last_date + datetime.timedelta(days=1)
+        while next_day < today:
+            missing_dates.add(next_day)
+            next_day += datetime.timedelta(days=1)
+
+    conn.close()
+
+    if not missing_dates:
+        return
+
+    for day in sorted(missing_dates):
+        date_str = day.strftime('%Y-%m-%d')
+        print(f"⏪ กำลังเติมข้อมูลย้อนหลัง {date_str} ...")
+        try:
+            results = trading_system_module.get_current_signals(quiet=True, as_of_date=date_str)
+        except Exception as e:
+            print(f"❌ ดึงสัญญาณสำหรับ {date_str} ไม่สำเร็จ: {e}")
+            break
+
+        valid_results = []
+        for r in results:
+            price = r.get('price')
+            try:
+                price_val = float(price)
+            except (TypeError, ValueError):
+                continue
+            if price_val <= 0:
+                continue
+            valid_results.append(r)
+        if not valid_results:
+            continue
+
+        saved = trading_system_module.save_signals_to_db(valid_results, quiet=True)
+        if saved:
+            print(f"   ↳ เติมข้อมูลวันที่ {date_str} แล้ว ({saved} แถว)")
+
 def save_signals_to_sql():
-    """ดึงข้อมูล --json จาก trading_system.py แล้ว Save ลง SQLite แบบ Schema ใหม่"""
-    result = subprocess.run(
-        ["python3", "workflows/trading_system.py", "--json"], 
-        capture_output=True, text=True
-    )
-    if result.returncode != 0:
-        print("❌ เกิดข้อผิดพลาดในการดึงสัญญาณ")
-        return False
-        
+    """
+    ดึงสัญญาณล่าสุดจาก trading_system โดยตรงและใช้ฟังก์ชัน save_signals_to_db
+    เพื่อให้ข้อมูล (ml_up_prob, equity_curve ฯลฯ) ถูกต้องเหมือนที่ระบบหลักใช้
+    """
     try:
-        signals_data = json.loads(result.stdout)
-    except Exception as e:
-        print("❌ แปลง JSON ไม่สำเร็จ:", e)
+        import trading_system
+    except ImportError as e:
+        print("❌ นำเข้า trading_system.py ไม่ได้:", e)
         return False
 
-    today_date = datetime.datetime.now().strftime('%Y-%m-%d')
-    conn = sqlite3.connect(DB_FILE)
-    c = conn.cursor()
-    
-    for m in signals_data:
-        market = m['market']
-        table_name = f"signals_history_{market}"
-        
-        c.execute(f'''
-            CREATE TABLE IF NOT EXISTS "{table_name}" (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                date TEXT,
-                market TEXT,
-                price REAL,
-                trend_regime TEXT,
-                ml_up_prob REAL,
-                ml_down_prob REAL,
-                signal_action TEXT,
-                position REAL,
-                equity_curve REAL,
-                bnh_curve REAL,
-                UNIQUE(date)
-            )
-        ''')
-        
-        # Check if we already have today's insert
-        c.execute(f'SELECT COUNT(*) FROM "{table_name}" WHERE date=?', (today_date,))
-        if c.fetchone()[0] == 0:
-            trend_str = "1 (Uptrend)" if m['trend'] == 'UPTREND' else "0 (Downtrend)"
-            price = m.get('price', 0)
-            if price == 'N/A': price = 0
-            
-            c.execute(f'''
-                INSERT INTO "{table_name}" 
-                (date, market, price, trend_regime, ml_up_prob, ml_down_prob, signal_action, position, equity_curve, bnh_curve)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (today_date, market, price, trend_str, 0, 0, m['signal_text'], 0, 0, 0))
-            print(f"✅ บันทึกสัญญาณของวันที่ {today_date} ลง SQL ({table_name}) เรียบร้อย")
-        else:
-            print(f"ℹ️ สัญญาณของวันที่ ({today_date}) ถูกบันทึกไว้ใน SQL ({table_name}) แล้ว")
-            
-    conn.commit()
-    conn.close()
-    return True
+    catch_up_missing_days(trading_system)
+
+    try:
+        results = trading_system.get_current_signals(quiet=True)
+    except Exception as e:
+        print("❌ ดึงสัญญาณล่าสุดไม่สำเร็จ:", e)
+        return False
+
+    valid_results = []
+    for m in results:
+        price = m.get('price')
+        try:
+            price_val = float(price)
+        except (TypeError, ValueError):
+            continue
+        if price_val <= 0:
+            continue
+        valid_results.append(m)
+    if not valid_results:
+        print("⚠️ ไม่มีข้อมูลราคาที่ใช้งานได้จาก trading_system (อาจเป็นวันหยุดหรือตลาดปิด)")
+        return False
+
+    try:
+        trading_system.save_signals_to_db(valid_results, quiet=True)
+        print("✅ บันทึกสัญญาณล่าสุดลง SQLite แล้ว")
+        return True
+    except Exception as e:
+        print("❌ บันทึกลง SQLite ไม่สำเร็จ:", e)
+        return False
 
 def get_sql_history(days=5):
     """อ่านข้อมูลย้อนหลัง N วัน จาก SQL แบบละเอียด"""
@@ -145,10 +194,10 @@ def get_sql_history(days=5):
 # 2. ข่าวสารระดับมหภาค (LLM Native Knowledge)
 # =========================================================
 def get_market_news_instruction():
-    """สั่งให้ LLM ใช้ความรู้ตัวเองเกี่ยวกับข่าวล่าสุดในการวิเคราะห์"""
-    return """ให้ใช้ความรู้ล่าสุดของคุณเกี่ยวกับข่าวเศรษฐกิจโลก, นโยบายธนาคารกลาง (FED/BOT/ECB), 
-ภูมิรัฐศาสตร์, และเหตุการณ์สำคัญที่อาจส่งผลต่อตลาดการเงิน (หุ้น, ทอง, คริปโต) 
-ในการประกอบการวิเคราะห์ร่วมกับข้อมูล Quantitative ด้านล่าง"""
+    """สั่งให้ LLM ใช้ความรู้ตัวเองเกี่ยวกับการวิเคราะห์โดยไม่แต่งเรื่อง"""
+    return """ในการวิเคราะห์ ให้พิจารณาเฉพาะข้อมูล Quantitative ที่ได้รับเป็นหลัก 
+ห้ามแต่งเรื่อง เดาสุ่ม หรือยกเหตุผลเชิงเศรษฐกิจมหภาคทั่วไป (เช่น การประชุม FED, ตัวเลข GDP, หรือสงคราม) มาอ้างอิงเด็ดขาดเว้นแต่จะระบุชัดเจนในคำถาม
+ให้วิเคราะห์ความเสี่ยงจากตัวเลขสถิติ, ความผันผวนของราคา, โอกาสทางสถิติ (ML prob), และ Max Drawdown เท่านั้น"""
 
 # =========================================================
 # 3. LLM Hybrid Prompt (SQL + RAG)
@@ -256,14 +305,15 @@ if __name__ == "__main__":
 ---
 
 คำสั่งและกฎการตอบ (สำคัญมาก):
-1. ในฐานะ **Master Quant** ให้สังเคราะห์ความเห็นจากผู้เชี่ยวชาญทั้งสอง 
-2. หน้าที่ของคุณคือ **สรุปแอคชั่นฟันธง (BUY/SELL/HOLD)** ออกมาให้สั้นที่สุด
-3. **ห้ามพิมพ์คำว่า "บทสรุปแอคชั่นฟันธง"** หรืออารัมภบทใดๆ ทั้งสิ้น
-4. **ห้ามระบุตัวเลขความมั่นใจ (Confidence %)** ไม่ต้องบอกว่ามั่นใจกี่เปอร์เซ็นต์ ให้ตอบสิ่งที่คุณเลือกและเหตุผลสั้นๆ ไม่เกิน 3 บรรทัด เช่น
-"🚨 สัญญาณ: HOLD (รอ)
-- ความเห็นผู้เชี่ยวชาญขัดแย้งกัน
-- รอสัญญาณที่ชัดเจนกว่านี้"
-"""
+1. ในฐานะ **Master Quant** ให้สังเคราะห์ความเห็นจากผู้เชี่ยวชาญทั้งสอง
+2. ฟันธง **BUY / SELL / HOLD** โดยอาศัยข้อมูลล่าสุด ไม่ใช่ความรู้สึก
+3. ใช้ภาษาไทยแบบมนุษย์ เป็นกันเอง เข้าใจง่าย และเลี่ยงศัพท์เทคนิคที่ไม่จำเป็น
+4. ห้ามระบุเปอร์เซ็นต์ความมั่นใจ
+5. ห้ามอ้างอิงถึง FED, ดอกเบี้ย, GDP หรือข่าวเศรษฐกิจเว้นแต่จะมีระบุในข้อมูล (ห้ามแต่งเรื่อง)
+6. รูปแบบคำตอบ:
+   - บรรทัดแรกขึ้นต้นด้วย `คำแนะนำ: <BUY/SELL/HOLD> – ...` พร้อมเหตุผลย่อ
+   - ตามด้วย 2 bullet ย่อยที่ขยายเหตุผลหลักและสิ่งที่ควรจับตา (ถ้าพูดถึงตลาดอื่น เช่น Gold หรือ BTC ให้รวมไว้ใน bullet)
+   - แต่ละ bullet เป็นประโยคสั้นที่เชื่อมโยงกับข้อมูลเชิงตัวเลขหรือสัญญาณในฐานข้อมูล"""
         
         # Don't keep piling up system prompts, just append the user request
         chat_history.append({"role": "user", "content": master_prompt})

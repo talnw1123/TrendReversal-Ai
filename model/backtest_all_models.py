@@ -712,15 +712,18 @@ def run_simulation_moo(signals, prices, confidences=None, regimes=None, stop_los
             cost = cash * abs(target_pos - position) * transaction_cost
             cash -= cost
             
-            # If completely closing a position, record trade stats
-            if target_pos == 0.0 and position != 0.0 and entry_price > 0:
+            # If closing or flipping a position, record trade stats for the OLD position
+            if position != 0.0 and entry_price > 0:
+                # We are closing at least part of the position, or flipping it completely
                 if position > 0:
                     trade_pnl = (price - entry_price) / entry_price
                 else:
                     trade_pnl = (entry_price - price) / entry_price
                 
-                if trade_pnl > 0: wins += 1
-                n_trades += 1
+                # Only count as a trade if we are exiting to neutral, or flipping direction
+                if target_pos == 0.0 or (position > 0 and target_pos < 0) or (position < 0 and target_pos > 0):
+                    if trade_pnl > 0: wins += 1
+                    n_trades += 1
             
             # Record trade point for plotting
             if position <= 0 and target_pos > 0:

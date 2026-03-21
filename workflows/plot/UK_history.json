@@ -1,8 +1,8 @@
 [
   {
-    "date": "2024-04-11",
+    "date": "2024-05-03",
     "market": "UK",
-    "price": 7923.7998046875,
+    "price": 8213.5,
     "trend_regime": "1 (Uptrend)",
     "ml_up_prob": 100.0,
     "ml_down_prob": 0.0,
@@ -10,198 +10,6 @@
     "position": 1.0,
     "equity_curve": 10000.0,
     "bnh_curve": 10000.0
-  },
-  {
-    "date": "2024-04-12",
-    "market": "UK",
-    "price": 7995.60009765625,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 10160.864469444123,
-    "bnh_curve": 10090.613461645353
-  },
-  {
-    "date": "2024-04-15",
-    "market": "UK",
-    "price": 7965.5,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 10084.361640621595,
-    "bnh_curve": 10052.62651296141
-  },
-  {
-    "date": "2024-04-16",
-    "market": "UK",
-    "price": 7820.39990234375,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 9716.966785595512,
-    "bnh_curve": 9869.507174723696
-  },
-  {
-    "date": "2024-04-17",
-    "market": "UK",
-    "price": 7848.0,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 9785.55387463289,
-    "bnh_curve": 9904.339071460818
-  },
-  {
-    "date": "2024-04-18",
-    "market": "UK",
-    "price": 7877.10009765625,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 9858.122828091684,
-    "bnh_curve": 9941.063999366032
-  },
-  {
-    "date": "2024-04-19",
-    "market": "UK",
-    "price": 7895.89990234375,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 9905.17841490812,
-    "bnh_curve": 9964.789743517693
-  },
-  {
-    "date": "2024-04-22",
-    "market": "UK",
-    "price": 8023.89990234375,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 10226.323022309209,
-    "bnh_curve": 10126.328403194933
-  },
-  {
-    "date": "2024-04-23",
-    "market": "UK",
-    "price": 8044.7998046875,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 10279.596157593329,
-    "bnh_curve": 10152.704514226141
-  },
-  {
-    "date": "2024-04-24",
-    "market": "UK",
-    "price": 8040.39990234375,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 10268.351820798212,
-    "bnh_curve": 10147.151746043952
-  },
-  {
-    "date": "2024-04-25",
-    "market": "UK",
-    "price": 8078.89990234375,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 10366.688110013254,
-    "bnh_curve": 10195.739546024997
-  },
-  {
-    "date": "2024-04-26",
-    "market": "UK",
-    "price": 8139.7998046875,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 10522.979263798874,
-    "bnh_curve": 10272.596488205343
-  },
-  {
-    "date": "2024-04-29",
-    "market": "UK",
-    "price": 8147.0,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 10541.595816487332,
-    "bnh_curve": 10281.683284300621
-  },
-  {
-    "date": "2024-04-30",
-    "market": "UK",
-    "price": 8144.10009765625,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 10534.091312150742,
-    "bnh_curve": 10278.023547286526
-  },
-  {
-    "date": "2024-05-01",
-    "market": "UK",
-    "price": 8121.2001953125,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 10474.850964061745,
-    "bnh_curve": 10249.123394697861
-  },
-  {
-    "date": "2024-05-02",
-    "market": "UK",
-    "price": 8172.2001953125,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 10606.412158545165,
-    "bnh_curve": 10313.486454413012
-  },
-  {
-    "date": "2024-05-03",
-    "market": "UK",
-    "price": 8213.5,
-    "trend_regime": "1 (Uptrend)",
-    "ml_up_prob": 100.0,
-    "ml_down_prob": 0.0,
-    "signal_action": "HOLD",
-    "position": 1.0,
-    "equity_curve": 10713.615296039105,
-    "bnh_curve": 10365.607666086064
   },
   {
     "date": "2024-05-07",
@@ -212,8 +20,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10975.015757514993,
-    "bnh_curve": 10492.062394603086
+    "equity_curve": 10223.501052953978,
+    "bnh_curve": 10121.994515508006
   },
   {
     "date": "2024-05-08",
@@ -224,8 +32,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11081.679263658818,
-    "bnh_curve": 10543.047294598415
+    "equity_curve": 10322.860770649731,
+    "bnh_curve": 10171.181115693675
   },
   {
     "date": "2024-05-09",
@@ -236,8 +44,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11154.108014956038,
-    "bnh_curve": 10577.501447811435
+    "equity_curve": 10390.329959898434,
+    "bnh_curve": 10204.420028763621
   },
   {
     "date": "2024-05-10",
@@ -248,8 +56,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11293.576050638307,
-    "bnh_curve": 10643.630597151505
+    "equity_curve": 10520.24791547629,
+    "bnh_curve": 10268.216722088635
   },
   {
     "date": "2024-05-13",
@@ -260,8 +68,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11243.226972193874,
-    "bnh_curve": 10619.904852999844
+    "equity_curve": 10473.346492474735,
+    "bnh_curve": 10245.327813964814
   },
   {
     "date": "2024-05-14",
@@ -272,8 +80,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11278.23157859915,
-    "bnh_curve": 10636.43683222432
+    "equity_curve": 10505.954156859867,
+    "bnh_curve": 10261.27669005296
   },
   {
     "date": "2024-05-15",
@@ -284,8 +92,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11325.603325724389,
-    "bnh_curve": 10658.774846496246
+    "equity_curve": 10550.082121440102,
+    "bnh_curve": 10282.82681522798
   },
   {
     "date": "2024-05-16",
@@ -296,8 +104,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11306.562533518014,
-    "bnh_curve": 10649.814991944142
+    "equity_curve": 10532.3451483485,
+    "bnh_curve": 10274.182985709504
   },
   {
     "date": "2024-05-17",
@@ -308,8 +116,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11257.25513725377,
-    "bnh_curve": 10626.593316638673
+    "equity_curve": 10486.414078292335,
+    "bnh_curve": 10251.780367306874
   },
   {
     "date": "2024-05-20",
@@ -320,8 +128,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11267.684146533495,
-    "bnh_curve": 10631.515690652579
+    "equity_curve": 10496.128960685968,
+    "bnh_curve": 10256.529123166129
   },
   {
     "date": "2024-05-21",
@@ -332,8 +140,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11247.085545684446,
-    "bnh_curve": 10621.797884167936
+    "equity_curve": 10476.94084996955,
+    "bnh_curve": 10247.154075607232
   },
   {
     "date": "2024-05-22",
@@ -344,8 +152,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11123.60962364868,
-    "bnh_curve": 10563.49227770225
+    "equity_curve": 10361.919947326858,
+    "bnh_curve": 10190.904979226274
   },
   {
     "date": "2024-05-23",
@@ -356,8 +164,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11040.950717227734,
-    "bnh_curve": 10524.243924460661
+    "equity_curve": 10284.92111329312,
+    "bnh_curve": 10153.04096342911
   },
   {
     "date": "2024-05-24",
@@ -368,8 +176,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10983.753144507693,
-    "bnh_curve": 10496.983536174826
+    "equity_curve": 10231.640146973838,
+    "bnh_curve": 10126.742082394838
   },
   {
     "date": "2024-05-28",
@@ -380,8 +188,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10816.309760292843,
-    "bnh_curve": 10416.972158268745
+    "equity_curve": 10075.662456130112,
+    "bnh_curve": 10049.552803692091
   },
   {
     "date": "2024-05-29",
@@ -392,8 +200,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10629.970524015584,
-    "bnh_curve": 10327.242357656936
+    "equity_curve": 9902.08280755578,
+    "bnh_curve": 9962.987882944239
   },
   {
     "date": "2024-05-30",
@@ -404,8 +212,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10754.674704252508,
-    "bnh_curve": 10387.818738814818
+    "equity_curve": 10018.247863363284,
+    "bnh_curve": 10021.427661015401
   },
   {
     "date": "2024-05-31",
@@ -416,8 +224,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10870.440644187276,
-    "bnh_curve": 10443.727245266222
+    "equity_curve": 10126.08672528099,
+    "bnh_curve": 10075.364206032751
   },
   {
     "date": "2024-06-03",
@@ -428,8 +236,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10837.336766417024,
-    "bnh_curve": 10427.825043988943
+    "equity_curve": 10095.249637050907,
+    "bnh_curve": 10060.022894852988
   },
   {
     "date": "2024-06-04",
@@ -440,8 +248,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10756.54384788378,
-    "bnh_curve": 10388.95505049254
+    "equity_curve": 10019.989017299155,
+    "bnh_curve": 10022.523893589821
   },
   {
     "date": "2024-06-05",
@@ -452,8 +260,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10795.744080565571,
-    "bnh_curve": 10407.885362173465
+    "equity_curve": 10056.505012260157,
+    "bnh_curve": 10040.786510014
   },
   {
     "date": "2024-06-06",
@@ -464,8 +272,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10896.01688030897,
-    "bnh_curve": 10456.220511510332
+    "equity_curve": 10149.91162746773,
+    "bnh_curve": 10087.416819489254
   },
   {
     "date": "2024-06-07",
@@ -476,8 +284,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10791.073257413518,
-    "bnh_curve": 10405.866621904368
+    "equity_curve": 10052.154023936475,
+    "bnh_curve": 10038.838973184393
   },
   {
     "date": "2024-06-10",
@@ -488,8 +296,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10746.836872356793,
-    "bnh_curve": 10384.53797776699
+    "equity_curve": 10010.94672736411,
+    "bnh_curve": 10018.262616424181
   },
   {
     "date": "2024-06-11",
@@ -500,8 +308,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10536.039804946993,
-    "bnh_curve": 10282.69265443517
+    "equity_curve": 9814.583998759548,
+    "bnh_curve": 9920.009502267609
   },
   {
     "date": "2024-06-12",
@@ -512,8 +320,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10711.128042192297,
-    "bnh_curve": 10368.131707643519
+    "equity_curve": 9977.68306097379,
+    "bnh_curve": 10002.435015523224
   },
   {
     "date": "2024-06-13",
@@ -524,8 +332,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10576.057908769288,
-    "bnh_curve": 10302.75927779382
+    "equity_curve": 9851.861861097404,
+    "bnh_curve": 9939.368351266208
   },
   {
     "date": "2024-06-14",
@@ -536,8 +344,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10532.528414282508,
-    "bnh_curve": 10281.556958978532
+    "equity_curve": 9811.313050730967,
+    "bnh_curve": 9918.9138641794
   },
   {
     "date": "2024-06-17",
@@ -548,8 +356,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10520.376602319971,
-    "bnh_curve": 10275.625831051158
+    "equity_curve": 9799.993334646804,
+    "bnh_curve": 9913.19193439155
   },
   {
     "date": "2024-06-18",
@@ -560,8 +368,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10647.25787992579,
-    "bnh_curve": 10337.59055830986
+    "equity_curve": 9918.18641098157,
+    "bnh_curve": 9972.97108989773
   },
   {
     "date": "2024-06-19",
@@ -572,8 +380,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10683.132547610725,
-    "bnh_curve": 10355.006198567879
+    "equity_curve": 9951.604559160553,
+    "bnh_curve": 9989.77245921349
   },
   {
     "date": "2024-06-20",
@@ -584,8 +392,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10858.644690323754,
-    "bnh_curve": 10440.066892031042
+    "equity_curve": 10115.098499896281,
+    "bnh_curve": 10071.832957935107
   },
   {
     "date": "2024-06-21",
@@ -596,8 +404,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10767.286886904178,
-    "bnh_curve": 10396.148815419725
+    "equity_curve": 10029.996426232645,
+    "bnh_curve": 10029.463925625494
   },
   {
     "date": "2024-06-24",
@@ -608,8 +416,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10882.046485862855,
-    "bnh_curve": 10451.550788140605
+    "equity_curve": 10136.897856418496,
+    "bnh_curve": 10082.911802976807
   },
   {
     "date": "2024-06-25",
@@ -620,8 +428,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10793.220398350464,
-    "bnh_curve": 10408.894732308016
+    "equity_curve": 10054.154139299832,
+    "bnh_curve": 10041.760278428806
   },
   {
     "date": "2024-06-26",
@@ -632,8 +440,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10734.332582274988,
-    "bnh_curve": 10380.499264786624
+    "equity_curve": 9999.29866911597,
+    "bnh_curve": 10014.366353792537
   },
   {
     "date": "2024-06-27",
@@ -644,8 +452,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10615.314094371575,
-    "bnh_curve": 10322.951610253474
+    "equity_curve": 9888.429977600117,
+    "bnh_curve": 9958.848475452
   },
   {
     "date": "2024-06-28",
@@ -656,8 +464,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10574.823628322743,
-    "bnh_curve": 10303.263962861096
+    "equity_curve": 9850.712098060729,
+    "bnh_curve": 9939.855235473611
   },
   {
     "date": "2024-07-01",
@@ -668,8 +476,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10581.817399923317,
-    "bnh_curve": 10306.67104923101
+    "equity_curve": 9857.226970831969,
+    "bnh_curve": 9943.142149738236
   },
   {
     "date": "2024-07-02",
@@ -680,8 +488,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10463.649512512357,
-    "bnh_curve": 10249.123394697861
+    "equity_curve": 9747.150634901054,
+    "bnh_curve": 9887.624271397699
   },
   {
     "date": "2024-07-03",
@@ -692,8 +500,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10592.235208290416,
-    "bnh_curve": 10312.098108312193
+    "equity_curve": 9866.931419295981,
+    "bnh_curve": 9948.377789804894
   },
   {
     "date": "2024-07-04",
@@ -704,8 +512,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10774.2356242788,
-    "bnh_curve": 10400.691597246281
+    "equity_curve": 10036.469348498607,
+    "bnh_curve": 10033.846477978328
   },
   {
     "date": "2024-07-05",
@@ -716,8 +524,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10676.44762751398,
-    "bnh_curve": 10353.492759587138
+    "equity_curve": 9945.377389272324,
+    "bnh_curve": 9988.312401077495
   },
   {
     "date": "2024-07-08",
@@ -728,8 +536,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10649.377765490695,
-    "bnh_curve": 10340.367250511496
+    "equity_curve": 9920.161137285726,
+    "bnh_curve": 9975.64984476776
   },
   {
     "date": "2024-07-09",
@@ -740,8 +548,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10509.785731326188,
-    "bnh_curve": 10272.596488205343
+    "equity_curve": 9790.127674027359,
+    "bnh_curve": 9910.269440174712
   },
   {
     "date": "2024-07-10",
@@ -752,8 +560,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10648.456843640213,
-    "bnh_curve": 10340.367250511496
+    "equity_curve": 9919.303275600958,
+    "bnh_curve": 9975.64984476776
   },
   {
     "date": "2024-07-11",
@@ -764,8 +572,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10725.913836174235,
-    "bnh_curve": 10377.975223229168
+    "equity_curve": 9991.456397038435,
+    "bnh_curve": 10011.931338269313
   },
   {
     "date": "2024-07-12",
@@ -776,8 +584,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10803.131824526045,
-    "bnh_curve": 10415.33177774483
+    "equity_curve": 10063.386880115979,
+    "bnh_curve": 10047.970281396481
   },
   {
     "date": "2024-07-15",
@@ -788,8 +596,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10620.131158392825,
-    "bnh_curve": 10327.116032334847
+    "equity_curve": 9892.917192942805,
+    "bnh_curve": 9962.866013270836
   },
   {
     "date": "2024-07-16",
@@ -800,8 +608,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10573.149510809031,
-    "bnh_curve": 10304.273332995645
+    "equity_curve": 9849.152615820121,
+    "bnh_curve": 9940.829003888415
   },
   {
     "date": "2024-07-17",
@@ -812,8 +620,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10631.681572276148,
-    "bnh_curve": 10332.795125839122
+    "equity_curve": 9903.676691708659,
+    "bnh_curve": 9968.344798198088
   },
   {
     "date": "2024-07-18",
@@ -824,8 +632,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10676.871291325484,
-    "bnh_curve": 10354.754780365865
+    "equity_curve": 9945.77204268501,
+    "bnh_curve": 9989.529908839106
   },
   {
     "date": "2024-07-19",
@@ -836,8 +644,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10548.824848870227,
-    "bnh_curve": 10292.663111563994
+    "equity_curve": 9826.493586217013,
+    "bnh_curve": 9929.628289173312
   },
   {
     "date": "2024-07-22",
@@ -848,8 +656,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10660.31747843327,
-    "bnh_curve": 10347.055714150321
+    "equity_curve": 9930.351752885601,
+    "bnh_curve": 9982.102398109819
   },
   {
     "date": "2024-07-23",
@@ -860,8 +668,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10578.663349597291,
-    "bnh_curve": 10307.428384942465
+    "equity_curve": 9854.288894245872,
+    "bnh_curve": 9943.872773292445
   },
   {
     "date": "2024-07-24",
@@ -872,8 +680,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10543.174799898601,
-    "bnh_curve": 10290.139070006537
+    "equity_curve": 9821.230424606416,
+    "bnh_curve": 9927.193273650088
   },
   {
     "date": "2024-07-25",
@@ -884,8 +692,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10627.739775033238,
-    "bnh_curve": 10331.406779738305
+    "equity_curve": 9900.004809211741,
+    "bnh_curve": 9967.005420763073
   },
   {
     "date": "2024-07-26",
@@ -896,8 +704,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10885.56682620241,
-    "bnh_curve": 10456.72581279869
+    "equity_curve": 10140.177141292736,
+    "bnh_curve": 10087.90429818287
   },
   {
     "date": "2024-07-29",
@@ -908,8 +716,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10903.171958443158,
-    "bnh_curve": 10465.181598504605
+    "equity_curve": 10156.576761300335,
+    "bnh_curve": 10096.061837980154
   },
   {
     "date": "2024-07-30",
@@ -920,8 +728,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10855.83775218031,
-    "bnh_curve": 10442.465224487492
+    "equity_curve": 10112.483766970226,
+    "bnh_curve": 10074.146698271137
   },
   {
     "date": "2024-07-31",
@@ -932,8 +740,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11101.439155320944,
-    "bnh_curve": 10560.589876399607
+    "equity_curve": 10341.267602829044,
+    "bnh_curve": 10188.10494916905
   },
   {
     "date": "2024-08-01",
@@ -944,8 +752,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10876.970365636316,
-    "bnh_curve": 10453.823411496049
+    "equity_curve": 10132.169323755985,
+    "bnh_curve": 10085.104268125646
   },
   {
     "date": "2024-08-02",
@@ -956,8 +764,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10591.500933423169,
-    "bnh_curve": 10316.641506359834
+    "equity_curve": 9866.247423933757,
+    "bnh_curve": 9952.76093664394
   },
   {
     "date": "2024-08-05",
@@ -968,8 +776,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10160.051494720532,
-    "bnh_curve": 10106.515046701548
+    "equity_curve": 9464.341505224485,
+    "bnh_curve": 9750.045894335544
   },
   {
     "date": "2024-08-06",
@@ -980,8 +788,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10206.99361606319,
-    "bnh_curve": 10129.862431108024
+    "equity_curve": 9508.069262667197,
+    "bnh_curve": 9772.569787925368
   },
   {
     "date": "2024-08-07",
@@ -992,8 +800,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10563.55795254547,
-    "bnh_curve": 10306.7973745531
+    "equity_curve": 9840.217839946126,
+    "bnh_curve": 9943.26401941164
   },
   {
     "date": "2024-08-08",
@@ -1004,8 +812,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10506.904659293548,
-    "bnh_curve": 10279.159242743166
+    "equity_curve": 9787.443883533559,
+    "bnh_curve": 9916.600718329579
   },
   {
     "date": "2024-08-09",
@@ -1016,8 +824,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10566.502086842864,
-    "bnh_curve": 10308.312045976008
+    "equity_curve": 9842.960374513224,
+    "bnh_curve": 9944.725266520058
   },
   {
     "date": "2024-08-12",
@@ -1028,8 +836,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10675.683729349377,
-    "bnh_curve": 10361.5689531057
+    "equity_curve": 9944.665799069382,
+    "bnh_curve": 9996.103737368358
   },
   {
     "date": "2024-08-13",
@@ -1040,8 +848,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10740.438659467274,
-    "bnh_curve": 10392.993763472905
+    "equity_curve": 10004.986632394015,
+    "bnh_curve": 10026.420156221466
   },
   {
     "date": "2024-08-14",
@@ -1052,8 +860,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10860.163700644629,
-    "bnh_curve": 10450.91977775124
+    "equity_curve": 10116.513495916148,
+    "bnh_curve": 10082.303049095999
   },
   {
     "date": "2024-08-15",
@@ -1064,8 +872,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11034.062668612718,
-    "bnh_curve": 10534.592741334667
+    "equity_curve": 10278.504724121174,
+    "bnh_curve": 10163.024764868813
   },
   {
     "date": "2024-08-16",
@@ -1076,8 +884,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10938.889024728045,
-    "bnh_curve": 10489.159993300445
+    "equity_curve": 10189.84809984233,
+    "bnh_curve": 10119.194485450782
   },
   {
     "date": "2024-08-19",
@@ -1088,8 +896,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11058.656916354717,
-    "bnh_curve": 10546.581938732588
+    "equity_curve": 10301.41487962731,
+    "bnh_curve": 10174.591088604127
   },
   {
     "date": "2024-08-20",
@@ -1100,8 +908,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10837.400193245709,
-    "bnh_curve": 10441.076262165592
+    "equity_curve": 10095.308720724603,
+    "bnh_curve": 10072.806726349912
   },
   {
     "date": "2024-08-21",
@@ -1112,8 +920,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10863.862208300196,
-    "bnh_curve": 10453.823411496049
+    "equity_curve": 10119.958748091314,
+    "bnh_curve": 10085.104268125646
   },
   {
     "date": "2024-08-22",
@@ -1124,8 +932,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10875.927186474753,
-    "bnh_curve": 10459.628214101333
+    "equity_curve": 10131.197576335091,
+    "bnh_curve": 10090.704328240092
   },
   {
     "date": "2024-08-23",
@@ -1136,8 +944,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10980.381766063838,
-    "bnh_curve": 10509.856394606291
+    "equity_curve": 10228.499623822689,
+    "bnh_curve": 10139.160899357765
   },
   {
     "date": "2024-08-27",
@@ -1148,8 +956,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11027.057936582669,
-    "bnh_curve": 10532.194408878217
+    "equity_curve": 10271.979641436365,
+    "bnh_curve": 10160.71102453278
   },
   {
     "date": "2024-08-28",
@@ -1160,8 +968,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11022.830751811469,
-    "bnh_curve": 10530.17566860912
+    "equity_curve": 10268.041913335172,
+    "bnh_curve": 10158.76348770317
   },
   {
     "date": "2024-08-29",
@@ -1172,8 +980,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11117.152694267848,
-    "bnh_curve": 10575.228824455991
+    "equity_curve": 10355.905156479872,
+    "bnh_curve": 10202.22756361478
   },
   {
     "date": "2024-08-30",
@@ -1184,8 +992,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11109.192538738344,
-    "bnh_curve": 10571.442762119805
+    "equity_curve": 10348.490072963308,
+    "bnh_curve": 10198.575040329944
   },
   {
     "date": "2024-09-02",
@@ -1196,8 +1004,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11075.241890178626,
-    "bnh_curve": 10555.289142640513
+    "equity_curve": 10316.864196612189,
+    "bnh_curve": 10182.991178775796
   },
   {
     "date": "2024-09-03",
@@ -1208,8 +1016,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10902.30347721227,
-    "bnh_curve": 10472.879432277981
+    "equity_curve": 10155.767749361343,
+    "bnh_curve": 10103.488159737017
   },
   {
     "date": "2024-09-04",
@@ -1220,8 +1028,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10826.366662317114,
-    "bnh_curve": 10436.406538795862
+    "equity_curve": 10085.030711329573,
+    "bnh_curve": 10068.301709837462
   },
   {
     "date": "2024-09-05",
@@ -1232,8 +1040,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10753.31613978347,
-    "bnh_curve": 10401.19689853464
+    "equity_curve": 10016.982326658219,
+    "bnh_curve": 10034.333956671944
   },
   {
     "date": "2024-09-06",
@@ -1244,8 +1052,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10596.224346456602,
-    "bnh_curve": 10325.223001166753
+    "equity_curve": 9870.647401044289,
+    "bnh_curve": 9961.039751628417
   },
   {
     "date": "2024-09-09",
@@ -1256,8 +1064,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10827.536639939095,
-    "bnh_curve": 10437.92121021877
+    "equity_curve": 10086.120574680526,
+    "bnh_curve": 10069.762956945882
   },
   {
     "date": "2024-09-10",
@@ -1268,8 +1076,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10657.874146327013,
-    "bnh_curve": 10356.142510245601
+    "equity_curve": 9928.075728056756,
+    "bnh_curve": 9990.86869178791
   },
   {
     "date": "2024-09-11",
@@ -1280,8 +1088,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10626.444432961556,
-    "bnh_curve": 10340.872551799854
+    "equity_curve": 9898.798165747494,
+    "bnh_curve": 9976.137323461375
   },
   {
     "date": "2024-09-12",
@@ -1292,8 +1100,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10748.60881328775,
-    "bnh_curve": 10400.313237501096
+    "equity_curve": 10012.597334558994,
+    "bnh_curve": 10033.48146344433
   },
   {
     "date": "2024-09-13",
@@ -1304,8 +1112,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10832.342861153596,
-    "bnh_curve": 10440.823611521413
+    "equity_curve": 10090.597689678156,
+    "bnh_curve": 10072.562987003104
   },
   {
     "date": "2024-09-16",
@@ -1316,8 +1124,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10846.223965610963,
-    "bnh_curve": 10447.513307602405
+    "equity_curve": 10103.528284874694,
+    "bnh_curve": 10079.016729317587
   },
   {
     "date": "2024-09-17",
@@ -1328,8 +1136,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10928.765528907094,
-    "bnh_curve": 10487.266962132351
+    "equity_curve": 10180.41781085944,
+    "bnh_curve": 10117.368223808366
   },
   {
     "date": "2024-09-18",
@@ -1340,8 +1148,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10780.942154768454,
-    "bnh_curve": 10416.34114787938
+    "equity_curve": 10042.716649007098,
+    "bnh_curve": 10048.944049811285
   },
   {
     "date": "2024-09-19",
@@ -1352,8 +1160,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10976.871408914816,
-    "bnh_curve": 10510.992706284012
+    "equity_curve": 10225.22963853955,
+    "bnh_curve": 10140.257131932185
   },
   {
     "date": "2024-09-20",
@@ -1364,8 +1172,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10716.706118635824,
-    "bnh_curve": 10386.431008935082
+    "equity_curve": 9982.879178378424,
+    "bnh_curve": 10020.088878066597
   },
   {
     "date": "2024-09-23",
@@ -1376,8 +1184,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10794.054421146187,
-    "bnh_curve": 10423.91327255175
+    "equity_curve": 10054.93105234657,
+    "bnh_curve": 10056.249096380958
   },
   {
     "date": "2024-09-24",
@@ -1388,8 +1196,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10854.429116305819,
-    "bnh_curve": 10453.065459563511
+    "equity_curve": 10111.171587501485,
+    "bnh_curve": 10084.373050085225
   },
   {
     "date": "2024-09-25",
@@ -1400,8 +1208,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10817.474653047651,
-    "bnh_curve": 10435.271459560307
+    "equity_curve": 10076.747582800397,
+    "bnh_curve": 10067.206666235466
   },
   {
     "date": "2024-09-26",
@@ -1412,8 +1220,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10859.86225884493,
-    "bnh_curve": 10455.716442664141
+    "equity_curve": 10116.232695357428,
+    "bnh_curve": 10086.930529768066
   },
   {
     "date": "2024-09-27",
@@ -1424,8 +1232,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10953.976291243715,
-    "bnh_curve": 10501.022249155192
+    "equity_curve": 10203.90226509521,
+    "bnh_curve": 10130.638345026482
   },
   {
     "date": "2024-09-30",
@@ -1436,8 +1244,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10733.33858926689,
-    "bnh_curve": 10395.265154386181
+    "equity_curve": 9998.372739824428,
+    "bnh_curve": 10028.611432397882
   },
   {
     "date": "2024-10-01",
@@ -1448,8 +1256,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10836.802383937058,
-    "bnh_curve": 10445.367625790133
+    "equity_curve": 10094.751846435622,
+    "bnh_curve": 10076.946728328361
   },
   {
     "date": "2024-10-02",
@@ -1460,8 +1268,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10873.987423091196,
-    "bnh_curve": 10463.28856733651
+    "equity_curve": 10129.390638337687,
+    "bnh_curve": 10094.235576337736
   },
   {
     "date": "2024-10-03",
@@ -1472,8 +1280,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10851.952242905316,
-    "bnh_curve": 10452.687099818326
+    "equity_curve": 10108.86431812005,
+    "bnh_curve": 10084.008035551225
   },
   {
     "date": "2024-10-04",
@@ -1484,8 +1292,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10846.972358014193,
-    "bnh_curve": 10450.288767361875
+    "equity_curve": 10104.225431073975,
+    "bnh_curve": 10081.694295215195
   },
   {
     "date": "2024-10-07",
@@ -1496,8 +1304,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10907.228951981584,
-    "bnh_curve": 10479.31524527263
+    "equity_curve": 10160.355952021177,
+    "bnh_curve": 10109.696973732269
   },
   {
     "date": "2024-10-08",
@@ -1508,8 +1316,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10610.366963504444,
-    "bnh_curve": 10336.707513497398
+    "equity_curve": 9883.821601744741,
+    "bnh_curve": 9972.119191156327
   },
   {
     "date": "2024-10-09",
@@ -1520,8 +1328,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10747.942114339108,
-    "bnh_curve": 10403.720940092096
+    "equity_curve": 10011.976287851265,
+    "bnh_curve": 10036.768972195166
   },
   {
     "date": "2024-10-10",
@@ -1532,8 +1340,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10732.29679702815,
-    "bnh_curve": 10396.148815419725
+    "equity_curve": 9997.40228435675,
+    "bnh_curve": 10029.463925625494
   },
   {
     "date": "2024-10-11",
@@ -1544,8 +1352,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10773.987255452495,
-    "bnh_curve": 10416.34114787938
+    "equity_curve": 10036.237986739006,
+    "bnh_curve": 10048.944049811285
   },
   {
     "date": "2024-10-14",
@@ -1556,8 +1364,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10875.80474167553,
-    "bnh_curve": 10465.559958249789
+    "equity_curve": 10131.083515949074,
+    "bnh_curve": 10096.426852514152
   },
   {
     "date": "2024-10-15",
@@ -1568,8 +1376,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10761.966266140927,
-    "bnh_curve": 10410.787763476108
+    "equity_curve": 10025.04013521882,
+    "bnh_curve": 10043.586540071223
   },
   {
     "date": "2024-10-16",
@@ -1580,8 +1388,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10970.178557226167,
-    "bnh_curve": 10511.496775130205
+    "equity_curve": 10218.995080175537,
+    "bnh_curve": 10140.743421653375
   },
   {
     "date": "2024-10-17",
@@ -1592,8 +1400,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11117.692701135118,
-    "bnh_curve": 10582.169938738996
+    "equity_curve": 10356.408186352273,
+    "bnh_curve": 10208.923856303647
   },
   {
     "date": "2024-10-18",
@@ -1604,8 +1412,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11046.625687778964,
-    "bnh_curve": 10548.348028357508
+    "equity_curve": 10290.207489977014,
+    "bnh_curve": 10176.29488608693
   },
   {
     "date": "2024-10-21",
@@ -1616,8 +1424,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10940.631553722335,
-    "bnh_curve": 10497.741488107364
+    "equity_curve": 10191.471309084252,
+    "bnh_curve": 10127.473300435258
   },
   {
     "date": "2024-10-22",
@@ -1628,8 +1436,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10909.853855899484,
-    "bnh_curve": 10482.975598507808
+    "equity_curve": 10162.801115523578,
+    "bnh_curve": 10113.228221829915
   },
   {
     "date": "2024-10-23",
@@ -1640,8 +1448,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10784.027993897618,
-    "bnh_curve": 10422.524310229848
+    "equity_curve": 10045.591185161147,
+    "bnh_curve": 10054.90912445973
   },
   {
     "date": "2024-10-24",
@@ -1652,8 +1460,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10812.23517982869,
-    "bnh_curve": 10436.15512059385
+    "equity_curve": 10071.866882749073,
+    "bnh_curve": 10068.059159463079
   },
   {
     "date": "2024-10-25",
@@ -1664,8 +1472,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10758.364676653868,
-    "bnh_curve": 10410.156753086743
+    "equity_curve": 10021.685164736155,
+    "bnh_curve": 10042.977786190419
   },
   {
     "date": "2024-10-28",
@@ -1676,8 +1484,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10854.355785234968,
-    "bnh_curve": 10456.598871255517
+    "equity_curve": 10111.103277779055,
+    "bnh_curve": 10087.781834023255
   },
   {
     "date": "2024-10-29",
@@ -1688,8 +1496,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10681.432275628029,
-    "bnh_curve": 10373.30549985944
+    "equity_curve": 9950.020713379408,
+    "bnh_curve": 10007.426321756862
   },
   {
     "date": "2024-10-30",
@@ -1700,8 +1508,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10525.49263100991,
-    "bnh_curve": 10297.584869356817
+    "equity_curve": 9804.759043038848,
+    "bnh_curve": 9934.376450546357
   },
   {
     "date": "2024-10-31",
@@ -1712,8 +1520,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10397.787380997806,
-    "bnh_curve": 10235.114840809758
+    "equity_curve": 9685.798415845898,
+    "bnh_curve": 9874.109816346563
   },
   {
     "date": "2024-11-01",
@@ -1724,8 +1532,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10569.842606031467,
-    "bnh_curve": 10319.796558306653
+    "equity_curve": 9846.072151498023,
+    "bnh_curve": 9955.80470604797
   },
   {
     "date": "2024-11-04",
@@ -1736,8 +1544,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10587.938995131646,
-    "bnh_curve": 10328.630703757754
+    "equity_curve": 9862.929389529201,
+    "bnh_curve": 9964.327260379254
   },
   {
     "date": "2024-11-05",
@@ -1748,8 +1556,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10557.406804057102,
-    "bnh_curve": 10313.738488836108
+    "equity_curve": 9834.487891631044,
+    "bnh_curve": 9949.960312100506
   },
   {
     "date": "2024-11-06",
@@ -1760,8 +1568,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10542.680621659789,
-    "bnh_curve": 10306.545340130004
+    "equity_curve": 9820.770085245042,
+    "bnh_curve": 9943.020874551044
   },
   {
     "date": "2024-11-07",
@@ -1772,8 +1580,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10475.551992076817,
-    "bnh_curve": 10273.732799883066
+    "equity_curve": 9758.238091634468,
+    "bnh_curve": 9911.365672749133
   },
   {
     "date": "2024-11-08",
@@ -1784,8 +1592,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10299.772697199896,
-    "bnh_curve": 10187.536410963263
+    "equity_curve": 9594.495291991454,
+    "bnh_curve": 9828.209535939308
   },
   {
     "date": "2024-11-11",
@@ -1796,8 +1604,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10434.511070546783,
-    "bnh_curve": 10254.171477812775
+    "equity_curve": 9720.00744907806,
+    "bnh_curve": 9892.494302444147
   },
   {
     "date": "2024-11-12",
@@ -1808,8 +1616,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10179.207951494625,
-    "bnh_curve": 10128.726119430301
+    "equity_curve": 9482.186222747252,
+    "bnh_curve": 9771.473555350947
   },
   {
     "date": "2024-11-13",
@@ -1820,8 +1628,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10190.622748000009,
-    "bnh_curve": 10134.405212934578
+    "equity_curve": 9492.819390541306,
+    "bnh_curve": 9776.952340278202
   },
   {
     "date": "2024-11-14",
@@ -1832,8 +1640,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10294.42969450079,
-    "bnh_curve": 10186.022355761439
+    "equity_curve": 9589.518151645862,
+    "bnh_curve": 9826.748883317101
   },
   {
     "date": "2024-11-15",
@@ -1844,8 +1652,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10275.04257261053,
-    "bnh_curve": 10176.430874598887
+    "equity_curve": 9571.458563811275,
+    "bnh_curve": 9817.495705431607
   },
   {
     "date": "2024-11-18",
@@ -1856,8 +1664,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10391.508277659173,
-    "bnh_curve": 10234.104854454126
+    "equity_curve": 9679.949274394769,
+    "bnh_curve": 9873.135453445548
   },
   {
     "date": "2024-11-19",
@@ -1868,8 +1676,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10365.111299314245,
-    "bnh_curve": 10221.106286921657
+    "equity_curve": 9655.359830345964,
+    "bnh_curve": 9860.595361295427
   },
   {
     "date": "2024-11-20",
@@ -1880,8 +1688,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10329.533071176804,
-    "bnh_curve": 10203.564321341548
+    "equity_curve": 9622.21782300294,
+    "bnh_curve": 9843.672122306263
   },
   {
     "date": "2024-11-21",
@@ -1892,8 +1700,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10493.57630847238,
-    "bnh_curve": 10284.585685603264
+    "equity_curve": 9775.028192142769,
+    "bnh_curve": 9921.835763910027
   },
   {
     "date": "2024-11-22",
@@ -1904,8 +1712,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10784.073255802312,
-    "bnh_curve": 10426.9413829554
+    "equity_curve": 10045.633347754856,
+    "bnh_curve": 10059.170401625372
   },
   {
     "date": "2024-11-25",
@@ -1916,8 +1724,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10861.34535424142,
-    "bnh_curve": 10464.297937471061
+    "equity_curve": 10117.614235729003,
+    "bnh_curve": 10095.209344752542
   },
   {
     "date": "2024-11-26",
@@ -1928,8 +1736,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10774.628061810086,
-    "bnh_curve": 10422.524310229848
+    "equity_curve": 10036.834913852037,
+    "bnh_curve": 10054.90912445973
   },
   {
     "date": "2024-11-27",
@@ -1940,8 +1748,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10816.899412227103,
-    "bnh_curve": 10442.969293333685
+    "equity_curve": 10076.211731621273,
+    "bnh_curve": 10074.632987992329
   },
   {
     "date": "2024-11-28",
@@ -1952,8 +1760,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10833.632718947192,
-    "bnh_curve": 10451.046719294412
+    "equity_curve": 10091.799224400507,
+    "bnh_curve": 10082.425513255615
   },
   {
     "date": "2024-11-29",
@@ -1964,8 +1772,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10849.591982372607,
-    "bnh_curve": 10458.744553067789
+    "equity_curve": 10106.665676534973,
+    "bnh_curve": 10089.85183501248
   },
   {
     "date": "2024-12-02",
@@ -1976,8 +1784,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10916.623685937726,
-    "bnh_curve": 10491.053024468538
+    "equity_curve": 10169.107381141186,
+    "bnh_curve": 10121.020747093202
   },
   {
     "date": "2024-12-03",
@@ -1988,8 +1796,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11038.752660794344,
-    "bnh_curve": 10549.73699067941
+    "equity_curve": 10282.873568874254,
+    "bnh_curve": 10177.634858008158
   },
   {
     "date": "2024-12-04",
@@ -2000,8 +1808,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10976.422584798449,
-    "bnh_curve": 10519.952560836118
+    "equity_curve": 10224.811547675024,
+    "bnh_curve": 10148.90096145066
   },
   {
     "date": "2024-12-05",
@@ -2012,8 +1820,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11012.240570390406,
-    "bnh_curve": 10537.116782892124
+    "equity_curve": 10258.176895069932,
+    "bnh_curve": 10165.459780392037
   },
   {
     "date": "2024-12-06",
@@ -2024,8 +1832,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10904.614154704466,
-    "bnh_curve": 10485.625349166272
+    "equity_curve": 10157.920203106876,
+    "bnh_curve": 10115.78451254033
   },
   {
     "date": "2024-12-09",
@@ -2036,8 +1844,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11018.797227191051,
-    "bnh_curve": 10540.52325304096
+    "equity_curve": 10264.284584497109,
+    "bnh_curve": 10168.746100170452
   },
   {
     "date": "2024-12-10",
@@ -2048,8 +1856,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10829.613862599119,
-    "bnh_curve": 10450.037349159862
+    "equity_curve": 10088.05555942417,
+    "bnh_curve": 10081.45174484081
   },
   {
     "date": "2024-12-11",
@@ -2060,8 +1868,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10885.065131238543,
-    "bnh_curve": 10476.791203715173
+    "equity_curve": 10139.709799914404,
+    "bnh_curve": 10107.261958209046
   },
   {
     "date": "2024-12-12",
@@ -2072,8 +1880,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10911.814142405627,
-    "bnh_curve": 10489.664062146636
+    "equity_curve": 10164.627171321812,
+    "bnh_curve": 10119.680775171973
   },
   {
     "date": "2024-12-13",
@@ -2084,8 +1892,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10881.619511739258,
-    "bnh_curve": 10475.15082319126
+    "equity_curve": 10136.500119367487,
+    "bnh_curve": 10105.679435913435
   },
   {
     "date": "2024-12-16",
@@ -2096,8 +1904,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10781.459276459564,
-    "bnh_curve": 10426.9413829554
+    "equity_curve": 10043.19836076683,
+    "bnh_curve": 10059.170401625372
   },
   {
     "date": "2024-12-17",
@@ -2108,8 +1916,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10606.861210003084,
-    "bnh_curve": 10342.512932323767
+    "equity_curve": 9880.555904874293,
+    "bnh_curve": 9977.719845756987
   },
   {
     "date": "2024-12-18",
@@ -2120,8 +1928,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10616.955055858107,
-    "bnh_curve": 10347.434073895507
+    "equity_curve": 9889.958574174017,
+    "bnh_curve": 9982.467412643819
   },
   {
     "date": "2024-12-19",
@@ -2132,8 +1940,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10374.033672276728,
-    "bnh_curve": 10229.056771339214
+    "equity_curve": 9663.671243412902,
+    "bnh_curve": 9868.2654223991
   },
   {
     "date": "2024-12-20",
@@ -2144,8 +1952,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10321.046253446333,
-    "bnh_curve": 10202.933310952183
+    "equity_curve": 9614.312140503649,
+    "bnh_curve": 9843.063368425457
   },
   {
     "date": "2024-12-23",
@@ -2156,8 +1964,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10367.260523254487,
-    "bnh_curve": 10225.776010291385
+    "equity_curve": 9657.36188607888,
+    "bnh_curve": 9865.100377807878
   },
   {
     "date": "2024-12-24",
@@ -2168,8 +1976,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10455.032501118798,
-    "bnh_curve": 10269.06307651334
+    "equity_curve": 9739.123673755694,
+    "bnh_curve": 9906.860656236684
   },
   {
     "date": "2024-12-27",
@@ -2180,8 +1988,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10487.924813768617,
-    "bnh_curve": 10285.216695992627
+    "equity_curve": 9769.763683796615,
+    "bnh_curve": 9922.444517790833
   },
   {
     "date": "2024-12-30",
@@ -2192,8 +2000,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10413.80024790137,
-    "bnh_curve": 10248.870744053682
+    "equity_curve": 9700.714800957912,
+    "bnh_curve": 9887.380532050893
   },
   {
     "date": "2024-12-31",
@@ -2204,8 +2012,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10547.162546359903,
-    "bnh_curve": 10314.495824547561
+    "equity_curve": 9824.945109946908,
+    "bnh_curve": 9950.690935654715
   },
   {
     "date": "2025-01-02",
@@ -2216,8 +2024,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10771.96463563008,
-    "bnh_curve": 10424.417341397942
+    "equity_curve": 10034.353865901194,
+    "bnh_curve": 10056.73538610215
   },
   {
     "date": "2025-01-03",
@@ -2228,8 +2036,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10677.809907736433,
-    "bnh_curve": 10378.858884262712
+    "equity_curve": 9946.646387294417,
+    "bnh_curve": 10012.783831496925
   },
   {
     "date": "2025-01-06",
@@ -2240,8 +2048,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10744.54672683628,
-    "bnh_curve": 10411.293064764466
+    "equity_curve": 10008.81339966257,
+    "bnh_curve": 10044.074018764839
   },
   {
     "date": "2025-01-07",
@@ -2252,8 +2060,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10733.084442979345,
-    "bnh_curve": 10405.739680361194
+    "equity_curve": 9998.135996215527,
+    "bnh_curve": 10038.716509024776
   },
   {
     "date": "2025-01-08",
@@ -2264,8 +2072,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10747.924577135716,
-    "bnh_curve": 10412.93344528838
+    "equity_curve": 10011.95995150869,
+    "bnh_curve": 10045.65654106045
   },
   {
     "date": "2025-01-09",
@@ -2276,8 +2084,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10926.905189825873,
-    "bnh_curve": 10499.634519275458
+    "equity_curve": 10178.684858581668,
+    "bnh_curve": 10129.299562077676
   },
   {
     "date": "2025-01-10",
@@ -2288,8 +2096,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10739.87975251141,
-    "bnh_curve": 10409.778393341558
+    "equity_curve": 10004.465996617453,
+    "bnh_curve": 10042.612771656419
   },
   {
     "date": "2025-01-13",
@@ -2300,8 +2108,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10676.601100549657,
-    "bnh_curve": 10379.111534906891
+    "equity_curve": 9945.52035323489,
+    "bnh_curve": 10013.027570843733
   },
   {
     "date": "2025-01-14",
@@ -2312,8 +2120,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10617.662620332634,
-    "bnh_curve": 10350.463416741322
+    "equity_curve": 9890.617688138884,
+    "bnh_curve": 9985.389906860657
   },
   {
     "date": "2025-01-15",
@@ -2324,8 +2132,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 10875.545946421926,
-    "bnh_curve": 10476.160193325808
+    "equity_curve": 10130.842441712277,
+    "bnh_curve": 10106.65320432824
   },
   {
     "date": "2025-01-16",
@@ -2336,8 +2144,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11113.468177192442,
-    "bnh_curve": 10590.752665988084
+    "equity_curve": 10352.472936879265,
+    "bnh_curve": 10217.203860260546
   },
   {
     "date": "2025-01-17",
@@ -2348,8 +2156,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11413.556051277152,
-    "bnh_curve": 10733.739373729582
+    "equity_curve": 10632.012280099161,
+    "bnh_curve": 10355.1472518567
   },
   {
     "date": "2025-01-20",
@@ -2360,8 +2168,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11454.619206609019,
-    "bnh_curve": 10753.048045155696
+    "equity_curve": 10670.263633996807,
+    "bnh_curve": 10373.77488281488
   },
   {
     "date": "2025-01-21",
@@ -2372,8 +2180,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11529.365096336951,
-    "bnh_curve": 10788.131976315914
+    "equity_curve": 10739.891295516494,
+    "bnh_curve": 10407.621360793206
   },
   {
     "date": "2025-01-22",
@@ -2384,8 +2192,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11520.73268498489,
-    "bnh_curve": 10784.093263335548
+    "equity_curve": 10731.849988925485,
+    "bnh_curve": 10403.725098161563
   },
   {
     "date": "2025-01-23",
@@ -2396,8 +2204,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11574.932984099822,
-    "bnh_curve": 10809.46062045329
+    "equity_curve": 10782.338920086473,
+    "bnh_curve": 10428.197717553418
   },
   {
     "date": "2025-01-24",
@@ -2408,8 +2216,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11405.19882398756,
-    "bnh_curve": 10730.205962037579
+    "equity_curve": 10624.227314329393,
+    "bnh_curve": 10351.738467918669
   },
   {
     "date": "2025-01-27",
@@ -2420,8 +2228,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11408.685964139097,
-    "bnh_curve": 10731.84634256149
+    "equity_curve": 10627.475672400007,
+    "bnh_curve": 10353.32099021428
   },
   {
     "date": "2025-01-28",
@@ -2432,8 +2240,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11489.719993199975,
-    "bnh_curve": 10769.959616567523
+    "equity_curve": 10702.960892625018,
+    "bnh_curve": 10390.089962409447
   },
   {
     "date": "2025-01-29",
@@ -2444,8 +2252,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11554.074523487518,
-    "bnh_curve": 10800.121173713833
+    "equity_curve": 10762.908743515944,
+    "bnh_curve": 10419.187684528519
   },
   {
     "date": "2025-01-30",
@@ -2456,8 +2264,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11794.667861378966,
-    "bnh_curve": 10912.567964563837
+    "equity_curve": 10987.027441621929,
+    "bnh_curve": 10527.6683394716
   },
   {
     "date": "2025-01-31",
@@ -2468,8 +2276,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11868.597449395913,
-    "bnh_curve": 10946.768234690511
+    "equity_curve": 11055.894697727523,
+    "bnh_curve": 10560.662324222316
   },
   {
     "date": "2025-02-03",
@@ -2480,8 +2288,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11621.208506440813,
-    "bnh_curve": 10832.681063316593
+    "equity_curve": 10825.445723924564,
+    "bnh_curve": 10450.599146983623
   },
   {
     "date": "2025-02-04",
@@ -2492,8 +2300,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11586.549574085047,
-    "bnh_curve": 10816.527443837304
+    "equity_curve": 10793.160063542637,
+    "bnh_curve": 10435.015285429476
   },
   {
     "date": "2025-02-05",
@@ -2504,8 +2312,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11728.495218949316,
-    "bnh_curve": 10882.783534720546
+    "equity_curve": 10925.385973900753,
+    "bnh_curve": 10498.934442914106
   },
   {
     "date": "2025-02-06",
@@ -2516,8 +2324,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12011.394696039903,
-    "bnh_curve": 11014.033695708304
+    "equity_curve": 11188.913896394653,
+    "bnh_curve": 10625.55525012175
   },
   {
     "date": "2025-02-07",
@@ -2528,8 +2336,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11937.625480112327,
-    "bnh_curve": 10980.211785326814
+    "equity_curve": 11120.196030892295,
+    "bnh_curve": 10592.926279905036
   },
   {
     "date": "2025-02-10",
@@ -2540,8 +2348,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12122.304490110391,
-    "bnh_curve": 11065.145537246806
+    "equity_curve": 11292.229137257622,
+    "bnh_curve": 10674.864314467037
   },
   {
     "date": "2025-02-11",
@@ -2552,8 +2360,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12148.851908758255,
-    "bnh_curve": 11077.2616761879
+    "equity_curve": 11316.958720202758,
+    "bnh_curve": 10686.553102361964
   },
   {
     "date": "2025-02-12",
@@ -2564,8 +2372,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12231.898264408619,
-    "bnh_curve": 11115.122299549752
+    "equity_curve": 11394.31847286226,
+    "bnh_curve": 10723.078335210326
   },
   {
     "date": "2025-02-13",
@@ -2576,8 +2384,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12113.292450713845,
-    "bnh_curve": 11061.233765809615
+    "equity_curve": 11283.834197669788,
+    "bnh_curve": 10671.090515995007
   },
   {
     "date": "2025-02-14",
@@ -2588,8 +2396,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12024.287607627706,
-    "bnh_curve": 11020.596450246125
+    "equity_curve": 11200.923965273441,
+    "bnh_curve": 10631.886528276616
   },
   {
     "date": "2025-02-17",
@@ -2600,8 +2408,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12122.051640853195,
-    "bnh_curve": 11065.398187890985
+    "equity_curve": 11291.993601864844,
+    "bnh_curve": 10675.108053813841
   },
   {
     "date": "2025-02-18",
@@ -2612,8 +2420,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12118.457594424157,
-    "bnh_curve": 11063.757807367072
+    "equity_curve": 11288.645657928957,
+    "bnh_curve": 10673.525531518233
   },
   {
     "date": "2025-02-19",
@@ -2624,8 +2432,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11968.612668997088,
-    "bnh_curve": 10995.356034671555
+    "equity_curve": 11149.06137060486,
+    "bnh_curve": 10607.536373044377
   },
   {
     "date": "2025-02-20",
@@ -2636,8 +2444,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11832.613512126993,
-    "bnh_curve": 10932.886006124498
+    "equity_curve": 11022.374762204301,
+    "bnh_curve": 10547.269738844585
   },
   {
     "date": "2025-02-21",
@@ -2648,8 +2456,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11822.780247315955,
-    "bnh_curve": 10928.343224297943
+    "equity_curve": 11013.214830649691,
+    "bnh_curve": 10542.887186491751
   },
   {
     "date": "2025-02-24",
@@ -2660,8 +2468,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11821.68693134512,
-    "bnh_curve": 10927.837923009585
+    "equity_curve": 11012.196379539824,
+    "bnh_curve": 10542.399707798138
   },
   {
     "date": "2025-02-25",
@@ -2672,8 +2480,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11848.173285925854,
-    "bnh_curve": 10940.079771051684
+    "equity_curve": 11036.869079782611,
+    "bnh_curve": 10554.209770880258
   },
   {
     "date": "2025-02-26",
@@ -2684,8 +2492,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12019.839845270504,
-    "bnh_curve": 11019.334429467395
+    "equity_curve": 11196.780763646508,
+    "bnh_curve": 10630.669020515006
   },
   {
     "date": "2025-02-27",
@@ -2696,8 +2504,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12087.84474518533,
-    "bnh_curve": 11050.506589190423
+    "equity_curve": 11260.129024937994,
+    "bnh_curve": 10660.741700021306
   },
   {
     "date": "2025-02-28",
@@ -2708,8 +2516,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12235.557149982473,
-    "bnh_curve": 11118.024700852393
+    "equity_curve": 11397.726816079561,
+    "bnh_curve": 10725.878365267547
   },
   {
     "date": "2025-03-03",
@@ -2720,8 +2528,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12406.665252236722,
-    "bnh_curve": 11195.7646878452
+    "equity_curve": 11557.118283227794,
+    "bnh_curve": 10800.876367793877
   },
   {
     "date": "2025-03-04",
@@ -2732,8 +2540,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12092.558838222129,
-    "bnh_curve": 11054.040000882427
+    "equity_curve": 11264.520320239091,
+    "bnh_curve": 10664.150483959336
   },
   {
     "date": "2025-03-05",
@@ -2744,8 +2552,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 12083.722544099464,
-    "bnh_curve": 11050.001287902065
+    "equity_curve": 11256.289091759496,
+    "bnh_curve": 10660.254221327692
   },
   {
     "date": "2025-03-06",
@@ -2756,8 +2564,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11882.230558125319,
-    "bnh_curve": 10957.873771054888
+    "equity_curve": 11068.594278714883,
+    "bnh_curve": 10571.376154730016
   },
   {
     "date": "2025-03-07",
@@ -2768,8 +2576,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11874.294982700558,
-    "bnh_curve": 10954.214650261876
+    "equity_curve": 11061.202092179272,
+    "bnh_curve": 10567.846095604797
   },
   {
     "date": "2025-03-10",
@@ -2780,8 +2588,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11656.23173618182,
-    "bnh_curve": 10853.631347708786
+    "equity_curve": 10858.070736411664,
+    "bnh_curve": 10470.810489209836
   },
   {
     "date": "2025-03-11",
@@ -2792,8 +2600,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11373.777468621884,
-    "bnh_curve": 10722.128536076849
+    "equity_curve": 10594.957537705497,
+    "bnh_curve": 10343.945942655384
   },
   {
     "date": "2025-03-12",
@@ -2804,8 +2612,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11494.262399433557,
-    "bnh_curve": 10778.919471119629
+    "equity_curve": 10707.192257384582,
+    "bnh_curve": 10398.733791927923
   },
   {
     "date": "2025-03-13",
@@ -2816,8 +2624,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11498.567827344305,
-    "bnh_curve": 10780.938211388726
+    "equity_curve": 10711.202870922772,
+    "bnh_curve": 10400.681328757533
   },
   {
     "date": "2025-03-14",
@@ -2828,8 +2636,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11740.045557096471,
-    "bnh_curve": 10894.141721729102
+    "equity_curve": 10936.145402116477,
+    "bnh_curve": 10509.892012768614
   },
   {
     "date": "2025-03-17",
@@ -2840,8 +2648,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11870.606867405604,
-    "bnh_curve": 10954.718719108068
+    "equity_curve": 11057.766520747355,
+    "bnh_curve": 10568.332385325986
   },
   {
     "date": "2025-03-18",
@@ -2852,8 +2660,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11938.711139056357,
-    "bnh_curve": 10986.143529475272
+    "equity_curve": 11121.20734929062,
+    "bnh_curve": 10598.648804179096
   },
   {
     "date": "2025-03-19",
@@ -2864,8 +2672,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11942.825476764117,
-    "bnh_curve": 10988.036560643364
+    "equity_curve": 11125.039957536188,
+    "bnh_curve": 10600.475065821513
   },
   {
     "date": "2025-03-20",
@@ -2876,8 +2684,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11929.931128488726,
-    "bnh_curve": 10982.104816494906
+    "equity_curve": 11113.028550347059,
+    "bnh_curve": 10594.752541547452
   },
   {
     "date": "2025-03-21",
@@ -2888,8 +2696,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11778.578674258148,
-    "bnh_curve": 10912.441023020665
+    "equity_curve": 10972.039962323031,
+    "bnh_curve": 10527.545875311986
   },
   {
     "date": "2025-03-24",
@@ -2900,8 +2708,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11754.604673663469,
-    "bnh_curve": 10901.335486656288
+    "equity_curve": 10949.707582512516,
+    "bnh_curve": 10516.832044804285
   },
   {
     "date": "2025-03-25",
@@ -2912,8 +2720,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11824.82150736555,
-    "bnh_curve": 10933.895376259048
+    "equity_curve": 11015.11631532429,
+    "bnh_curve": 10548.243507259389
   },
   {
     "date": "2025-03-26",
@@ -2924,8 +2732,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11895.247438765655,
-    "bnh_curve": 10966.455265861807
+    "equity_curve": 11080.71982785968,
+    "bnh_curve": 10579.654969714493
   },
   {
     "date": "2025-03-27",
@@ -2936,8 +2744,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11830.908843806825,
-    "bnh_curve": 10936.79777756169
+    "equity_curve": 11020.786821125108,
+    "bnh_curve": 10551.043537316613
   },
   {
     "date": "2025-03-28",
@@ -2948,8 +2756,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11811.252180574906,
-    "bnh_curve": 10927.712213908579
+    "equity_curve": 11002.476148804526,
+    "bnh_curve": 10542.278432610945
   },
   {
     "date": "2025-03-31",
@@ -2960,8 +2768,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11603.640781656284,
-    "bnh_curve": 10831.671693182043
+    "equity_curve": 10809.080949895913,
+    "bnh_curve": 10449.625378568819
   },
   {
     "date": "2025-04-01",
@@ -2972,8 +2780,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11744.24509129347,
-    "bnh_curve": 10897.296773675922
+    "equity_curve": 10940.057373017798,
+    "bnh_curve": 10512.935782172643
   },
   {
     "date": "2025-04-02",
@@ -2984,8 +2792,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 11672.704034386632,
-    "bnh_curve": 10864.105873683799
+    "equity_curve": 10873.41509324561,
+    "bnh_curve": 10480.915565836733
   },
   {
     "date": "2025-04-03",
@@ -2996,8 +2804,8 @@
     "ml_down_prob": 76.65,
     "signal_action": "SELL",
     "position": 0.0,
-    "equity_curve": 11309.852081090257,
-    "bnh_curve": 10695.247739978366
+    "equity_curve": 10535.409444000707,
+    "bnh_curve": 10318.013265127534
   },
   {
     "date": "2025-04-04",
@@ -3008,8 +2816,8 @@
     "ml_down_prob": 68.1,
     "signal_action": "WAIT",
     "position": 0.0,
-    "equity_curve": 12380.347750095125,
-    "bnh_curve": 10165.577372657606
+    "equity_curve": 11532.602873245674,
+    "bnh_curve": 9807.025019784502
   },
   {
     "date": "2025-04-07",
@@ -3020,8 +2828,8 @@
     "ml_down_prob": 49.89,
     "signal_action": "WAIT",
     "position": 0.0,
-    "equity_curve": 13353.9945201625,
-    "bnh_curve": 9720.210363088554
+    "equity_curve": 12439.579136325126,
+    "bnh_curve": 9377.366649608875
   },
   {
     "date": "2025-04-08",
@@ -3032,8 +2840,8 @@
     "ml_down_prob": 42.36,
     "signal_action": "WAIT",
     "position": 0.0,
-    "equity_curve": 12703.60722143785,
-    "bnh_curve": 9983.215370131345
+    "equity_curve": 11833.727137544498,
+    "bnh_curve": 9631.09514823157
   },
   {
     "date": "2025-04-09",
@@ -3044,8 +2852,8 @@
     "ml_down_prob": 39.75,
     "signal_action": "BUY",
     "position": 1.0,
-    "equity_curve": 13371.34755171708,
-    "bnh_curve": 9691.688570245075
+    "equity_curve": 12455.743918252543,
+    "bnh_curve": 9349.850855299203
   },
   {
     "date": "2025-04-10",
@@ -3056,8 +2864,8 @@
     "ml_down_prob": 49.76,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14053.327935672529,
-    "bnh_curve": 9986.748781823351
+    "equity_curve": 13091.025664311846,
+    "bnh_curve": 9634.503932169599
   },
   {
     "date": "2025-04-11",
@@ -3068,8 +2876,8 @@
     "ml_down_prob": 61.38,
     "signal_action": "SELL",
     "position": 0.0,
-    "equity_curve": 14216.038286410132,
-    "bnh_curve": 10050.986132437496
+    "equity_curve": 13242.594416361551,
+    "bnh_curve": 9696.475552824619
   },
   {
     "date": "2025-04-14",
@@ -3080,8 +2888,8 @@
     "ml_down_prob": 50.91,
     "signal_action": "WAIT",
     "position": 0.0,
-    "equity_curve": 13620.300274259358,
-    "bnh_curve": 10265.655373922338
+    "equity_curve": 12687.649591764124,
+    "bnh_curve": 9903.573147485848
   },
   {
     "date": "2025-04-15",
@@ -3092,8 +2900,8 @@
     "ml_down_prob": 62.84,
     "signal_action": "WAIT",
     "position": 0.0,
-    "equity_curve": 13470.909142201395,
-    "bnh_curve": 10410.535112831929
+    "equity_curve": 12548.488024287486,
+    "bnh_curve": 10043.342800724418
   },
   {
     "date": "2025-04-16",
@@ -3104,8 +2912,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "BUY",
     "position": 1.0,
-    "equity_curve": 13378.281977766494,
-    "bnh_curve": 10443.978663468231
+    "equity_curve": 12462.203509161944,
+    "bnh_curve": 10075.606756407135
   },
   {
     "date": "2025-04-17",
@@ -3116,8 +2924,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 13327.768483621421,
-    "bnh_curve": 10444.105605011408
+    "equity_curve": 12415.148928832354,
+    "bnh_curve": 10075.729220566749
   },
   {
     "date": "2025-04-22",
@@ -3128,8 +2936,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 13498.154342679863,
-    "bnh_curve": 10510.86576474084
+    "equity_curve": 12573.867608420553,
+    "bnh_curve": 10140.134667772569
   },
   {
     "date": "2025-04-23",
@@ -3140,8 +2948,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 13739.964555745035,
-    "bnh_curve": 10605.013254299283
+    "equity_curve": 12799.119856117239,
+    "bnh_curve": 10230.961460172277
   },
   {
     "date": "2025-04-24",
@@ -3152,8 +2960,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 13753.699926408499,
-    "bnh_curve": 10610.313988058375
+    "equity_curve": 12811.914696648058,
+    "bnh_curve": 10236.075230565533
   },
   {
     "date": "2025-04-25",
@@ -3164,8 +2972,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 13779.545292529332,
-    "bnh_curve": 10620.28321274503
+    "equity_curve": 12835.990300144973,
+    "bnh_curve": 10245.692828498813
   },
   {
     "date": "2025-04-28",
@@ -3176,8 +2984,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 13786.095050998949,
-    "bnh_curve": 10622.807254302486
+    "equity_curve": 12842.09156360465,
+    "bnh_curve": 10248.127844022038
   },
   {
     "date": "2025-04-29",
@@ -3188,8 +2996,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 13937.43106105722,
-    "bnh_curve": 10681.112860768173
+    "equity_curve": 12983.064833471819,
+    "bnh_curve": 10304.376940402995
   },
   {
     "date": "2025-04-30",
@@ -3200,8 +3008,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14040.849452887125,
-    "bnh_curve": 10720.740806197113
+    "equity_curve": 13079.40164620431,
+    "bnh_curve": 10342.60715970658
   },
   {
     "date": "2025-05-01",
@@ -3212,8 +3020,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14047.128369807608,
-    "bnh_curve": 10723.137906211397
+    "equity_curve": 13085.250614002283,
+    "bnh_curve": 10344.919711070188
   },
   {
     "date": "2025-05-02",
@@ -3224,8 +3032,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14376.452879866152,
-    "bnh_curve": 10848.83591523805
+    "equity_curve": 13392.024613214237,
+    "bnh_curve": 10466.184197510198
   },
   {
     "date": "2025-05-06",
@@ -3236,8 +3044,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14379.79764098164,
-    "bnh_curve": 10850.097936016778
+    "equity_curve": 13395.140341659788,
+    "bnh_curve": 10467.401705271808
   },
   {
     "date": "2025-05-07",
@@ -3248,8 +3056,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14252.345459882454,
-    "bnh_curve": 10802.014204881925
+    "equity_curve": 13276.4154544744,
+    "bnh_curve": 10421.013946170939
   },
   {
     "date": "2025-05-08",
@@ -3260,8 +3068,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14160.096616657274,
-    "bnh_curve": 10767.055982822712
+    "equity_curve": 13190.48335499649,
+    "bnh_curve": 10387.2887433798
   },
   {
     "date": "2025-05-09",
@@ -3272,8 +3080,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14237.10843675941,
-    "bnh_curve": 10796.335111377646
+    "equity_curve": 13262.22178720466,
+    "bnh_curve": 10415.535161243686
   },
   {
     "date": "2025-05-12",
@@ -3284,8 +3092,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14404.197238491264,
-    "bnh_curve": 10859.688800958249
+    "equity_curve": 13417.869175617087,
+    "bnh_curve": 10476.65428867109
   },
   {
     "date": "2025-05-13",
@@ -3296,8 +3104,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14397.168025809966,
-    "bnh_curve": 10857.039050299785
+    "equity_curve": 13411.32128859474,
+    "bnh_curve": 10474.097997960675
   },
   {
     "date": "2025-05-14",
@@ -3308,8 +3116,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14337.254526907525,
-    "bnh_curve": 10834.44838538368
+    "equity_curve": 13355.510369262269,
+    "bnh_curve": 10452.30413343885
   },
   {
     "date": "2025-05-15",
@@ -3320,8 +3128,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14500.249336614705,
-    "bnh_curve": 10896.034752897194
+    "equity_curve": 13507.344101940635,
+    "bnh_curve": 10511.71827441103
   },
   {
     "date": "2025-05-16",
@@ -3332,8 +3140,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14670.883321854933,
-    "bnh_curve": 10960.145161968167
+    "equity_curve": 13666.293917259005,
+    "bnh_curve": 10573.567430906434
   },
   {
     "date": "2025-05-19",
@@ -3344,8 +3152,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14720.549365181872,
-    "bnh_curve": 10978.697113903909
+    "equity_curve": 13712.559076003889,
+    "bnh_curve": 10591.465032796614
   },
   {
     "date": "2025-05-20",
@@ -3356,8 +3164,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14997.384993335701,
-    "bnh_curve": 11081.93016711546
+    "equity_curve": 13970.438371893544,
+    "bnh_curve": 10691.05692990199
   },
   {
     "date": "2025-05-21",
@@ -3368,8 +3176,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15015.831825946749,
-    "bnh_curve": 11088.745572297461
+    "equity_curve": 13987.622056800197,
+    "bnh_curve": 10697.631947403665
   },
   {
     "date": "2025-05-22",
@@ -3380,8 +3188,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14854.504745775044,
-    "bnh_curve": 11029.177945053047
+    "equity_curve": 13837.341855801302,
+    "bnh_curve": 10640.165343261095
   },
   {
     "date": "2025-05-23",
@@ -3392,8 +3200,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14782.09664515242,
-    "bnh_curve": 11002.297148954563
+    "equity_curve": 13769.89190317131,
+    "bnh_curve": 10614.232665733243
   },
   {
     "date": "2025-05-27",
@@ -3404,8 +3212,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14985.90445293337,
-    "bnh_curve": 11078.144104779274
+    "equity_curve": 13959.743962018883,
+    "bnh_curve": 10687.404406617154
   },
   {
     "date": "2025-05-28",
@@ -3416,8 +3224,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14808.01634437396,
-    "bnh_curve": 11012.39331518439
+    "equity_curve": 13794.036749806472,
+    "bnh_curve": 10623.972727826142
   },
   {
     "date": "2025-05-29",
@@ -3428,8 +3236,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14775.773356688525,
-    "bnh_curve": 11000.404117786471
+    "equity_curve": 13764.001602173385,
+    "bnh_curve": 10612.406404090827
   },
   {
     "date": "2025-05-30",
@@ -3440,8 +3248,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14965.292430267453,
-    "bnh_curve": 11070.951572294256
+    "equity_curve": 13940.543348545121,
+    "bnh_curve": 10680.465563553904
   },
   {
     "date": "2025-06-02",
@@ -3452,8 +3260,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14971.773048029008,
-    "bnh_curve": 11073.34867230854
+    "equity_curve": 13946.580205709877,
+    "bnh_curve": 10682.778114917515
   },
   {
     "date": "2025-06-03",
@@ -3464,8 +3272,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15015.114270945238,
-    "bnh_curve": 11089.376582686826
+    "equity_curve": 13986.953636410146,
+    "bnh_curve": 10698.240701284472
   },
   {
     "date": "2025-06-04",
@@ -3476,8 +3284,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15063.984921095462,
-    "bnh_curve": 11107.423233334208
+    "equity_curve": 14032.477866562367,
+    "bnh_curve": 10715.650824481037
   },
   {
     "date": "2025-06-05",
@@ -3488,8 +3296,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15097.18992471126,
-    "bnh_curve": 11119.665081376308
+    "equity_curve": 14063.409156041109,
+    "bnh_curve": 10727.460887563158
   },
   {
     "date": "2025-06-06",
@@ -3500,8 +3308,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15189.37476327999,
-    "bnh_curve": 11153.61393330097
+    "equity_curve": 14149.28163358434,
+    "bnh_curve": 10760.21232193949
   },
   {
     "date": "2025-06-09",
@@ -3512,8 +3320,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15170.123720625359,
-    "bnh_curve": 11146.54587747479
+    "equity_curve": 14131.348806953516,
+    "bnh_curve": 10753.39356509101
   },
   {
     "date": "2025-06-10",
@@ -3524,8 +3332,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15241.574105565134,
-    "bnh_curve": 11172.795663183908
+    "equity_curve": 14197.906623525723,
+    "bnh_curve": 10778.717488738052
   },
   {
     "date": "2025-06-11",
@@ -3536,8 +3344,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15280.485154231132,
-    "bnh_curve": 11187.057483937273
+    "equity_curve": 14234.153236359603,
+    "bnh_curve": 10792.476277622207
   },
   {
     "date": "2025-06-12",
@@ -3548,8 +3356,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15351.16110113286,
-    "bnh_curve": 11212.928909901206
+    "equity_curve": 14299.989644573741,
+    "bnh_curve": 10817.435186735254
   },
   {
     "date": "2025-06-13",
@@ -3560,8 +3368,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15232.632632447028,
-    "bnh_curve": 11169.640611237088
+    "equity_curve": 14189.577418187198,
+    "bnh_curve": 10775.673719334023
   },
   {
     "date": "2025-06-16",
@@ -3572,8 +3380,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15317.312022469812,
-    "bnh_curve": 11200.687061859107
+    "equity_curve": 14268.458383115987,
+    "bnh_curve": 10805.625123653133
   },
   {
     "date": "2025-06-17",
@@ -3584,8 +3392,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15175.10086483946,
-    "bnh_curve": 11148.691559287063
+    "equity_curve": 14135.985140990555,
+    "bnh_curve": 10755.463566080234
   },
   {
     "date": "2025-06-18",
@@ -3596,8 +3404,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15207.739184562342,
-    "bnh_curve": 11160.680756684982
+    "equity_curve": 14166.388550281796,
+    "bnh_curve": 10767.029889815547
   },
   {
     "date": "2025-06-19",
@@ -3608,8 +3416,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15029.926534343891,
-    "bnh_curve": 11095.434035936289
+    "equity_curve": 14000.751629397002,
+    "bnh_curve": 10704.084500745723
   },
   {
     "date": "2025-06-20",
@@ -3620,8 +3428,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14971.461628776955,
-    "bnh_curve": 11073.853973596899
+    "equity_curve": 13946.290110905318,
+    "bnh_curve": 10683.26559361113
   },
   {
     "date": "2025-06-23",
@@ -3632,8 +3440,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14914.473622862464,
-    "bnh_curve": 11052.777980103701
+    "equity_curve": 13893.204361295018,
+    "bnh_curve": 10662.932976197722
   },
   {
     "date": "2025-06-24",
@@ -3644,8 +3452,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14917.879531431283,
-    "bnh_curve": 11054.040000882427
+    "equity_curve": 13896.377050119245,
+    "bnh_curve": 10664.150483959336
   },
   {
     "date": "2025-06-25",
@@ -3656,8 +3464,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14780.945710033433,
-    "bnh_curve": 11003.30651908911
+    "equity_curve": 13768.819778387098,
+    "bnh_curve": 10615.206434148047
   },
   {
     "date": "2025-06-26",
@@ -3668,8 +3476,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14837.90699061969,
-    "bnh_curve": 11024.508221683316
+    "equity_curve": 13821.880632687235,
+    "bnh_curve": 10635.660326748646
   },
   {
     "date": "2025-06-27",
@@ -3680,8 +3488,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15052.946861177186,
-    "bnh_curve": 11104.395122930559
+    "equity_curve": 14022.195638300442,
+    "bnh_curve": 10712.729519236624
   },
   {
     "date": "2025-06-30",
@@ -3692,8 +3500,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14923.268710324643,
-    "bnh_curve": 11056.564042439884
+    "equity_curve": 13901.397204742085,
+    "bnh_curve": 10666.585499482559
   },
   {
     "date": "2025-07-01",
@@ -3704,8 +3512,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15006.052071803919,
-    "bnh_curve": 11087.230900874554
+    "equity_curve": 13978.51197176836,
+    "bnh_curve": 10696.170700295246
   },
   {
     "date": "2025-07-02",
@@ -3716,8 +3524,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 14969.841972260778,
-    "bnh_curve": 11073.853973596899
+    "equity_curve": 13944.781360442961,
+    "bnh_curve": 10683.26559361113
   },
   {
     "date": "2025-07-03",
@@ -3728,8 +3536,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15135.326221179621,
-    "bnh_curve": 11135.061981365228
+    "equity_curve": 14098.93406786943,
+    "bnh_curve": 10742.314720049308
   },
   {
     "date": "2025-07-04",
@@ -3740,8 +3548,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15134.297650672888,
-    "bnh_curve": 11134.683621620043
+    "equity_curve": 14097.975928775058,
+    "bnh_curve": 10741.94970551531
   },
   {
     "date": "2025-07-07",
@@ -3752,8 +3560,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15078.033070474341,
-    "bnh_curve": 11113.98598787203
+    "equity_curve": 14045.564068271808,
+    "bnh_curve": 10721.982102635906
   },
   {
     "date": "2025-07-08",
@@ -3764,8 +3572,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15241.372676989973,
-    "bnh_curve": 11174.18462550581
+    "equity_curve": 14197.718987781442,
+    "bnh_curve": 10780.05746065928
   },
   {
     "date": "2025-07-09",
@@ -3776,8 +3584,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15285.439128873037,
-    "bnh_curve": 11190.338244985101
+    "equity_curve": 14238.767987361964,
+    "bnh_curve": 10795.641322213429
   },
   {
     "date": "2025-07-10",
@@ -3788,8 +3596,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15660.206292230616,
-    "bnh_curve": 11327.520150121316
+    "equity_curve": 14587.872952115684,
+    "bnh_curve": 10927.984653695135
   },
   {
     "date": "2025-07-11",
@@ -3800,8 +3608,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15539.468678045087,
-    "bnh_curve": 11283.85349171201
+    "equity_curve": 14475.402851568293,
+    "bnh_curve": 10885.858171759908
   },
   {
     "date": "2025-07-14",
@@ -3812,8 +3620,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15737.598606878413,
-    "bnh_curve": 11355.788676099532
+    "equity_curve": 14659.965824488147,
+    "bnh_curve": 10955.256114171789
   },
   {
     "date": "2025-07-15",
@@ -3824,8 +3632,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15528.419921645573,
-    "bnh_curve": 11280.320080020005
+    "equity_curve": 14465.110659267164,
+    "bnh_curve": 10882.449387821878
   },
   {
     "date": "2025-07-16",
@@ -3836,8 +3644,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15487.766654257408,
-    "bnh_curve": 11265.554190420447
+    "equity_curve": 14427.241126217581,
+    "bnh_curve": 10868.204309216533
   },
   {
     "date": "2025-07-17",
@@ -3848,8 +3656,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15647.38785320703,
-    "bnh_curve": 11323.607146241957
+    "equity_curve": 14575.932256288883,
+    "bnh_curve": 10924.209666250685
   },
   {
     "date": "2025-07-18",
@@ -3860,8 +3668,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15715.400263527608,
-    "bnh_curve": 11348.216551427162
+    "equity_curve": 14639.287513710746,
+    "bnh_curve": 10947.951067602118
   },
   {
     "date": "2025-07-21",
@@ -3872,8 +3680,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15788.455060205686,
-    "bnh_curve": 11374.593278679453
+    "equity_curve": 14707.339879854298,
+    "bnh_curve": 10973.397455408778
   },
   {
     "date": "2025-07-22",
@@ -3884,8 +3692,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15826.29201371009,
-    "bnh_curve": 11388.222856601287
+    "equity_curve": 14742.585946241763,
+    "bnh_curve": 10986.546301439703
   },
   {
     "date": "2025-07-23",
@@ -3896,8 +3704,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15958.532159303653,
-    "bnh_curve": 11435.801286447782
+    "equity_curve": 14865.770941834398,
+    "bnh_curve": 11032.44658184696
   },
   {
     "date": "2025-07-24",
@@ -3908,8 +3716,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16229.396223057352,
-    "bnh_curve": 11532.851177308867
+    "equity_curve": 15118.087576468584,
+    "bnh_curve": 11126.073404303888
   },
   {
     "date": "2025-07-25",
@@ -3920,8 +3728,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16165.104537753094,
-    "bnh_curve": 11510.007861748581
+    "equity_curve": 15058.198267247848,
+    "bnh_curve": 11104.035800435258
   },
   {
     "date": "2025-07-28",
@@ -3932,8 +3740,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16027.211462252557,
-    "bnh_curve": 11460.915992921346
+    "equity_curve": 14929.747426381447,
+    "bnh_curve": 11056.675461892008
   },
   {
     "date": "2025-07-29",
@@ -3944,8 +3752,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16220.988738991016,
-    "bnh_curve": 11530.200194208237
+    "equity_curve": 15110.255795257151,
+    "bnh_curve": 11123.51592462105
   },
   {
     "date": "2025-07-30",
@@ -3956,8 +3764,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16223.121352398468,
-    "bnh_curve": 11530.958146140772
+    "equity_curve": 15112.24237786426,
+    "bnh_curve": 11124.247142661472
   },
   {
     "date": "2025-07-31",
@@ -3968,8 +3776,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16208.55967383442,
-    "bnh_curve": 11525.783121482687
+    "equity_curve": 15098.677810904037,
+    "bnh_curve": 11119.254647455407
   },
   {
     "date": "2025-08-01",
@@ -3980,8 +3788,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 15980.679348184363,
-    "bnh_curve": 11444.761140999888
+    "equity_curve": 14886.40160094638,
+    "bnh_curve": 11041.090411365436
   },
   {
     "date": "2025-08-04",
@@ -3992,8 +3800,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16191.086625913718,
-    "bnh_curve": 11520.104027978408
+    "equity_curve": 15082.401230736643,
+    "bnh_curve": 11113.775862528155
   },
   {
     "date": "2025-08-05",
@@ -4004,8 +3812,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16242.171269723653,
-    "bnh_curve": 11538.277620168967
+    "equity_curve": 15129.987851231746,
+    "bnh_curve": 11131.308449884336
   },
   {
     "date": "2025-08-06",
@@ -4016,8 +3824,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16318.915458493562,
-    "bnh_curve": 11565.536776012632
+    "equity_curve": 15201.476978175371,
+    "bnh_curve": 11157.606141946186
   },
   {
     "date": "2025-08-07",
@@ -4028,8 +3836,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16092.765909984835,
-    "bnh_curve": 11485.398456563376
+    "equity_curve": 14990.813030315352,
+    "bnh_curve": 11080.294399083825
   },
   {
     "date": "2025-08-08",
@@ -4040,8 +3848,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16074.73083138395,
-    "bnh_curve": 11478.962643568728
+    "equity_curve": 14974.012904544232,
+    "bnh_curve": 11074.085585088573
   },
   {
     "date": "2025-08-11",
@@ -4052,8 +3860,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16194.906482852479,
-    "bnh_curve": 11521.871350045496
+    "equity_curve": 15085.9595227973,
+    "bnh_curve": 11115.480848983381
   },
   {
     "date": "2025-08-12",
@@ -4064,8 +3872,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16259.119211624182,
-    "bnh_curve": 11544.713433163613
+    "equity_curve": 15145.77528203765,
+    "bnh_curve": 11137.517263879588
   },
   {
     "date": "2025-08-13",
@@ -4076,8 +3884,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16320.973434834386,
-    "bnh_curve": 11566.673087690355
+    "equity_curve": 15203.394034492396,
+    "bnh_curve": 11158.702374520606
   },
   {
     "date": "2025-08-14",
@@ -4088,8 +3896,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16363.711547923978,
-    "bnh_curve": 11581.817337035096
+    "equity_curve": 15243.205653338913,
+    "bnh_curve": 11173.312467659951
   },
   {
     "date": "2025-08-15",
@@ -4100,8 +3908,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16227.128070848215,
-    "bnh_curve": 11533.48218769823
+    "equity_curve": 15115.97473608542,
+    "bnh_curve": 11126.682158184696
   },
   {
     "date": "2025-08-18",
@@ -4112,8 +3920,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16293.890334431686,
-    "bnh_curve": 11557.20793184989
+    "equity_curve": 15178.165450625018,
+    "bnh_curve": 11149.571066308517
   },
   {
     "date": "2025-08-19",
@@ -4124,8 +3932,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16405.983443965302,
-    "bnh_curve": 11596.961586379837
+    "equity_curve": 15282.582979370807,
+    "bnh_curve": 11187.922560799296
   },
   {
     "date": "2025-08-20",
@@ -4136,8 +3944,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16759.12454770465,
-    "bnh_curve": 11721.77470193078
+    "equity_curve": 15611.54272992501,
+    "bnh_curve": 11308.333365039265
   },
   {
     "date": "2025-08-21",
@@ -4148,8 +3956,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16835.27087744452,
-    "bnh_curve": 11748.40407982725
+    "equity_curve": 15682.474936262945,
+    "bnh_curve": 11334.023492192731
   },
   {
     "date": "2025-08-22",
@@ -4160,8 +3968,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16879.397889117787,
-    "bnh_curve": 11763.800979816173
+    "equity_curve": 15723.580348799274,
+    "bnh_curve": 11348.877324678882
   },
   {
     "date": "2025-08-26",
@@ -4172,8 +3980,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16678.03234883887,
-    "bnh_curve": 11693.63188505357
+    "equity_curve": 15536.003323075143,
+    "bnh_curve": 11281.183179749803
   },
   {
     "date": "2025-08-27",
@@ -4184,8 +3992,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16640.95395746721,
-    "bnh_curve": 11680.6333175211
+    "equity_curve": 15501.463876243783,
+    "bnh_curve": 11268.643087599683
   },
   {
     "date": "2025-08-28",
@@ -4196,8 +4004,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16501.791693226423,
-    "bnh_curve": 11631.792866895876
+    "equity_curve": 15371.830754394008,
+    "bnh_curve": 11221.525299430814
   },
   {
     "date": "2025-08-29",
@@ -4208,8 +4016,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16396.15787991465,
-    "bnh_curve": 11594.563253923387
+    "equity_curve": 15273.430221266664,
+    "bnh_curve": 11185.608820463262
   },
   {
     "date": "2025-09-01",
@@ -4220,8 +4028,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16428.281664716782,
-    "bnh_curve": 11605.921440931943
+    "equity_curve": 15303.354328439322,
+    "bnh_curve": 11196.56639031777
   },
   {
     "date": "2025-09-02",
@@ -4232,8 +4040,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16143.887977910837,
-    "bnh_curve": 11505.465079922025
+    "equity_curve": 15038.434512308473,
+    "bnh_curve": 11099.653248082426
   },
   {
     "date": "2025-09-03",
@@ -4244,8 +4052,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16360.987840523769,
-    "bnh_curve": 11582.826707169646
+    "equity_curve": 15240.668451927164,
+    "bnh_curve": 11174.286236074755
   },
   {
     "date": "2025-09-04",
@@ -4256,8 +4064,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16499.67792943361,
-    "bnh_curve": 11631.919808439048
+    "equity_curve": 15369.861730673314,
+    "bnh_curve": 11221.64776359043
   },
   {
     "date": "2025-09-05",
@@ -4268,8 +4076,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16468.528537665108,
-    "bnh_curve": 11620.939981175678
+    "equity_curve": 15340.845294926869,
+    "bnh_curve": 11211.055208269921
   },
   {
     "date": "2025-09-08",
@@ -4280,8 +4088,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16515.744668634397,
-    "bnh_curve": 11637.598901943327
+    "equity_curve": 15384.828299174531,
+    "bnh_curve": 11227.126548517685
   },
   {
     "date": "2025-09-09",
@@ -4292,8 +4100,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16591.324460484604,
-    "bnh_curve": 11664.227047397631
+    "equity_curve": 15455.232761330637,
+    "bnh_curve": 11252.815486698728
   },
   {
     "date": "2025-09-10",
@@ -4304,8 +4112,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16529.933025853676,
-    "bnh_curve": 11642.64698505824
+    "equity_curve": 15398.045107986096,
+    "bnh_curve": 11231.996579564131
   },
   {
     "date": "2025-09-11",
@@ -4316,8 +4124,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16788.66396433289,
-    "bnh_curve": 11733.763899328702
+    "equity_curve": 15639.059433652352,
+    "bnh_curve": 11319.89968877458
   },
   {
     "date": "2025-09-12",
@@ -4328,8 +4136,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16737.021685521064,
-    "bnh_curve": 11715.717248681316
+    "equity_curve": 15590.953362237546,
+    "bnh_curve": 11302.489565578011
   },
   {
     "date": "2025-09-15",
@@ -4340,8 +4148,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16714.30563198674,
-    "bnh_curve": 11707.766764263763
+    "equity_curve": 15569.792791505051,
+    "bnh_curve": 11294.81950447434
   },
   {
     "date": "2025-09-16",
@@ -4352,8 +4160,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16421.35105973974,
-    "bnh_curve": 11605.164721441572
+    "equity_curve": 15296.898296954183,
+    "bnh_curve": 11195.83636124977
   },
   {
     "date": "2025-09-17",
@@ -4364,8 +4172,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16466.710164826734,
-    "bnh_curve": 11621.192631819857
+    "equity_curve": 15339.151435251537,
+    "bnh_curve": 11211.298947616728
   },
   {
     "date": "2025-09-18",
@@ -4376,8 +4184,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16537.16351434877,
-    "bnh_curve": 11646.053455207075
+    "equity_curve": 15404.780488451706,
+    "bnh_curve": 11235.282899342546
   },
   {
     "date": "2025-09-19",
@@ -4388,8 +4196,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16496.307003843005,
-    "bnh_curve": 11631.66715779487
+    "equity_curve": 15366.721629366271,
+    "bnh_curve": 11221.404024243624
   },
   {
     "date": "2025-09-22",
@@ -4400,8 +4208,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16532.1035615139,
-    "bnh_curve": 11644.287365582155
+    "equity_curve": 15400.067016117988,
+    "bnh_curve": 11233.579101859743
   },
   {
     "date": "2025-09-23",
@@ -4412,8 +4220,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16519.918141207156,
-    "bnh_curve": 11639.99600195761
+    "equity_curve": 15388.715993022519,
+    "bnh_curve": 11229.439099881292
   },
   {
     "date": "2025-09-24",
@@ -4424,8 +4232,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16616.998247188036,
-    "bnh_curve": 11674.197504526452
+    "equity_curve": 15479.148534318581,
+    "bnh_curve": 11262.434273604431
   },
   {
     "date": "2025-09-25",
@@ -4436,8 +4244,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16486.222237140817,
-    "bnh_curve": 11628.259455203872
+    "equity_curve": 15357.327417523977,
+    "bnh_curve": 11218.116515492786
   },
   {
     "date": "2025-09-26",
@@ -4448,8 +4256,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16739.580456030395,
-    "bnh_curve": 11717.61027984941
+    "equity_curve": 15593.336920819547,
+    "bnh_curve": 11304.315827220431
   },
   {
     "date": "2025-09-29",
@@ -4460,8 +4268,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16793.667504135337,
-    "bnh_curve": 11736.540591530338
+    "equity_curve": 15643.72035583862,
+    "bnh_curve": 11322.578443644608
   },
   {
     "date": "2025-09-30",
@@ -4472,8 +4280,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16976.417548995545,
-    "bnh_curve": 11800.399582399297
+    "equity_curve": 15813.956583041885,
+    "bnh_curve": 11384.185049765629
   },
   {
     "date": "2025-10-01",
@@ -4484,8 +4292,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17325.009270551684,
-    "bnh_curve": 11921.553577157227
+    "equity_curve": 16138.678470565368,
+    "bnh_curve": 11501.06579488038
   },
   {
     "date": "2025-10-02",
@@ -4496,8 +4304,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17256.415723009126,
-    "bnh_curve": 11897.953542106572
+    "equity_curve": 16074.781869319304,
+    "bnh_curve": 11478.298161943752
   },
   {
     "date": "2025-10-03",
@@ -4508,8 +4316,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17489.240542733805,
-    "bnh_curve": 11978.217570656832
+    "equity_curve": 16291.66399889431,
+    "bnh_curve": 11555.731179993303
   },
   {
     "date": "2025-10-06",
@@ -4520,8 +4328,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17444.27891368838,
-    "bnh_curve": 11962.820670667914
+    "equity_curve": 16249.781119448447,
+    "bnh_curve": 11540.877347507152
   },
   {
     "date": "2025-10-07",
@@ -4532,8 +4340,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17460.841511054477,
-    "bnh_curve": 11968.499764172191
+    "equity_curve": 16265.209592204488,
+    "bnh_curve": 11546.356132434408
   },
   {
     "date": "2025-10-08",
@@ -4544,8 +4352,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17701.300121480657,
-    "bnh_curve": 12050.910706976892
+    "equity_curve": 16489.202788314535,
+    "bnh_curve": 11625.860340445608
   },
   {
     "date": "2025-10-09",
@@ -4556,8 +4364,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17554.853656192372,
-    "bnh_curve": 12001.06088621712
+    "equity_curve": 16352.784251416217,
+    "bnh_curve": 11577.768783861935
   },
   {
     "date": "2025-10-10",
@@ -4568,8 +4376,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17252.46879221624,
-    "bnh_curve": 11897.700891462393
+    "equity_curve": 16071.105204792477,
+    "bnh_curve": 11478.054422596944
   },
   {
     "date": "2025-10-13",
@@ -4580,8 +4388,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17308.83469169028,
-    "bnh_curve": 11917.136504431677
+    "equity_curve": 16123.611446729208,
+    "bnh_curve": 11496.804517714738
   },
   {
     "date": "2025-10-14",
@@ -4592,8 +4400,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17345.125940028032,
-    "bnh_curve": 11929.629770675789
+    "equity_curve": 16157.417650181806,
+    "bnh_curve": 11508.857131171242
   },
   {
     "date": "2025-10-15",
@@ -4604,8 +4412,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17242.370452478208,
-    "bnh_curve": 11894.293188871392
+    "equity_curve": 16061.698349328582,
+    "bnh_curve": 11474.766913846106
   },
   {
     "date": "2025-10-16",
@@ -4616,8 +4424,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17283.715716568724,
-    "bnh_curve": 11908.553777182591
+    "equity_curve": 16100.212494574764,
+    "bnh_curve": 11488.524513757839
   },
   {
     "date": "2025-10-17",
@@ -4628,8 +4436,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 16985.155317841934,
-    "bnh_curve": 11805.699083716221
+    "equity_curve": 15822.096032767988,
+    "bnh_curve": 11389.29763118646
   },
   {
     "date": "2025-10-20",
@@ -4640,8 +4448,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17163.09401010625,
-    "bnh_curve": 11867.538101873915
+    "equity_curve": 15987.85036496381,
+    "bnh_curve": 11448.955511505448
   },
   {
     "date": "2025-10-21",
@@ -4652,8 +4460,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17248.513024282413,
-    "bnh_curve": 11897.069881073028
+    "equity_curve": 16067.42030824834,
+    "bnh_curve": 11477.445668716138
   },
   {
     "date": "2025-10-22",
@@ -4664,8 +4472,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17570.538938388036,
-    "bnh_curve": 12008.12770960113
+    "equity_curve": 16367.395483198134,
+    "bnh_curve": 11584.586351737993
   },
   {
     "date": "2025-10-23",
@@ -4676,8 +4484,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17805.42688646785,
-    "bnh_curve": 12088.391738151395
+    "equity_curve": 16586.199468320057,
+    "bnh_curve": 11662.019369787544
   },
   {
     "date": "2025-10-24",
@@ -4688,8 +4496,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18054.51624191512,
-    "bnh_curve": 12172.9471303262
+    "equity_curve": 16818.23241879223,
+    "bnh_curve": 11743.592389815547
   },
   {
     "date": "2025-10-27",
@@ -4700,8 +4508,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18085.21429397038,
-    "bnh_curve": 12183.295947200206
+    "equity_curve": 16846.828420332884,
+    "bnh_curve": 11753.57619125525
   },
   {
     "date": "2025-10-28",
@@ -4712,8 +4520,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18245.951573268725,
-    "bnh_curve": 12237.437131584524
+    "equity_curve": 16996.559207100123,
+    "bnh_curve": 11805.807749817373
   },
   {
     "date": "2025-10-29",
@@ -4724,8 +4532,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18469.49129516068,
-    "bnh_curve": 12312.40042637569
+    "equity_curve": 17204.792036339986,
+    "bnh_curve": 11878.12699747367
   },
   {
     "date": "2025-10-30",
@@ -4736,8 +4544,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18484.636274842855,
-    "bnh_curve": 12317.448509490605
+    "equity_curve": 17218.89996284767,
+    "bnh_curve": 11882.99702852012
   },
   {
     "date": "2025-10-31",
@@ -4748,8 +4556,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18322.519318265317,
-    "bnh_curve": 12263.434266649463
+    "equity_curve": 17067.883972265852,
+    "bnh_curve": 11830.88793411761
   },
   {
     "date": "2025-11-03",
@@ -4760,8 +4568,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18262.56082626351,
-    "bnh_curve": 12243.36887573298
+    "equity_curve": 17012.031140738545,
+    "bnh_curve": 11811.530274091436
   },
   {
     "date": "2025-11-04",
@@ -4772,8 +4580,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18313.762443230968,
-    "bnh_curve": 12260.53186534682
+    "equity_curve": 17059.726724648874,
+    "bnh_curve": 11828.087904060389
   },
   {
     "date": "2025-11-05",
@@ -4784,8 +4592,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18547.890594319222,
-    "bnh_curve": 12338.902862728988
+    "equity_curve": 17277.822939912887,
+    "bnh_curve": 11903.694660467523
   },
   {
     "date": "2025-11-06",
@@ -4796,8 +4604,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18391.192945831324,
-    "bnh_curve": 12286.781651055939
+    "equity_curve": 17131.855170052102,
+    "bnh_curve": 11853.411827707432
   },
   {
     "date": "2025-11-07",
@@ -4808,8 +4616,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18190.199688702716,
-    "bnh_curve": 12219.641899139151
+    "equity_curve": 16944.624935372583,
+    "bnh_curve": 11788.640176995192
   },
   {
     "date": "2025-11-10",
@@ -4820,8 +4628,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18583.215123094153,
-    "bnh_curve": 12351.650012059448
+    "equity_curve": 17310.728619968824,
+    "bnh_curve": 11915.992202243257
   },
   {
     "date": "2025-11-11",
@@ -4832,8 +4640,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19010.0465865465,
-    "bnh_curve": 12493.500408123224
+    "equity_curve": 17708.3327794937,
+    "bnh_curve": 12052.83936126499
   },
   {
     "date": "2025-11-12",
@@ -4844,8 +4652,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19055.36829856962,
-    "bnh_curve": 12508.393239265954
+    "equity_curve": 17750.551085218933,
+    "bnh_curve": 12067.20690402995
   },
   {
     "date": "2025-11-13",
@@ -4856,8 +4664,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18656.62637786538,
-    "bnh_curve": 12377.52143802338
+    "equity_curve": 17379.11303572134,
+    "bnh_curve": 11940.951111356304
   },
   {
     "date": "2025-11-14",
@@ -4868,8 +4676,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18240.796860522885,
-    "bnh_curve": 12239.582813396793
+    "equity_curve": 16991.757463544654,
+    "bnh_curve": 11807.8777508066
   },
   {
     "date": "2025-11-17",
@@ -4880,8 +4688,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18154.27984516073,
-    "bnh_curve": 12210.55633548604
+    "equity_curve": 16911.16470475542,
+    "bnh_curve": 11779.875072289524
   },
   {
     "date": "2025-11-18",
@@ -4892,8 +4700,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17692.324288597294,
-    "bnh_curve": 12055.200838159268
+    "equity_curve": 16480.841575997238,
+    "bnh_curve": 11629.999153451636
   },
   {
     "date": "2025-11-19",
@@ -4904,8 +4712,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17526.00308633102,
-    "bnh_curve": 11998.536844659662
+    "equity_curve": 16325.909225641977,
+    "bnh_curve": 11575.33376833871
   },
   {
     "date": "2025-11-20",
@@ -4916,8 +4724,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17600.844667622972,
-    "bnh_curve": 12024.155619979416
+    "equity_curve": 16395.626026241473,
+    "bnh_curve": 11600.04893810495
   },
   {
     "date": "2025-11-21",
@@ -4928,8 +4736,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17645.180684013452,
-    "bnh_curve": 12039.299869324155
+    "equity_curve": 16436.926131887467,
+    "bnh_curve": 11614.659031244291
   },
   {
     "date": "2025-11-24",
@@ -4940,8 +4748,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17627.424691849144,
-    "bnh_curve": 12033.242416074694
+    "equity_curve": 16420.38598209645,
+    "bnh_curve": 11608.81523178304
   },
   {
     "date": "2025-11-25",
@@ -4952,8 +4760,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 17903.253267382483,
-    "bnh_curve": 12127.388673190968
+    "equity_curve": 16677.327183339734,
+    "bnh_curve": 11699.640835210326
   },
   {
     "date": "2025-11-26",
@@ -4964,8 +4772,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18209.169308756915,
-    "bnh_curve": 12231.000086147707
+    "equity_curve": 16962.29560982837,
+    "bnh_curve": 11799.597746849699
   },
   {
     "date": "2025-11-27",
@@ -4976,8 +4784,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18217.815005445238,
-    "bnh_curve": 12233.903719892516
+    "equity_curve": 16970.349292041632,
+    "bnh_curve": 11802.398965879345
   },
   {
     "date": "2025-11-28",
@@ -4988,8 +4796,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18317.792670427127,
-    "bnh_curve": 12267.472979629825
+    "equity_curve": 17063.48098185395,
+    "bnh_curve": 11834.784196749255
   },
   {
     "date": "2025-12-01",
@@ -5000,8 +4808,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18249.952483591536,
-    "bnh_curve": 12244.756605612714
+    "equity_curve": 17000.286154906084,
+    "bnh_curve": 11812.869057040238
   },
   {
     "date": "2025-12-02",
@@ -5012,8 +4820,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18247.318413778114,
-    "bnh_curve": 12243.87294457917
+    "equity_curve": 16997.832453143274,
+    "bnh_curve": 11812.016563812625
   },
   {
     "date": "2025-12-03",
@@ -5024,8 +4832,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18210.829812465705,
-    "bnh_curve": 12231.631096537072
+    "equity_curve": 16963.84241046996,
+    "bnh_curve": 11800.206500730506
   },
   {
     "date": "2025-12-04",
@@ -5036,8 +4844,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18281.48072227558,
-    "bnh_curve": 12255.3580731309
+    "equity_curve": 17029.65549600825,
+    "bnh_curve": 11823.096597826749
   },
   {
     "date": "2025-12-05",
@@ -5048,8 +4856,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18116.189325468316,
-    "bnh_curve": 12199.954867967856
+    "equity_curve": 16875.682435136227,
+    "bnh_curve": 11769.647531503013
   },
   {
     "date": "2025-12-08",
@@ -5060,8 +4868,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18034.10561327959,
-    "bnh_curve": 12172.316119936835
+    "equity_curve": 16799.219408883422,
+    "bnh_curve": 11742.983635934741
   },
   {
     "date": "2025-12-09",
@@ -5072,8 +4880,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18022.514507932305,
-    "bnh_curve": 12168.404348499644
+    "equity_curve": 16788.422005003456,
+    "bnh_curve": 11739.209837462715
   },
   {
     "date": "2025-12-10",
@@ -5084,8 +4892,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18072.982034556884,
-    "bnh_curve": 12185.441629012477
+    "equity_curve": 16835.43376544062,
+    "bnh_curve": 11755.646192244476
   },
   {
     "date": "2025-12-11",
@@ -5096,8 +4904,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18251.55067894147,
-    "bnh_curve": 12245.640266646258
+    "equity_curve": 17001.774913756537,
+    "bnh_curve": 11813.721550267852
   },
   {
     "date": "2025-12-12",
@@ -5108,8 +4916,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18047.651430932034,
-    "bnh_curve": 12177.238493950741
+    "equity_curve": 16811.837676054292,
+    "bnh_curve": 11747.732391793998
   },
   {
     "date": "2025-12-15",
@@ -5120,8 +4928,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18430.337971807236,
-    "bnh_curve": 12306.34297312623
+    "equity_curve": 17168.319738588918,
+    "bnh_curve": 11872.28319801242
   },
   {
     "date": "2025-12-16",
@@ -5132,8 +4940,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18178.962770618975,
-    "bnh_curve": 12222.418591340787
+    "equity_curve": 16934.157465767126,
+    "bnh_curve": 11791.318931865222
   },
   {
     "date": "2025-12-17",
@@ -5144,8 +4952,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18514.95674071279,
-    "bnh_curve": 12335.369451036984
+    "equity_curve": 17247.144233434246,
+    "bnh_curve": 11900.285876529495
   },
   {
     "date": "2025-12-18",
@@ -5156,8 +4964,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18755.526352148572,
-    "bnh_curve": 12415.507770486238
+    "equity_curve": 17471.2408297547,
+    "bnh_curve": 11977.597619391856
   },
   {
     "date": "2025-12-19",
@@ -5168,8 +4976,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18982.780490746034,
-    "bnh_curve": 12490.724948363753
+    "equity_curve": 17682.93373084675,
+    "bnh_curve": 12050.161795367383
   },
   {
     "date": "2025-12-22",
@@ -5180,8 +4988,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18862.331342680314,
-    "bnh_curve": 12451.097002934814
+    "equity_curve": 17570.732343688458,
+    "bnh_curve": 12011.931576063796
   },
   {
     "date": "2025-12-23",
@@ -5192,8 +5000,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18951.042019996203,
-    "bnh_curve": 12480.376131489747
+    "equity_curve": 17653.368553329088,
+    "bnh_curve": 12040.17799392768
   },
   {
     "date": "2025-12-24",
@@ -5204,8 +5012,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18880.13754431654,
-    "bnh_curve": 12457.028747083272
+    "equity_curve": 17587.31926485551,
+    "bnh_curve": 12017.654100337857
   },
   {
     "date": "2025-12-29",
@@ -5216,8 +5024,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 18864.06973481086,
-    "bnh_curve": 12451.728013324178
+    "equity_curve": 17572.35169933857,
+    "bnh_curve": 12012.540329944602
   },
   {
     "date": "2025-12-30",
@@ -5228,8 +5036,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19147.801080011603,
-    "bnh_curve": 12545.370201594264
+    "equity_curve": 17836.654527735845,
+    "bnh_curve": 12102.879643650696
   },
   {
     "date": "2025-12-31",
@@ -5240,8 +5048,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19111.974466847434,
-    "bnh_curve": 12533.633654840522
+    "equity_curve": 17803.281143542128,
+    "bnh_curve": 12091.55705926219
   },
   {
     "date": "2026-01-02",
@@ -5252,8 +5060,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19187.79277060291,
-    "bnh_curve": 12558.494478227738
+    "equity_curve": 17873.907785489915,
+    "bnh_curve": 12115.541010988007
   },
   {
     "date": "2026-01-05",
@@ -5264,8 +5072,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19394.11105773173,
-    "bnh_curve": 12626.01258988971
+    "equity_curve": 18066.098418497513,
+    "bnh_curve": 12180.677676234249
   },
   {
     "date": "2026-01-06",
@@ -5276,8 +5084,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19851.991626487077,
-    "bnh_curve": 12775.05798332284
+    "equity_curve": 18492.625594423625,
+    "bnh_curve": 12324.466056264078
   },
   {
     "date": "2026-01-07",
@@ -5288,8 +5096,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19559.78236460295,
-    "bnh_curve": 12681.03743530757
+    "equity_curve": 18220.425375074537,
+    "bnh_curve": 12233.761728023985
   },
   {
     "date": "2026-01-08",
@@ -5300,8 +5108,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19546.156195349664,
-    "bnh_curve": 12676.62036258202
+    "equity_curve": 18207.732258382355,
+    "bnh_curve": 12229.500450858344
   },
   {
     "date": "2026-01-09",
@@ -5312,8 +5120,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19857.11150448101,
-    "bnh_curve": 12777.455083337123
+    "equity_curve": 18497.394888538412,
+    "bnh_curve": 12326.778607627686
   },
   {
     "date": "2026-01-12",
@@ -5324,8 +5132,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19920.26681779382,
-    "bnh_curve": 12797.774357339951
+    "equity_curve": 18556.225638891647,
+    "bnh_curve": 12346.381195973094
   },
   {
     "date": "2026-01-13",
@@ -5336,8 +5144,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19907.30262625762,
-    "bnh_curve": 12793.60993525858
+    "equity_curve": 18544.149170962177,
+    "bnh_curve": 12342.363658154258
   },
   {
     "date": "2026-01-14",
@@ -5348,8 +5156,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20091.89496499949,
-    "bnh_curve": 12852.924911858816
+    "equity_curve": 18716.10154088953,
+    "bnh_curve": 12399.586522950021
   },
   {
     "date": "2026-01-15",
@@ -5360,8 +5168,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20306.931340945677,
-    "bnh_curve": 12921.705044299519
+    "equity_curve": 18916.413291185097,
+    "bnh_curve": 12465.940695957874
   },
   {
     "date": "2026-01-16",
@@ -5372,8 +5180,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20292.64917223019,
-    "bnh_curve": 12917.161030030795
+    "equity_curve": 18903.109094623807,
+    "bnh_curve": 12461.556954632617
   },
   {
     "date": "2026-01-19",
@@ -5384,8 +5192,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20134.43889462268,
-    "bnh_curve": 12866.80714042483
+    "equity_curve": 18755.732272991365,
+    "bnh_curve": 12412.979108327752
   },
   {
     "date": "2026-01-20",
@@ -5396,8 +5204,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19863.486454743223,
-    "bnh_curve": 12780.23177553876
+    "equity_curve": 18503.333313790663,
+    "bnh_curve": 12329.457362497718
   },
   {
     "date": "2026-01-21",
@@ -5408,8 +5216,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19907.815072209818,
-    "bnh_curve": 12794.492363849957
+    "equity_curve": 18544.62652715443,
+    "bnh_curve": 12343.214962409447
   },
   {
     "date": "2026-01-22",
@@ -5420,8 +5228,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19954.94299362925,
-    "bnh_curve": 12809.6366131947
+    "equity_curve": 18588.527362005185,
+    "bnh_curve": 12357.825055548792
   },
   {
     "date": "2026-01-23",
@@ -5432,8 +5240,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19928.601867255547,
-    "bnh_curve": 12801.18205993095
+    "equity_curve": 18563.98994546133,
+    "bnh_curve": 12349.66870472393
   },
   {
     "date": "2026-01-26",
@@ -5444,8 +5252,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19950.213418815954,
-    "bnh_curve": 12808.123174213957
+    "equity_curve": 18584.121645042946,
+    "bnh_curve": 12356.364997412797
   },
   {
     "date": "2026-01-27",
@@ -5456,8 +5264,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20181.77661001163,
-    "bnh_curve": 12882.455458615763
+    "equity_curve": 18799.828536160014,
+    "bnh_curve": 12428.075491188289
   },
   {
     "date": "2026-01-28",
@@ -5468,8 +5276,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 19970.625320539828,
-    "bnh_curve": 12815.064288496964
+    "equity_curve": 18603.1358408653,
+    "bnh_curve": 12363.061290101663
   },
   {
     "date": "2026-01-29",
@@ -5480,8 +5288,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20039.064059544038,
-    "bnh_curve": 12837.022710581537
+    "equity_curve": 18666.88823409474,
+    "bnh_curve": 12384.245211770258
   },
   {
     "date": "2026-01-30",
@@ -5492,8 +5300,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20242.76911580767,
-    "bnh_curve": 12902.269431330233
+    "equity_curve": 18856.64457733983,
+    "bnh_curve": 12447.190600840082
   },
   {
     "date": "2026-02-02",
@@ -5504,8 +5312,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20710.449093358453,
-    "bnh_curve": 13051.313592321194
+    "equity_curve": 19292.300147097165,
+    "bnh_curve": 12590.977791897487
   },
   {
     "date": "2026-02-03",
@@ -5516,8 +5324,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20602.306804613534,
-    "bnh_curve": 13017.239031295527
+    "equity_curve": 19191.562906506373,
+    "bnh_curve": 12558.105082333961
   },
   {
     "date": "2026-02-04",
@@ -5528,8 +5336,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20952.65027873354,
-    "bnh_curve": 13127.918500078446
+    "equity_curve": 19517.916595257015,
+    "bnh_curve": 12664.880750821818
   },
   {
     "date": "2026-02-05",
@@ -5540,8 +5348,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20577.60176197342,
-    "bnh_curve": 13010.424858555694
+    "equity_curve": 19168.549542787823,
+    "bnh_curve": 12551.531253804711
   },
   {
     "date": "2026-02-06",
@@ -5552,8 +5360,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20819.520553931092,
-    "bnh_curve": 13086.90282476977
+    "equity_curve": 19393.902934432397,
+    "bnh_curve": 12625.311748569427
   },
   {
     "date": "2026-02-09",
@@ -5564,8 +5372,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20885.374914890952,
-    "bnh_curve": 13107.600458517783
+    "equity_curve": 19455.247915021944,
+    "bnh_curve": 12645.279351448835
   },
   {
     "date": "2026-02-10",
@@ -5576,8 +5384,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20755.06849043026,
-    "bnh_curve": 13066.710492310116
+    "equity_curve": 19333.864228919414,
+    "bnh_curve": 12605.831624383636
   },
   {
     "date": "2026-02-11",
@@ -5588,8 +5396,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 21229.352443183914,
-    "bnh_curve": 13216.007303945256
+    "equity_curve": 19775.671566376397,
+    "bnh_curve": 12749.86255478785
   },
   {
     "date": "2026-02-12",
@@ -5600,8 +5408,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 20946.759775991624,
-    "bnh_curve": 13128.045441621618
+    "equity_curve": 19512.429444959012,
+    "bnh_curve": 12665.003214981434
   },
   {
     "date": "2026-02-13",
@@ -5612,8 +5420,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 21123.960690306416,
-    "bnh_curve": 13183.57435588567
+    "equity_curve": 19677.49651858405,
+    "bnh_curve": 12718.573556492362
   },
   {
     "date": "2026-02-16",
@@ -5624,8 +5432,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 21234.368099463223,
-    "bnh_curve": 13218.027276656523
+    "equity_curve": 19780.343775363217,
+    "bnh_curve": 12751.811280589882
   },
   {
     "date": "2026-02-17",
@@ -5636,8 +5444,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 21568.888915514413,
-    "bnh_curve": 13322.143990901619
+    "equity_curve": 20091.95826327797,
+    "bnh_curve": 12852.255670922872
   },
   {
     "date": "2026-02-18",
@@ -5648,8 +5456,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 22100.132262009865,
-    "bnh_curve": 13486.206692136315
+    "equity_curve": 20586.824697392392,
+    "bnh_curve": 13010.531679932428
   },
   {
     "date": "2026-02-19",
@@ -5660,8 +5468,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 21855.268396008745,
-    "bnh_curve": 13411.494815547161
+    "equity_curve": 20358.72789578382,
+    "bnh_curve": 12938.454982650514
   },
   {
     "date": "2026-02-20",
@@ -5672,8 +5480,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 22101.648204823116,
-    "bnh_curve": 13487.090353169859
+    "equity_curve": 20588.23683595236,
+    "bnh_curve": 13011.38417316004
   },
   {
     "date": "2026-02-23",
@@ -5684,8 +5492,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 22092.54772835167,
-    "bnh_curve": 13484.313660968224
+    "equity_curve": 20579.759515022364,
+    "bnh_curve": 13008.70541829001
   },
   {
     "date": "2026-02-24",
@@ -5696,8 +5504,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 22075.590324047866,
-    "bnh_curve": 13479.138636310137
+    "equity_curve": 20563.963269751683,
+    "bnh_curve": 13003.712923083947
   },
   {
     "date": "2026-02-25",
@@ -5708,8 +5516,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 22595.62227185771,
-    "bnh_curve": 13637.901836227908
+    "equity_curve": 21048.38600621684,
+    "bnh_curve": 13156.876350672672
   },
   {
     "date": "2026-02-26",
@@ -5720,8 +5528,8 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 22764.151871249265,
-    "bnh_curve": 13688.761027122231
+    "equity_curve": 21205.375533603503,
+    "bnh_curve": 13205.94167567115
   },
   {
     "date": "2026-02-27",
@@ -5732,7 +5540,187 @@
     "ml_down_prob": 0.0,
     "signal_action": "HOLD",
     "position": 1.0,
-    "equity_curve": 23032.365418228506,
-    "bnh_curve": 13769.403415417679
+    "equity_curve": 21455.22314572025,
+    "bnh_curve": 13283.739708254703
+  },
+  {
+    "date": "2026-03-02",
+    "market": "UK",
+    "price": 10780.099609375,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 48.8,
+    "ml_down_prob": 51.2,
+    "signal_action": "SELL",
+    "position": 0.0,
+    "equity_curve": 20941.9779125049,
+    "bnh_curve": 13124.854945364339
+  },
+  {
+    "date": "2026-03-03",
+    "market": "UK",
+    "price": 10484.099609375,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 52.94,
+    "ml_down_prob": 47.06,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 21286.865189682394,
+    "bnh_curve": 12764.472647927192
+  },
+  {
+    "date": "2026-03-04",
+    "market": "UK",
+    "price": 10567.7001953125,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 49.31,
+    "ml_down_prob": 50.69,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 21168.045631660734,
+    "bnh_curve": 12866.257010181407
+  },
+  {
+    "date": "2026-03-05",
+    "market": "UK",
+    "price": 10413.900390625,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 51.88,
+    "ml_down_prob": 48.12,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 21383.697935995286,
+    "bnh_curve": 12679.00455423997
+  },
+  {
+    "date": "2026-03-06",
+    "market": "UK",
+    "price": 10284.7998046875,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 52.71,
+    "ml_down_prob": 47.29,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 21569.262756153632,
+    "bnh_curve": 12521.82358883241
+  },
+  {
+    "date": "2026-03-09",
+    "market": "UK",
+    "price": 10249.5,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 53.4,
+    "ml_down_prob": 46.6,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 21621.08423483122,
+    "bnh_curve": 12478.845802641992
+  },
+  {
+    "date": "2026-03-10",
+    "market": "UK",
+    "price": 10412.2001953125,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 40.65,
+    "ml_down_prob": 59.35,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 21380.835613970445,
+    "bnh_curve": 12676.934553250745
+  },
+  {
+    "date": "2026-03-11",
+    "market": "UK",
+    "price": 10353.7998046875,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 36.51,
+    "ml_down_prob": 63.49,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 21464.780831102824,
+    "bnh_curve": 12605.831624383636
+  },
+  {
+    "date": "2026-03-12",
+    "market": "UK",
+    "price": 10305.2001953125,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 37.49,
+    "ml_down_prob": 62.51,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 21622.32610155317,
+    "bnh_curve": 12546.661222758265
+  },
+  {
+    "date": "2026-03-13",
+    "market": "UK",
+    "price": 10261.2001953125,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 36.85,
+    "ml_down_prob": 63.15,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 21788.503196106074,
+    "bnh_curve": 12493.090881247337
+  },
+  {
+    "date": "2026-03-16",
+    "market": "UK",
+    "price": 10317.7001953125,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 36.32,
+    "ml_down_prob": 63.68,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 21572.554697600386,
+    "bnh_curve": 12561.880069778414
+  },
+  {
+    "date": "2026-03-17",
+    "market": "UK",
+    "price": 10403.599609375,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 36.32,
+    "ml_down_prob": 63.68,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 21249.272804165008,
+    "bnh_curve": 12666.463273117428
+  },
+  {
+    "date": "2026-03-18",
+    "market": "UK",
+    "price": 10305.2998046875,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 28.65,
+    "ml_down_prob": 71.35,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 21610.67068573413,
+    "bnh_curve": 12546.782497945456
+  },
+  {
+    "date": "2026-03-19",
+    "market": "UK",
+    "price": 10063.5,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 25.49,
+    "ml_down_prob": 74.51,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 22620.275552034138,
+    "bnh_curve": 12252.389358982164
+  },
+  {
+    "date": "2026-03-20",
+    "market": "UK",
+    "price": 9918.330078125,
+    "trend_regime": "0 (Downtrend)",
+    "ml_up_prob": 25.92,
+    "ml_down_prob": 74.08,
+    "signal_action": "WAIT",
+    "position": 0.0,
+    "equity_curve": 23272.88818872709,
+    "bnh_curve": 12075.643852346748
   }
 ]

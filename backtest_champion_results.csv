@@ -1,11 +1,11 @@
 Market,Trend,Regime,Champion Model,Best Threshold,Return (%),B&H (%),Max DD (%),Final $
-US,uptrend,HMM,MLP,0.5,-26.97,32.25,-31.06,7302.82
-US,downtrend,HMM,MLP,0.5,-20.34,32.25,-30.23,7966.01
-UK,uptrend,HMM,SVM,0.55,0.0,35.39,0.0,10000.0
-UK,downtrend,HMM,CNN,0.5,-27.86,35.39,-29.27,7213.63
-Thai,uptrend,ADX_Supertrend,CNN,0.5,-11.28,7.66,-31.17,8871.78
-Thai,downtrend,ADX_Supertrend,RandomForest,0.7000000000000002,0.0,7.66,0.0,10000.0
-Gold,uptrend,SMA200,CNN,0.5,121.57,121.8,-13.08,22157.47
-Gold,downtrend,SMA200,Transformer,0.6200000000000001,124.17,121.8,-13.08,22417.11
-BTC,uptrend,GMM,XGBoost,0.6800000000000002,25.43,-5.52,-32.77,12542.88
-BTC,downtrend,GMM,CNN,0.5,-5.61,-5.52,-49.74,9438.96
+US,uptrend,HMM,RandomForest,0.5,26.76,26.89,-18.9,12675.97
+US,downtrend,HMM,CNN,0.5,26.76,26.89,-18.9,12675.97
+UK,uptrend,HMM,CNN,0.5,20.64,20.76,-13.43,12063.57
+UK,downtrend,HMM,XGBoost,0.7600000000000002,0.76,20.76,-3.54,10075.64
+Thai,uptrend,ADX_Supertrend,LSTM,0.5800000000000001,17.69,4.65,-22.0,11768.79
+Thai,downtrend,ADX_Supertrend,CNN,0.5,1.92,4.65,-21.29,10192.27
+Gold,uptrend,SMA200,CNN,0.5,98.8,99.0,-13.98,19879.62
+Gold,downtrend,SMA200,Transformer,0.5800000000000001,99.08,99.0,-13.98,19908.48
+BTC,uptrend,GMM,RandomForest,0.52,15.82,8.69,-33.03,11581.94
+BTC,downtrend,GMM,RandomForest,0.6600000000000001,11.44,8.69,-16.69,11144.44

@@ -748,23 +748,64 @@ class TradingEngine:
 # 4. CLI — แสดงสัญญาณปัจจุบัน
 # ═════════════════════════════════════════════════════════════════
 
-def download_market_data(market, period='2y'):
+def download_market_data(market, period='2y', start=None, end=None):
     """ดาวน์โหลดข้อมูลตลาด"""
     ticker = TICKERS.get(market)
     if not ticker:
         return None
 
+    df = None
+    kwargs = {'progress': False}
+    if start or end:
+        if start:
+            kwargs['start'] = start
+        if end:
+            kwargs['end'] = end
+    else:
+        kwargs['period'] = period
+
     try:
-        df = yf.download(ticker, period=period, progress=False)
+        df = yf.download(ticker, **kwargs)
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = df.columns.get_level_values(0)
-        return df if not df.empty else None
     except Exception as e:
-        print(f"  Error downloading {market}: {e}")
-        return None
+        print(f"  Error downloading {market} from yfinance: {e}")
+        df = None
+
+    if df is None or df.empty:
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.join(script_dir, '..')
+        fallback_path = os.path.join(project_root, 'full_data', f"{market}_full_history.csv")
+        if os.path.exists(fallback_path):
+            try:
+                df = pd.read_csv(fallback_path, parse_dates=['Date'])
+                df = df.set_index('Date')
+                if 'Adj Close' not in df.columns:
+                    df['Adj Close'] = df['Close']
+                # Align column order with yfinance output
+                ordered_cols = ['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
+                existing = [col for col in ordered_cols if col in df.columns]
+                df = df[existing]
+                if start:
+                    start_dt = pd.to_datetime(start)
+                    df = df[df.index >= start_dt]
+                if end:
+                    end_dt = pd.to_datetime(end)
+                    df = df[df.index < end_dt]
+                if df.empty:
+                    print(f"  ⚠️ Fallback CSV for {market} has no data in requested range.")
+                    return None
+                print(f"  ⚠️ Using fallback data for {market} from {fallback_path}")
+            except Exception as e:
+                print(f"  ⚠️ Failed to load fallback CSV for {market}: {e}")
+                return None
+        else:
+            return None
+
+    return df
 
 
-def get_current_signals(markets=None, quiet=False):
+def get_current_signals(markets=None, quiet=False, as_of_date=None):
     """
     ดึงสัญญาณปัจจุบันของแต่ละตลาดแบบ REAL ML PREDICTION
     
@@ -797,6 +838,15 @@ def get_current_signals(markets=None, quiet=False):
 
     results = []
 
+    target_date = None
+    if as_of_date:
+        try:
+            target_date = datetime.datetime.strptime(as_of_date, '%Y-%m-%d').date()
+        except ValueError:
+            if not quiet:
+                print(f"❌ Invalid as_of_date '{as_of_date}' (ต้องเป็นรูปแบบ YYYY-MM-DD)")
+            target_date = None
+
     for market in markets:
         regime_method = MARKET_REGIME_METHOD.get(market, 'HMM')
         up_model = MARKET_UPTREND_MODEL.get(market, '?')
@@ -808,7 +858,13 @@ def get_current_signals(markets=None, quiet=False):
             print(f"   ⚙️  Regime: {regime_method} | Models: ↑{up_model} ↓{down_model} | Strategy: {strategy}")
             print(f"   Downloading data & calculating features...")
 
-        df = download_market_data(market, period='1y')
+        if target_date:
+            buffer_days = max(LOOKBACK * 4, 200)
+            start = (target_date - datetime.timedelta(days=buffer_days)).strftime('%Y-%m-%d')
+            end = (target_date + datetime.timedelta(days=1)).strftime('%Y-%m-%d')
+            df = download_market_data(market, start=start, end=end)
+        else:
+            df = download_market_data(market, period='1y')
         if df is None:
             if not quiet:
                 print(f"   ❌ No data available")
@@ -827,6 +883,16 @@ def get_current_signals(markets=None, quiet=False):
         if df.empty:
             if not quiet: print(f"   ❌ Data is empty after TA calculation")
             continue
+
+        if target_date:
+            df = df[df.index.date <= target_date]
+            if df.empty:
+                if not quiet:
+                    print(f"   ❌ No data available up to {as_of_date}")
+                results.append({
+                    'market': market, 'trend': 'N/A', 'signal': 'N/A', 'price': 'N/A', 'date': 'N/A'
+                })
+                continue
 
         # 1. Detect Trend (ใช้ regime method ที่ดีที่สุดสำหรับตลาดนี้)
         trend = TrendDetector.get_current_trend(df, method=regime_method, market_name=market)
@@ -912,6 +978,24 @@ def get_current_signals(markets=None, quiet=False):
             print(f"   📅 Date:   {current_date}")
             print(f"   📊 Trend Stats: Up {summary['uptrend_pct']}% ({summary['uptrend_days']}d) / Down {100-summary['uptrend_pct']:.1f}% ({summary['downtrend_days']}d)")
 
+        # 4. Fetch Market News
+        news_summary = "No recent news."
+        if not quiet: print(f"   Fetching news for {market}...")
+        try:
+            ticker_obj = yf.Ticker(TICKERS[market])
+            raw_news = ticker_obj.news
+            if raw_news:
+                news_items = []
+                for n in raw_news[:3]:
+                    title = n.get('title', '')
+                    pub = n.get('publisher', '')
+                    if title:
+                        news_items.append(f"- {title} ({pub})")
+                if news_items:
+                    news_summary = "\n".join(news_items)
+        except Exception as e:
+            if not quiet: print(f"   ⚠️ Failed to fetch news: {e}")
+
         results.append({
             'market': market,
             'regime_method': regime_method,
@@ -926,6 +1010,7 @@ def get_current_signals(markets=None, quiet=False):
             'trend_stats': summary,
             'ml_up_prob': ml_up_prob,
             'ml_down_prob': ml_down_prob,
+            'news_summary': news_summary,
         })
 
     return results
@@ -1575,7 +1660,6 @@ def save_signals_to_db(results, quiet=False):
         script_dir = os.path.dirname(os.path.abspath(__file__))
         db_path = os.path.join(script_dir, 'trading_database.sqlite')
         
-        today_date = datetime.datetime.now().strftime('%Y-%m-%d')
         conn = sqlite3.connect(db_path)
         c = conn.cursor()
         
@@ -1584,6 +1668,9 @@ def save_signals_to_db(results, quiet=False):
         for m in results:
             market = m['market']
             table_name = f"signals_history_{market}"
+            row_date = m.get('date')
+            if not row_date or row_date == 'N/A':
+                row_date = datetime.datetime.now().strftime('%Y-%m-%d')
             
             c.execute(f'''
                 CREATE TABLE IF NOT EXISTS "{table_name}" (
@@ -1598,12 +1685,13 @@ def save_signals_to_db(results, quiet=False):
                     position REAL,
                     equity_curve REAL,
                     bnh_curve REAL,
+                    news_summary TEXT,
                     UNIQUE(date)
                 )
             ''')
             
-            # Check if we already have today's insert
-            c.execute(f'SELECT COUNT(*) FROM "{table_name}" WHERE date=?', (today_date,))
+            # Check if we already have this date
+            c.execute(f'SELECT COUNT(*) FROM "{table_name}" WHERE date=?', (row_date,))
             if c.fetchone()[0] == 0:
                 trend_str = "1 (Uptrend)" if m['trend'] == 'UPTREND' else "0 (Downtrend)"
                 price = m.get('price', 0)
@@ -1612,6 +1700,7 @@ def save_signals_to_db(results, quiet=False):
                 up_prob = m.get('ml_up_prob', 0.0)
                 down_prob = m.get('ml_down_prob', 0.0)
                 sig = m.get('signal', 99)
+                news_summary = m.get('news_summary', 'No recent news.')
                 
                 # Chain equity/bnh from last known row
                 equity_val = 0.0
@@ -1654,9 +1743,9 @@ def save_signals_to_db(results, quiet=False):
                 
                 c.execute(f'''
                     INSERT INTO "{table_name}" 
-                    (date, market, price, trend_regime, ml_up_prob, ml_down_prob, signal_action, position, equity_curve, bnh_curve)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                ''', (today_date, market, price, trend_str, up_prob, down_prob, sg_text, position, equity_val, bnh_val))
+                    (date, market, price, trend_regime, ml_up_prob, ml_down_prob, signal_action, position, equity_curve, bnh_curve, news_summary)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ''', (row_date, market, price, trend_str, up_prob, down_prob, sg_text, position, equity_val, bnh_val, news_summary))
                 saved_count += 1
                 
         conn.commit()
@@ -1665,11 +1754,12 @@ def save_signals_to_db(results, quiet=False):
         if not quiet and saved_count > 0:
             print(f"\n  ✅ Successfully archived {saved_count} daily signals to SQLite Database.")
         elif not quiet and saved_count == 0:
-            print(f"\n  ℹ️ Database up to date. No new records inserted for {today_date}.")
-            
+            print(f"\n  ℹ️ Database up to date. No new records inserted.")
+        return saved_count
     except Exception as e:
         if not quiet:
             print(f"\n  ❌ Failed to save signals to Database: {e}")
+        return 0
 
 
 # ═════════════════════════════════════════════════════════════════
@@ -1750,4 +1840,3 @@ if __name__ == '__main__':
 
         # Auto-Save to SQLite Database
         save_signals_to_db(results)
-
