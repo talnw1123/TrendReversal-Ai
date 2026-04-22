@@ -36,9 +36,9 @@ except ImportError:
 
 USE_OLLAMA = False
 OLLAMA_MODEL = "llama3.2:1b"
-EXTERNAL_MODEL = "anthropic/claude-3.5-sonnet"
-EXTERNAL_API_KEY = os.getenv("OPENROUTER_API_KEY", "YOUR_API_KEY")
-EXTERNAL_BASE_URL = "https://openrouter.ai/api/v1"
+EXTERNAL_MODEL = "minimax/minimax-01"
+EXTERNAL_API_KEY = os.getenv("OPENCODE_API_KEY", "YOUR_API_KEY")
+EXTERNAL_BASE_URL = os.getenv("OPENCODE_BASE_URL", "https://api.minimax.chat/v1")
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.join(SCRIPT_DIR, '..')
@@ -47,7 +47,7 @@ DB_FILE = os.path.join(SCRIPT_DIR, "trading_database.sqlite")
 # Expert models (MoE)
 EXPERT1_MODEL = "deepseek/deepseek-r1-distill-llama-70b"
 EXPERT2_MODEL = "qwen/qwen-2.5-72b-instruct"
-MASTER_MODEL = "anthropic/claude-3-5-haiku"
+MASTER_MODEL = "minimax/minimax-01"
 
 
 # ─── Database helpers (reused from llm_hybrid_agent.py) ───
@@ -305,8 +305,17 @@ async def root():
 async def chat_moe(req: ChatRequest):
     """
     Full Mixture-of-Experts analysis:
-    Expert 1 (DeepSeek) + Expert 2 (Qwen) → Master Judge (Claude Haiku)
+    Expert 1 (DeepSeek) + Expert 2 (Qwen) -> Master Judge (Claude Haiku)
     """
+    # ----- Casual message shortcut -----
+    from llm_hybrid_agent import is_casual_message, handle_casual_response
+    if is_casual_message(req.message):
+        resp = handle_casual_response(req.message)
+        return ChatResponse(
+            response=resp or "สวัสดีครับ! มีอะไรให้ช่วยวิเคราะห์ไหมครับ? 📊",
+            models_used={"master": MASTER_MODEL}
+        )
+
     news_context = get_market_news_instruction()
     sql_history = get_sql_history(days=req.days)
 

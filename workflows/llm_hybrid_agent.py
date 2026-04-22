@@ -1,7 +1,13 @@
 import sqlite3
 import json
 import os
+import sys
 import datetime
+
+# Ensure workflows/ directory is on sys.path so trading_system can be imported
+_workflows_dir = os.path.dirname(os.path.abspath(__file__))
+if _workflows_dir not in sys.path:
+    sys.path.insert(0, _workflows_dir)
 
 # ---------------------------------------------------------
 # ตั้งค่า LLM (Ollama / API) เสมือน llm_agent.py
@@ -14,9 +20,9 @@ except ImportError:
 
 USE_OLLAMA = False
 OLLAMA_MODEL = "llama3.2:1b"
-EXTERNAL_MODEL = "anthropic/claude-3.5-sonnet"  # Best available model for complex reasoning and consensus
-EXTERNAL_API_KEY = os.getenv("OPENROUTER_API_KEY", "YOUR_API_KEY")
-EXTERNAL_BASE_URL = "https://openrouter.ai/api/v1"
+EXTERNAL_MODEL = "minimax/minimax-01"  # Best available model for complex reasoning and consensus
+EXTERNAL_API_KEY = os.getenv("OPENCODE_API_KEY", "YOUR_API_KEY")
+EXTERNAL_BASE_URL = os.getenv("OPENCODE_BASE_URL", "https://api.minimax.chat/v1")
 
 DB_FILE = os.path.join(os.path.dirname(__file__), "trading_database.sqlite")
 
@@ -87,7 +93,7 @@ def catch_up_missing_days(trading_system_module):
 
     for day in sorted(missing_dates):
         date_str = day.strftime('%Y-%m-%d')
-        print(f"⏪ กำลังเติมข้อมูลย้อนหลัง {date_str} ...")
+        # print(f"⏪ กำลังเติมข้อมูลย้อนหลัง {date_str} ...")
         try:
             results = trading_system_module.get_current_signals(quiet=True, as_of_date=date_str)
         except Exception as e:
@@ -108,8 +114,8 @@ def catch_up_missing_days(trading_system_module):
             continue
 
         saved = trading_system_module.save_signals_to_db(valid_results, quiet=True)
-        if saved:
-            print(f"   ↳ เติมข้อมูลวันที่ {date_str} แล้ว ({saved} แถว)")
+        # if saved:
+        #     print(f"   ↳ เติมข้อมูลวันที่ {date_str} แล้ว ({saved} แถว)")
 
 def save_signals_to_sql():
     """
@@ -146,7 +152,7 @@ def save_signals_to_sql():
 
     try:
         trading_system.save_signals_to_db(valid_results, quiet=True)
-        print("✅ บันทึกสัญญาณล่าสุดลง SQLite แล้ว")
+        # print("✅ บันทึกสัญญาณล่าสุดลง SQLite แล้ว")
         return True
     except Exception as e:
         print("❌ บันทึกลง SQLite ไม่สำเร็จ:", e)
@@ -228,11 +234,64 @@ def ask_llm(messages, model_override=None):
         print(f"\n❌ เกิดข้อผิดพลาดในการเชื่อมต่อ LLM ({model_name}): {e}")
         return None
 
+# =========================================================
+# 4. Casual message detection
+# =========================================================
+CASUAL_PATTERNS = [
+    '\u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e35', '\u0e2b\u0e27\u0e31\u0e14\u0e14\u0e35', '\u0e14\u0e35\u0e04\u0e23\u0e31\u0e1a', '\u0e14\u0e35\u0e04\u0e48\u0e30', '\u0e14\u0e35\u0e08\u0e49\u0e32', '\u0e14\u0e35\u0e08\u0e49\u0e30', '\u0e14\u0e35\u0e19\u0e30',
+    '\u0e40\u0e1b\u0e47\u0e19\u0e44\u0e07', '\u0e40\u0e1b\u0e47\u0e19\u0e22\u0e31\u0e07\u0e44\u0e07', '\u0e17\u0e33\u0e2d\u0e30\u0e44\u0e23\u0e2d\u0e22\u0e39\u0e48', '\u0e27\u0e48\u0e32\u0e44\u0e07', '\u0e44\u0e07',
+    '\u0e02\u0e2d\u0e1a\u0e04\u0e38\u0e13', '\u0e02\u0e2d\u0e1a\u0e43\u0e08',
+    '\u0e25\u0e32\u0e01\u0e48\u0e2d\u0e19', '\u0e1a\u0e32\u0e22', '\u0e44\u0e1b\u0e41\u0e25\u0e49\u0e27', '\u0e44\u0e1b\u0e01\u0e48\u0e2d\u0e19', '\u0e44\u0e1b\u0e25\u0e30',
+    '\u0e04\u0e38\u0e13\u0e40\u0e1b\u0e47\u0e19\u0e43\u0e04\u0e23', '\u0e17\u0e33\u0e2d\u0e30\u0e44\u0e23\u0e44\u0e14\u0e49\u0e1a\u0e49\u0e32\u0e07', '\u0e0a\u0e48\u0e27\u0e22\u0e2d\u0e30\u0e44\u0e23\u0e44\u0e14\u0e49\u0e1a\u0e49\u0e32\u0e07', '\u0e04\u0e38\u0e13\u0e04\u0e37\u0e2d\u0e43\u0e04\u0e23',
+    '\u0e2d\u0e23\u0e38\u0e13\u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e34\u0e4c', '\u0e23\u0e32\u0e15\u0e23\u0e35\u0e2a\u0e27\u0e31\u0e2a\u0e14\u0e34\u0e4c', '\u0e19\u0e2d\u0e19\u0e2b\u0e25\u0e31\u0e1a\u0e1d\u0e31\u0e19\u0e14\u0e35',
+    'hello', 'hi', 'hey', 'yo', 'sup',
+    'good morning', 'good evening', 'good night',
+    'how are you', "what's up", 'whats up',
+    'thank you', 'thanks', 'bye', 'goodbye',
+    'who are you', 'what can you do',
+]
+
+# Keywords that indicate a trading/market question (override casual detection)
+TRADING_KEYWORDS = [
+    # Thai market/trading terms
+    '\u0e23\u0e32\u0e04\u0e32', '\u0e15\u0e25\u0e32\u0e14', '\u0e2b\u0e38\u0e49\u0e19', '\u0e17\u0e2d\u0e07', '\u0e17\u0e2d\u0e07\u0e04\u0e33',
+    '\u0e40\u0e17\u0e23\u0e14', '\u0e25\u0e07\u0e17\u0e38\u0e19', '\u0e1e\u0e2d\u0e23\u0e4c\u0e15', '\u0e2a\u0e31\u0e0d\u0e0d\u0e32\u0e13',
+    '\u0e0b\u0e37\u0e49\u0e2d', '\u0e02\u0e32\u0e22', '\u0e16\u0e37\u0e2d', '\u0e02\u0e36\u0e49\u0e19', '\u0e25\u0e07',
+    '\u0e41\u0e19\u0e27\u0e42\u0e19\u0e49\u0e21', '\u0e27\u0e34\u0e40\u0e04\u0e23\u0e32\u0e30\u0e2b\u0e4c', '\u0e04\u0e33\u0e41\u0e19\u0e30\u0e19\u0e33',
+    '\u0e2d\u0e31\u0e15\u0e23\u0e32\u0e41\u0e25\u0e01\u0e40\u0e1b\u0e25\u0e35\u0e48\u0e22\u0e19', '\u0e1c\u0e25\u0e15\u0e2d\u0e1a\u0e41\u0e17\u0e19',
+    '\u0e04\u0e27\u0e32\u0e21\u0e40\u0e2a\u0e35\u0e48\u0e22\u0e07', '\u0e01\u0e33\u0e44\u0e23',
+    # English market terms
+    'btc', 'bitcoin', 'gold', 'stock', 'market',
+    'buy', 'sell', 'hold', 'trade', 'price',
+    'signal', 'trend', 'crypto', 'forex',
+    'us', 'uk', 'thai', 'sp500', 's&p',
+    'bull', 'bear', 'portfolio',
+]
+
+def is_casual_message(text):
+    cleaned = text.strip().lower()
+    # If message contains trading keywords, it's NOT casual
+    for kw in TRADING_KEYWORDS:
+        if kw in cleaned:
+            return False
+    # Short messages matching casual patterns are casual
+    if len(cleaned) <= 40:
+        for pattern in CASUAL_PATTERNS:
+            if pattern in cleaned:
+                return True
+    return False
+
+def handle_casual_response(user_input):
+    casual_system = {"role": "system", "content": "\u0e04\u0e38\u0e13\u0e40\u0e1b\u0e47\u0e19 AI Trading Assistant \u0e17\u0e35\u0e48\u0e40\u0e1b\u0e47\u0e19\u0e01\u0e31\u0e19\u0e40\u0e2d\u0e07\n\u0e40\u0e21\u0e37\u0e48\u0e2d\u0e1c\u0e39\u0e49\u0e43\u0e0a\u0e49\u0e17\u0e31\u0e01\u0e17\u0e32\u0e22\u0e2b\u0e23\u0e37\u0e2d\u0e04\u0e38\u0e22\u0e40\u0e25\u0e48\u0e19 \u0e43\u0e2b\u0e49\u0e15\u0e2d\u0e1a\u0e2a\u0e31\u0e49\u0e19\u0e46 \u0e40\u0e1b\u0e47\u0e19\u0e01\u0e31\u0e19\u0e40\u0e2d\u0e07 \u0e2d\u0e1a\u0e2d\u0e38\u0e48\u0e19 \u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22\n\u0e41\u0e19\u0e30\u0e19\u0e33\u0e15\u0e31\u0e27\u0e2a\u0e31\u0e49\u0e19\u0e46 \u0e27\u0e48\u0e32\u0e0a\u0e48\u0e27\u0e22\u0e27\u0e34\u0e40\u0e04\u0e23\u0e32\u0e30\u0e2b\u0e4c\u0e15\u0e25\u0e32\u0e14\u0e41\u0e25\u0e30\u0e43\u0e2b\u0e49\u0e2a\u0e31\u0e0d\u0e0d\u0e32\u0e13\u0e40\u0e17\u0e23\u0e14\u0e44\u0e14\u0e49\n\u0e2b\u0e49\u0e32\u0e21\u0e43\u0e2b\u0e49\u0e04\u0e33\u0e41\u0e19\u0e30\u0e19\u0e33\u0e40\u0e17\u0e23\u0e14\u0e2b\u0e23\u0e37\u0e2d\u0e27\u0e34\u0e40\u0e04\u0e23\u0e32\u0e30\u0e2b\u0e4c\u0e15\u0e25\u0e32\u0e14\u0e43\u0e19\u0e01\u0e32\u0e23\u0e17\u0e31\u0e01\u0e17\u0e32\u0e22\n\u0e15\u0e2d\u0e1a 1-2 \u0e1b\u0e23\u0e30\u0e42\u0e22\u0e04\u0e1e\u0e2d"}
+    messages = [casual_system, {"role": "user", "content": user_input}]
+    return ask_llm(messages, model_override="minimax/minimax-01")
+
 if __name__ == "__main__":
     init_db()
+
     
     print("\n--- 1. ระบบ SQL Database ---")
-    print("📡 กำลังดึงและบันทึกสัญญาณวันนี้...")
+    print("กำลังดึงและบันทึกสัญญาณวันนี้...")
     save_signals_to_sql()
     
     print("\n=======================================================")
@@ -258,12 +317,21 @@ if __name__ == "__main__":
             break
             
         if user_input.lower() in ['exit', 'quit', 'q']:
-            print("ลาก่อน! ขอให้เทรดได้กำไรเยอะๆ 🚀")
+            print("ลาก่อน! ขอให้เทรดได้กำไรเยอะๆ")
             break
             
         if not user_input.strip():
             continue
-            
+
+        # ----- Casual message shortcut (greetings/chitchat) -----
+        if is_casual_message(user_input):
+            response_text = handle_casual_response(user_input)
+            if response_text:
+                print(f"\n🤖 AI: {response_text}\n")
+                chat_history.append({"role": "user", "content": user_input})
+                chat_history.append({"role": "assistant", "content": response_text})
+            continue
+
         print("🔍 กำลังค้นหาข้อมูลที่เกี่ยวข้องจาก Database...")
         news_context = get_market_news_instruction()
         sql_history = get_sql_history(days=5)
@@ -273,7 +341,7 @@ if __name__ == "__main__":
         # -------------------------------------------------------------
         expert1_model = "deepseek/deepseek-r1-distill-llama-70b"
         expert2_model = "qwen/qwen-2.5-72b-instruct"
-        master_model = "anthropic/claude-3-5-haiku"
+        master_model = "minimax/minimax-01"
         
         expert_prompt = f"""คำถามของผู้ใช้: {user_input}
 

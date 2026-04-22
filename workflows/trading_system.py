@@ -1813,8 +1813,8 @@ if __name__ == '__main__':
         sys.exit(0)
 
     print("=" * 80)
-    print("  🚀 TRADING SYSTEM — ระบบเทรดอัตโนมัติ")
-    print("  📡 Auto Regime: ใช้วิธีที่ดีที่สุดต่อตลาด (จาก Backtest Results)")
+    print("  TRADING SYSTEM — ระบบเทรดอัตโนมัติ")
+    print("  Auto Regime: ใช้วิธีที่ดีที่สุดต่อตลาด (จาก Backtest Results)")
     print("=" * 80)
 
     if args.backtest_all:
