@@ -1516,6 +1516,7 @@ def run_backtest(markets=None, period='2y'):
                         position REAL,
                         equity_curve REAL,
                         bnh_curve REAL,
+                        news_summary TEXT,
                         UNIQUE(date)
                     )
                 ''')
@@ -1538,11 +1539,11 @@ def run_backtest(markets=None, period='2y'):
                 for row in market_history:
                     cursor.execute(f'''
                         INSERT INTO "{table_name}" 
-                        (date, market, price, trend_regime, ml_up_prob, ml_down_prob, signal_action, position, equity_curve, bnh_curve)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        (date, market, price, trend_regime, ml_up_prob, ml_down_prob, signal_action, position, equity_curve, bnh_curve, news_summary)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                     ''', (row['date'], row['market'], row['price'], row['trend_regime'], 
                           row['ml_up_prob'], row['ml_down_prob'], row['signal_action'], 
-                          row['position'], row['equity_curve'], row['bnh_curve']))
+                          row['position'], row['equity_curve'], row['bnh_curve'], 'No news during backtest.'))
                 
                 # Insert strategy performance summary
                 from datetime import datetime

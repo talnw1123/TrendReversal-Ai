@@ -28,8 +28,8 @@ if __name__ == "__main__":
     
     with socketserver.TCPServer(("", PORT), TradingDashboardHandler) as httpd:
         print("="*60)
-        print(f" 🚀 AI Trading Dashboard Online!")
-        print(f" 🌐 Open your browser and go to: http://localhost:{PORT}")
+        print(f" AI Trading Dashboard Online!")
+        print(f" Open your browser and go to: http://localhost:{PORT}")
         print("="*60)
         try:
             httpd.serve_forever()

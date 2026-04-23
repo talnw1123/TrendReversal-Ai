@@ -172,6 +172,7 @@ def save_signals_to_sql_sync() -> dict:
                 trend_regime TEXT, ml_up_prob REAL, ml_down_prob REAL,
                 signal_action TEXT, position REAL,
                 equity_curve REAL, bnh_curve REAL,
+                news_summary TEXT,
                 UNIQUE(date)
             )
         ''')
@@ -186,6 +187,7 @@ def save_signals_to_sql_sync() -> dict:
             up_prob = m.get('ml_up_prob', 0.0)
             down_prob = m.get('ml_down_prob', 0.0)
             sig = m.get('signal', 99)
+            news_sum = m.get('news_summary', 'No recent news.')
 
             equity_val = 0.0
             bnh_val = 0.0
@@ -225,9 +227,9 @@ def save_signals_to_sql_sync() -> dict:
 
             c.execute(f'''
                 INSERT INTO "{table_name}"
-                (date, market, price, trend_regime, ml_up_prob, ml_down_prob, signal_action, position, equity_curve, bnh_curve)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (today_date, market, price, trend_str, up_prob, down_prob, sg_text, position, equity_val, bnh_val))
+                (date, market, price, trend_regime, ml_up_prob, ml_down_prob, signal_action, position, equity_curve, bnh_curve, news_summary)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (today_date, market, price, trend_str, up_prob, down_prob, sg_text, position, equity_val, bnh_val, news_sum))
             saved.append(market)
 
     conn.commit()
@@ -254,7 +256,7 @@ class ChatResponse(BaseModel):
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
-    print("✅ Database initialized")
+    print("Database initialized")
     yield
 
 app = FastAPI(
@@ -447,6 +449,45 @@ async def save_signals():
     return result
 
 
+@app.get("/api/history/latest", tags=["Historical Data"], summary="Get Latest Combined Signals Across All Markets")
+async def get_latest_history(
+    limit: int = Query(default=5, ge=1, le=50, description="Number of records to return")
+):
+    """
+    Get the absolute latest signals from all market tables combined.
+    Useful for a 'Latest Activity' or 'Real-time Predictions' feed.
+    """
+    conn = sqlite3.connect(DB_FILE)
+    conn.row_factory = sqlite3.Row
+    c = conn.cursor()
+
+    try:
+        # 1. Get list of all signals history tables
+        c.execute("SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'signals_history_%'")
+        tables = [row[0] for row in c.fetchall()]
+
+        if not tables:
+            return {"limit": limit, "predictions": []}
+
+        # 2. Build a UNION ALL query
+        # We wrap each subquery to select common columns
+        queries = []
+        for t in tables:
+            queries.append(f'SELECT date, market, price, trend_regime, signal_action, ml_up_prob, ml_down_prob FROM "{t}"')
+        
+        union_query = " UNION ALL ".join(queries)
+        final_query = f"SELECT * FROM ({union_query}) ORDER BY date DESC, market ASC LIMIT ?"
+        
+        c.execute(final_query, (limit,))
+        rows = [dict(row) for row in c.fetchall()]
+        
+        return {"limit": limit, "count": len(rows), "predictions": rows}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        conn.close()
+
+
 @app.get("/api/history", tags=["Historical Data"], summary="Get Signal History (Last N Days)")
 async def get_history(
     days: int = Query(default=5, ge=1, le=365, description="Number of days to look back"),
@@ -626,7 +667,7 @@ if __name__ == "__main__":
     import uvicorn
     os.chdir(PROJECT_ROOT)
     print("=" * 60)
-    print("🚀 AI Trading Assistant API starting...")
-    print("📖 Docs: http://localhost:8000/docs")
+    print("AI Trading Assistant API starting...")
+    print("Docs: http://localhost:8000/docs")
     print("=" * 60)
     uvicorn.run(app, host="0.0.0.0", port=8000)
