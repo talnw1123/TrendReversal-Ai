@@ -1817,6 +1817,67 @@ if __name__ == '__main__':
     print("  Auto Regime: ใช้วิธีที่ดีที่สุดต่อตลาด (จาก Backtest Results)")
     print("=" * 80)
 
+    # ── Auto-Detect Gap and Backfill ──
+    if not (args.backtest_all or args.backtest or args.json):
+        try:
+            import sqlite3
+            import datetime
+            db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'trading_database.sqlite')
+            if os.path.exists(db_path):
+                conn = sqlite3.connect(db_path)
+                c = conn.cursor()
+                needs_fill = False
+                today = datetime.datetime.now().date()
+                # BTC trades 24/7 → must be continuous every day.
+                # Stock markets (US/UK/Thai/Gold) skip weekends & holidays → tolerate.
+                ALWAYS_DAILY = {'BTC'}
+                for m in markets:
+                    try:
+                        c.execute(f'SELECT date FROM "signals_history_{m}" ORDER BY date ASC')
+                        rows = [r[0] for r in c.fetchall() if r[0]]
+                        if not rows:
+                            needs_fill = True
+                            continue
+
+                        existing = {datetime.datetime.strptime(d, '%Y-%m-%d').date() for d in rows}
+                        last_dt = max(existing)
+
+                        # 1) Tail gap: last record → today
+                        tail_gap_days = (today - last_dt).days
+                        tail_threshold = 1 if m in ALWAYS_DAILY else 4
+                        if tail_gap_days > tail_threshold:
+                            needs_fill = True
+                            print(f"  ⚠️  [Auto-Heal] Tail gap for {m} (Last Update: {last_dt}, {tail_gap_days} days behind).")
+
+                        # 2) Internal gap detection (only for ALWAYS_DAILY markets like BTC,
+                        #    where every calendar day must exist).
+                        if m in ALWAYS_DAILY:
+                            first_dt = min(existing)
+                            cur = first_dt + datetime.timedelta(days=1)
+                            internal_missing = []
+                            while cur < last_dt:
+                                if cur not in existing:
+                                    internal_missing.append(cur)
+                                cur += datetime.timedelta(days=1)
+                            if internal_missing:
+                                needs_fill = True
+                                print(
+                                    f"  ⚠️  [Auto-Heal] Internal gap for {m}: "
+                                    f"{len(internal_missing)} missing days "
+                                    f"(first: {internal_missing[0]}, last: {internal_missing[-1]})."
+                                )
+                    except Exception:
+                        pass
+                conn.close()
+
+                if needs_fill:
+                    print(f"  🔄  Running automated backtest to seamlessly fill missing data gaps...\n")
+                    run_backtest(markets=markets, period='2y')
+                    print(f"\n  ✅  Gap fill completed. Resuming normal operations...\n")
+                    print("=" * 80)
+        except Exception as e:
+            print(f"  [Auto-Heal Error]: {e}")
+
     if args.backtest_all:
         run_backtest(markets=markets, period='max')
     elif args.backtest:

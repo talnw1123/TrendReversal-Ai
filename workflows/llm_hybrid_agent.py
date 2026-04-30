@@ -72,19 +72,23 @@ def catch_up_missing_days(trading_system_module):
                     missing_dates.add(bad_date)
                 print(f"⚠️ ลบข้อมูลเสีย {table_name} จำนวน {len(bad_rows)} แถว (eq/bnh = 0)")
 
-            cursor.execute(f'SELECT MAX(date) FROM "{table_name}"')
-            row = cursor.fetchone()
+            cursor.execute(f'SELECT date FROM "{table_name}" ORDER BY date ASC')
+            existing_rows = [r[0] for r in cursor.fetchall() if r[0]]
         except sqlite3.OperationalError:
             continue
 
-        if not row or not row[0]:
+        if not existing_rows:
             continue
 
-        last_date = datetime.datetime.strptime(row[0], '%Y-%m-%d').date()
-        next_day = last_date + datetime.timedelta(days=1)
-        while next_day < today:
-            missing_dates.add(next_day)
-            next_day += datetime.timedelta(days=1)
+        existing_set = {
+            datetime.datetime.strptime(d, '%Y-%m-%d').date() for d in existing_rows
+        }
+        first_date = min(existing_set)
+        cur_day = first_date + datetime.timedelta(days=1)
+        while cur_day < today:
+            if cur_day not in existing_set:
+                missing_dates.add(cur_day)
+            cur_day += datetime.timedelta(days=1)
 
     conn.close()
 

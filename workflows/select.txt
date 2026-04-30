@@ -1,0 +1,2 @@
+ sqlite3 -column -header /Users/oattao/project/p-e/workflows/trading_database.sqlite \                              ─╯
+  "SELECT date, signal_action, price FROM signals_history_BTC ORDER BY date DESC LIMIT 10;"
