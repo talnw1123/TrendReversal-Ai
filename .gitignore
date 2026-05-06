@@ -17,11 +17,32 @@ env/
 
 # Large model files (exceed GitHub's 100MB limit)
 *.pkl
+*.keras
+*.h5
+*.joblib
 old_model/
 model_downtrend/*.pkl
 model_uptrend/*.pkl
 model/model_downtrend/*.pkl
 model/model_uptrend/*.pkl
+
+# Trained model directories
+model/model_*/
+all_trad/separate_models/model_*/
+regime_models.py/
+
+# Claude Code worktrees (NOT for git)
+.claude/worktrees/
+
+# Backtest plot outputs (regenerable)
+workflows/plot/*.png
+workflows/plot/*.json
+workflows/plot_all/
+model/backtest_plots/
+
+# Database files
+*.sqlite
+*.db
 
 # OS files
 .DS_Store
