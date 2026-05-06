@@ -1,0 +1,17 @@
+[
+    "volume_adi",
+    "momentum_pvo_signal",
+    "trend_mass_index",
+    "atr_14",
+    "volume_cmf",
+    "volume_obv",
+    "momentum_pvo",
+    "trend_adx",
+    "volatility_atr",
+    "volatility_dcw",
+    "volatility_kcw",
+    "volatility_ui",
+    "volatility_bbw",
+    "bb_width_20",
+    "volume_mfi"
+]
