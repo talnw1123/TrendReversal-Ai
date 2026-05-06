@@ -1,0 +1,6 @@
+Market,Regime,UpModel,DownModel,BestStrategy,Return (%),B&H (%),Alpha (%),Sharpe,Sortino,Calmar,Max DD (%),Final $
+US,HMM,RandomForest,LSTM,Mode=standard Th=0.50 Trail=0.00,39.84,31.23,8.61,1.18,1.54,1.04,-18.9,13984.2
+UK,HMM,LSTM,SVM,"W(pyramid,ema3) ex=0.35 en=0.48 f=0.2 T=0.00 VT=0.00",33.24,24.9,8.34,1.61,2.31,1.77,-9.32,13323.99
+Thai,LogisticRegression,Transformer,CNN,"W(binary,regime_gated) ex=0.35 en=0.48 f=0.0 T=0.00 VT=0.00",24.9,14.48,10.42,0.87,1.22,0.57,-23.22,12489.72
+Gold,SMA200,Transformer,XGBoost,Mode=long_only Th=0.76 Trail=0.00,1.97,95.75,-93.78,0.86,663238.74,0.0,-0.1,10197.3
+BTC,XGBoost,MLP,RandomForest,"W(pyramid,ema5) ex=0.45 en=0.55 f=0.2 T=0.00 VT=0.00",71.09,14.84,56.25,0.72,1.05,0.49,-43.65,17109.15

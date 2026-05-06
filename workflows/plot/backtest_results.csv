@@ -1,6 +1,6 @@
 Market,Regime Method,Uptrend Model,Downtrend Model,Type,Return (%),B&H (%),Max DD (%),Trades,Final $,Confidence,Threshold Long,Threshold Short,Stop Loss,Win Rate (%)
-US,HMM,RandomForest,CNN,MOO (smart_hold),7.04,31.63,-42.75,4,10703.94,0.0,0.6,0.4,0.03,0.0
-UK,HMM,CNN,XGBoost,MOO (smart_hold),59.52,25.77,-14.06,6,15951.81,0.0,0.6,0.5,0.08,66.7
-Thai,ADX_Supertrend,LSTM,CNN,MOO (smart_hold),18.32,13.29,-17.64,8,11831.74,0.0,0.55,0.5,0.15,50.0
-Gold,SMA200,CNN,Transformer,MOO (smart_hold),273.32,98.28,-30.93,3,37331.93,0.0,0.6,0.4,0.03,33.3
-BTC,GMM,RandomForest,RandomForest,MOO (active),166.38,11.51,-31.6,59,26637.68,0.0,0.5,0.4,0.03,49.2
+US,HMM,RandomForest,CNN,MOO (smart_hold),19.84,32.3,-13.38,6,11984.11,0.0,0.6,0.4,0.03,33.3
+UK,HMM,CNN,XGBoost,MOO (smart_hold),30.64,24.55,-6.28,4,13064.2,0.0,0.6,0.5,0.08,100.0
+Thai,ADX_Supertrend,LSTM,CNN,MOO (smart_hold),9.0,16.4,-22.89,12,10899.75,0.0,0.55,0.5,0.15,50.0
+Gold,SMA200,CNN,Transformer,MOO (smart_hold),56.69,100.01,-17.8,6,15668.6,0.0,0.6,0.4,0.03,33.3
+BTC,GMM,RandomForest,RandomForest,MOO (active),14.51,14.34,-19.69,34,11451.12,0.0,0.5,0.4,0.03,29.4

@@ -1,0 +1,6 @@
+Market,Preference,confidence_threshold,threshold_long,threshold_short,stop_loss_pct,metric_return,metric_max_dd,metric_sharpe,metric_win_rate,pareto_size
+Thai,balanced,0.5628,0.5331,0.3,0.0403,25.35,-43.09,0.13,46.67,40
+UK,balanced,0.5469,0.5334,0.305,0.127,-55.78,-70.7,-0.1,45.3,40
+Gold,balanced,0.5082,0.524,0.3214,0.097,111.48,-25.82,0.3,48.19,40
+US,balanced,0.5081,0.5397,0.3542,0.145,-98.96,-99.29,-0.4,41.5,40
+BTC,balanced,0.5044,0.5455,0.3146,0.0331,646.82,-55.2,0.55,45.17,40

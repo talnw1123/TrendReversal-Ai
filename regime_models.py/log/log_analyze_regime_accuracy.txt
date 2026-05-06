@@ -1,0 +1,253 @@
+ cd /Users/oattao/project/p-e                                                                                                                        ─╯
+
+# ขั้นที่ 1: สร้าง regime_comparison_results.csv
+uv run python all_trad/compare_regime_methods.py
+
+# ขั้นที่ 2: วิเคราะห์ผล (รันหลังขั้นที่ 1 เสร็จ)
+uv run python all_trad/analyze_regime_accuracy.py
+================================================================================
+REGIME DETECTION METHODS COMPARISON
+================================================================================
+
+--- Thai (^SET.BK) ---
+  Data: 7166 rows (1996-12-11 to 2026-04-30)
+  SMA200          | Uptrend:  55.0% | Sep: +0.046% | Strategy:  +235.2% | B&H:   +71.2% | Excess: +164.0%
+  GMM             | Uptrend:  77.2% | Sep: -0.017% | Strategy:   +55.1% | B&H:   +71.2% | Excess:  -16.2%
+  GMM_Enhanced    | Uptrend:  10.5% | Sep: +0.141% | Strategy:  +126.4% | B&H:   +71.2% | Excess:  +55.2%
+  ADX_Supertrend  | Uptrend:  25.0% | Sep: +0.104% | Strategy:  +351.5% | B&H:   +71.2% | Excess: +280.3%
+  HMM             | Uptrend:  68.3% | Sep: +0.077% | Strategy:  +550.8% | B&H:   +71.2% | Excess: +479.6%
+  HMM_Enhanced    | Uptrend:  33.2% | Sep: +0.196% | Strategy: +3104.4% | B&H:   +71.2% | Excess: +3033.1%
+  RandomForest    | Uptrend:  65.6% | Sep: +0.340% | Strategy: +34210.2% | B&H:   +71.2% | Excess: +34139.0%
+
+--- UK (^FTSE) ---
+  Data: 10693 rows (1984-01-03 to 2026-05-01)
+  SMA200          | Uptrend:  67.1% | Sep: -0.032% | Strategy:  +173.3% | B&H:  +937.8% | Excess: -764.5%
+  GMM             | Uptrend:  86.4% | Sep: -0.016% | Strategy:  +640.9% | B&H:  +937.8% | Excess: -296.9%
+  GMM_Enhanced    | Uptrend:  48.6% | Sep: -0.010% | Strategy:  +182.9% | B&H:  +937.8% | Excess: -755.0%
+  ADX_Supertrend  | Uptrend:  18.5% | Sep: -0.008% | Strategy:   +41.6% | B&H:  +937.8% | Excess: -896.3%
+Model is not converging.  Current: 34948.910745436006 is not greater than 34948.93250799351. Delta is -0.021762557502370328
+  HMM             | Uptrend:  81.2% | Sep: +0.090% | Strategy: +3618.8% | B&H:  +937.8% | Excess: +2681.0%
+  HMM_Enhanced    | Uptrend:  46.2% | Sep: +0.001% | Strategy:  +258.9% | B&H:  +937.8% | Excess: -678.9%
+  RandomForest    | Uptrend:  81.4% | Sep: +0.187% | Strategy: +13345.2% | B&H:  +937.8% | Excess: +12407.4%
+
+--- Gold (GC=F) ---
+  Data: 6441 rows (2000-08-30 to 2026-05-01)
+  SMA200          | Uptrend:  70.6% | Sep: +0.001% | Strategy:  +640.9% | B&H: +1563.6% | Excess: -922.8%
+  GMM             | Uptrend:  84.4% | Sep: -0.006% | Strategy: +1004.0% | B&H: +1563.6% | Excess: -559.6%
+  GMM_Enhanced    | Uptrend:  26.7% | Sep: +0.027% | Strategy:  +205.2% | B&H: +1563.6% | Excess: -1358.4%
+  ADX_Supertrend  | Uptrend:  21.9% | Sep: -0.012% | Strategy:   +59.8% | B&H: +1563.6% | Excess: -1503.8%
+  HMM             | Uptrend:  86.2% | Sep: +0.105% | Strategy: +2737.5% | B&H: +1563.6% | Excess: +1173.8%
+  HMM_Enhanced    | Uptrend:  38.7% | Sep: +0.039% | Strategy:  +451.8% | B&H: +1563.6% | Excess: -1111.9%
+  RandomForest    | Uptrend:  74.7% | Sep: +0.217% | Strategy: +11297.1% | B&H: +1563.6% | Excess: +9733.4%
+
+--- US (^GSPC) ---
+  Data: 24700 rows (1927-12-30 to 2026-05-01)
+  SMA200          | Uptrend:  67.3% | Sep: +0.035% | Strategy: +60047.8% | B&H: +40610.1% | Excess: +19437.6%
+  GMM             | Uptrend:  84.5% | Sep: -0.014% | Strategy: +20618.7% | B&H: +40610.1% | Excess: -19991.5%
+  GMM_Enhanced    | Uptrend:  39.9% | Sep: +0.005% | Strategy: +2352.7% | B&H: +40610.1% | Excess: -38257.4%
+  ADX_Supertrend  | Uptrend:  23.9% | Sep: -0.007% | Strategy:  +256.4% | B&H: +40610.1% | Excess: -40353.7%
+Model is not converging.  Current: 80359.48636077688 is not greater than 80359.49824699303. Delta is -0.011886216147104278
+  HMM             | Uptrend:  80.1% | Sep: +0.113% | Strategy: +2463391.7% | B&H: +40610.1% | Excess: +2422781.6%
+  HMM_Enhanced    | Uptrend:  41.6% | Sep: -0.001% | Strategy: +1833.2% | B&H: +40610.1% | Excess: -38777.0%
+  RandomForest    | Uptrend:  94.4% | Sep: +0.231% | Strategy: +598988.2% | B&H: +40610.1% | Excess: +558378.1%
+
+--- BTC (BTC-USD) ---
+  Data: 4246 rows (2014-09-17 to 2026-05-03)
+  SMA200          | Uptrend:  59.2% | Sep: +0.217% | Strategy: +20249.1% | B&H: +18306.2% | Excess: +1942.9%
+  GMM             | Uptrend:  76.0% | Sep: -0.016% | Strategy: +7690.2% | B&H: +18306.2% | Excess: -10616.0%
+  GMM_Enhanced    | Uptrend:  28.9% | Sep: +0.435% | Strategy: +20579.8% | B&H: +18306.2% | Excess: +2273.6%
+  ADX_Supertrend  | Uptrend:  32.5% | Sep: +0.221% | Strategy: +4271.7% | B&H: +18306.2% | Excess: -14034.5%
+  HMM             | Uptrend:  70.1% | Sep: -0.134% | Strategy: +3090.8% | B&H: +18306.2% | Excess: -15215.4%
+  HMM_Enhanced    | Uptrend:  30.5% | Sep: +0.101% | Strategy: +1809.2% | B&H: +18306.2% | Excess: -16497.0%
+  RandomForest    | Uptrend:  69.1% | Sep: +0.894% | Strategy: +12570967.0% | B&H: +18306.2% | Excess: +12552660.8%
+
+Results saved to: /Users/oattao/project/p-e/all_trad/regime_comparison_results.csv
+
+================================================================================
+SUMMARY: BEST METHOD PER MARKET
+================================================================================
+
+>>> MARKET: Thai
+        Method  separation  uptrend_accuracy  excess_return
+  RandomForest    0.340174         55.009572   34138.982094
+  HMM_Enhanced    0.195667         58.140513    3033.132511
+  GMM_Enhanced    0.140827         50.467290      55.153229
+ADX_Supertrend    0.104482         53.288740     280.265127
+           HMM    0.076728         52.984464     479.573340
+        SMA200    0.046054         52.600863     163.954435
+           GMM   -0.017346         51.953690     -16.185331
+  🏆 WINNER: RandomForest (Sep: 0.340%)
+
+>>> MARKET: UK
+        Method  separation  uptrend_accuracy  excess_return
+  RandomForest    0.186513         54.129810   12407.384218
+           HMM    0.090341         53.437752    2681.003653
+  HMM_Enhanced    0.000947         52.761481    -678.914851
+ADX_Supertrend   -0.008139         51.315789    -896.289316
+  GMM_Enhanced   -0.009861         52.338787    -754.951526
+           GMM   -0.016130         52.821401    -296.936150
+        SMA200   -0.031505         52.528207    -764.538814
+  🏆 WINNER: RandomForest (Sep: 0.187%)
+
+>>> MARKET: Gold
+        Method  separation  uptrend_accuracy  excess_return
+  RandomForest    0.217210         54.917862    9733.447868
+           HMM    0.104872         53.342945    1173.827411
+  HMM_Enhanced    0.039193         53.877059   -1111.862245
+  GMM_Enhanced    0.027122         54.471545   -1358.421979
+        SMA200    0.001322         53.771718    -922.766693
+           GMM   -0.005680         53.221649    -559.627039
+ADX_Supertrend   -0.011769         52.441614   -1503.831521
+  🏆 WINNER: RandomForest (Sep: 0.217%)
+
+>>> MARKET: US
+        Method  separation  uptrend_accuracy  excess_return
+  RandomForest    0.231061         52.907126   5.583781e+05
+           HMM    0.112953         53.673201   2.422782e+06
+        SMA200    0.034806         53.734664   1.943764e+04
+  GMM_Enhanced    0.005470         53.714982  -3.825740e+04
+  HMM_Enhanced   -0.001257         53.628405  -3.877698e+04
+ADX_Supertrend   -0.007228         52.803659  -4.035372e+04
+           GMM   -0.013938         52.832990  -1.999147e+04
+  🏆 WINNER: RandomForest (Sep: 0.231%)
+
+>>> MARKET: BTC
+        Method  separation  uptrend_accuracy  excess_return
+  RandomForest    0.893576         55.578301   1.255266e+07
+  GMM_Enhanced    0.435223         56.351792   2.273567e+03
+ADX_Supertrend    0.221499         54.525706  -1.403451e+04
+        SMA200    0.216955         53.739061   1.942861e+03
+  HMM_Enhanced    0.100731         55.220418  -1.649698e+04
+           GMM   -0.015526         52.806202  -1.061602e+04
+           HMM   -0.133610         52.520161  -1.521536e+04
+  🏆 WINNER: RandomForest (Sep: 0.894%)
+================================================================================
+REGIME DETECTION ACCURACY ANALYSIS
+================================================================================
+
+>>> MARKET: Thai
+
+  [Ranked by Accuracy (Correctly Identified Days)]
+        Method  overall_accuracy  uptrend_accuracy  downtrend_accuracy
+  RandomForest         55.641205         55.009572           56.272838
+  HMM_Enhanced         55.203534         58.140513           52.266555
+           HMM         52.878676         52.984464           52.772887
+           GMM         51.771466         51.953690           51.589242
+        SMA200         51.633972         52.600863           50.667080
+ADX_Supertrend         51.411595         53.288740           49.534451
+  GMM_Enhanced         49.606209         50.467290           48.745129
+
+  [Ranked by Market Separation (Good Uptrend vs Bad Downtrend)]
+        Method  separation  avg_uptrend_ret  avg_downtrend_ret
+  RandomForest    0.340174         0.134663          -0.205511
+  HMM_Enhanced    0.195667         0.148456          -0.047211
+  GMM_Enhanced    0.140827         0.143814           0.002987
+ADX_Supertrend    0.104482         0.096029          -0.008454
+           HMM    0.076728         0.042044          -0.034683
+        SMA200    0.046054         0.038430          -0.007624
+           GMM   -0.017346         0.013750           0.031095
+
+  🏆 Champion based on Accuracy: RandomForest (55.64%)
+  💎 Champion based on Separation: RandomForest (Sep: 0.3402)
+
+>>> MARKET: UK
+
+  [Ranked by Accuracy (Correctly Identified Days)]
+        Method  overall_accuracy  uptrend_accuracy  downtrend_accuracy
+  RandomForest         53.852418         54.129810           53.575025
+           HMM         52.042581         53.437752           50.647410
+           GMM         50.587655         52.821401           48.353909
+  HMM_Enhanced         50.023747         52.761481           47.286013
+        SMA200         49.726518         52.528207           46.924829
+  GMM_Enhanced         49.604619         52.338787           46.870451
+ADX_Supertrend         49.094498         51.315789           46.873207
+
+  [Ranked by Market Separation (Good Uptrend vs Bad Downtrend)]
+        Method  separation  avg_uptrend_ret  avg_downtrend_ret
+  RandomForest    0.186513         0.062288          -0.124225
+           HMM    0.090341         0.044609          -0.045732
+  HMM_Enhanced    0.000947         0.028150           0.027203
+ADX_Supertrend   -0.008139         0.021006           0.029145
+  GMM_Enhanced   -0.009861         0.022571           0.032432
+           GMM   -0.016130         0.025441           0.041571
+        SMA200   -0.031505         0.017291           0.048796
+
+  🏆 Champion based on Accuracy: RandomForest (53.85%)
+  💎 Champion based on Separation: RandomForest (Sep: 0.1865)
+
+>>> MARKET: Gold
+
+  [Ranked by Accuracy (Correctly Identified Days)]
+        Method  overall_accuracy  uptrend_accuracy  downtrend_accuracy
+  RandomForest         54.023348         54.917862           53.128834
+           HMM         52.177090         53.342945           51.011236
+           GMM         51.387389         53.221649           49.553128
+        SMA200         51.357318         53.771718           48.942918
+  GMM_Enhanced         50.820678         54.471545           47.169811
+  HMM_Enhanced         50.508150         53.877059           47.139241
+ADX_Supertrend         49.459963         52.441614           46.478313
+
+  [Ranked by Market Separation (Good Uptrend vs Bad Downtrend)]
+        Method  separation  avg_uptrend_ret  avg_downtrend_ret
+  RandomForest    0.217210         0.104948          -0.112262
+           HMM    0.104872         0.064458          -0.040415
+  HMM_Enhanced    0.039193         0.074005           0.034812
+  GMM_Enhanced    0.027122         0.069831           0.042709
+        SMA200    0.001322         0.050351           0.049029
+           GMM   -0.005680         0.049074           0.054754
+ADX_Supertrend   -0.011769         0.040776           0.052545
+
+  🏆 Champion based on Accuracy: RandomForest (54.02%)
+  💎 Champion based on Separation: RandomForest (Sep: 0.2172)
+
+>>> MARKET: US
+
+  [Ranked by Accuracy (Correctly Identified Days)]
+        Method  overall_accuracy  uptrend_accuracy  downtrend_accuracy
+  RandomForest         53.924493         52.907126           54.941860
+           HMM         52.590779         53.673201           51.508357
+        SMA200         51.179600         53.734664           48.624535
+           GMM         50.572033         52.832990           48.311076
+  GMM_Enhanced         50.432865         53.714982           47.150748
+  HMM_Enhanced         50.413176         53.628405           47.197947
+ADX_Supertrend         49.588847         52.803659           46.374036
+
+  [Ranked by Market Separation (Good Uptrend vs Bad Downtrend)]
+        Method  separation  avg_uptrend_ret  avg_downtrend_ret
+  RandomForest    0.231061         0.044327          -0.186734
+           HMM    0.112953         0.053891          -0.059062
+        SMA200    0.034806         0.042826           0.008021
+  GMM_Enhanced    0.005470         0.034742           0.029272
+  HMM_Enhanced   -0.001257         0.030720           0.031977
+ADX_Supertrend   -0.007228         0.025953           0.033181
+           GMM   -0.013938         0.029299           0.043237
+
+  🏆 Champion based on Accuracy: RandomForest (53.92%)
+  💎 Champion based on Separation: RandomForest (Sep: 0.2311)
+
+>>> MARKET: BTC
+
+  [Ranked by Accuracy (Correctly Identified Days)]
+        Method  overall_accuracy  uptrend_accuracy  downtrend_accuracy
+  RandomForest         54.978793         55.578301           54.379284
+  GMM_Enhanced         52.711705         56.351792           49.071618
+  HMM_Enhanced         51.957888         55.220418           48.695358
+        SMA200         51.522710         53.739061           49.306358
+ADX_Supertrend         51.503160         54.525706           48.480615
+           GMM         50.642551         52.806202           48.478901
+           HMM         50.037683         52.520161           47.555205
+
+  [Ranked by Market Separation (Good Uptrend vs Bad Downtrend)]
+        Method  separation  avg_uptrend_ret  avg_downtrend_ret
+  RandomForest    0.893576         0.461082          -0.432494
+  GMM_Enhanced    0.435223         0.493921           0.058698
+ADX_Supertrend    0.221499         0.334052           0.112553
+        SMA200    0.216955         0.273068           0.056113
+  HMM_Enhanced    0.100731         0.254671           0.153940
+           GMM   -0.015526         0.180902           0.196427
+           HMM   -0.133610         0.144710           0.278320
+
+  🏆 Champion based on Accuracy: RandomForest (54.98%)
+  💎 Champion based on Separation: RandomForest (Sep: 0.8936)
+
+================================================================================

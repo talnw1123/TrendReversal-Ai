@@ -1,11 +1,6 @@
-Market,Regime Method,Uptrend Model,Downtrend Model,Type,Confidence,Threshold Long,Threshold Short,Stop Loss,Return (%),B&H (%),Max DD (%),Trades,Win Rate (%),Final $,Trailing
-US,HMM,RandomForest,CNN,Original,0.55,0.54,0.46,0.0,29.79,32.31,-18.9,469,0.0,12979.21,
-UK,HMM,CNN,XGBoost,Original,0.55,0.54,0.46,0.0,49.09,37.69,-5.18,475,0.0,14909.19,
-Thai,ADX_Supertrend,LSTM,CNN,Original,0.55,0.54,0.46,0.0,14.37,8.53,-24.0,269,0.0,11437.39,
-Gold,SMA200,CNN,Transformer,Original,0.55,0.54,0.46,0.0,121.9,122.12,-13.08,474,0.0,22189.86,
-BTC,GMM,RandomForest,RandomForest,Original,0.55,0.54,0.46,0.0,11.19,-8.49,-26.36,330,0.0,11119.47,
-US,HMM,RandomForest,CNN,MOO (smart_hold)[FB:False][LO:True][Lev:2.0][SM:aggressive][MP:0.0],0.0,0.6,0.4,0.03,67.5,32.31,-34.36,0,0.0,16749.8,0.2
-UK,HMM,CNN,XGBoost,MOO (smart_hold)[FB:False][LO:False][Lev:2.0][SM:aggressive][MP:0.0],0.0,0.6,0.5,0.08,130.32,37.69,-10.29,0,0.0,23032.37,0.1
-Thai,ADX_Supertrend,LSTM,CNN,MOO (smart_hold)[FB:False][LO:False][Lev:1.0][SM:aggressive][MP:0.0],0.0,0.55,0.5,0.15,33.22,8.53,-22.27,1,0.0,13321.55,0.2
-Gold,SMA200,CNN,Transformer,MOO (smart_hold)[FB:False][LO:True][Lev:2.0][SM:aggressive][MP:0.0],0.0,0.6,0.4,0.03,363.03,122.12,-22.89,1,100.0,46302.89,0.1
-BTC,GMM,RandomForest,RandomForest,MOO (active)[FB:False][LO:False][Lev:2.0][SM:aggressive][MP:0.3],0.0,0.5,0.4,0.03,91.79,-8.49,-31.5,28,0.0,19178.72,0.0
+Market,Regime Method,Uptrend Model,Downtrend Model,Type,Return (%),B&H (%),Max DD (%),Trades,Final $,Confidence,Threshold Long,Threshold Short,Stop Loss,Win Rate (%)
+US,HMM,RandomForest,CNN,MOO (smart_hold),7.04,31.63,-42.75,4,10703.94,0.0,0.6,0.4,0.03,0.0
+UK,HMM,CNN,XGBoost,MOO (smart_hold),59.52,25.77,-14.06,6,15951.81,0.0,0.6,0.5,0.08,66.7
+Thai,ADX_Supertrend,LSTM,CNN,MOO (smart_hold),18.32,13.29,-17.64,8,11831.74,0.0,0.55,0.5,0.15,50.0
+Gold,SMA200,CNN,Transformer,MOO (smart_hold),273.32,98.28,-30.93,3,37331.93,0.0,0.6,0.4,0.03,33.3
+BTC,GMM,RandomForest,RandomForest,MOO (active),166.38,11.51,-31.6,59,26637.68,0.0,0.5,0.4,0.03,49.2

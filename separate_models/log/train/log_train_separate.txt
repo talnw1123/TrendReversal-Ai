@@ -1,0 +1,190 @@
+uv run python model/train_separate_models.py                                                                                        ─╯
+============================================================
+TRAINING PER-MARKET SPECIALIZED MODELS
+============================================================
+Found Markets: ['BTC', 'Gold', 'Thai', 'UK', 'US']
+
+Processing BTC - uptrend...
+  Data: Train=776, Val=128, Test=128
+    LSTM: 63.28%
+    CNN: 63.28%
+    MLP: 62.50%
+    Transformer: 54.69%
+    RandomForest: 64.06%
+    SVM: 63.28%
+    XGBoost: 49.22%
+  -> Best: RandomForest (64.06%)
+
+Processing BTC - downtrend...
+  Data: Train=460, Val=60, Test=60
+    LSTM: 55.00%
+    CNN: 53.33%
+    MLP: 48.33%
+    Transformer: 43.33%
+    RandomForest: 55.00%
+    SVM: 43.33%
+    XGBoost: 55.00%
+  -> Best: LSTM (55.00%)
+
+Processing Gold - uptrend...
+  Data: Train=1117, Val=201, Test=202
+    LSTM: 64.36%
+    CNN: 67.33%
+    MLP: 68.81%
+    Transformer: 67.33%
+    RandomForest: 51.98%
+    SVM: 67.33%
+    XGBoost: 53.47%
+  -> Best: MLP (68.81%)
+
+Processing Gold - downtrend...
+  Data: Train=1148, Val=210, Test=181
+    LSTM: 66.30%
+    CNN: 59.67%
+    MLP: 58.56%
+    Transformer: 59.67%
+    RandomForest: 52.49%
+    SVM: 40.33%
+    XGBoost: 57.46%
+  -> Best: LSTM (66.30%)
+
+Processing Thai - uptrend...
+  Data: Train=969, Val=169, Test=160
+    LSTM: 53.75%
+    CNN: 50.00%
+    MLP: 61.25%
+    Transformer: 43.75%
+    RandomForest: 56.25%
+    SVM: 51.25%
+    XGBoost: 50.62%
+  -> Best: MLP (61.25%)
+
+Processing Thai - downtrend...
+  Data: Train=647, Val=100, Test=100
+    LSTM: 66.00%
+    CNN: 66.00%
+    MLP: 69.00%
+    Transformer: 66.00%
+    RandomForest: 66.00%
+    SVM: 61.00%
+    XGBoost: 66.00%
+  -> Best: MLP (69.00%)
+
+Processing UK - uptrend...
+  Data: Train=1019, Val=171, Test=173
+    LSTM: 71.10%
+    CNN: 62.43%
+    MLP: 61.85%
+    Transformer: 45.09%
+    RandomForest: 31.79%
+    SVM: 63.01%
+    XGBoost: 34.10%
+  -> Best: LSTM (71.10%)
+
+Processing UK - downtrend...
+  Data: Train=1474, Val=265, Test=298
+    LSTM: 55.37%
+    CNN: 57.38%
+    MLP: 57.38%
+    Transformer: 58.39%
+    RandomForest: 52.35%
+    SVM: 60.07%
+    XGBoost: 56.38%
+  -> Best: SVM (60.07%)
+
+Processing US - uptrend...
+  Data: Train=1270, Val=220, Test=140
+    LSTM: 19.29%
+    CNN: 19.29%
+    MLP: 45.71%
+    Transformer: 19.29%
+    RandomForest: 77.86%
+    SVM: 26.43%
+    XGBoost: 42.14%
+  -> Best: RandomForest (77.86%)
+
+Processing US - downtrend...
+  Data: Train=1466, Val=258, Test=297
+    LSTM: 53.20%
+    CNN: 45.79%
+    MLP: 51.52%
+    Transformer: 57.24%
+    RandomForest: 50.84%
+    SVM: 51.18%
+    XGBoost: 50.84%
+  -> Best: Transformer (57.24%)
+
+============================================================
+Market     Trend        Model  Accuracy  Samples
+   BTC downtrend         LSTM     55.00      460
+   BTC downtrend RandomForest     55.00      460
+   BTC downtrend      XGBoost     55.00      460
+   BTC downtrend          CNN     53.33      460
+   BTC downtrend          MLP     48.33      460
+   BTC downtrend  Transformer     43.33      460
+   BTC downtrend          SVM     43.33      460
+   BTC   uptrend RandomForest     64.06      776
+   BTC   uptrend         LSTM     63.28      776
+   BTC   uptrend          CNN     63.28      776
+   BTC   uptrend          SVM     63.28      776
+   BTC   uptrend          MLP     62.50      776
+   BTC   uptrend  Transformer     54.69      776
+   BTC   uptrend      XGBoost     49.22      776
+  Gold downtrend         LSTM     66.30     1148
+  Gold downtrend          CNN     59.67     1148
+  Gold downtrend  Transformer     59.67     1148
+  Gold downtrend          MLP     58.56     1148
+  Gold downtrend      XGBoost     57.46     1148
+  Gold downtrend RandomForest     52.49     1148
+  Gold downtrend          SVM     40.33     1148
+  Gold   uptrend          MLP     68.81     1117
+  Gold   uptrend          CNN     67.33     1117
+  Gold   uptrend  Transformer     67.33     1117
+  Gold   uptrend          SVM     67.33     1117
+  Gold   uptrend         LSTM     64.36     1117
+  Gold   uptrend      XGBoost     53.47     1117
+  Gold   uptrend RandomForest     51.98     1117
+  Thai downtrend          MLP     69.00      647
+  Thai downtrend         LSTM     66.00      647
+  Thai downtrend          CNN     66.00      647
+  Thai downtrend  Transformer     66.00      647
+  Thai downtrend RandomForest     66.00      647
+  Thai downtrend      XGBoost     66.00      647
+  Thai downtrend          SVM     61.00      647
+  Thai   uptrend          MLP     61.25      969
+  Thai   uptrend RandomForest     56.25      969
+  Thai   uptrend         LSTM     53.75      969
+  Thai   uptrend          SVM     51.25      969
+  Thai   uptrend      XGBoost     50.62      969
+  Thai   uptrend          CNN     50.00      969
+  Thai   uptrend  Transformer     43.75      969
+    UK downtrend          SVM     60.07     1474
+    UK downtrend  Transformer     58.39     1474
+    UK downtrend          CNN     57.38     1474
+    UK downtrend          MLP     57.38     1474
+    UK downtrend      XGBoost     56.38     1474
+    UK downtrend         LSTM     55.37     1474
+    UK downtrend RandomForest     52.35     1474
+    UK   uptrend         LSTM     71.10     1019
+    UK   uptrend          SVM     63.01     1019
+    UK   uptrend          CNN     62.43     1019
+    UK   uptrend          MLP     61.85     1019
+    UK   uptrend  Transformer     45.09     1019
+    UK   uptrend      XGBoost     34.10     1019
+    UK   uptrend RandomForest     31.79     1019
+    US downtrend  Transformer     57.24     1466
+    US downtrend         LSTM     53.20     1466
+    US downtrend          MLP     51.52     1466
+    US downtrend          SVM     51.18     1466
+    US downtrend RandomForest     50.84     1466
+    US downtrend      XGBoost     50.84     1466
+    US downtrend          CNN     45.79     1466
+    US   uptrend RandomForest     77.86     1270
+    US   uptrend          MLP     45.71     1270
+    US   uptrend      XGBoost     42.14     1270
+    US   uptrend          SVM     26.43     1270
+    US   uptrend         LSTM     19.29     1270
+    US   uptrend          CNN     19.29     1270
+    US   uptrend  Transformer     19.29     1270
+
+Saved to separate_models_comparison.csv
